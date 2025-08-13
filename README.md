@@ -13,8 +13,8 @@ This repository hosts the source for Agnes Deglon's GitHub Pages blog.
 
 2. **Edit the site**
 
-   - Web pages live in the `web/` directory. Start by editing `web/index.html`.
-   - Add additional pages or assets inside `web/` as the blog grows.
+   - Site pages live in the `docs/` directory. Start by editing `docs/index.html`.
+   - Add additional pages or assets inside `docs/` as the blog grows.
 
 3. **Preview locally**
 
@@ -22,7 +22,7 @@ This repository hosts the source for Agnes Deglon's GitHub Pages blog.
 
    ```bash
    bundle install
-   bundle exec jekyll serve
+   bundle exec jekyll serve --source docs
    ```
 
    Visit `http://localhost:4000` in your browser.
@@ -42,6 +42,6 @@ This repository hosts the source for Agnes Deglon's GitHub Pages blog.
 /
 ├── _config.yml         # GitHub Pages configuration
 ├── README.md           # Project overview and instructions
-└── web/                # Website pages
+└── docs/                # Website pages
     └── index.html      # Landing page
 ```
