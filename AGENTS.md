@@ -13,6 +13,10 @@ This repository hosts the public GitHub Pages site for **Agnes Deglon**.
   ```
   to ensure the site builds successfully.
 
+## Design
+- Follow Material Design principles for UI.
+- Ensure all pages are fully responsive across devices.
+
 ## Commit expectations
 - Keep commits focused and descriptive.
 - Do not create new branches.
