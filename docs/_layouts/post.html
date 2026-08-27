@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="post">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {%- if page.categories.size > 0 %}
+      {%- for c in page.categories %}
+        {%- for s in site.sections %}{% if s.key == c %}
+        <span class="sep">·</span>
+        <a class="cat" href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a>
+        {%- endif %}{% endfor %}
+      {%- endfor %}
+      {%- endif %}
+    </p>
+  </header>
+
+  {{ content }}
+</article>
+
+<nav class="pager">
+  {%- if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}
+  {%- if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+</nav>

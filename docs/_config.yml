@@ -1,0 +1,40 @@
+title: Agnès Déglon-Fischer
+tagline: Words from the trail, stories from the soul
+description: >-
+  A scientist's mind, a healer's heart, a mother's humor.
+  Writing on health and science, soul and self, and family misadventures.
+author: Agnès Déglon
+url: https://agnesdeglon.com
+baseurl: ""
+lang: en
+
+# Keeps agnesdeglonblog.com/<slug>/ URLs working after the move.
+permalink: /:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+feed:
+  path: feed.xml
+
+exclude: [Gemfile, Gemfile.lock, vendor, README.md]
+
+defaults:
+  - scope: {path: "", type: "posts"}
+    values: {layout: "post"}
+
+sections:
+  - {name: "Health & Science", key: "Health&Science", slug: "health-science",
+     blurb: "Body wisdom — biochemistry, Chinese medicine, and what the textbooks left out."}
+  - {name: "Soul & Self", key: "Soul&Self", slug: "soul-self",
+     blurb: "Soul reflections — meditation, transformation, and the long way round."}
+  - {name: "Misadventures", key: "Misadventures", slug: "misadventures",
+     blurb: "Mind in motion — family, trails, and everything that went sideways."}
