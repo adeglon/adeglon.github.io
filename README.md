@@ -1,56 +1,46 @@
-# Agnès Déglon — Blog
+# agnesdeglon.com
 
-Source for Agnès Déglon's GitHub Pages blog.
+Source for Agnès Déglon's personal site and blog, published with GitHub Pages.
 
-- **Live:** <https://adeglon.github.io/>
-- **Custom domain:** <https://agnesdeglon.com/> (see `CNAME`)
-- **Status:** prototype. The blog currently published to readers is the WordPress site at
-  <https://agnesdeglonblog.com/>; this repo is where it is being migrated to.
+**Live:** <https://agnesdeglon.com> · <https://adeglon.github.io>
 
-## Getting started
+Agnès is a Swiss-American writer and translator in Southern California, writing about
+motherhood, midlife, health and the mess in between.
+
+## Running the site locally
 
 ```bash
 git clone https://github.com/adeglon/adeglon.github.io.git
 cd adeglon.github.io
 bundle install
-bundle exec jekyll serve --source docs   # preview at http://localhost:4000
+bundle exec jekyll serve --source docs
 ```
 
-## Editing the site
+The preview runs at <http://localhost:4000>.
 
-GitHub Pages builds from the **`docs/`** directory. Pages and assets go there.
-
-```bash
-bundle exec jekyll build --source docs   # build check
-git add -A && git commit -m "..." && git push
-```
-
-Pushing to `main` republishes the site automatically, usually within a minute.
-
-> **Note:** `_config.yml` contains a `source: web` line that is stale — Pages ignores it and serves
-> `docs/`. `web/index.html` is an abandoned placeholder, not the live page.
-
-## Directory structure
+## Structure
 
 ```text
-/
-├── _config.yml   # Jekyll config (minima theme)
-├── CNAME         # custom domain
-├── Gemfile       # github-pages + webrick
-├── CLAUDE.md     # working guidance for Claude
-├── AGENTS.md     # older guidance, written for Codex
-├── docs/         # ← the published site
-│   ├── index.html
-│   ├── mama-hood-menopause.html
-│   ├── family-misadventures.html
-│   ├── feeding-healthy.html
-│   └── when-menopause-and-puberty-collide.html
-└── web/          # abandoned placeholder, not served
+_config.yml   Jekyll configuration
+CNAME         custom domain
+Gemfile       github-pages, webrick
+docs/         the published site — pages and assets live here
 ```
 
-## Conventions
+GitHub Pages builds from `docs/`. Pushing to `main` republishes the site, usually within a minute.
 
-- Commit directly to `main`; no branches.
-- This repository is public — no confidential or personally identifiable information.
-- Material Design, responsive on every screen size.
-- Descriptive meta tags, optimized images, current dependencies.
+Build check before pushing:
+
+```bash
+bundle exec jekyll build --source docs
+```
+
+## Notes
+
+- The `source: web` key in `_config.yml` is inert — GitHub Pages serves `docs/` regardless.
+  `web/` holds an old placeholder page and is not published.
+- Built with Jekyll and Materialize CSS.
+
+## License
+
+Site code is free to reuse. Written content and images are © Agnès Déglon, all rights reserved.
