@@ -1,0 +1,70 @@
+# The trilogy, as data.
+#
+# The series strip, the books page and each book page all read from this one
+# list, so reading order and status cannot disagree between pages. Adding a
+# book, changing a status or publishing a cover is an edit here, not a hunt
+# through templates.
+#
+# ORDER IS READING ORDER. The Canyon Within was drafted first, but that is a
+# production fact and appears nowhere on the site.
+#
+# status:  writing | soon | out     (see .status in components.css)
+# page:    false when there is no page yet — the template then renders the
+#          book WITHOUT a link, rather than sending a reader to a "coming
+#          soon" dead end.
+
+- number: One
+  title: The Chaos Within
+  slug: the-chaos-within
+  page: true
+  status: writing
+  status_label: In revision
+  cover: false                      # no artwork yet — placeholder is deliberate
+  line: A mother's journey through chaos toward quiet clarity.
+  # PLACEHOLDER COPY — drafted from the project README so the page could be
+  # laid out. Not approved by Agnès. Must not survive to a public launch.
+  blurb: >-
+    Arielle answers to her name twelve times before eight in the morning. She is
+    the household's unpaid infrastructure, running at maximum capacity and
+    minimum acknowledgement — and somewhere underneath the noise, a question she
+    has not had a quiet enough minute to hear.
+
+- number: Two
+  title: The Canyon Within
+  slug: the-canyon-within
+  page: true
+  status: soon
+  status_label: Coming 2026
+  cover: canyon-cover
+  cover_alt: >-
+    Cover of The Canyon Within: sunrise over the Grand Canyon, the title in
+    white capitals across the sky.
+  line: A novel of midlife awakening in the Grand Canyon.
+  # Spoiler-safe. Shown in the open. Says nothing about how Book One ends.
+  blurb: >-
+    Twenty years after <em>The Chaos Within</em>, the house has gone quiet. At
+    fifty-two, Arielle walks to the rim of the Grand Canyon and starts down.
+  # The approved back-cover copy, verbatim from tcw.en.yml. Behind the spoiler
+  # disclosure, because it gives away where Book One leaves her.
+  blurb_full:
+    - >-
+      At fifty-two, Arielle has spent decades being everything to everyone. Now
+      perimenopause is reshaping her body in ways no one warned her about, her
+      sons have left home, and the marriage that once held her feels carefully
+      managed rather than loved. The silence inside her grows deeper than the
+      one around her.
+    - >-
+      She descends into the Grand Canyon hoping to find the woman she used to
+      be. What she finds is a stranger on the trail, an ancient way of seeing
+      the body, and a question she hadn't known she was asking.
+
+- number: Three
+  title: The Creation Within
+  slug: the-creation-within
+  page: false                       # nothing to link to yet, and it says so
+  status: writing
+  status_label: In progress
+  cover: false
+  line: What happens to a woman after she comes back up.
+  blurb: >-
+    The third book is being written.

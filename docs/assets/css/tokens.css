@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Within — design tokens
+   --------------------------------------------------------------------------
+   The single source of colour, type and spacing for BOTH sites.
+
+   Nothing here was invented. The palette and the two typefaces are lifted
+   from `The Canyon Within/scripts/books/base.yml`, which was itself sampled
+   off Agnès' approved cover comp. If a value disagrees with base.yml,
+   base.yml wins and this file is the thing that is wrong.
+
+   Copy this file into a repo as `assets/css/tokens.css`. Do not edit it there
+   — edit it here and re-copy, so the two sites cannot drift apart.
+
+   Layer 1 is the raw palette: named colours, no opinion about where they go.
+   Layer 2 is semantic: `--bg`, `--text`, `--rule`. Components only ever use
+   layer 2, which is what lets one stylesheet serve a dark site and a light
+   one without a single component being rewritten.
+   ========================================================================== */
+
+:root {
+
+  /* ------------------------------------------------------------------ */
+  /* 1. PALETTE — sampled from the comp. Do not add to this list casually. */
+  /* ------------------------------------------------------------------ */
+
+  --c-night:        #11181E;  /* deep blue-black; back cover top-left, spine  */
+  --c-dusk:         #0E1A2B;  /* the sky's own blue; scrims over photography  */
+  --c-ember:        #2C1F12;  /* warm canyon black; back cover bottom-right   */
+
+  --c-gold:         #C9A05C;  /* ornament. THE ONLY ACCENT IN THE SYSTEM.     */
+  --c-gold-bright:  #EABA62;  /* brightest pixel of an ornament on the comp   */
+  --c-gold-dim:     #A0854F;  /* the same gold in shadow; hairlines on dark   */
+
+  --c-paper:        #FFFFFF;  /* the title, and nothing else                  */
+  --c-bone:         #F2ECE2;  /* body copy on dark ground; white would glare  */
+  --c-cream:        #F5E7CC;  /* the author's name, warmed by the sun         */
+  --c-ink:          #1A1A1A;  /* text on any light ground                     */
+
+  /* --- additions ----------------------------------------------------- */
+  /* base.yml defines `ink` "for any light-ground surface (none at present)".
+     The web IS that surface, so these three are the system's extension into
+     territory the cover never needed. They are the ONLY colours here that
+     were not sampled from the comp, and each has a reason:                */
+
+  --c-shell:        #FBF8F2;  /* the cream printing stock, as a screen bg.
+                                 Trade fiction is printed on cream, not
+                                 white (base.yml `print.paper: cream`), and
+                                 a pure-white page beside these covers looks
+                                 like a different company.                 */
+  --c-ink-soft:     #514A42;  /* secondary text on light ground. Warm grey,
+                                 not neutral — neutral goes blue next to
+                                 cream. 8.23:1 on shell.                    */
+  --c-gold-deep:    #7E6537;  /* MEASURED, not chosen. Gold #C9A05C is only
+                                 2.29:1 on shell and fails WCAG AA outright
+                                 as text. This is gold pushed into shadow
+                                 until it clears AA at 5.21:1. Use it for
+                                 gold-COLOURED TEXT on light ground; keep
+                                 --c-gold itself for ornament and rules.   */
+
+  /* ------------------------------------------------------------------ */
+  /* 2. SEMANTIC — DARK GROUND (default).                                */
+  /*    The trilogy site. Photographic, cover-like, made for browsing.    */
+  /* ------------------------------------------------------------------ */
+
+  --bg:             var(--c-dusk);
+  --bg-deep:        var(--c-night);
+  --bg-warm:        var(--c-ember);
+  --surface:        #16202F;          /* dusk lifted just off the page      */
+
+  --text:           var(--c-bone);    /* 14.88:1 on dusk — AAA              */
+  --text-strong:    var(--c-paper);   /* 17.48:1 — titles only              */
+  --text-soft:      #B9B1A5;          /* captions, metadata; 8.24:1          */
+  --text-accent:    var(--c-cream);   /* author name, standfirsts; 14.30:1  */
+
+  --accent:         var(--c-gold);    /* 7.21:1 on dusk — AAA, usable as
+                                         real text here, unlike on light   */
+  --accent-strong:  var(--c-gold-bright);
+  --rule:           rgba(201, 160, 92, 0.42);   /* gold hairline           */
+  --rule-quiet:     rgba(242, 236, 226, 0.14);  /* structural divider      */
+
+  /* Scrims. The cover makes photographs carry type by washing them, never
+     by retouching the picture — same trick here, same colour.             */
+  /* These are the COVER'S OWN measured numbers, not taste: 0.66 at the top
+     is the point below which a hairline white serif stops surviving a small
+     thumbnail against a bright sky. One ramp, broken at 30%, gone by 52% —
+     "fading to nothing in the middle where the canyon should be seen". */
+  --scrim-top:      linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.66) 0%,
+                      rgba(14, 26, 43, 0.34) 30%,
+                      rgba(14, 26, 43, 0.00) 52%);
+  /* Anchored to where the COPY is, not to a percentage of the viewport.
+     The cover can use a plain vertical ramp because its subtitle ends at a
+     known 41% of a FIXED panel. A web hero's copy block changes height with
+     the viewport, the font size and the length of the sentence, so any
+     horizontal ramp will eventually drop type onto sunlit rock — which is
+     exactly what happened the first time this was built.
+
+     So the wash runs LEFT TO RIGHT instead, down the column the type
+     actually occupies, at every height. The sun is on the right of this
+     photograph and stays untouched, which is the same trade the cover makes
+     when it crops hard right to keep the sun. */
+  --scrim-copy:     linear-gradient(to right,
+                      rgba(14, 26, 43, 0.88) 0%,
+                      rgba(14, 26, 43, 0.72) 26%,
+                      rgba(14, 26, 43, 0.30) 52%,
+                      rgba(14, 26, 43, 0.00) 74%);
+
+  /* On a phone the copy is full-width, so a side wash would cover the whole
+     frame. Fall back to a vertical ramp there and let the foot of the
+     picture carry the image. */
+  --scrim-copy-narrow: linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.86) 0%,
+                      rgba(14, 26, 43, 0.74) 45%,
+                      rgba(14, 26, 43, 0.46) 72%,
+                      rgba(14, 26, 43, 0.00) 96%);
+
+  /* Only for a hero whose type sits at the FOOT. Applying both scrims at
+     once leaves a ~8% band of un-washed photograph in the middle and the
+     picture disappears — which is exactly the bug this comment prevents. */
+  --scrim-foot:     linear-gradient(to top,
+                      rgba(14, 26, 43, 0.78) 0%,
+                      rgba(14, 26, 43, 0.00) 45%);
+
+  /* ------------------------------------------------------------------ */
+  /* 3. TYPE                                                             */
+  /* ------------------------------------------------------------------ */
+
+  /* Two families, both Garamond, and that is the whole type system.
+     Cormorant is a DISPLAY cut — hairline serifs, extreme contrast. It
+     wants to be large and letterspaced and it disappears below about 22px.
+     EB Garamond is the text cut of the same tradition and holds up small.
+     There is no sans-serif anywhere: the cover sets its small labels as
+     letterspaced serif caps, so the site does too (see .label).          */
+  --font-display: 'Cormorant Garamond', Cormorant, 'EB Garamond',
+                  Garamond, Georgia, 'Times New Roman', serif;
+  --font-body:    'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+
+  /* EB Garamond has a small x-height and sets roughly one step smaller than
+     a modern screen face at the same px. 19px here reads like a 16-17px
+     Inter. Do not "fix" this by dropping the base back to 16.            */
+  --fs-base:      1.1875rem;   /* 19px */
+
+  /* Fluid scale, min at 360px viewport, max at 1200px.                   */
+  --fs-xs:        0.8125rem;
+  --fs-sm:        0.9375rem;
+  --fs-md:        var(--fs-base);
+  --fs-lg:        clamp(1.30rem, 1.18rem + 0.55vw, 1.55rem);
+  --fs-xl:        clamp(1.65rem, 1.40rem + 1.10vw, 2.25rem);
+  --fs-2xl:       clamp(2.10rem, 1.60rem + 2.20vw, 3.25rem);
+  --fs-3xl:       clamp(2.80rem, 1.80rem + 4.40vw, 5.00rem);
+  --fs-hero:      clamp(3.20rem, 1.60rem + 7.00vw, 7.00rem);
+
+  --lh-tight:     1.06;   /* display caps, stacked title lines            */
+  --lh-snug:      1.28;
+  --lh-body:      1.62;   /* long-form prose                              */
+
+  /* The cover's title is set in wide caps. These are the two tracking
+     values that appear on it; nothing else is tracked.                   */
+  --track-title:  0.10em;
+  --track-label:  0.18em;
+
+  --measure:      34rem;   /* ~68 characters at --fs-base. Prose never
+                              exceeds this, on either site.               */
+  --measure-wide: 46rem;
+
+  /* ------------------------------------------------------------------ */
+  /* 4. SPACE, RADIUS, MOTION                                            */
+  /* ------------------------------------------------------------------ */
+
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;  --sp-4: 1rem;
+  --sp-5: 1.5rem;   --sp-6: 2rem;     --sp-7: 3rem;     --sp-8: 4rem;
+  --sp-9: 6rem;     --sp-10: 8rem;
+
+  --gutter:       clamp(1.25rem, 5vw, 3rem);
+  --page-max:     72rem;
+
+  /* Books are rectangles. Nothing on either site is rounded except the
+     author photograph, which is a portrait and reads better as a square
+     with a whisper of a corner.                                          */
+  --radius:       0;
+  --radius-photo: 2px;
+
+  /* Restraint is the point. Motion is a fade and a 2px lift, never more. */
+  --ease:         cubic-bezier(0.2, 0, 0.2, 1);
+  --dur:          180ms;
+}
+
+
+/* ==========================================================================
+   LIGHT GROUND
+   --------------------------------------------------------------------------
+   Applied with `<html data-ground="light">`. This is the BLOG's default and
+   the trilogy site's reading surfaces (an excerpt, a long note).
+
+   Only layer 2 is redefined. Layer 1 never changes — the gold on a light
+   page is the same gold, it is simply not allowed to be text.
+   ========================================================================== */
+
+[data-ground="light"] {
+  --bg:            var(--c-shell);
+  --bg-deep:       #F4EEE3;
+  --bg-warm:       var(--c-bone);
+  --surface:       #FFFFFF;
+
+  --text:          var(--c-ink);       /* 16.42:1 on shell — AAA          */
+  --text-strong:   #000000;
+  --text-soft:     var(--c-ink-soft);
+  --text-accent:   var(--c-gold-deep);
+
+  /* THE ONE RULE THAT CATCHES EVERYONE: --accent is now a text-safe gold,
+     because --c-gold is 2.29:1 here and unreadable. The bright gold stays
+     available for RULES AND ORNAMENT, which have no contrast minimum.    */
+  --accent:        var(--c-gold-deep); /* 5.21:1 — AA                     */
+  --accent-strong: #6B5530;
+  --rule:          rgba(160, 133, 79, 0.55);
+  --rule-quiet:    rgba(26, 26, 26, 0.14);
+
+  --scrim-top:     linear-gradient(to bottom,
+                     rgba(14, 26, 43, 0.55) 0%,
+                     rgba(14, 26, 43, 0.00) 60%);
+  --scrim-foot:    linear-gradient(to top,
+                     rgba(14, 26, 43, 0.65) 0%,
+                     rgba(14, 26, 43, 0.00) 45%);
+}
+
+
+/* --------------------------------------------------------------------------
+   Respect the reader's system setting on the BLOG only.
+
+   The trilogy site is deliberately dark in both settings: it is a book
+   cover, and a cover does not have a light mode. The blog is a reading
+   surface and should follow the operating system.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+  [data-ground="auto"] {
+    --bg: var(--c-shell);      --bg-deep: #F4EEE3;
+    --bg-warm: var(--c-bone);  --surface: #FFFFFF;
+    --text: var(--c-ink);      --text-strong: #000000;
+    --text-soft: var(--c-ink-soft);
+    --text-accent: var(--c-gold-deep);
+    --accent: var(--c-gold-deep);
+    --accent-strong: #6B5530;
+    --rule: rgba(160, 133, 79, 0.55);
+    --rule-quiet: rgba(26, 26, 26, 0.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 1ms; }
+}

@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% comment %}
+  One book. Everything factual comes from _data/books.yml via page.slug, so a
+  status or a blurb is changed in one place and every page that mentions the
+  book agrees.
+{% endcomment %}
+{% assign book = site.data.books | where: "slug", page.slug | first %}
+
+{% include header.html %}
+
+<main id="main" class="page">
+
+  {% comment %} Reading order first, before anything is sold. {% endcomment %}
+  {% include series-strip.html current=page.slug %}
+
+  <div class="book-card" style="padding-top:var(--sp-6);border-top:0">
+    <div class="book-card__cover">
+      {% if book.cover %}
+        <img src="{{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }}"
+             srcset="{{ '/assets/covers/' | append: book.cover | append: '-300.jpg' | relative_url }} 300w,
+                     {{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }} 480w,
+                     {{ '/assets/covers/' | append: book.cover | append: '-720.jpg' | relative_url }} 720w"
+             sizes="(max-width: 40rem) 11rem, 12rem"
+             width="480" height="721" decoding="async"
+             alt="{{ book.cover_alt }}">
+      {% else %}
+        {% include cover-placeholder.html book=book %}
+      {% endif %}
+    </div>
+
+    <div>
+      <span class="label">Book {{ book.number }}</span>
+      <h1 class="book-card__title" style="font-size:var(--fs-2xl);margin-top:0">{{ book.title }}</h1>
+      <p class="status status--{{ book.status }}">{{ book.status_label }}</p>
+
+      <p class="book-card__blurb">{{ book.blurb }}</p>
+
+      {% comment %}
+        The approved blurb gives away where Book One leaves Arielle, so it sits
+        behind a disclosure the reader opens deliberately. <details> needs no
+        JavaScript and announces its own state.
+      {% endcomment %}
+      {% if book.blurb_full %}
+        <details class="spoiler">
+          <summary>Read the full description
+            <span class="visually-hidden">(contains details about the end of the previous book)</span></summary>
+          {% for para in book.blurb_full %}<p>{{ para }}</p>{% endfor %}
+        </details>
+      {% endif %}
+
+      <p><em>{{ book.line }}</em></p>
+    </div>
+  </div>
+
+  {% if content != "" %}
+    <div class="prose section">{{ content }}</div>
+  {% endif %}
+
+</main>
+
+{% include signup.html %}

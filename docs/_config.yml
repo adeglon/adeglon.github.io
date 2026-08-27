@@ -1,14 +1,22 @@
+# Agnès Déglon-Fischer — one site: the essays and the trilogy.
+#
+# The design system in assets/css/tokens.css serves both. Reading surfaces run
+# on the light/auto ground; the trilogy pages opt into dark with `ground: dark`
+# in their front matter, because a book cover has no light mode.
+
 title: Agnès Déglon-Fischer
 tagline: Words from the trail, stories from the soul
 description: >-
-  A scientist's mind, a healer's heart, a mother's humor.
-  Writing on health and science, soul and self, and family misadventures.
-author: Agnès Déglon
-url: https://agnesdeglon.com
-baseurl: ""
+  Agnès Déglon-Fischer — a scientist's mind, a healer's heart, a mother's
+  humour. Essays on health and science, soul and self, and family
+  misadventures, and the home of The Within Trilogy.
+author: Agnès Déglon-Fischer
 lang: en
 
-# Keeps agnesdeglonblog.com/<slug>/ URLs working after the move.
+url: "https://adeglon.github.io"
+baseurl: ""
+
+# Keeps agnesdeglonblog.com/<slug>/ working after the domain moves.
 permalink: /:title/
 
 markdown: kramdown
@@ -31,6 +39,19 @@ defaults:
   - scope: {path: "", type: "posts"}
     values: {layout: "post"}
 
+# Demeterics AI chat widget. Publishable client key, protected by the domain
+# allowlist rather than by secrecy. Empty = widget omitted entirely.
+demeterics_key: "DEM-CTB2X5VRO4KL"
+
+# One navbar for the whole site.
+nav:
+  - {name: "Health & Science", url: "/health-science/"}
+  - {name: "Soul & Self",      url: "/soul-self/"}
+  - {name: "Misadventures",    url: "/misadventures/"}
+  - {name: "The Books",        url: "/books/"}
+  - {name: "The Author",       url: "/author/"}
+
+# Blog categories, keyed to the WordPress category names in post front matter.
 sections:
   - {name: "Health & Science", key: "Health&Science", slug: "health-science",
      blurb: "Body wisdom — biochemistry, Chinese medicine, and what the textbooks left out."}
@@ -38,9 +59,3 @@ sections:
      blurb: "Soul reflections — meditation, transformation, and the long way round."}
   - {name: "Misadventures", key: "Misadventures", slug: "misadventures",
      blurb: "Mind in motion — family, trails, and everything that went sideways."}
-
-# Site navigation. Category sections plus standalone pages.
-nav:
-  - {name: "Health & Science", url: "/health-science/"}
-  - {name: "Soul & Self",      url: "/soul-self/"}
-  - {name: "Misadventures",    url: "/misadventures/"}

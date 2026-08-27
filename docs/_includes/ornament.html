@@ -1,0 +1,9 @@
+{% comment %}
+  The system's only ornament: a hairline rule broken by a small gold diamond.
+  Do not add a second one — if a page feels like it needs decoration, it needs
+  more space instead.
+
+      {% include ornament.html %}
+      {% include ornament.html modifier="ornament--short ornament--center" %}
+{% endcomment %}
+<div class="ornament {{ include.modifier }}" role="presentation"><span></span></div>

@@ -1,0 +1,34 @@
+{% comment %}
+  Reading order. The most important component on the site.
+
+  A reader arriving from a search for "The Canyon Within" has no idea it is
+  Book Two. This strip goes at the top of every book page and the books page.
+
+  Built from _data/books.yml so the order and the statuses cannot disagree
+  between pages. Marked up as an <ol> so the order is real to a screen reader
+  and not just a visual arrangement.
+
+  Set `current` to a book slug when including it:
+      {% include series-strip.html current=page.slug %}
+{% endcomment %}
+<nav class="series-strip" aria-label="The Within Trilogy, in reading order">
+  <ol>
+    {% for book in site.data.books %}
+      {% if book.slug == include.current %}
+        <li aria-current="page">
+          <span class="label">Book {{ book.number }}</span>{{ book.title }}
+        </li>
+      {% elsif book.page %}
+        <li>
+          <a href="{{ '/books/' | append: book.slug | append: '/' | relative_url }}">
+            <span class="label">Book {{ book.number }}</span>{{ book.title }}</a>
+        </li>
+      {% else %}
+        {% comment %} No page yet, so no link — a link to nothing costs a click. {% endcomment %}
+        <li class="is-unwritten">
+          <span class="label">Book {{ book.number }}</span>{{ book.title }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>

@@ -1,0 +1,58 @@
+---
+layout: default
+title: The Books
+description: >-
+  The three novels of The Within Trilogy by Agnès Déglon-Fischer, in reading
+  order: The Chaos Within, The Canyon Within, and The Creation Within.
+ground: dark
+permalink: /books/
+---
+<header class="site-header">
+  <div class="page site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}">The Within Trilogy</a>
+    {% include nav.html %}
+  </div>
+</header>
+
+<main id="main" class="page">
+  {% include series-strip.html %}
+
+  <section class="section">
+    <h1>The books</h1>
+    <p class="standfirst">One woman, Arielle, across three books and twenty
+      years. They are written to be read in order, though each stands alone.</p>
+
+    {% for book in site.data.books %}
+      <article class="book-card" id="{{ book.slug }}">
+        <div class="book-card__cover">
+          {% if book.cover %}
+            <img src="{{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }}"
+                 srcset="{{ '/assets/covers/' | append: book.cover | append: '-300.jpg' | relative_url }} 300w,
+                         {{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }} 480w,
+                         {{ '/assets/covers/' | append: book.cover | append: '-720.jpg' | relative_url }} 720w"
+                 sizes="(max-width: 40rem) 11rem, 12rem"
+                 width="480" height="721" loading="lazy" decoding="async"
+                 alt="{{ book.cover_alt }}">
+          {% else %}
+            {% include cover-placeholder.html book=book %}
+          {% endif %}
+        </div>
+        <div>
+          <span class="label">Book {{ book.number }}</span>
+          <h2 class="book-card__title" style="margin-top:0">
+            {% if book.page %}
+              <a href="{{ '/books/' | append: book.slug | append: '/' | relative_url }}">{{ book.title }}</a>
+            {% else %}
+              {{ book.title }}
+            {% endif %}
+          </h2>
+          <p class="status status--{{ book.status }}">{{ book.status_label }}</p>
+          <p class="book-card__blurb">{{ book.blurb }}</p>
+          <p><em>{{ book.line }}</em></p>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</main>
+
+{% include signup.html %}

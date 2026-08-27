@@ -1,0 +1,13 @@
+{% comment %}
+  One navbar for the whole site — essays and trilogy side by side. Entries
+  come from `nav` in _config.yml so this markup never changes when a
+  destination is added.
+{% endcomment %}
+<nav class="site-nav" aria-label="Main">
+  <ul>
+    {%- for item in site.nav %}
+    <li><a href="{{ item.url | relative_url }}"
+           {% if page.url contains item.url %}aria-current="page"{% endif %}>{{ item.name }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>

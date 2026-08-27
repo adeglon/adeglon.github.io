@@ -1,15 +1,29 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-{%- if page.blurb %}<p class="lede">{{ page.blurb }}</p>{% endif %}
-<ul class="posts">
-  {%- for post in site.posts %}
-    {%- if post.categories contains page.category %}
-    <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-    {%- endif %}
-  {%- endfor %}
-</ul>
+{% include header.html %}
+
+<main id="main" class="page section">
+  <span class="label">Essays</span>
+  <h1>{{ page.title }}</h1>
+  {% if page.blurb %}<p class="standfirst">{{ page.blurb }}</p>{% endif %}
+  {% include ornament.html modifier="ornament--short" %}
+
+  <ul class="post-list">
+    {%- for post in site.posts %}
+      {%- if page.category == nil or post.categories contains page.category %}
+      <li>
+        <p class="post-list__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {%- for c in post.categories %}
+            {%- for s in site.sections %}{% if s.key == c and page.category == nil %}
+            &middot; {{ s.name }}
+            {%- endif %}{% endfor %}
+          {%- endfor %}
+        </p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      </li>
+      {%- endif %}
+    {%- endfor %}
+  </ul>
+</main>

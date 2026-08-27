@@ -1,0 +1,10 @@
+{% comment %}
+  Site header. Was duplicated inline in page.html and book.html; extracted so
+  the wordmark and nav cannot drift between page types.
+{% endcomment %}
+<header class="site-header">
+  <div class="page site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% include nav.html %}
+  </div>
+</header>

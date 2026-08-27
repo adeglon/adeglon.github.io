@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 12" width="320" height="12"
+     role="presentation" aria-hidden="true" fill="none">
+  <!-- The system's only ornament: a hairline interrupted by a small gold
+       diamond. Colour is currentColor so it inherits; the fallback gold is
+       #C9A05C, sampled from the approved cover comp. -->
+  <g fill="currentColor" color="#C9A05C">
+    <rect x="0"   y="5.5" width="146" height="1" opacity=".55"/>
+    <rect x="174" y="5.5" width="146" height="1" opacity=".55"/>
+    <path d="M160 2.2 L163.8 6 L160 9.8 L156.2 6 Z"/>
+  </g>
+</svg>

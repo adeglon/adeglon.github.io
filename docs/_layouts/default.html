@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en' }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-</head>
+{% comment %}
+  data-ground is per page, not per site. Reading surfaces use "auto" and
+  follow the operating system; the trilogy pages set `ground: dark` in their
+  front matter, because a book cover does not have a light mode.
+{% endcomment %}
+<html lang="{{ site.lang | default: 'en' }}" data-ground="{{ page.ground | default: 'auto' }}">
+<head>{% include head.html %}</head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site">
-    <div class="wrap">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <p class="tagline">{{ site.tagline }}</p>
-      <nav>
-        {%- for n in site.nav %}
-        <a href="{{ n.url | relative_url }}">{{ n.name }}</a>
-        {%- endfor %}
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="wrap">
-    {{ content }}
-  </main>
-
-  <footer class="site">
-    <div class="wrap">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. All rights reserved.</p>
-      <p><a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
-    </div>
-  </footer>
-  {% include widget.html %}
+<a class="skip-link" href="#main">Skip to content</a>
+{{ content }}
+{% include footer.html %}
+{% include chat-widget.html %}
 </body>
 </html>

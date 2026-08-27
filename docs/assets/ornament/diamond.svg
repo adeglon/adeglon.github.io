@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"
+     role="img" aria-label="The Within Trilogy">
+  <!-- The diamond alone, on the cover's night blue. Doubles as the favicon:
+       it is the one mark the series has, and at 16px a diamond still reads
+       where a wordmark would not. -->
+  <rect width="32" height="32" fill="#0E1A2B"/>
+  <path d="M16 7 L25 16 L16 25 L7 16 Z" fill="none" stroke="#C9A05C" stroke-width="1.6"/>
+  <path d="M16 12.5 L19.5 16 L16 19.5 L12.5 16 Z" fill="#C9A05C"/>
+</svg>

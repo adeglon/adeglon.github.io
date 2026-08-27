@@ -1,0 +1,25 @@
+{% comment %}
+  Demeterics AI chat widget — https://demeterics.ai/docs/ai-chat-widget
+
+  THE KEY IS PUBLIC BY DESIGN. `DEM-…` is a publishable client key: it links to
+  the provider API key held server-side, so no vendor secret is exposed here.
+  It is protected by a DOMAIN ALLOWLIST rather than by being secret, which
+  means two things:
+
+    1. Committing it to this public repo is correct, not a leak.
+    2. The allowlist in the Demeterics dashboard MUST list every host the site
+       is served from, or the widget silently refuses to load. Today that is
+       `adeglon.github.io`. Add any custom domain at the same time as the
+       CNAME, or the widget will disappear the moment the domain changes.
+
+  Set the key in _config.yml as `demeterics_key`. The widget is omitted
+  entirely when that value is empty, so a local build without it is clean.
+{% endcomment %}
+{% if site.demeterics_key and site.demeterics_key != "" %}
+  <script src="https://demeterics.com/widget/embed.js?k={{ site.demeterics_key }}" async></script>
+  <dem-agent
+      name="default"
+      title="Ask about the trilogy"
+      primary-color="#C9A05C"
+      accent-color="#0E1A2B"></dem-agent>
+{% endif %}
