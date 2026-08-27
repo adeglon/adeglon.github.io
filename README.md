@@ -1,47 +1,56 @@
-# Agnes Deglon Blog
+# Agnès Déglon — Blog
 
-This repository hosts the source for Agnes Deglon's GitHub Pages blog.
+Source for Agnès Déglon's GitHub Pages blog.
+
+- **Live:** <https://adeglon.github.io/>
+- **Custom domain:** <https://agnesdeglon.com/> (see `CNAME`)
+- **Status:** prototype. The blog currently published to readers is the WordPress site at
+  <https://agnesdeglonblog.com/>; this repo is where it is being migrated to.
 
 ## Getting started
 
-1. **Clone the repository**
+```bash
+git clone https://github.com/adeglon/adeglon.github.io.git
+cd adeglon.github.io
+bundle install
+bundle exec jekyll serve --source docs   # preview at http://localhost:4000
+```
 
-   ```bash
-   git clone https://github.com/adeglon/adeglon.github.io.git
-   cd adeglon.github.io
-   ```
+## Editing the site
 
-2. **Edit the site**
+GitHub Pages builds from the **`docs/`** directory. Pages and assets go there.
 
-   - Site pages live in the `docs/` directory. Start by editing `docs/index.html`.
-   - Add additional pages or assets inside `docs/` as the blog grows.
+```bash
+bundle exec jekyll build --source docs   # build check
+git add -A && git commit -m "..." && git push
+```
 
-3. **Preview locally**
+Pushing to `main` republishes the site automatically, usually within a minute.
 
-   To preview with the configured GitHub Pages theme:
-
-   ```bash
-   bundle install
-   bundle exec jekyll serve --source docs
-   ```
-
-   Visit `http://localhost:4000` in your browser.
-
-4. **Publish**
-
-   Commit your changes and push to the `main` branch. GitHub Pages will rebuild the site automatically.
-
-## Customization
-
-- Site configuration lives in `_config.yml`. It currently uses the `minima` theme. Explore other [GitHub Pages themes](https://pages.github.com/themes/) by updating this file.
-- Follow common best practices: include descriptive meta tags, optimize images, and keep external dependencies up to date.
+> **Note:** `_config.yml` contains a `source: web` line that is stale — Pages ignores it and serves
+> `docs/`. `web/index.html` is an abandoned placeholder, not the live page.
 
 ## Directory structure
 
 ```text
 /
-├── _config.yml         # GitHub Pages configuration
-├── README.md           # Project overview and instructions
-└── docs/                # Website pages
-    └── index.html      # Landing page
+├── _config.yml   # Jekyll config (minima theme)
+├── CNAME         # custom domain
+├── Gemfile       # github-pages + webrick
+├── CLAUDE.md     # working guidance for Claude
+├── AGENTS.md     # older guidance, written for Codex
+├── docs/         # ← the published site
+│   ├── index.html
+│   ├── mama-hood-menopause.html
+│   ├── family-misadventures.html
+│   ├── feeding-healthy.html
+│   └── when-menopause-and-puberty-collide.html
+└── web/          # abandoned placeholder, not served
 ```
+
+## Conventions
+
+- Commit directly to `main`; no branches.
+- This repository is public — no confidential or personally identifiable information.
+- Material Design, responsive on every screen size.
+- Descriptive meta tags, optimized images, current dependencies.
