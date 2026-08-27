@@ -97,6 +97,13 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Demeterics AI chat widget -->
+  <style>
+    dem-agent { --dem-primary-color: #009688; --dem-accent-color: #00796b; }
+    @media (max-width: 768px) { dem-agent { --dem-right: 8px; --dem-bottom: 8px; } }
+  </style>
+  <script src="https://demeterics.com/widget/embed.js?k=DEM-CTB2X5VRO4KL" async></script>
+  <dem-agent name="default" title="Ask me anything"></dem-agent>
 </body>
 </html>
 
