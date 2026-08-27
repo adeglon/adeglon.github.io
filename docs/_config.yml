@@ -38,3 +38,10 @@ sections:
      blurb: "Soul reflections — meditation, transformation, and the long way round."}
   - {name: "Misadventures", key: "Misadventures", slug: "misadventures",
      blurb: "Mind in motion — family, trails, and everything that went sideways."}
+
+# Site navigation. Category sections plus standalone pages.
+nav:
+  - {name: "Health & Science", url: "/health-science/"}
+  - {name: "Soul & Self",      url: "/soul-self/"}
+  - {name: "Misadventures",    url: "/misadventures/"}
+  - {name: "Within",           url: "/within/"}

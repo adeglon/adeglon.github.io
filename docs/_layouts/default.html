@@ -14,8 +14,8 @@
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <p class="tagline">{{ site.tagline }}</p>
       <nav>
-        {%- for s in site.sections %}
-        <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a>
+        {%- for n in site.nav %}
+        <a href="{{ n.url | relative_url }}">{{ n.name }}</a>
         {%- endfor %}
       </nav>
     </div>
