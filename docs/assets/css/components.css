@@ -516,3 +516,48 @@ dem-agent {
   .pager { grid-template-columns: 1fr; }
   .pager__link--next { text-align: left; grid-column: 1; }
 }
+
+
+/* --------------------------------------------------------------------------
+   20. TITLE COVER — a book whose artwork is not on show yet
+   --------------------------------------------------------------------------
+   Same proportion as a real trade paperback (5.5 x 8.5) so the card layout
+   does not shift when real artwork replaces it.
+   -------------------------------------------------------------------------- */
+
+.title-cover {
+  aspect-ratio: 5.5 / 8.5;
+  background: var(--c-night);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5) var(--sp-4);
+  text-align: center;
+}
+.title-cover__series {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--c-gold);
+}
+.title-cover__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--track-title);
+  color: var(--c-paper);
+  text-wrap: balance;
+}
+.title-cover__status {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--c-bone);
+  opacity: 0.7;
+}

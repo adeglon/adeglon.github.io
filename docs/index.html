@@ -1,140 +1,29 @@
 ---
 layout: default
-description: >-
-  The Within Trilogy by Agnès Déglon-Fischer — three novels of midlife as
-  initiation rather than decline. The Chaos Within, The Canyon Within, and
-  The Creation Within.
-ground: dark
+permalink: /
 ---
+{% include header.html %}
 
-{% comment %}
-  HERO — the cover's own method: photograph bled to the edge, type in the sky,
-  a scrim doing the legibility work instead of a text-shadow.
+<main id="main" class="page section">
+  <span class="label">Essays</span>
+  <h1>{{ site.tagline }}</h1>
+  <p class="standfirst">A scientist's mind, a healer's heart, a mother's humour —
+    on health and science, soul and self, and the misadventures in between.</p>
+  {% include ornament.html modifier="ornament--short" %}
 
-  The scrim runs left-to-right (see Design/DESIGN-SYSTEM.md) because the copy
-  block's height changes with the viewport, and a top-down ramp eventually
-  drops the standfirst onto sunlit rock.
-{% endcomment %}
-<header class="hero hero--sky">
-  <picture>
-    <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/photography/canyon-hero-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/photography/canyon-hero-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/photography/canyon-hero-tall-1024.webp' | relative_url }} 1024w"
-            type="image/webp">
-    <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/photography/canyon-hero-tall-640.jpg' | relative_url }} 640w,
-                    {{ '/assets/photography/canyon-hero-tall-900.jpg' | relative_url }} 900w"
-            type="image/jpeg">
-    <source srcset="{{ '/assets/photography/canyon-hero-1200.webp' | relative_url }} 1200w,
-                    {{ '/assets/photography/canyon-hero-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/photography/canyon-hero-2400.webp' | relative_url }} 2400w,
-                    {{ '/assets/photography/canyon-hero-3200.webp' | relative_url }} 3200w"
-            type="image/webp">
-    <img class="hero__media"
-         src="{{ '/assets/photography/canyon-hero-1600.jpg' | relative_url }}"
-         srcset="{{ '/assets/photography/canyon-hero-1200.jpg' | relative_url }} 1200w,
-                 {{ '/assets/photography/canyon-hero-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/photography/canyon-hero-2400.jpg' | relative_url }} 2400w"
-         sizes="100vw" width="2400" height="1350"
-         alt="Sunrise over the Grand Canyon from the South Kaibab trail, a stone
-              staircase descending into the light."
-         fetchpriority="high" decoding="async">
-  </picture>
-  <div class="hero__scrim"></div>
-
-  <div class="hero__body">
-    <div class="page">
-      {% include nav.html %}
-      <div style="margin-top:var(--sp-8)">
-        <p class="label">A trilogy</p>
-        <h1 class="hero__title">The<br>Within<br>Trilogy</h1>
-        {% include ornament.html modifier="ornament--short" %}
-        <p class="hero__sub">Three novels of midlife as initiation rather than decline — of the empty nest as opening,
-          the body as messenger, and the quiet awakening that comes when a woman
-          finally listens to herself.</p>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  {% comment %}
-    Reading order, immediately, before anything is sold. A visitor who does not
-    know where to start does not start.
-  {% endcomment %}
-  <div class="page">
-    {% include series-strip.html %}
-  </div>
-
-  <section class="page section">
-    <h2>The books</h2>
-    <p class="standfirst">One woman, Arielle, across three books and twenty
-      years — read in order, though each stands alone.</p>
-
-    {% for book in site.data.books %}
-      <article class="book-card" id="{{ book.slug }}">
-        <div class="book-card__cover">
-          {% if book.cover %}
-            <img src="{{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }}"
-                 srcset="{{ '/assets/covers/' | append: book.cover | append: '-300.jpg' | relative_url }} 300w,
-                         {{ '/assets/covers/' | append: book.cover | append: '-480.jpg' | relative_url }} 480w,
-                         {{ '/assets/covers/' | append: book.cover | append: '-720.jpg' | relative_url }} 720w"
-                 sizes="(max-width: 40rem) 11rem, 12rem"
-                 width="480" height="721" loading="lazy" decoding="async"
-                 alt="{{ book.cover_alt }}">
-          {% else %}
-            {% include cover-placeholder.html book=book %}
-          {% endif %}
-        </div>
-
-        <div>
-          <span class="label">Book {{ book.number }}</span>
-          <h3 class="book-card__title">
-            {% if book.page %}
-              <a href="{{ '/books/' | append: book.slug | append: '/' | relative_url }}">{{ book.title }}</a>
-            {% else %}
-              {{ book.title }}
-            {% endif %}
-          </h3>
-          <p class="status status--{{ book.status }}">{{ book.status_label }}</p>
-          <p class="book-card__blurb">{{ book.blurb }}</p>
-        </div>
-      </article>
-    {% endfor %}
-  </section>
-
-  {% comment %} A breath between the books and the author. {% endcomment %}
-  <section class="page section--tight">
-    {% include ornament.html modifier="ornament--center ornament--short" %}
-    <blockquote class="pull" style="text-align:center;margin-inline:auto">
-      Midlife as initiation rather than decline.
-    </blockquote>
-    {% include ornament.html modifier="ornament--center ornament--short" %}
-  </section>
-
-  <section class="page section" id="author">
-    <div class="author-grid">
-      <img src="{{ '/assets/author/agnes-400.jpg' | relative_url }}"
-           srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
-                   {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w,
-                   {{ '/assets/author/agnes-600.jpg' | relative_url }} 600w"
-           sizes="14rem" width="400" height="400" loading="lazy"
-           style="border-radius:var(--radius-photo)"
-           alt="{{ site.author }}">
-      <div>
-        <span class="label">The author</span>
-        <h2 style="margin-top:0">{{ site.author }}</h2>
-        <p>is a Swiss-American writer trained in biochemistry and Traditional
-          Chinese Medicine. <em>The Canyon Within</em> is drawn from her own
-          midlife journey and a rim-river-rim hike through the Grand Canyon.
-          She lives in Southern California with her husband and two sons.</p>
-        <p><a href="{{ '/blog/' | relative_url }}">Her essays and notes from the trail &rarr;</a></p>
-      </div>
-    </div>
-  </section>
-
+  <ul class="post-list">
+    {%- for post in site.posts %}
+    <li>
+      <p class="post-list__meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        {%- for c in post.categories %}
+          {%- for s in site.sections %}{% if s.key == c %}
+          &middot; {{ s.name }}
+          {%- endif %}{% endfor %}
+        {%- endfor %}
+      </p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    </li>
+    {%- endfor %}
+  </ul>
 </main>
-
-{% include signup.html %}

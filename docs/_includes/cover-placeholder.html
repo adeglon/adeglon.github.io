@@ -1,18 +1,17 @@
 {% comment %}
-  A book with no artwork yet. Deliberately NOT a grey box — a grey box reads as
-  a broken image. The ornament on the night ground reads as "not yet", which is
-  the truth.
+  A book with no artwork on show. Deliberately NOT a grey box — a grey box
+  reads as a broken image. This is a typographic cover: the title, set the way
+  the real cover sets it, on the night ground.
+
+  The artwork exists; it is held back for the cover reveal. When a cover is
+  published, set `cover:` in _data/books.yml and this include stops being used.
 {% endcomment %}
-<div style="aspect-ratio:5.5/8.5;background:var(--c-night);display:grid;
-            place-items:center;padding:var(--sp-5);border:1px solid var(--rule-quiet)">
-  <div style="text-align:center">
-    {% include ornament.html modifier="ornament--center ornament--tiny" %}
-    <span class="label" style="color:var(--text-soft)">
-      {% if include.book.status == 'writing' and include.book.page == false %}
-        Not yet<br>written
-      {% else %}
-        Cover<br>in progress
-      {% endif %}
-    </span>
-  </div>
+<div class="title-cover">
+  <span class="title-cover__series">The Within Trilogy</span>
+  {% include ornament.html modifier="ornament--center ornament--tiny" %}
+  <span class="title-cover__title">{{ include.book.title }}</span>
+  {% include ornament.html modifier="ornament--center ornament--tiny" %}
+  <span class="title-cover__status">
+    {% if include.book.status == 'soon' %}Cover reveal soon{% else %}Book {{ include.book.number }}{% endif %}
+  </span>
 </div>

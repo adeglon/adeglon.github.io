@@ -35,7 +35,7 @@
   page: true
   status: soon
   status_label: Coming 2026
-  cover: canyon-cover
+  cover: false                     # artwork held back for the cover reveal
   cover_alt: >-
     Cover of The Canyon Within: sunrise over the Grand Canyon, the title in
     white capitals across the sky.
