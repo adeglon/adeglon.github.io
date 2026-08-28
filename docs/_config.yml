@@ -41,7 +41,7 @@ defaults:
 
 # Demeterics AI chat widget. Publishable client key, protected by the domain
 # allowlist rather than by secrecy. Empty = widget omitted entirely.
-contact_email: ""
+contact_email: "agnes@deglon.ai"
 
 demeterics_key: "DEM-CTB2X5VRO4KL"
 
