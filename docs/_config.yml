@@ -41,6 +41,8 @@ defaults:
 
 # Demeterics AI chat widget. Publishable client key, protected by the domain
 # allowlist rather than by secrecy. Empty = widget omitted entirely.
+contact_email: ""
+
 demeterics_key: "DEM-CTB2X5VRO4KL"
 
 # One navbar for the whole site.
@@ -50,12 +52,13 @@ nav:
   - {name: "Misadventures",    url: "/misadventures/"}
   - {name: "The Books",        url: "/books/"}
   - {name: "The Author",       url: "/author/"}
+  - {name: "Contact",          url: "/contact/"}
 
 # Blog categories, keyed to the WordPress category names in post front matter.
 sections:
   - {name: "Health & Science", key: "Health&Science", slug: "health-science",
-     blurb: "Body wisdom — biochemistry, Chinese medicine, and what the textbooks left out."}
+     blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."}
   - {name: "Soul & Self", key: "Soul&Self", slug: "soul-self",
-     blurb: "Soul reflections — meditation, transformation, and the long way round."}
+     blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."}
   - {name: "Misadventures", key: "Misadventures", slug: "misadventures",
-     blurb: "Mind in motion — family, trails, and everything that went sideways."}
+     blurb: "Mind in motion. Stories of parenting in motion, cross-cultural surprises, accidental wisdom, and laughing through chaos, because life is messy, and humor is healing."}

@@ -1,0 +1,30 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+{% include header.html %}
+
+<main id="main" class="page section">
+  <span class="label">404</span>
+  <h1>This page isn't here</h1>
+  {% include ornament.html modifier="ornament--short" %}
+  <p class="standfirst">A link may have aged out, or a URL may have picked up a
+    typo on the way. Nothing is lost — it is just not at this address.</p>
+
+  <ul class="post-list">
+    <li>
+      <p class="post-list__meta">Start here</p>
+      <h2><a href="{{ '/' | relative_url }}">All the essays, newest first</a></h2>
+    </li>
+    <li>
+      <p class="post-list__meta">The books</p>
+      <h2><a href="{{ '/books/' | relative_url }}">The Within Trilogy</a></h2>
+    </li>
+    <li>
+      <p class="post-list__meta">Or say hello</p>
+      <h2><a href="{{ '/contact/' | relative_url }}">Get in touch</a></h2>
+    </li>
+  </ul>
+</main>
