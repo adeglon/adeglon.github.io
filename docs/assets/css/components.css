@@ -486,7 +486,7 @@ dem-agent {
 
 
 /* --------------------------------------------------------------------------
-   19. PAGER — previous / next essay
+   13. PAGER — previous / next essay
    --------------------------------------------------------------------------
    The one component the trilogy site never needed. Same hairline vocabulary
    as .post-list so a reader arriving from an essay sees no seam.
@@ -519,7 +519,7 @@ dem-agent {
 
 
 /* --------------------------------------------------------------------------
-   20. TITLE COVER — a book whose artwork is not on show yet
+   14. TITLE COVER — a book whose artwork is not on show yet
    --------------------------------------------------------------------------
    Same proportion as a real trade paperback (5.5 x 8.5) so the card layout
    does not shift when real artwork replaces it.
