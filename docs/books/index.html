@@ -18,33 +18,13 @@ title: The Books
   drops the standfirst onto sunlit rock.
 {% endcomment %}
 <header class="hero hero--sky">
-  <picture>
-    <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/photography/canyon-hero-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/photography/canyon-hero-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/photography/canyon-hero-tall-1024.webp' | relative_url }} 1024w"
-            type="image/webp">
-    <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/photography/canyon-hero-tall-640.jpg' | relative_url }} 640w,
-                    {{ '/assets/photography/canyon-hero-tall-900.jpg' | relative_url }} 900w"
-            type="image/jpeg">
-    <source srcset="{{ '/assets/photography/canyon-hero-1200.webp' | relative_url }} 1200w,
-                    {{ '/assets/photography/canyon-hero-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/photography/canyon-hero-2400.webp' | relative_url }} 2400w,
-                    {{ '/assets/photography/canyon-hero-3200.webp' | relative_url }} 3200w"
-            type="image/webp">
-    <img class="hero__media"
-         src="{{ '/assets/photography/canyon-hero-1600.jpg' | relative_url }}"
-         srcset="{{ '/assets/photography/canyon-hero-1200.jpg' | relative_url }} 1200w,
-                 {{ '/assets/photography/canyon-hero-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/photography/canyon-hero-2400.jpg' | relative_url }} 2400w"
-         sizes="100vw" width="2400" height="1350"
-         alt="Sunrise over the Grand Canyon from the South Kaibab trail, a stone
-              staircase descending into the light."
-         fetchpriority="high" decoding="async">
-  </picture>
-  <div class="hero__scrim"></div>
-
+  {% comment %}
+    No photograph here on purpose. The hero image was the cover photograph
+    without its type, so publishing it gave away most of the cover reveal.
+    .hero already paints --bg-deep, so the type sits on the night ground and
+    nothing else had to change. The photography is held locally until the
+    reveal; restore the <picture> and .hero__scrim then.
+  {% endcomment %}
   <div class="hero__body">
     <div class="page">
       {% include nav.html %}
