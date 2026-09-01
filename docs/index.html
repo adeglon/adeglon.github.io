@@ -13,11 +13,11 @@ permalink: /
   {% include ornament.html modifier="ornament--short" %}
 
   <div class="author-grid" style="margin-block:var(--sp-7)">
-    <img src="{{ '/assets/author/agnes-400.jpg' | relative_url }}"
+    <img src="{{ '/assets/author/agnes-240.jpg' | relative_url }}"
          srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
-                 {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w,
-                 {{ '/assets/author/agnes-600.jpg' | relative_url }} 600w"
-         sizes="14rem" width="400" height="400" loading="lazy"
+                 {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w"
+         sizes="(max-width: 40rem) 7rem, 9.5rem"
+         width="400" height="400" loading="lazy"
          style="border-radius:var(--radius-photo)"
          alt="Agnès Déglon-Fischer">
     <div>
@@ -31,7 +31,6 @@ permalink: /
       <p>And when I'm not writing about the serious stuff? I'm a mama, soul-searcher, and
         semi-functional adult, making sense of the mess through stories, soul, sarcasm, and
         the sacred art of laughing when everything burns.</p>
-      <p><a href="{{ '/author/' | relative_url }}">More about me &rarr;</a></p>
     </div>
   </div>
 
