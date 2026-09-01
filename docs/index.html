@@ -39,16 +39,24 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
               streaked orange, a figure watching from the ridge beyond.">
   </picture>
   <div class="hero__scrim"></div>
-  <div class="hero__body">
+  {%- comment %}
+    Two blocks, pinned to the top and the foot of the picture rather than
+    stacked together. The name and what she does sit in the sky; the title
+    drops into the dark scrub at the bottom, where white type needs no help.
+    The photograph is then the middle of the page rather than its backdrop.
+  {%- endcomment %}
+  <div class="hero__body hero__body--split">
     <div class="page">
       <div class="site-header__inner">
-        <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <div>
+          <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          <p class="hero__tagline">A scientist's mind, a healer's heart, a mother's humor.</p>
+        </div>
         {% include nav.html %}
       </div>
-      <div style="margin-top:var(--sp-8)">
-        <h1 class="hero__title">Words from the trail,<br>stories from the soul</h1>
-        <p class="hero__sub">A scientist's mind, a healer's heart, a mother's humor.</p>
-      </div>
+    </div>
+    <div class="page">
+      <h1 class="hero__title">Words from the trail,<br>stories from the soul</h1>
     </div>
   </div>
 </header>
