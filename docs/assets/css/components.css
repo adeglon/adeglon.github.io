@@ -109,6 +109,14 @@
   border-bottom-color: var(--rule);
 }
 
+/* Inside a hero the navbar sits on a photograph, where --text (a dark ink
+   meant for paper) all but vanishes. Paper white plus a shadow the width of
+   the stroke: legible over sky or over rock, without a bar behind it. */
+.hero .site-nav a { color: var(--c-paper); text-shadow: 0 1px 4px rgba(14, 26, 43, 0.65); }
+.hero .site-nav a:hover,
+.hero .site-nav a[aria-current="page"] { color: var(--c-cream); border-bottom-color: var(--c-cream); }
+.hero .wordmark { text-shadow: 0 1px 4px rgba(14, 26, 43, 0.65); }
+
 
 /* --------------------------------------------------------------------------
    3. HERO
@@ -163,7 +171,16 @@
    cover reveal and this line is what needs revisiting. */
 .hero__media--trail { object-position: 50% 64%; }
 
-.hero--trail { min-height: min(84svh, 44rem); }
+/* THE WHOLE HERO MUST FIT ON A LAPTOP SCREEN. Not min-height: the picture and
+   the sentence are one image and a reader should never meet half of it. So
+   the hero takes the viewport's height exactly, and the type is sized to fit
+   inside that rather than the hero growing to fit the type. */
+.hero--trail {
+  min-height: 0;
+  height: 100svh;
+  max-height: 50rem;
+}
+.hero--trail .hero__body { padding-block: var(--sp-5) var(--sp-6); }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {
   .hero--trail .hero__scrim { background: var(--scrim-sky-narrow); }
@@ -171,10 +188,19 @@
 /* A whole sentence, not a two-word book title - it needs a smaller ceiling
    and a measure, or it fills the frame and the photograph is decoration. */
 .hero--trail .hero__title {
-  font-size: clamp(2.1rem, 1.15rem + 3.2vw, 3.9rem);
-  max-width: 20ch;
+  font-size: clamp(1.8rem, 0.85rem + 2.5vw, 3.15rem);
+  max-width: 22ch;
+  margin-bottom: var(--sp-4);
 }
-.hero--trail .hero__sub { max-width: 34rem; }
+.hero--trail .hero__sub { font-size: var(--fs-md); max-width: 32rem; }
+
+/* A short laptop window (or a phone in landscape) has no room for three
+   lines of standfirst under four of title. Tighten rather than overflow. */
+@media (max-height: 44rem) {
+  .hero--trail .hero__title { font-size: clamp(1.6rem, 0.8rem + 2vw, 2.5rem); }
+  .hero--trail .hero__sub { font-size: var(--fs-sm); }
+  .hero--trail .hero__body { padding-block: var(--sp-4) var(--sp-5); }
+}
 .hero__body {
   position: relative; z-index: 2;
   padding-block: var(--sp-9);
