@@ -51,12 +51,14 @@ medium: "https://medium.com/@agnes.deglon"
 demeterics_key: "DEM-CTB2X5VRO4KL"
 
 # One navbar for the whole site.
+# ONE LEVEL ONLY. The three blog categories are children of /blog/ and must
+# not sit beside Books, which is their aunt, not their sibling. Books leads
+# because a book is launching.
 nav:
-  - {name: "Health & Science", url: "/health-science/"}
-  - {name: "Soul & Self",      url: "/soul-self/"}
-  - {name: "Misadventures",    url: "/misadventures/"}
-  - {name: "Books",            url: "/books/"}
-  - {name: "Contact",          url: "/contact/"}
+  - {name: "Books",      url: "/books/"}
+  - {name: "Blog",       url: "/blog/"}
+  - {name: "Newsletter", url: "/newsletter/"}
+  - {name: "Contact",    url: "/contact/"}
 
 # Blog categories, keyed to the WordPress category names in post front matter.
 sections:

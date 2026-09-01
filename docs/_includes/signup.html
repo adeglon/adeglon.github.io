@@ -8,15 +8,22 @@
   foreign white box. Submitting hands the reader to Substack to confirm.
 
   If Substack ever changes that endpoint the form will 404 rather than fail
-  silently, which is the failure mode we want: the previous version of this
+  silently, which is the failure mode we want: an earlier version of this
   file posted to "#" and quietly threw every address away.
+
+  Params:
+    heading  - override the h2 (the newsletter page already says the name)
+    bare     - true when the caller is already inside a .page wrapper, so the
+               gutter is not applied twice
 {% endcomment %}
-<section class="page signup" id="letters">
+<section class="signup{% unless include.bare %} page{% endunless %}" id="letters">
   <span class="label">Stay in touch</span>
-  <h2 style="margin-top:0">The Path Is the Goal</h2>
+  <h2 style="margin-top:0">{{ include.heading | default: "The Path Is the Goal" }}</h2>
+  {%- unless include.bare %}
   <p>My letter from the writing desk — notes on the books as they come, the
     canyon, and the path between science and soul. Free, and never anything
     you did not ask for.</p>
+  {%- endunless %}
 
   <form class="signup__form" method="post"
         action="https://{{ site.substack }}/api/v1/free?nojs=true">

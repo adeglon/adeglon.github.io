@@ -279,6 +279,52 @@
 /* An author statement rather than a description of one book - it stands
    above the shelf and stays true as the shelf grows. Display italic, wide
    measure, no quotation marks: it is a claim, not a pull-quote. */
+/* --------------------------------------------------------------------------
+   5b. LAUNCH PANEL
+   --------------------------------------------------------------------------
+   One book, one date, on the landing page only. It is bordered rather than
+   filled: a filled block would read as an advertisement dropped onto the
+   page, and this is the page's own news. No cover art here before the
+   reveal - see rule 7 in README.md.
+   -------------------------------------------------------------------------- */
+
+.launch {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  padding: var(--sp-6) var(--sp-6) var(--sp-7);
+  margin-block: var(--sp-7);
+  max-width: var(--measure-wide);
+}
+.launch__date {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+}
+.launch__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  letter-spacing: var(--track-title);
+  line-height: var(--lh-tight);
+  color: var(--text-strong);
+  margin: 0 0 var(--sp-3);
+}
+.launch__line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--text-accent);
+  margin: 0 0 var(--sp-4);
+}
+.launch__blurb { color: var(--text); margin: 0 0 var(--sp-5); }
+.launch__actions {
+  display: flex; flex-wrap: wrap; gap: var(--sp-3);
+  margin: 0;
+}
+
 .credo {
   font-family: var(--font-display);
   font-weight: 300;

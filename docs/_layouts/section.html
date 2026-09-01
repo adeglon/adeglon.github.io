@@ -4,10 +4,31 @@ layout: default
 {% include header.html %}
 
 <main id="main" class="page section">
-  <span class="label">Essays</span>
+  <span class="label">{{ page.label | default: "Essays" }}</span>
   <h1>{{ page.title }}</h1>
   {% if page.blurb %}<p class="standfirst">{{ page.blurb }}</p>{% endif %}
   {% include ornament.html modifier="ornament--short" %}
+
+  {%- comment %}
+    The hub (/blog/) shows the three categories first and then everything
+    below them. A category page sets `category` and skips this block, so one
+    layout serves both levels and they cannot drift apart.
+  {%- endcomment %}
+  {%- if page.show_sections %}
+  <ul class="doors">
+    {%- for s in site.sections %}
+    <li>
+      <a class="door" href="{{ '/' | append: s.slug | append: '/' | relative_url }}">
+        <span class="door__name">{{ s.name }}</span>
+        <p class="door__blurb">{{ s.blurb }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+  <h2 style="margin-top:var(--sp-7)">Everything, newest first</h2>
+  {%- endif %}
 
   <ul class="post-list">
     {%- for post in site.posts %}
@@ -64,3 +85,5 @@ layout: default
     {%- endfor %}
   </ul>
 </main>
+
+{% include signup.html %}

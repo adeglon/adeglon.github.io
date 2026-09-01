@@ -12,6 +12,59 @@ permalink: /
 
   {% include ornament.html modifier="ornament--short" %}
 
+  {%- comment %}
+    THE LAUNCH PANEL. Found by data, not hard-coded: the featured book is
+    whichever entry in _data/books.yml carries a `release` date. Remove that
+    key after publication and this whole block disappears on its own rather
+    than sitting here announcing a date that has passed.
+
+    No cover here, and none until the reveal — see rule 7 in Design/README.md.
+    The panel is a date and two sentences, which is all a pre-launch page can
+    honestly offer.
+  {%- endcomment %}
+  {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+  {%- if launching %}
+  <section class="launch" aria-labelledby="launch-title">
+    <p class="launch__date">Coming {{ launching.release_label }}</p>
+    <h2 class="launch__title" id="launch-title">{{ launching.title }}</h2>
+    <p class="launch__line">{{ launching.line }}</p>
+    <p class="launch__blurb">{{ launching.blurb }}</p>
+    <p class="launch__actions">
+      <a class="btn btn--primary" href="#letters">Be told when it's out</a>
+      <a class="btn btn--quiet" href="{{ '/books/#within' | relative_url }}">About the trilogy</a>
+    </p>
+  </section>
+  {%- endif %}
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+
+  <h2 style="margin-top:var(--sp-7)">Where would you like to start?</h2>
+
+  {%- comment %}
+    Two doors, because there are two things here: books and writing. The three
+    blog categories are one level down and live on /blog/, named here only as
+    a hint of what is behind the door.
+  {%- endcomment %}
+  <ul class="doors">
+    <li>
+      <a class="door door--books" href="{{ '/books/' | relative_url }}">
+        <span class="door__name">Books</span>
+        <p class="door__blurb">The Within Trilogy, the children's series Kids'
+          Questions About Life, and Once You Know.</p>
+      </a>
+    </li>
+    <li>
+      <a class="door" href="{{ '/blog/' | relative_url }}">
+        <span class="door__name">Blog</span>
+        <p class="door__blurb">
+          {%- for s in site.sections %}{{ s.name }}{% unless forloop.last %} · {% endunless %}{% endfor %} —
+          essays, reflections, and the family stories that got out of hand.</p>
+      </a>
+    </li>
+  </ul>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+
   <div class="author-grid" style="margin-block:var(--sp-7)">
     <img src="{{ '/assets/author/agnes-240.jpg' | relative_url }}"
          srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
@@ -34,26 +87,6 @@ permalink: /
     </div>
   </div>
 
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-  <h2 style="margin-top:var(--sp-7)">Where would you like to start?</h2>
-
-  <ul class="doors">
-    {%- for s in site.sections %}
-    <li>
-      <a class="door" href="{{ '/' | append: s.slug | append: '/' | relative_url }}">
-        <span class="door__name">{{ s.name }}</span>
-        <p class="door__blurb">{{ s.blurb }}</p>
-      </a>
-    </li>
-    {%- endfor %}
-    <li>
-      <a class="door door--books" href="{{ '/books/' | relative_url }}">
-        <span class="door__name">Books</span>
-        <p class="door__blurb">The Within Trilogy, the children's series Kids' Questions
-          About Life, and Once You Know.</p>
-      </a>
-    </li>
-  </ul>
-
 </main>
+
+{% include signup.html %}

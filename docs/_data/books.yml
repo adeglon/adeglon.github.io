@@ -34,7 +34,11 @@
   slug: the-canyon-within
   page: true
   status: soon
-  status_label: Coming 2026
+  status_label: Coming 3 March 2027
+  # The launch. The landing page finds the book to feature by looking for
+  # `release`, so there is exactly one date on the site and this is it.
+  release: 2027-03-03
+  release_label: "3 March 2027"
   cover: false                     # artwork held back for the cover reveal
   cover_alt: >-
     Cover of The Canyon Within: sunrise over the Grand Canyon, the title in
