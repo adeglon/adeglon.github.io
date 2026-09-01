@@ -5,6 +5,7 @@ date: 2025-08-26 15:10:25 -0800
 categories: ["Soul&Self"]
 permalink: /3-powerful-insights-you-need-to-know-about-meditation/
 image: /assets/images/featured-3-powerful-insights-you-need-to-know-about-meditation.jpg
+image_in_body: true
 ---
 
 ## *Discover how meditation can transform your life with these three powerful insights*

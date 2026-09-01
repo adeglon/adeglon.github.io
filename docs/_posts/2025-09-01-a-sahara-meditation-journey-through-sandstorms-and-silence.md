@@ -5,6 +5,7 @@ date: 2025-09-01 15:22:36 -0800
 categories: ["Soul&Self"]
 permalink: /a-sahara-meditation-journey-through-sandstorms-and-silence/
 image: /assets/images/featured-a-sahara-meditation-journey-through-sandstorms-and-silence.jpg
+image_in_body: true
 ---
 
 ## A sandstorm baptism

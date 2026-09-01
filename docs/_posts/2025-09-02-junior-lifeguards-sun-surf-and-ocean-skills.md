@@ -5,6 +5,7 @@ date: 2025-09-02 14:30:18 -0800
 categories: ["Misadventures"]
 permalink: /junior-lifeguards-sun-surf-and-ocean-skills/
 image: /assets/images/featured-junior-lifeguards-sun-surf-and-ocean-skills.jpg
+image_in_body: true
 ---
 
 ## A Summer Where the Fun Never Ends and the Sand Never Leaves[](https://medium.com/@agnes.deglon?source=post_page---byline--d13424628c36---------------------------------------)

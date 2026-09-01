@@ -5,6 +5,7 @@ date: 2025-11-21 10:59:48 -0800
 categories: ["Health&Science"]
 permalink: /menopause-isnt-a-malady-its-a-turning-tide/
 image: /assets/images/featured-menopause-isnt-a-malady-its-a-turning-tide.jpg
+image_in_body: true
 ---
 
 I used to find words easily, whether in English, French, or German. If one language failed me, another one would usually offer the missing word. But lately, they weren’t just hiding in another tongue. They were gone. I could sense them hovering just out of reach, their shape and texture clear in my mind, only to watch them dissolve before I could speak.

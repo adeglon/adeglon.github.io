@@ -5,6 +5,7 @@ date: 2025-08-25 14:40:21 -0800
 categories: ["Misadventures"]
 permalink: /doing-the-splits-between-worlds/
 image: /assets/images/featured-doing-the-splits-between-worlds.jpg
+image_in_body: true
 ---
 
 ## Caught Between Cultures and Generations and Always Out of Sync

@@ -5,6 +5,7 @@ date: 2025-09-04 14:26:30 -0800
 categories: ["Misadventures"]
 permalink: /the-reality-of-a-family-ski-trip/
 image: /assets/images/featured-the-reality-of-a-family-ski-trip.jpg
+image_in_body: true
 ---
 
 ## [](https://medium.com/@agnes.deglon?source=post_page---byline--b0d422a8be01---------------------------------------)**A Swiss Tradition That’s Non-Negotiable**

@@ -5,6 +5,7 @@ date: 2025-08-30 22:20:23 -0800
 categories: ["Misadventures"]
 permalink: /the-chaos-before-the-calm-getting-ready-for-a-family-hike/
 image: /assets/images/featured-the-chaos-before-the-calm-getting-ready-for-a-family-hike.jpg
+image_in_body: true
 ---
 
 ##### Before the Trail: The Art of Family Hiking Prep

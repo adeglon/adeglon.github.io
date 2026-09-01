@@ -5,6 +5,7 @@ date: 2025-08-28 14:14:10 -0800
 categories: ["Health&Science"]
 permalink: /healing-from-the-inside-out-my-journey-with-my-sons-microbiome-and-eczema/
 image: /assets/images/featured-healing-from-the-inside-out-my-journey-with-my-sons-microbiome-and-eczema.jpg
+image_in_body: true
 ---
 
 ### Can Food Truly Heal?

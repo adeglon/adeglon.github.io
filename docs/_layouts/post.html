@@ -18,7 +18,13 @@ layout: default
       {% include ornament.html modifier="ornament--short" %}
     </header>
 
-    {%- if page.image %}
+    {%- comment %}
+      26 of 29 essays already open with this photograph inside the body, because
+      WordPress used the same file for the post's featured image. Showing it
+      here as well printed it twice. The two essays whose featured image is not
+      in the body still get it.
+    {%- endcomment %}
+    {%- if page.image and page.image_in_body != true %}
     <img class="featured" src="{{ page.image | relative_url }}" alt=""
          loading="eager" decoding="async">
     {%- endif %}

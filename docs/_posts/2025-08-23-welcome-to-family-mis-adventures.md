@@ -5,6 +5,7 @@ date: 2025-08-23 20:17:37 -0800
 categories: ["Misadventures"]
 permalink: /welcome-to-family-mis-adventures/
 image: /assets/images/featured-welcome-to-family-mis-adventures.jpg
+image_in_body: true
 ---
 
 Life with family is rarely picture-perfect, it’s messy, unpredictable, and often ridiculously chaotic. This publication is all about celebrating the beauty of those imperfect moments, whether it’s an outdoor adventure gone sideways, the occasional golden doodle disaster, a dinner gone wrong, or the everyday hilarity of parenting. We find humor in the chaos, joy in the mishaps, and stories worth sharing in the moments that make family life so wonderfully unique. Writing about it is my way of keeping my sanity while trying to turn tiny humans into responsible adults\!

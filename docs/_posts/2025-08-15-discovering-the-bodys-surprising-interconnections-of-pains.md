@@ -5,6 +5,7 @@ date: 2025-08-15 14:03:47 -0800
 categories: ["Health&Science"]
 permalink: /discovering-the-bodys-surprising-interconnections-of-pains/
 image: /assets/images/featured-discovering-the-bodys-surprising-interconnections-of-pains.jpg
+image_in_body: true
 ---
 
 ## How Tuina and Stretching Unblock Energy Flow and Relieve Pain from Head to Toe

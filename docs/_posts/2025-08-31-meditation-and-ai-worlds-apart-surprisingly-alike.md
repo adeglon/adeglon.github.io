@@ -5,6 +5,7 @@ date: 2025-08-31 20:38:26 -0800
 categories: ["Soul&Self"]
 permalink: /meditation-and-ai-worlds-apart-surprisingly-alike/
 image: /assets/images/featured-meditation-and-ai-worlds-apart-surprisingly-alike.jpg
+image_in_body: true
 ---
 
 What do meditation and AI have in common? At first glance, nothing\! They seem like opposites, one ancient and inward, the other modern and outward. But their similarities might surprise you.

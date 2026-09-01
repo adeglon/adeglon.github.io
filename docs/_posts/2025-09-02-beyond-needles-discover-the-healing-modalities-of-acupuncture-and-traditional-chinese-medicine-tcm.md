@@ -5,6 +5,7 @@ date: 2025-09-02 14:00:18 -0800
 categories: ["Health&Science"]
 permalink: /beyond-needles-discover-the-healing-modalities-of-acupuncture-and-traditional-chinese-medicine-tcm/
 image: /assets/images/featured-beyond-needles-discover-the-healing-modalities-of-acupuncture-and-traditional-chinese-medicine-tcm.jpg
+image_in_body: true
 ---
 
 If you’re curious about ancient health practices like Traditional Chinese Medicine (TCM) but feel uneasy at the thought of needles, you’re not alone, and you’ve come to the right place\! In fact, I was afraid of needles, too, before I went to acupuncture school. (Yes, really\!) And it didn’t take long for me to realize that the word *acupuncturist* is a bit of a misnomer.

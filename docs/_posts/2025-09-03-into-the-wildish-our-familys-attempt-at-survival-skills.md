@@ -5,6 +5,7 @@ date: 2025-09-03 14:14:54 -0800
 categories: ["Misadventures", "Uncategorized"]
 permalink: /into-the-wildish-our-familys-attempt-at-survival-skills/
 image: /assets/images/featured-into-the-wildish-our-familys-attempt-at-survival-skills.jpg
+image_in_body: true
 ---
 
 ## **Learning ancient survival skills… and why we’re glad we don’t actually live in the Stone Age.**[](https://medium.com/@agnes.deglon?source=post_page---byline--2e0be0c9504d---------------------------------------)
