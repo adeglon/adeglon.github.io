@@ -26,7 +26,8 @@
 <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:image" content="{{ '/assets/ornament/social-card-1200.jpg' | absolute_url }}">
+{%- comment %}Pages may override the card; the ornament is the fallback.{%- endcomment %}
+<meta property="og:image" content="{{ page.og_image | default: '/assets/ornament/social-card-1200.jpg' | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

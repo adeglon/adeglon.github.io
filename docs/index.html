@@ -1,16 +1,57 @@
 ---
 layout: default
 permalink: /
+og_image: /assets/hero/hero-trail-og-1200.jpg
 ---
-{% include header.html %}
+{%- comment %}
+  The hero. Agnès' own photograph, dusk on the trail above the desert - NOT the
+  canyon, and deliberately so: The Canyon Within's cover is a canyon sunrise,
+  and spending that palette here would flatten the reveal. At the reveal this
+  picture is replaced by the cover and the page turns over in a day.
+
+  hero--sky puts the type at the TOP, where this frame is emptiest.
+{%- endcomment %}
+<header class="hero hero--sky">
+  <picture>
+    <source media="(max-width: 40rem)" type="image/webp"
+            srcset="{{ '/assets/hero/hero-trail-tall-640.webp' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-trail-tall-900.webp' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-trail-tall-1024.webp' | relative_url }} 1024w">
+    <source media="(max-width: 40rem)"
+            srcset="{{ '/assets/hero/hero-trail-tall-640.jpg' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-trail-tall-900.jpg' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-trail-tall-1024.jpg' | relative_url }} 1024w">
+    <source type="image/webp"
+            srcset="{{ '/assets/hero/hero-trail-1200.webp' | relative_url }} 1200w,
+                    {{ '/assets/hero/hero-trail-1600.webp' | relative_url }} 1600w,
+                    {{ '/assets/hero/hero-trail-1920.webp' | relative_url }} 1920w">
+    <img class="hero__media hero__media--trail"
+         src="{{ '/assets/hero/hero-trail-1600.jpg' | relative_url }}"
+         srcset="{{ '/assets/hero/hero-trail-1200.jpg' | relative_url }} 1200w,
+                 {{ '/assets/hero/hero-trail-1600.jpg' | relative_url }} 1600w,
+                 {{ '/assets/hero/hero-trail-1920.jpg' | relative_url }} 1920w"
+         sizes="100vw" width="1920" height="1440"
+         fetchpriority="high" decoding="async"
+         alt="A single-track trail at dusk, running along a hillside above a
+              wide desert valley, the last of the sun gold along the far ridge.">
+  </picture>
+  <div class="hero__scrim"></div>
+  <div class="hero__body">
+    <div class="page">
+      <div class="site-header__inner">
+        <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        {% include nav.html %}
+      </div>
+      <div style="margin-top:var(--sp-8)">
+        <h1 class="hero__title">Words from the trail,<br>stories from the soul</h1>
+        <p class="hero__sub">A scientist's mind, a healer's heart, a mother's humour —
+          on health and science, soul and self, and the misadventures in between.</p>
+      </div>
+    </div>
+  </div>
+</header>
 
 <main id="main" class="page section">
-
-  <h1>Words from the trail,<br>stories from the soul</h1>
-  <p class="standfirst">A scientist's mind, a healer's heart, a mother's humour —
-    on health and science, soul and self, and the misadventures in between.</p>
-
-  {% include ornament.html modifier="ornament--short" %}
 
   {%- comment %}
     THE LAUNCH PANEL. Found by data, not hard-coded: the featured book is
