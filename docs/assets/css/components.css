@@ -112,10 +112,20 @@
 /* Inside a hero the navbar sits on a photograph, where --text (a dark ink
    meant for paper) all but vanishes. Paper white plus a shadow the width of
    the stroke: legible over sky or over rock, without a bar behind it. */
-.hero .site-nav a { color: var(--c-paper); text-shadow: 0 1px 4px rgba(14, 26, 43, 0.65); }
+.hero .site-nav a {
+  color: var(--c-paper);
+  font-size: var(--fs-sm);
+  /* A hairline of type over a sunset needs more than colour. Two shadows: a
+     tight one that thickens the stroke, and a wide soft one that darkens the
+     sky immediately around it. Cheaper than a bar behind the nav, and it does
+     not cut a band across the photograph. */
+  text-shadow: 0 1px 2px rgba(14, 26, 43, 0.85), 0 0 14px rgba(14, 26, 43, 0.65);
+}
 .hero .site-nav a:hover,
 .hero .site-nav a[aria-current="page"] { color: var(--c-cream); border-bottom-color: var(--c-cream); }
-.hero .wordmark { text-shadow: 0 1px 4px rgba(14, 26, 43, 0.65); }
+.hero .wordmark {
+  text-shadow: 0 1px 2px rgba(14, 26, 43, 0.85), 0 0 16px rgba(14, 26, 43, 0.6);
+}
 
 
 /* --------------------------------------------------------------------------
@@ -171,16 +181,12 @@
    cover reveal and this line is what needs revisiting. */
 .hero__media--trail { object-position: 50% 64%; }
 
-/* THE WHOLE HERO MUST FIT ON A LAPTOP SCREEN. Not min-height: the picture and
-   the sentence are one image and a reader should never meet half of it. So
-   the hero takes the viewport's height exactly, and the type is sized to fit
-   inside that rather than the hero growing to fit the type. */
-.hero--trail {
-  min-height: 0;
-  height: 100svh;
-  max-height: 50rem;
-}
-.hero--trail .hero__body { padding-block: var(--sp-5) var(--sp-6); }
+/* Sized by Agnès: the title at this scale is the point of the page, and she
+   would rather it be read than fitted. The hero therefore keeps a minimum
+   height and grows if the sentence needs the room - it is not clamped to the
+   viewport, and on a short window the foot of the picture scrolls. That was
+   tried the other way round and the type came out too small. */
+.hero--trail { min-height: min(84svh, 44rem); }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {
   .hero--trail .hero__scrim { background: var(--scrim-sky-narrow); }
@@ -188,19 +194,10 @@
 /* A whole sentence, not a two-word book title - it needs a smaller ceiling
    and a measure, or it fills the frame and the photograph is decoration. */
 .hero--trail .hero__title {
-  font-size: clamp(1.8rem, 0.85rem + 2.5vw, 3.15rem);
-  max-width: 22ch;
-  margin-bottom: var(--sp-4);
+  font-size: clamp(2.1rem, 1.15rem + 3.2vw, 3.9rem);
+  max-width: 20ch;
 }
-.hero--trail .hero__sub { font-size: var(--fs-md); max-width: 32rem; }
-
-/* A short laptop window (or a phone in landscape) has no room for three
-   lines of standfirst under four of title. Tighten rather than overflow. */
-@media (max-height: 44rem) {
-  .hero--trail .hero__title { font-size: clamp(1.6rem, 0.8rem + 2vw, 2.5rem); }
-  .hero--trail .hero__sub { font-size: var(--fs-sm); }
-  .hero--trail .hero__body { padding-block: var(--sp-4) var(--sp-5); }
-}
+.hero--trail .hero__sub { max-width: 34rem; }
 .hero__body {
   position: relative; z-index: 2;
   padding-block: var(--sp-9);
