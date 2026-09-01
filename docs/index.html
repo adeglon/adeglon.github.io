@@ -24,13 +24,15 @@ og_image: /assets/hero/hero-trail-og-1200.jpg
     <source type="image/webp"
             srcset="{{ '/assets/hero/hero-trail-1200.webp' | relative_url }} 1200w,
                     {{ '/assets/hero/hero-trail-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/hero/hero-trail-1920.webp' | relative_url }} 1920w">
+                    {{ '/assets/hero/hero-trail-1920.webp' | relative_url }} 1920w,
+                    {{ '/assets/hero/hero-trail-2400.webp' | relative_url }} 2400w">
     <img class="hero__media hero__media--trail"
          src="{{ '/assets/hero/hero-trail-1600.jpg' | relative_url }}"
          srcset="{{ '/assets/hero/hero-trail-1200.jpg' | relative_url }} 1200w,
                  {{ '/assets/hero/hero-trail-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/hero/hero-trail-1920.jpg' | relative_url }} 1920w"
-         sizes="100vw" width="1920" height="1440"
+                 {{ '/assets/hero/hero-trail-1920.jpg' | relative_url }} 1920w,
+                 {{ '/assets/hero/hero-trail-2400.jpg' | relative_url }} 2400w"
+         sizes="100vw" width="4032" height="3024"
          fetchpriority="high" decoding="async"
          alt="A single-track trail at dusk, running along a hillside above a
               wide desert valley, the last of the sun gold along the far ridge.">
@@ -88,18 +90,18 @@ og_image: /assets/hero/hero-trail-og-1200.jpg
   {%- endcomment %}
   <ul class="doors">
     <li>
-      <a class="door door--books" href="{{ '/books/' | relative_url }}">
-        <span class="door__name">Books</span>
-        <p class="door__blurb">The Within Trilogy, the children's series Kids'
-          Questions About Life, and Once You Know.</p>
-      </a>
-    </li>
-    <li>
       <a class="door" href="{{ '/blog/' | relative_url }}">
         <span class="door__name">Blog</span>
         <p class="door__blurb">
           {%- for s in site.sections %}{{ s.name }}{% unless forloop.last %} · {% endunless %}{% endfor %} —
           essays, reflections, and the family stories that got out of hand.</p>
+      </a>
+    </li>
+    <li>
+      <a class="door door--books" href="{{ '/books/' | relative_url }}">
+        <span class="door__name">Books</span>
+        <p class="door__blurb">The Within Trilogy, the children's series Kids'
+          Questions About Life, and Once You Know.</p>
       </a>
     </li>
   </ul>
