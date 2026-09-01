@@ -79,9 +79,8 @@ permalink: /books/
     <p class="post-list__meta">Available in {{ s.languages }}</p>
 
     {% if s.image %}
-    <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-         loading="lazy" decoding="async"
-         style="width:100%;max-width:var(--measure-wide);height:auto;border-radius:var(--radius-photo);margin:var(--sp-6) 0">
+    <img class="series-photo" src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+         loading="lazy" decoding="async">
     {% endif %}
 
     {% for b in s.books %}
@@ -103,11 +102,14 @@ permalink: /books/
           <span class="label">Book {{ b.number }}</span>
           <h3 class="book-card__title">{{ b.title }}</h3>
           <p class="book-card__blurb">{{ b.blurb }}</p>
-          {% for para in b.body %}<p>{{ para }}</p>{% endfor %}
-          {%- if b.questions %}
+          {%- if b.body or b.questions %}
           <details class="spoiler">
-            <summary>The questions this book answers</summary>
+            <summary>Read the full description</summary>
+            {% for para in b.body %}<p>{{ para }}</p>{% endfor %}
+            {%- if b.questions %}
+            <p><strong>The questions this book answers</strong></p>
             <ul>{% for q in b.questions %}<li>{{ q }}</li>{% endfor %}</ul>
+            {%- endif %}
           </details>
           {%- endif %}
           <p><a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"

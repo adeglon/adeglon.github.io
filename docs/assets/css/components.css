@@ -251,7 +251,7 @@
 
 .book-card {
   display: grid;
-  grid-template-columns: minmax(0, 12rem) 1fr;
+  grid-template-columns: minmax(0, 18rem) 1fr;   /* 12rem + 50%, at Agnès' request */
   gap: var(--sp-6);
   align-items: start;
   padding-block: var(--sp-7);
@@ -272,6 +272,18 @@
   margin: 0 0 var(--sp-2);
 }
 .book-card__blurb { color: var(--text); }
+
+/* A photograph belonging to a series rather than to one book — the shelf, the
+   table at a signing. Deliberately half the width of a hero: it is a snapshot,
+   not a statement. */
+.series-photo {
+  display: block;
+  width: 100%;
+  max-width: 23rem;
+  height: auto;
+  border-radius: var(--radius-photo);
+  margin: var(--sp-6) 0;
+}
 
 @media (max-width: 40rem) {
   .book-card { grid-template-columns: 1fr; gap: var(--sp-5); }
