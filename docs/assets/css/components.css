@@ -176,10 +176,11 @@
    eight-word line into four stacked rows and pushes the whole page down.
    -------------------------------------------------------------------------- */
 
-/* 4:3 frame in a wide band: crop pinned just below centre, so there is sky
-   for the title above and trail and horizon below. Swap the picture at the
+/* 4:3 frame in a wide band. Pinned just above centre so the burning sky and
+   the dog on the trail both stay in the crop - she is small, and pushing the
+   crop down loses her before it loses anything else. Swap the picture at the
    cover reveal and this line is what needs revisiting. */
-.hero__media--trail { object-position: 50% 64%; }
+.hero__media--trail { object-position: 50% 46%; }
 
 /* Sized by Agnès: the title at this scale is the point of the page, and she
    would rather it be read than fitted. The hero therefore keeps a minimum
