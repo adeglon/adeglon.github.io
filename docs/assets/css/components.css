@@ -269,6 +269,20 @@
 .hero--compact .hero__body { padding-block: var(--sp-5) var(--sp-7); }
 .hero--compact .hero__title { font-size: clamp(2.4rem, 1.4rem + 3vw, 4rem); }
 
+/* With no photograph underneath, the type takes the GROUND's own ink instead
+   of paper white. That one substitution lets the same masthead serve the dark
+   Books page and the light Blog page, so the two read as siblings without a
+   second set of markup. */
+.hero--compact .hero__title,
+.hero--compact .wordmark { color: var(--text-strong); text-shadow: none; }
+.hero--compact .site-nav a { color: var(--text); text-shadow: none; }
+.hero--compact .site-nav a:hover,
+.hero--compact .site-nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--rule);
+}
+.hero--compact .hero__sub { color: var(--text); text-shadow: none; }
+
 /* Type at the foot instead — for an interior page over a busier picture. */
 .hero--foot .hero__scrim { background: var(--scrim-foot); }
 
@@ -389,6 +403,45 @@
 /* An author statement rather than a description of one book - it stands
    above the shelf and stays true as the shelf grows. Display italic, wide
    measure, no quotation marks: it is a claim, not a pull-quote. */
+/* --------------------------------------------------------------------------
+   4b. LATEST  ← three newest posts, on the landing page
+   --------------------------------------------------------------------------
+   A fixed hero photograph says nothing about whether anything is new. This
+   row is the only thing on the landing page that changes by itself: publish a
+   post and it appears here, so a returning reader can see at a glance that
+   the site is alive. Three, deliberately - enough to prove movement, few
+   enough that the page stays a front door rather than becoming an index.
+   -------------------------------------------------------------------------- */
+
+.latest {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--sp-6);
+  margin: var(--sp-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.latest__link { display: block; color: var(--text); text-decoration: none; }
+.latest__link:hover .latest__title { color: var(--accent); }
+.latest__thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+  margin-bottom: var(--sp-3);
+}
+.latest__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: var(--sp-2) 0 var(--sp-2);
+  transition: color var(--dur) var(--ease);
+}
+.latest__meta { font-size: var(--fs-xs); color: var(--text-soft); margin: 0; }
+
+
 /* --------------------------------------------------------------------------
    5a. STRAND  ← the three blog categories on /blog/
    --------------------------------------------------------------------------

@@ -116,6 +116,35 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
 
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
+  {%- comment %}
+    The one part of this page that changes on its own. The hero is fixed - a
+    reader who came last month sees the same photograph - so without this
+    there is nothing to say the site is still being written.
+  {%- endcomment %}
+  <h2 style="margin-top:var(--sp-7)">Lately</h2>
+  <ul class="latest">
+    {%- for post in site.posts limit: 3 %}
+    <li>
+      <a class="latest__link" href="{{ post.url | relative_url }}">
+        {%- if post.image %}
+        <img class="latest__thumb" src="{{ post.image | relative_url }}" alt=""
+             loading="lazy" decoding="async">
+        {%- endif %}
+        {%- assign cat = post.categories | first %}
+        {%- for sec in site.sections %}{% if sec.key == cat %}
+        <span class="label">{{ sec.name }}</span>
+        {%- endif %}{% endfor %}
+        <p class="latest__title">{{ post.title }}</p>
+        <p class="latest__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+
   <div class="author-grid" style="margin-block:var(--sp-7)">
     <img src="{{ '/assets/author/agnes-240.jpg' | relative_url }}"
          srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
