@@ -208,11 +208,12 @@
 .hero__tagline {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-lg);          /* the standfirst's size - it is a line to
+                                       be read, not a credit line */
   color: var(--c-cream);
-  margin: var(--sp-2) 0 0;
-  max-width: 30rem;
-  text-shadow: 0 1px 3px rgba(14, 26, 43, 0.85);
+  margin: var(--sp-3) 0 0;
+  max-width: 34rem;
+  text-shadow: 0 1px 3px rgba(14, 26, 43, 0.9), 0 0 18px rgba(14, 26, 43, 0.7);
 }
 
 /* Top block and foot block, pushed apart. The hero stops being type stacked
@@ -223,6 +224,10 @@
   justify-content: space-between;
   gap: var(--sp-7);
   height: 100%;
+  /* Sit the title as low as the scrub allows. The default hero pads sp-9 at
+     the foot, which floats the type well clear of the dark band that makes it
+     readable in the first place. */
+  padding-bottom: var(--sp-5);
 }
 .hero--trail { align-items: stretch; }
 /* In the scrub at the foot, below every ramp - white on near-black already,
