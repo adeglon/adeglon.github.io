@@ -1,9 +1,55 @@
 ---
-layout: section
-title: "Blog"
-label: "The writing"
-blurb: "Three strands of the same life — what the body knows, what the soul is
-  working out, and what the family got wrong on the way to the trailhead."
+layout: default
+title: Blog
+description: >-
+  Essays and stories by Agnès Déglon-Fischer, in three strands: Health &
+  Science, Soul & Self, and Family Mis-Adventures.
 permalink: /blog/
-show_sections: true
 ---
+{% include header.html %}
+
+<main id="main" class="page section">
+  <span class="label">The writing</span>
+  <h1>Blog</h1>
+  <p class="standfirst">Three strands of the same life. Pick the one you are in
+    the mood for — each keeps its own shelf.</p>
+
+  {% include ornament.html modifier="ornament--short" %}
+
+  {%- comment %}
+    A landing page for the three categories, NOT a mixed feed. Agnès wrote an
+    introduction to each on WordPress and a reader met it before any post; the
+    words live in `sections` in _config.yml and are hers verbatim.
+
+    Deliberately no combined post list here. Mixing the three is exactly what
+    this page exists to undo.
+  {%- endcomment %}
+  {%- for s in site.sections %}
+  {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
+  {%- assign latest = posts | first %}
+  <section class="strand" id="{{ s.slug }}">
+    <h2 class="strand__name">
+      <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.welcome_title }}</a>
+    </h2>
+    {%- for para in s.welcome %}
+    <p class="strand__intro">{{ para }}</p>
+    {%- endfor %}
+
+    <p class="strand__foot">
+      <a class="btn btn--quiet"
+         href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
+      <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
+    </p>
+
+    {%- if latest %}
+    <p class="strand__latest">
+      Latest: <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+      <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%b %-d, %Y" }}</time>
+    </p>
+    {%- endif %}
+  </section>
+  {%- endfor %}
+
+</main>
+
+{% include signup.html %}

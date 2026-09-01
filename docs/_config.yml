@@ -52,19 +52,63 @@ demeterics_key: "DEM-CTB2X5VRO4KL"
 
 # One navbar for the whole site.
 # ONE LEVEL ONLY. The three blog categories are children of /blog/ and must
-# not sit beside Books, which is their aunt, not their sibling. Books leads
-# because a book is launching.
+# not sit beside Books, which is their aunt, not their sibling. Blog leads
+# because that is where Agnès is most active; the Newsletter is an ask, so it
+# comes after the two things worth subscribing for.
 nav:
-  - {name: "Books",      url: "/books/"}
   - {name: "Blog",       url: "/blog/"}
+  - {name: "Books",      url: "/books/"}
   - {name: "Newsletter", url: "/newsletter/"}
   - {name: "Contact",    url: "/contact/"}
 
 # Blog categories, keyed to the WordPress category names in post front matter.
+#
+# `blurb`   - one line, for the door on the landing page.
+# `welcome` - Agnès' own introduction to the category, verbatim from the top of
+#             the matching agnesdeglonblog.com page. This is what a reader met
+#             first on WordPress, and it belongs on /blog/ rather than being
+#             lost in the move.
 sections:
-  - {name: "Health & Science", key: "Health&Science", slug: "health-science",
-     blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."}
-  - {name: "Soul & Self", key: "Soul&Self", slug: "soul-self",
-     blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."}
-  - {name: "Misadventures", key: "Misadventures", slug: "misadventures",
-     blurb: "Mind in motion. Stories of parenting in motion, cross-cultural surprises, accidental wisdom, and laughing through chaos, because life is messy, and humor is healing."}
+  - name: "Health & Science"
+    key: "Health&Science"
+    slug: "health-science"
+    welcome_title: "Welcome to Health & Science"
+    blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
+    welcome:
+      - >-
+        I entered acupuncture school with a degree in biochemistry, trained to
+        think in molecules and lab reports. Then, I found myself studying Qi,
+        Yin and Yang, and meridians: medicine in another language. Traditional
+        Chinese Medicine expanded my scientific training and taught me to see
+        the whole person, body, mind, and soul, catching imbalances on an
+        energetic and emotional level, before they manifest on a physical level.
+      - >-
+        Here I explore where evidence-based science meets holistic wisdom,
+        writing through both lenses to bridge East and West.
+
+  - name: "Soul & Self"
+    key: "Soul&Self"
+    slug: "soul-self"
+    welcome_title: "Welcome to Soul & Self"
+    blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."
+    welcome:
+      - >-
+        Life isn't just about the miles we hike, but the inner paths we walk.
+      - >-
+        In Soul & Self, I write closest to the heart, reflections on resilience,
+        healing, and the inner path. From soulfulness to mindlessness, from life
+        transitions to quiet revelations, these stories weave the personal with
+        the universal.
+
+  - name: "Misadventures"
+    key: "Misadventures"
+    slug: "misadventures"
+    welcome_title: "Welcome to Family Mis-Adventures"
+    blurb: "Mind in motion. Stories of parenting in motion, cross-cultural surprises, accidental wisdom, and laughing through chaos, because life is messy, and humor is healing."
+    welcome:
+      - >-
+        Life with family is rarely picture-perfect. It's messy, unpredictable,
+        and often hilarious. Here I share the beauty in imperfect moments:
+        outdoor adventures gone sideways, golden doodle disasters, dinners gone
+        wrong, and the everyday comedy of parenting. Writing about it keeps me
+        sane while raising tiny humans into (hopefully) responsible adults.

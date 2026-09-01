@@ -280,6 +280,45 @@
    above the shelf and stays true as the shelf grows. Display italic, wide
    measure, no quotation marks: it is a claim, not a pull-quote. */
 /* --------------------------------------------------------------------------
+   5a. STRAND  ← the three blog categories on /blog/
+   --------------------------------------------------------------------------
+   A category introduced in Agnès' own words, not a card and not a teaser. The
+   rule above each one does the separating, so three of these read as three
+   doors rather than three adverts. /blog/ deliberately shows no combined post
+   feed: mixing the categories is the thing this page exists to undo.
+   -------------------------------------------------------------------------- */
+
+.strand {
+  border-top: 1px solid var(--rule-quiet);
+  padding-block: var(--sp-7);
+  max-width: var(--measure-wide);
+}
+.strand__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  letter-spacing: var(--track-title);
+  margin: 0 0 var(--sp-4);
+}
+.strand__name a { color: var(--text-strong); text-decoration: none; }
+.strand__name a:hover { color: var(--accent); }
+.strand__intro { color: var(--text); max-width: var(--measure); }
+.strand__foot {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin: var(--sp-5) 0 0;
+}
+.strand__count,
+.strand__latest {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+.strand__latest { margin: var(--sp-3) 0 0; }
+.strand__latest time { margin-left: var(--sp-2); }
+
+
+/* --------------------------------------------------------------------------
    5b. LAUNCH PANEL
    --------------------------------------------------------------------------
    One book, one date, on the landing page only. It is bordered rather than
