@@ -435,6 +435,13 @@
   border-radius: var(--radius-photo);
   margin-bottom: var(--sp-3);
 }
+/* One essay has no photograph. Without a stand-in its card floats to the top
+   of the row while its neighbours start below their images, and three cards
+   stop looking like a set. A ruled empty frame keeps the grid honest. */
+.latest__thumb--none {
+  background: transparent;
+  border: 1px solid var(--rule-quiet);
+}
 .latest__title {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
