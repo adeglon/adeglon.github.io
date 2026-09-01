@@ -35,6 +35,10 @@
   page: true
   status: soon
   status_label: Coming March 3, 2027
+  # Published FIRST, though it is second in Arielle's chronology. This flag,
+  # not the array order, decides what leads the Books page. The array itself
+  # stays in story order because that is what the chronology note prints.
+  lead: true
   # The launch. The landing page finds the book to feature by looking for
   # `release`, so there is exactly one date on the site and this is it.
   release: 2027-03-03

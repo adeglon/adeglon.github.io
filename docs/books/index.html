@@ -37,10 +37,24 @@ permalink: /books/
       into conversation through story.</p>
 
     <h2 style="margin-top:var(--sp-7)">The Within Trilogy</h2>
+    <p class="standfirst">Three standalone novels about one woman at three
+      points in her life. They are published in the order they were written
+      rather than the order they happened, so you can begin anywhere — and
+      <em>The Canyon Within</em> is where to begin.</p>
 
-    {% include series-strip.html %}
+    {%- comment %}
+      PUBLICATION ORDER, not story order. The Canyon Within comes out first
+      although it is second in Arielle's chronology, so it leads: a reader
+      meets the book they can actually have. The numbered reading-order strip
+      that used to sit here has gone - with only one book published, "Book
+      Two, out now" above "Book One, in revision" reads as a gap rather than
+      a plan. The chronology is a note at the foot of the section instead.
+    {%- endcomment %}
+    {%- assign lead = site.data.books | where: "lead", true %}
+    {%- assign rest = site.data.books | where_exp: "b", "b.lead != true" %}
+    {%- assign shelf = lead | concat: rest %}
 
-    {% for book in site.data.books %}
+    {% for book in shelf %}
       <article class="book-card" id="{{ book.slug }}">
         <div class="book-card__cover">
           {% if book.cover %}
@@ -52,7 +66,7 @@ permalink: /books/
           {% endif %}
         </div>
         <div>
-          <span class="label">Book {{ book.number }}</span>
+          {%- if book.lead %}<span class="label">Start here</span>{% endif %}
           <h3 class="book-card__title">
             {% if book.page %}
               <a href="{{ '/books/' | append: book.slug | append: '/' | relative_url }}">{{ book.title }}</a>
@@ -65,6 +79,19 @@ permalink: /books/
         </div>
       </article>
     {% endfor %}
+
+    {%- comment %}
+      The numbers, demoted. They are still true and a reader who wants the
+      chronology should be able to find it - but they are a footnote, not the
+      frame. site.data.books stays in story order precisely so this prints
+      correctly without a second list to keep in step.
+    {%- endcomment %}
+    <p class="chronology">
+      <span class="label">Arielle's chronology</span>
+      {%- for book in site.data.books %}
+      {{ book.title }}{% unless forloop.last %}, then {% endunless %}
+      {%- endfor %}. Each can be read on its own.
+    </p>
   </section>
 
   {% include ornament.html modifier="ornament--center ornament--short" %}

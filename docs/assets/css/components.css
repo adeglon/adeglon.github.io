@@ -404,6 +404,20 @@
 }
 .book-card__blurb { color: var(--text); }
 
+/* The chronology, demoted. It used to be a numbered strip at the top of every
+   book page, which with one book published announced a Book One nobody could
+   buy. As a footnote it still answers "what order did this happen in" for the
+   reader who wants to know, without framing the shelf around a gap. */
+.chronology {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  max-width: var(--measure-wide);
+  margin: var(--sp-7) 0 0;
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--rule-quiet);
+}
+.chronology .label { display: block; margin-bottom: var(--sp-2); }
+
 /* An author statement rather than a description of one book - it stands
    above the shelf and stays true as the shelf grows. Display italic, wide
    measure, no quotation marks: it is a claim, not a pull-quote. */

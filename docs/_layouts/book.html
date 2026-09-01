@@ -12,9 +12,6 @@ layout: default
 
 <main id="main" class="page">
 
-  {% comment %} Reading order first, before anything is sold. {% endcomment %}
-  {% include series-strip.html current=page.slug %}
-
   <div class="book-card" style="padding-top:var(--sp-6);border-top:0">
     <div class="book-card__cover">
       {% if book.cover %}
@@ -31,7 +28,7 @@ layout: default
     </div>
 
     <div>
-      <span class="label">Book {{ book.number }}</span>
+      {%- if book.lead %}<span class="label">Start here</span>{% endif %}
       <h1 class="book-card__title" style="font-size:var(--fs-2xl);margin-top:0">{{ book.title }}</h1>
       <p class="status status--{{ book.status }}">{{ book.status_label }}</p>
 
@@ -59,5 +56,19 @@ layout: default
   {% endif %}
 
 </main>
+
+{%- comment %}
+  The chronology, demoted the same way it is on /books/: a note, not a frame.
+  The trilogy is published out of order, so leading with "Book Two" would
+  advertise a Book One nobody can buy.
+{%- endcomment %}
+<div class="page">
+  <p class="chronology">
+    <span class="label">Arielle's chronology</span>
+    {%- for b in site.data.books %}
+    {{ b.title }}{% unless forloop.last %}, then {% endunless %}
+    {%- endfor %}. Each can be read on its own.
+  </p>
+</div>
 
 {% include signup.html %}
