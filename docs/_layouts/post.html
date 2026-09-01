@@ -36,14 +36,37 @@ layout: default
 
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
-  <nav class="pager" aria-label="More essays">
-    {%- if page.previous %}
-    <a class="pager__link" href="{{ page.previous.url | relative_url }}">
-      <span class="label">Previous</span>{{ page.previous.title }}</a>
+  {%- comment %}
+    Previous / next stay inside the essay's own section. Jekyll's page.previous
+    and page.next walk every post on the site, which sent a reader from a
+    menopause piece straight into a hiking one. site.posts is newest-first, so
+    walking it: anything before the current post is newer, anything after is
+    older.
+  {%- endcomment %}
+  {%- assign cat = page.categories | first %}
+  {%- assign siblings = site.posts | where_exp: "p", "p.categories contains cat" %}
+  {%- assign newer = nil %}
+  {%- assign older = nil %}
+  {%- assign passed = false %}
+  {%- for p in siblings %}
+    {%- if passed and older == nil %}{% assign older = p %}{% endif %}
+    {%- if p.url == page.url %}{% assign passed = true %}{% endif %}
+    {%- unless passed %}{% assign newer = p %}{% endunless %}
+  {%- endfor %}
+
+  {%- assign section_name = nil %}
+  {%- for sec in site.sections %}{% if sec.key == cat %}{% assign section_name = sec.name %}{% endif %}{% endfor %}
+
+  {%- if older or newer %}
+  <nav class="pager" aria-label="More essays{% if section_name %} in {{ section_name }}{% endif %}">
+    {%- if older %}
+    <a class="pager__link" href="{{ older.url | relative_url }}">
+      <span class="label">Previous{% if section_name %} in {{ section_name }}{% endif %}</span>{{ older.title }}</a>
     {%- else %}<span></span>{% endif %}
-    {%- if page.next %}
-    <a class="pager__link pager__link--next" href="{{ page.next.url | relative_url }}">
-      <span class="label">Next</span>{{ page.next.title }}</a>
+    {%- if newer %}
+    <a class="pager__link pager__link--next" href="{{ newer.url | relative_url }}">
+      <span class="label">Next{% if section_name %} in {{ section_name }}{% endif %}</span>{{ newer.title }}</a>
     {%- endif %}
   </nav>
+  {%- endif %}
 </main>
