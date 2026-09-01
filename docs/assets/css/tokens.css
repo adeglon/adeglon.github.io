@@ -114,6 +114,28 @@
                       rgba(14, 26, 43, 0.46) 72%,
                       rgba(14, 26, 43, 0.00) 96%);
 
+  /* A SECOND, LIGHTER SET, for the dusk trail photograph on the landing page.
+     The canyon scrims above are tuned for sunlit rock and a hard sun on the
+     right; laid over this soft lavender-and-gold frame they erase it — the
+     first build of this hero showed no photograph at all, only type on a grey
+     wash. Here the picture is already low-contrast, so the type needs a
+     fraction of the help, and everything below the horizon must stay clear.
+     Same hue, roughly half the weight, gone by the horizon line. */
+  --scrim-copy-soft: linear-gradient(to right,
+                      rgba(14, 26, 43, 0.62) 0%,
+                      rgba(14, 26, 43, 0.44) 30%,
+                      rgba(14, 26, 43, 0.16) 58%,
+                      rgba(14, 26, 43, 0.00) 78%);
+  --scrim-top-soft:  linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.40) 0%,
+                      rgba(14, 26, 43, 0.16) 26%,
+                      rgba(14, 26, 43, 0.00) 44%);
+  --scrim-copy-soft-narrow: linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.62) 0%,
+                      rgba(14, 26, 43, 0.46) 40%,
+                      rgba(14, 26, 43, 0.18) 66%,
+                      rgba(14, 26, 43, 0.00) 88%);
+
   /* Only for a hero whose type sits at the FOOT. Applying both scrims at
      once leaves a ~8% band of un-washed photograph in the middle and the
      picture disappears — which is exactly the bug this comment prevents. */

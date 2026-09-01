@@ -150,10 +150,33 @@
   .hero__scrim { background: var(--scrim-copy-narrow); }
 }
 
-/* The trail hero is a 4:3 frame doing duty in a wide band, so the crop is
-   pinned just below centre: sky for the title above, trail and horizon below.
-   Swap the picture at the cover reveal and this line is what needs revisiting. */
+/* --------------------------------------------------------------------------
+   3b. TRAIL HERO  ← the landing page, until the cover reveal
+   --------------------------------------------------------------------------
+   A soft photograph needs a soft scrim and smaller type. The default hero is
+   built for the canyon: heavy washes and --fs-hero, which at 7rem turns an
+   eight-word line into four stacked rows and pushes the whole page down.
+   -------------------------------------------------------------------------- */
+
+/* 4:3 frame in a wide band: crop pinned just below centre, so there is sky
+   for the title above and trail and horizon below. Swap the picture at the
+   cover reveal and this line is what needs revisiting. */
 .hero__media--trail { object-position: 50% 52%; }
+
+.hero--trail { min-height: min(76svh, 40rem); }
+.hero--trail .hero__scrim {
+  background: var(--scrim-copy-soft), var(--scrim-top-soft);
+}
+@media (max-width: 48rem) {
+  .hero--trail .hero__scrim { background: var(--scrim-copy-soft-narrow); }
+}
+/* A whole sentence, not a two-word book title - it needs a smaller ceiling
+   and a measure, or it fills the frame and the photograph is decoration. */
+.hero--trail .hero__title {
+  font-size: clamp(2.1rem, 1.15rem + 3.2vw, 3.9rem);
+  max-width: 20ch;
+}
+.hero--trail .hero__sub { max-width: 34rem; }
 .hero__body {
   position: relative; z-index: 2;
   padding-block: var(--sp-9);
