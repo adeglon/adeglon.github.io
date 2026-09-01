@@ -603,6 +603,13 @@ dem-agent {
 }
 .post-list__thumb:hover { opacity: 0.88; }
 
+/* The image column carries the date beneath it, so the text column can start
+   flush with the title. Without the margin reset the title sits a few pixels
+   below the top of the photograph and the row looks accidentally ragged. */
+.post-list__media { display: flex; flex-direction: column; gap: var(--sp-2); }
+.post-list__media .post-list__meta { margin: 0; }
+.post-list > li.has-thumb h2 { margin-top: 0; }
+
 .post-list__excerpt { color: var(--text); margin: var(--sp-2) 0 var(--sp-3); }
 
 .read-more {

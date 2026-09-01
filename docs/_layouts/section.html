@@ -14,20 +14,27 @@ layout: default
       {%- if page.category == nil or post.categories contains page.category %}
       <li{% if post.image %} class="has-thumb"{% endif %}>
         {%- if post.image %}
-        <a href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
-          <img class="post-list__thumb" src="{{ post.image | relative_url }}" alt=""
-               loading="lazy" decoding="async">
-        </a>
-        {%- endif %}
-        <div>
+        <div class="post-list__media">
+          <a href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+            <img class="post-list__thumb" src="{{ post.image | relative_url }}" alt=""
+                 loading="lazy" decoding="async">
+          </a>
           <p class="post-list__meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
             {%- for c in post.categories %}
               {%- for s in site.sections %}{% if s.key == c and page.category == nil %}
-              &middot; {{ s.name }}
+              <br>{{ s.name }}
               {%- endif %}{% endfor %}
             {%- endfor %}
           </p>
+        </div>
+        {%- endif %}
+        <div>
+          {%- unless post.image %}
+          <p class="post-list__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </p>
+          {%- endunless %}
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <p class="post-list__excerpt">
             {{ post.excerpt | strip_html | normalize_whitespace | truncate: 220 }}
