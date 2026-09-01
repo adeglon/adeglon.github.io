@@ -61,6 +61,7 @@ series:
       - number: Two
         title: Wait for Me! Would You Mind?
         asin: "1947392085"
+        cover: /assets/books/wait-for-me-cover.jpg
         cover_alt: Cover of Wait for Me! Would You Mind?
         blurb: >-
           The second installment. An educational book written in simple
