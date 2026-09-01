@@ -282,6 +282,10 @@
   border-bottom-color: var(--rule);
 }
 .hero--compact .hero__sub { color: var(--text); text-shadow: none; }
+/* .section pads sp-9 at the top, which is right under a full-height hero and
+   far too much under a masthead - it reopens the very gap the masthead was
+   closing. */
+.hero--compact + main.section { padding-top: var(--sp-6); }
 
 /* Type at the foot instead — for an interior page over a busier picture. */
 .hero--foot .hero__scrim { background: var(--scrim-foot); }
