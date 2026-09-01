@@ -179,7 +179,11 @@
 /* 4:3 frame in a wide band. Pinned just above centre so the burning sky and
    the dog on the trail both stay in the crop - she is small, and pushing the
    crop down loses her before it loses anything else. Swap the picture at the
-   cover reveal and this line is what needs revisiting. */
+   cover reveal and this line is what needs revisiting.
+
+   A new photograph gets a NEW FILENAME. Reusing one leaves every reader who
+   has already visited looking at the old picture out of their browser cache,
+   which is exactly what happened the first time this was swapped. */
 .hero__media--trail { object-position: 50% 46%; }
 
 /* Sized by Agnès: the title at this scale is the point of the page, and she
