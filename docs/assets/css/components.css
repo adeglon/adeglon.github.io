@@ -187,11 +187,14 @@
 .hero__media--trail { object-position: 50% 72%; }
 
 /* Sized by Agnès: the title at this scale is the point of the page, and she
-   would rather it be read than fitted. The hero therefore keeps a minimum
-   height and grows if the sentence needs the room - it is not clamped to the
-   viewport, and on a short window the foot of the picture scrolls. That was
-   tried the other way round and the type came out too small. */
-.hero--trail { min-height: min(84svh, 44rem); }
+   would rather it be read than fitted. So this is a MINIMUM, never a fixed
+   height - the type keeps its size and the hero grows if the sentence needs
+   the room. Clamping the height instead shrank the type, and she rejected it.
+
+   The minimum is the viewport itself. A 44rem cap was tried and on a taller
+   laptop it ended the picture above the fold, leaving a band of page below
+   the photograph. A hero that stops short of the screen looks like a mistake. */
+.hero--trail { min-height: 100svh; }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {
   .hero--trail .hero__scrim { background: var(--scrim-sky-narrow); }
