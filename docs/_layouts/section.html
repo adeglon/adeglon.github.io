@@ -9,9 +9,24 @@ layout: default
   {% if page.blurb %}<p class="standfirst">{{ page.blurb }}</p>{% endif %}
   {% include ornament.html modifier="ornament--short" %}
 
+  {%- comment %}
+    Order: pinned first, then newest. `pinned: true` in a post's front matter
+    lifts it to the top of its own section and nowhere else - the previous /
+    next pager stays strictly chronological, because reading order and
+    display order are different things.
+  {%- endcomment %}
+  {%- if page.category %}
+    {%- assign listed = site.posts | where_exp: "p", "p.categories contains page.category" %}
+  {%- else %}
+    {%- assign listed = site.posts %}
+  {%- endif %}
+  {%- assign pinned = listed | where: "pinned", true %}
+  {%- assign unpinned = listed | where_exp: "p", "p.pinned != true" %}
+  {%- assign listed = pinned | concat: unpinned %}
+
   <ul class="post-list">
-    {%- for post in site.posts %}
-      {%- if page.category == nil or post.categories contains page.category %}
+    {%- for post in listed %}
+      {%- if true %}
       <li{% if post.image %} class="has-thumb"{% endif %}>
         {%- if post.image %}
         <div class="post-list__media">
@@ -36,6 +51,7 @@ layout: default
           </p>
           {%- endunless %}
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {%- if post.pinned %}<p class="label">Start here</p>{% endif %}
           {%- comment %}
             Whole sentences only. Liquid has no regex, so sentence ends are
             marked with a pipe, split on it, and re-joined until the next
