@@ -589,7 +589,7 @@ dem-agent {
 /* Listing rows become two columns once there is room for a thumbnail. */
 .post-list > li.has-thumb {
   display: grid;
-  grid-template-columns: 8.5rem 1fr;
+  grid-template-columns: 12.75rem 1fr;   /* 8.5rem + 50%, at Agnès' request */
   gap: var(--sp-5);
   align-items: start;
 }
