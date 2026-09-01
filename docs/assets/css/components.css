@@ -332,27 +332,19 @@
        </nav>
    -------------------------------------------------------------------------- */
 
-/* Sibling navigation: three things at the same level, one of them current.
-   Built for the trilogy's reading order and reused for the three blog
-   strands - the same job deserves the same shape, and a reader learns the
-   pattern once. It works on a phone, needs no JavaScript and cannot trap a
-   keyboard, none of which is true of a hover menu. */
-.series-strip,
-.strand-strip {
+.series-strip {
   border-block: 1px solid var(--rule-quiet);
   padding-block: var(--sp-4);
   margin-block: var(--sp-6);
 }
-.series-strip ol,
-.strand-strip ol {
+.series-strip ol {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-5);
   list-style: none; margin: 0; padding: 0;
   counter-reset: book;
 }
-.series-strip li,
-.strand-strip li {
+.series-strip li {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
   line-height: var(--lh-snug);
@@ -360,13 +352,10 @@
   padding-top: var(--sp-3);
   border-top: 2px solid transparent;
 }
-.series-strip a,
-.strand-strip a { color: var(--text); display: block; }
-.series-strip a:hover,
-.strand-strip a:hover { color: var(--accent-strong); }
+.series-strip a { color: var(--text); display: block; }
+.series-strip a:hover { color: var(--accent-strong); }
 
-.series-strip [aria-current="page"],
-.strand-strip [aria-current="page"] {
+.series-strip [aria-current="page"] {
   color: var(--text-strong);
   border-top-color: var(--accent);
 }
@@ -376,13 +365,10 @@
 }
 
 @media (max-width: 46rem) {
-  .series-strip ol,
-  .strand-strip ol { grid-template-columns: 1fr; gap: var(--sp-3); }
-  .series-strip li,
-  .strand-strip li { border-top: 0; border-left: 2px solid transparent;
+  .series-strip ol { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .series-strip li { border-top: 0; border-left: 2px solid transparent;
                      padding: var(--sp-1) 0 var(--sp-1) var(--sp-4); }
-  .series-strip [aria-current="page"],
-  .strand-strip [aria-current="page"] { border-left-color: var(--accent); }
+  .series-strip [aria-current="page"] { border-left-color: var(--accent); }
 }
 
 

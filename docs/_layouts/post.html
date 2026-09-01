@@ -100,12 +100,6 @@ layout: default
   </section>
   {%- endif %}
 
-  {%- comment %}
-    Strand switcher AFTER the essay, never before it. A reader at the top of a
-    piece came to read it, not to choose a different one.
-  {%- endcomment %}
-  {% include strand-strip.html current=cat %}
-
   {%- if older or newer %}
   <nav class="pager" aria-label="More essays{% if section_name %} in {{ section_name }}{% endif %}">
     {%- if older %}
