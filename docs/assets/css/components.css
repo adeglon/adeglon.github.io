@@ -184,7 +184,7 @@
    A new photograph gets a NEW FILENAME. Reusing one leaves every reader who
    has already visited looking at the old picture out of their browser cache,
    which is exactly what happened the first time this was swapped. */
-.hero__media--trail { object-position: 50% 72%; }
+.hero__media--trail { object-position: 50% 62%; }
 
 /* Sized by Agnès: the title at this scale is the point of the page, and she
    would rather it be read than fitted. So this is a MINIMUM, never a fixed
@@ -195,6 +195,14 @@
    laptop it ended the picture above the fold, leaving a band of page below
    the photograph. A hero that stops short of the screen looks like a mistake. */
 .hero--trail { min-height: 100svh; }
+
+/* A hero that sets a tone and then gets out of the way. Full-screen was right
+   when the picture WAS the message; once the page's job became "introduce the
+   writer", a whole screen of photograph only delayed her. Still a minimum,
+   never a fixed height - the type keeps its size. */
+.hero--short { min-height: min(58svh, 30rem); }
+.hero--short .hero__body--split { gap: var(--sp-6); padding-bottom: var(--sp-6); }
+.hero--short .hero__title { font-size: clamp(1.7rem, 0.95rem + 2.3vw, 2.9rem); }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {
   .hero--trail .hero__scrim { background: var(--scrim-sky-narrow); }
@@ -561,6 +569,31 @@
 }
 .strand__latest { margin: var(--sp-3) 0 0; }
 .strand__latest time { margin-left: var(--sp-2); }
+
+
+/* --------------------------------------------------------------------------
+   5c. TASTE  ← a paragraph of the actual writing, on the landing page
+   --------------------------------------------------------------------------
+   The one thing an author's front page must not omit. A visitor can read a
+   real paragraph of Agnès' prose before being asked for anything - no bio, no
+   blurb, no description OF the writing, the writing itself.
+   -------------------------------------------------------------------------- */
+
+.taste { margin-block: var(--sp-7); max-width: var(--measure-wide); }
+.taste__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  margin: var(--sp-2) 0 var(--sp-4);
+}
+.taste__title a { color: var(--text-strong); }
+.taste__title a:hover { color: var(--accent-strong); }
+.taste__text {
+  font-size: var(--fs-lg);
+  line-height: 1.5;
+  color: var(--text);
+  max-width: var(--measure);
+}
 
 
 /* --------------------------------------------------------------------------

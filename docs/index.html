@@ -1,42 +1,45 @@
 ---
 layout: default
 permalink: /
-og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
+og_image: /assets/hero/hero-daytrail-og-1200.jpg
 ---
 {%- comment %}
-  The hero. Agnès' own photograph: her dog on the trail at sunset. She chose
-  it over a cooler dusk frame knowing it sits nearer the cover's palette - a
-  canyon sunrise - and that is a fair trade for a picture she loves. At the
-  reveal this picture is replaced by the cover and the page turns over in a
-  day, so nothing here needs to last past March.
+  The hero. Agnès' own photograph: a single-track trail heading out toward
+  snow peaks in spring. Daylight, deliberately - the sunset frame that was
+  here before said ending and solitude, and her writing is warm and funny.
+  An open trail says invitation.
+
+  It is also SHORT now. A full screen of photograph made a stranger scroll
+  past a mood before meeting the writer; the page's job is to introduce her,
+  so the picture sets a tone and then gets out of the way.
 
   hero--sky puts the type at the TOP, where this frame is emptiest.
 {%- endcomment %}
-<header class="hero hero--sky hero--trail">
+<header class="hero hero--sky hero--trail hero--short">
   <picture>
     <source media="(max-width: 40rem)" type="image/webp"
-            srcset="{{ '/assets/hero/hero-sunset-dog-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-1024.webp' | relative_url }} 1024w">
+            srcset="{{ '/assets/hero/hero-daytrail-tall-640.webp' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-daytrail-tall-900.webp' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-daytrail-tall-1024.webp' | relative_url }} 1024w">
     <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/hero/hero-sunset-dog-tall-640.jpg' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-900.jpg' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-1024.jpg' | relative_url }} 1024w">
+            srcset="{{ '/assets/hero/hero-daytrail-tall-640.jpg' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-daytrail-tall-900.jpg' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-daytrail-tall-1024.jpg' | relative_url }} 1024w">
     <source type="image/webp"
-            srcset="{{ '/assets/hero/hero-sunset-dog-1200.webp' | relative_url }} 1200w,
-                    {{ '/assets/hero/hero-sunset-dog-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/hero/hero-sunset-dog-1920.webp' | relative_url }} 1920w,
-                    {{ '/assets/hero/hero-sunset-dog-2400.webp' | relative_url }} 2400w">
+            srcset="{{ '/assets/hero/hero-daytrail-1200.webp' | relative_url }} 1200w,
+                    {{ '/assets/hero/hero-daytrail-1600.webp' | relative_url }} 1600w,
+                    {{ '/assets/hero/hero-daytrail-1920.webp' | relative_url }} 1920w,
+                    {{ '/assets/hero/hero-daytrail-2400.webp' | relative_url }} 2400w">
     <img class="hero__media hero__media--trail"
-         src="{{ '/assets/hero/hero-sunset-dog-1600.jpg' | relative_url }}"
-         srcset="{{ '/assets/hero/hero-sunset-dog-1200.jpg' | relative_url }} 1200w,
-                 {{ '/assets/hero/hero-sunset-dog-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/hero/hero-sunset-dog-1920.jpg' | relative_url }} 1920w,
-                 {{ '/assets/hero/hero-sunset-dog-2400.jpg' | relative_url }} 2400w"
+         src="{{ '/assets/hero/hero-daytrail-1600.jpg' | relative_url }}"
+         srcset="{{ '/assets/hero/hero-daytrail-1200.jpg' | relative_url }} 1200w,
+                 {{ '/assets/hero/hero-daytrail-1600.jpg' | relative_url }} 1600w,
+                 {{ '/assets/hero/hero-daytrail-1920.jpg' | relative_url }} 1920w,
+                 {{ '/assets/hero/hero-daytrail-2400.jpg' | relative_url }} 2400w"
          sizes="100vw" width="4032" height="3024"
          fetchpriority="high" decoding="async"
-         alt="A dog waiting on a desert trail at sunset, the sky above her
-              streaked orange, a figure watching from the ridge beyond.">
+         alt="A single-track trail winding through spring grass toward
+              snow-covered mountains under an open blue sky.">
   </picture>
   <div class="hero__scrim"></div>
   {%- comment %}
@@ -62,6 +65,65 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
 </header>
 
 <main id="main" class="page section">
+
+  {%- comment %}
+    IDENTITY FIRST, then the writing. The page's job is to introduce a writer
+    to a stranger, so the two things a stranger needs - who she is, and what
+    her prose sounds like - come before the launch, the doors and the ask.
+    Everything below this is navigation.
+  {%- endcomment %}
+  <div class="author-grid" style="margin-block:0 var(--sp-7)">
+    <img src="{{ '/assets/author/agnes-240.jpg' | relative_url }}"
+         srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
+                 {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w"
+         sizes="(max-width: 40rem) 7rem, 9.5rem"
+         width="400" height="400" loading="lazy"
+         style="border-radius:var(--radius-photo)"
+         alt="Agnès Déglon-Fischer">
+    <div>
+      <span class="label">The author</span>
+      <h2 style="margin-top:0">Agnès Déglon-Fischer</h2>
+      <p>I'm a writer with a background in biochemistry and acupuncture. My work bridges
+        the worlds of science and storytelling, blending evidence-based health with holistic
+        perspectives and lived experience. Whether unpacking the latest research, reflecting
+        on body–mind–soul connections, or writing from the trail, I aim to make complex ideas
+        accessible and meaningful.</p>
+      <p>And when I'm not writing about the serious stuff? I'm a mama, soul-searcher, and
+        semi-functional adult, making sense of the mess through stories, soul, and humor.</p>
+    </div>
+  </div>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+
+  {%- comment %}
+    Something of hers to actually read. A novelist's site where a visitor
+    cannot read a sentence of the novelist asks them to take the writing on
+    trust; this is the fix. `featured: true` in a post's front matter picks
+    the piece, otherwise it is the newest.
+  {%- endcomment %}
+  {%- assign picked = site.posts | where: "featured", true | first %}
+  {%- unless picked %}{% assign picked = site.posts.first %}{% endunless %}
+  {%- if picked %}
+  <section class="taste">
+    <span class="label">From the blog</span>
+    <h2 class="taste__title">
+      <a href="{{ picked.url | relative_url }}">{{ picked.title }}</a></h2>
+    {%- assign plain = picked.content | strip_html | normalize_whitespace %}
+    {%- assign marked = plain | replace: '. ', '.| ' | replace: '! ', '!| ' | replace: '? ', '?| ' %}
+    {%- assign parts = marked | split: '| ' %}
+    {%- assign built = '' %}
+    {%- for part in parts %}
+      {%- assign candidate = built | append: part | append: ' ' %}
+      {%- if candidate.size > 420 and built != '' %}{% break %}{% endif %}
+      {%- assign built = candidate %}
+    {%- endfor %}
+    {%- if built == '' %}{% assign built = plain %}{% endif %}
+    <p class="taste__text">{{ built | strip }}</p>
+    <p><a class="btn btn--quiet" href="{{ picked.url | relative_url }}">Read the rest</a></p>
+  </section>
+  {%- endif %}
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
 
   {%- comment %}
     THE LAUNCH PANEL. Found by data, not hard-coded: the featured book is
@@ -174,26 +236,7 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
 
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
-  <div class="author-grid" style="margin-block:var(--sp-7)">
-    <img src="{{ '/assets/author/agnes-240.jpg' | relative_url }}"
-         srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
-                 {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w"
-         sizes="(max-width: 40rem) 7rem, 9.5rem"
-         width="400" height="400" loading="lazy"
-         style="border-radius:var(--radius-photo)"
-         alt="Agnès Déglon-Fischer">
-    <div>
-      <span class="label">The author</span>
-      <h2 style="margin-top:0">Agnès Déglon-Fischer</h2>
-      <p>I'm a writer with a background in biochemistry and acupuncture. My work bridges
-        the worlds of science and storytelling, blending evidence-based health with holistic
-        perspectives and lived experience. Whether unpacking the latest research, reflecting
-        on body–mind–soul connections, or writing from the trail, I aim to make complex ideas
-        accessible and meaningful.</p>
-      <p>And when I'm not writing about the serious stuff? I'm a mama, soul-searcher, and
-        semi-functional adult, making sense of the mess through stories, soul, and humor.</p>
-    </div>
-  </div>
+
 
 </main>
 

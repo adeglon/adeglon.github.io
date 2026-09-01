@@ -130,10 +130,10 @@
      So: a vertical ramp instead. The sky is the emptiest third of this frame
      and the type sits in it; everything below the ridge line stays clear. */
   --scrim-sky:      linear-gradient(to bottom,
-                      rgba(14, 26, 43, 0.50) 0%,
-                      rgba(14, 26, 43, 0.30) 22%,
-                      rgba(14, 26, 43, 0.10) 42%,
-                      rgba(14, 26, 43, 0.00) 58%);
+                      rgba(14, 26, 43, 0.58) 0%,
+                      rgba(14, 26, 43, 0.38) 24%,
+                      rgba(14, 26, 43, 0.14) 46%,
+                      rgba(14, 26, 43, 0.00) 64%);
   /* Narrow screens use the tall crop, where the sky is proportionally taller
      and the type runs full width - the ramp simply reaches further down. */
   --scrim-sky-narrow: linear-gradient(to bottom,
