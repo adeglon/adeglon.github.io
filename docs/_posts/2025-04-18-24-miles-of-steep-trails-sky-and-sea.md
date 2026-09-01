@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "24 Miles of Steep Trails, Sky, and Sea"
-date: 2025-09-12 14:13:18 -0800
+date: 2025-04-18 14:13:18 -0800
 categories: ["Misadventures"]
 permalink: /24-miles-of-steep-trails-sky-and-sea/
 image: /assets/images/featured-24-miles-of-steep-trails-sky-and-sea.jpg

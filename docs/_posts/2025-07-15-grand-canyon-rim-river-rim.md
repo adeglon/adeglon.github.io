@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Grand Canyon Rim - River-Rim: A Family Adventure"
-date: 2025-09-17 14:07:23 -0800
+date: 2025-07-15 14:07:23 -0800
 categories: ["Misadventures"]
 permalink: /grand-canyon-rim-river-rim/
 image: /assets/images/featured-grand-canyon-rim-river-rim.jpg

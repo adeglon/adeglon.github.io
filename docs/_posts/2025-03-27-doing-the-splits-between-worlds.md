@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Doing the Splits Between Worlds"
-date: 2025-08-25 14:40:21 -0800
+date: 2025-03-27 14:40:21 -0800
 categories: ["Misadventures"]
 permalink: /doing-the-splits-between-worlds/
 image: /assets/images/featured-doing-the-splits-between-worlds.jpg
