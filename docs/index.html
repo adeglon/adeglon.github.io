@@ -113,10 +113,19 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
       <ul class="door__list">
         {%- for post in site.posts limit: 3 %}
         <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}
-            <span class="door__date">
-              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-            </span></a>
+          <a href="{{ post.url | relative_url }}">
+            {%- if post.image %}
+            <img class="door__thumb" src="{{ post.image | relative_url }}" alt=""
+                 loading="lazy" decoding="async">
+            {%- else %}
+            <span class="door__thumb door__thumb--none" aria-hidden="true">
+              <img src="{{ '/assets/ornament/diamond.svg' | relative_url }}" alt=""></span>
+            {%- endif %}
+            <span>{{ post.title }}
+              <span class="door__date">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+              </span></span>
+          </a>
         </li>
         {%- endfor %}
       </ul>
@@ -129,10 +138,36 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
           three languages, and a guide for parents.</p>
         <span class="door__go">All the books</span>
       </a>
+      {%- comment %}
+        The trilogy has no artwork to show until the reveal, so it gets the
+        night tile rather than a borrowed photograph. The other two have real
+        covers and use them.
+      {%- endcomment %}
       <ul class="door__list">
-        <li><a href="{{ '/books/#within' | relative_url }}">The Within Trilogy</a></li>
-        <li><a href="{{ '/books/#kids-questions-about-life' | relative_url }}">Kids' Questions About Life</a></li>
-        <li><a href="{{ '/books/#once-you-know' | relative_url }}">Once You Know</a></li>
+        <li>
+          <a href="{{ '/books/#within' | relative_url }}">
+            <span class="door__thumb door__thumb--book door__thumb--none" aria-hidden="true">
+              <img src="{{ '/assets/ornament/diamond.svg' | relative_url }}" alt=""></span>
+            <span>The Within Trilogy
+              <span class="door__date">Fiction — The Canyon Within, March 3, 2027</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/books/#kids-questions-about-life' | relative_url }}">
+            <img class="door__thumb door__thumb--book" src="{{ '/assets/books/hey-buddy-cover.jpg' | relative_url }}"
+                 alt="" loading="lazy" decoding="async">
+            <span>Kids' Questions About Life
+              <span class="door__date">Three books, in English, French and German</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/books/#once-you-know' | relative_url }}">
+            <img class="door__thumb door__thumb--book" src="{{ '/assets/books/once-you-know-cover.jpg' | relative_url }}"
+                 alt="" loading="lazy" decoding="async">
+            <span>Once You Know
+              <span class="door__date">A guide to preserving your child's health</span></span>
+          </a>
+        </li>
       </ul>
     </li>
   </ul>

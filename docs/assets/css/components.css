@@ -1058,16 +1058,44 @@ dem-agent {
   margin: var(--sp-4) 0 0;
   padding: 0 var(--sp-5);
 }
-.door__list li + li { margin-top: var(--sp-3); padding-top: var(--sp-3);
+.door__list li + li { margin-top: var(--sp-4); padding-top: var(--sp-4);
                       border-top: 1px solid var(--rule-quiet); }
+/* Picture first, then the name. A thumbnail is the fastest way to say what a
+   thing is, and it is what makes these clickable rather than merely listed. */
 .door__list a {
+  display: grid;
+  grid-template-columns: minmax(0, 4.5rem) 1fr;
+  gap: var(--sp-4);
+  align-items: center;
   font-family: var(--font-display);
   font-size: var(--fs-md);
   line-height: var(--lh-snug);
   color: var(--text);
-  display: block;
 }
 .door__list a:hover { color: var(--accent-strong); }
+.door__thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+  display: block;
+}
+/* Trade paperback proportion, so a cover is a cover and not a crop. */
+.door__thumb--book {
+  aspect-ratio: 5.5 / 8.5;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.30), 0 6px 14px rgba(0,0,0,.22);
+}
+/* The trilogy has no artwork to show before the reveal. A night tile with the
+   ornament on it, NOT a grey box: a grey box reads as a broken image. */
+.door__thumb--none {
+  background: var(--c-night);
+  border: 1px solid var(--rule);
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+}
+.door__thumb--none img { width: 40%; opacity: 0.8; }
 .door__date { display: block; font-size: var(--fs-xs); color: var(--text-soft);
               font-family: var(--font-body); margin-top: var(--sp-1); }
 
