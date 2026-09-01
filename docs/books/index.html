@@ -50,9 +50,14 @@ permalink: /books/
       Two, out now" above "Book One, in revision" reads as a gap rather than
       a plan. The chronology is a note at the foot of the section instead.
     {%- endcomment %}
-    {%- assign lead = site.data.books | where: "lead", true %}
-    {%- assign rest = site.data.books | where_exp: "b", "b.lead != true" %}
-    {%- assign shelf = lead | concat: rest %}
+    {%- comment %}
+      ONLY the published book gets a card. The other two are named in a line
+      below and nothing more: they have no artwork, no date and no approved
+      copy, and three black tiles in a row read as three things missing rather
+      than as a trilogy in progress. Give a book a card when there is
+      something true to put on it.
+    {%- endcomment %}
+    {%- assign shelf = site.data.books | where: "lead", true %}
 
     {% for book in shelf %}
       <article class="book-card" id="{{ book.slug }}">
@@ -89,11 +94,16 @@ permalink: /books/
       frame. site.data.books stays in story order precisely so this prints
       correctly without a second list to keep in step.
     {%- endcomment %}
+    {%- assign coming = site.data.books | where_exp: "b", "b.lead != true" %}
     <p class="chronology">
-      <span class="label">Arielle's chronology</span>
+      <span class="label">Also in the trilogy</span>
+      {%- for book in coming %}
+      <em>{{ book.title }}</em>{% unless forloop.last %} and {% endunless %}
+      {%- endfor %} are being written.
+      In Arielle's own chronology the three run
       {%- for book in site.data.books %}
       {{ book.title }}{% unless forloop.last %}, then {% endunless %}
-      {%- endfor %}. Each can be read on its own.
+      {%- endfor %} — and each can be read on its own.
     </p>
   </section>
 

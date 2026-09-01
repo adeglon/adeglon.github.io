@@ -1,21 +1,12 @@
 ---
-layout: book
-slug: the-chaos-within
-title: The Chaos Within
-description: >-
-  A standalone novel in The Within Trilogy. A mother's journey through chaos
-  toward quiet clarity, by Agnès Déglon-Fischer.
-book: true
-ground: dark
+# RETIRED, 2026-09-01. This page existed to display placeholder copy for an
+# unwritten novel: a description drafted from project notes, never approved by
+# Agnès. With the trilogy now framed standalone-first, the two unwritten books
+# are named in one line on /books/ and given no pages of their own.
+#
+# The old page is kept outside the repo at ~/Documents/Github/_retired/.
+# Restore it when The Chaos Within has real copy and a date.
+permalink: /books/the-chaos-within/
+redirect_to: /books/
+sitemap: false
 ---
-
-{% include ornament.html modifier="ornament--short" %}
-
-## Where it sits
-
-*The Chaos Within* is where Arielle starts: in the middle of the noise, twenty
-years before the canyon. It is the earliest of the three in her life, and the
-last of them to be written.
-
-It is being published after [*The Canyon Within*]({{ '/books/the-canyon-within/' | relative_url }}),
-which comes out first and can be read first.

@@ -11,7 +11,12 @@
   {% include ornament.html modifier="ornament--center ornament--tiny" %}
   <span class="title-cover__title">{{ include.book.title }}</span>
   {% include ornament.html modifier="ornament--center ornament--tiny" %}
+  {%- comment %}
+    No book numbers. The trilogy is published out of order, so "Book One" on a
+    tile beside a published Book Two advertises a book nobody can buy. The
+    chronology lives in one note on /books/ instead.
+  {%- endcomment %}
   <span class="title-cover__status">
-    {% if include.book.status == 'soon' %}Cover reveal soon{% else %}Book {{ include.book.number }}{% endif %}
+    {% if include.book.status == 'soon' %}Cover reveal soon{% else %}{{ include.book.status_label }}{% endif %}
   </span>
 </div>

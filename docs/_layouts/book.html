@@ -44,7 +44,7 @@ layout: default
         {% for para in book.blurb_rest %}<p class="book-card__blurb">{{ para }}</p>{% endfor %}
       {% endif %}
 
-      <p><em>{{ book.line }}</em></p>
+      {%- if book.line %}<p><em>{{ book.line }}</em></p>{% endif %}
     </div>
   </div>
 

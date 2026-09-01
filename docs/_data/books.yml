@@ -16,18 +16,14 @@
 - number: One
   title: The Chaos Within
   slug: the-chaos-within
-  page: true
+  page: false                       # nothing true to show yet
   status: writing
   status_label: In revision
-  cover: false                      # no artwork yet — placeholder is deliberate
-  line: A mother's journey through chaos toward quiet clarity.
-  # PLACEHOLDER COPY — drafted from the project README so the page could be
-  # laid out. Not approved by Agnès. Must not survive to a public launch.
-  blurb: >-
-    Arielle answers to her name twelve times before eight in the morning. She is
-    the household's unpaid infrastructure, running at maximum capacity and
-    minimum acknowledgement — and somewhere underneath the noise, a question she
-    has not had a quiet enough minute to hear.
+  cover: false
+  # No line and no blurb. What used to be here was placeholder copy written
+  # from the project notes to lay the page out, never approved by Agnès, and
+  # publicly visible for a while. Removed 2026-09-01. Nothing goes back here
+  # until Agnès writes it.
 
 - number: Two
   title: The Canyon Within
@@ -75,6 +71,4 @@
   status: writing
   status_label: In progress
   cover: false
-  line: What happens to a woman after she comes back up.
-  blurb: >-
-    The third book is being written.
+  # Same rule: no copy until there is copy.

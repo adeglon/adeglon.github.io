@@ -15,7 +15,7 @@ ground: dark
 ## Where it sits
 
 *The Canyon Within* is the first of the three to be published, and it is where
-to start. It opens twenty years after [*The Chaos Within*]({{ '/books/the-chaos-within/' | relative_url }}),
-but it does not require it — the canyon does not require the kitchen.
+to start. It opens twenty years after *The Chaos Within*, but it does not
+require it — the canyon does not require the kitchen.
 
 *The Chaos Within* and *The Creation Within* are being written.
