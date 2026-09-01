@@ -72,6 +72,8 @@ sections:
   - name: "Health & Science"
     key: "Health&Science"
     slug: "health-science"
+    image: /assets/images/featured-what-i-wish-i-knew-sooner-about-breath-qigong-and-unlocking-energy-flow.jpg
+    image_alt: "Qigong beside a waterfall in green hills"
     welcome_title: "Welcome to Health & Science"
     blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
     welcome:
@@ -89,6 +91,8 @@ sections:
   - name: "Soul & Self"
     key: "Soul&Self"
     slug: "soul-self"
+    image: /assets/images/featured-a-sahara-meditation-journey-through-sandstorms-and-silence.jpg
+    image_alt: "Two figures and a camel crossing the dunes at first light in the Sahara"
     welcome_title: "Welcome to Soul & Self"
     blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."
     welcome:
@@ -103,6 +107,8 @@ sections:
   - name: "Misadventures"
     key: "Misadventures"
     slug: "misadventures"
+    image: /assets/images/featured-through-red-rocks-and-turquoise-waters-our-familys-havasupai-adventure.jpg
+    image_alt: "Havasu Falls dropping into turquoise water below red canyon walls"
     welcome_title: "Welcome to Family Mis-Adventures"
     blurb: "Mind in motion. Stories of parenting in motion, cross-cultural surprises, accidental wisdom, and laughing through chaos, because life is messy, and humor is healing."
     welcome:

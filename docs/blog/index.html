@@ -28,6 +28,14 @@ permalink: /blog/
   {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
   {%- assign latest = posts | first %}
   <section class="strand" id="{{ s.slug }}">
+    {%- if s.image %}
+    <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
+       tabindex="-1" aria-hidden="true">
+      <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+           loading="lazy" decoding="async">
+    </a>
+    {%- endif %}
+    <div class="strand__body">
     <h2 class="strand__name">
       <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.welcome_title }}</a>
     </h2>
@@ -47,6 +55,7 @@ permalink: /blog/
       <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%b %-d, %Y" }}</time>
     </p>
     {%- endif %}
+    </div>
   </section>
   {%- endfor %}
 

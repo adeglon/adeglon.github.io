@@ -341,9 +341,27 @@
    -------------------------------------------------------------------------- */
 
 .strand {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) 1fr;
+  gap: var(--sp-6);
+  align-items: start;
   border-top: 1px solid var(--rule-quiet);
   padding-block: var(--sp-7);
   max-width: var(--measure-wide);
+}
+/* A photograph of Agnès' own, one per strand - the picture says what the
+   category is faster than the paragraph does. Fixed 4:3 so three unequal
+   source frames still line up down the page. */
+.strand__media { display: block; }
+.strand__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+}
+@media (max-width: 40rem) {
+  .strand { grid-template-columns: 1fr; gap: var(--sp-5); }
 }
 .strand__name {
   font-family: var(--font-display);
@@ -355,6 +373,7 @@
 }
 .strand__name a { color: var(--text-strong); text-decoration: none; }
 .strand__name a:hover { color: var(--accent); }
+.strand__body { min-width: 0; }
 .strand__intro { color: var(--text); max-width: var(--measure); }
 .strand__foot {
   display: flex; align-items: baseline; flex-wrap: wrap;
