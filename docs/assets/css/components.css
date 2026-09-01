@@ -261,6 +261,10 @@
 .hero--compact {
   min-height: 0;
   align-items: start;
+  /* .hero paints --bg-deep for a photograph to sit on. With no photograph and
+     no height, that leaves a slightly different navy from the page ground and
+     a visible seam across the screen. Let the page ground show through. */
+  background: transparent;
 }
 .hero--compact .hero__body { padding-block: var(--sp-5) var(--sp-7); }
 .hero--compact .hero__title { font-size: clamp(2.4rem, 1.4rem + 3vw, 4rem); }
