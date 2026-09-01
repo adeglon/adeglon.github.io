@@ -75,13 +75,17 @@ permalink: /books/
     <span class="label">Published — for children</span>
     <h2 style="margin-top:var(--sp-2)">{{ s.name }}</h2>
     <p class="standfirst">{{ s.kind }}</p>
-    <p>{{ s.intro }}</p>
-    <p class="post-list__meta">Available in {{ s.languages }}</p>
 
-    {% if s.image %}
-    <img class="series-photo" src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-         loading="lazy" decoding="async">
-    {% endif %}
+    <div class="series-intro">
+      <div>
+        <p>{{ s.intro }}</p>
+        <p class="post-list__meta">Available in {{ s.languages }}</p>
+      </div>
+      {%- if s.image %}
+      <img class="series-photo" src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+           loading="lazy" decoding="async">
+      {%- endif %}
+    </div>
 
     {% for b in s.books %}
       <article class="book-card">
@@ -97,23 +101,30 @@ permalink: /books/
               <span class="title-cover__status">Book {{ b.number }}</span>
             </div>
           {% endif %}
+          <a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"
+             rel="noopener">Find it on Amazon</a>
         </div>
         <div>
           <span class="label">Book {{ b.number }}</span>
           <h3 class="book-card__title">{{ b.title }}</h3>
           <p class="book-card__blurb">{{ b.blurb }}</p>
-          {%- if b.body or b.questions %}
-          <details class="spoiler">
+          {%- comment %}
+            The first paragraph of the description reads on the page; only what
+            is left goes behind the disclosure, so the toggle is a footnote
+            rather than the main event.
+          {%- endcomment %}
+          {%- for para in b.body %}{% if forloop.first %}<p>{{ para }}</p>{% endif %}{% endfor %}
+          {%- assign rest = b.body | size | minus: 1 %}
+          {%- if rest > 0 or b.questions %}
+          <details class="spoiler spoiler--quiet">
             <summary>Read the full description</summary>
-            {% for para in b.body %}<p>{{ para }}</p>{% endfor %}
+            {%- for para in b.body %}{% unless forloop.first %}<p>{{ para }}</p>{% endunless %}{% endfor %}
             {%- if b.questions %}
             <p><strong>The questions this book answers</strong></p>
             <ul>{% for q in b.questions %}<li>{{ q }}</li>{% endfor %}</ul>
             {%- endif %}
           </details>
           {%- endif %}
-          <p><a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"
-                rel="noopener">Find it on Amazon</a></p>
         </div>
       </article>
     {% endfor %}

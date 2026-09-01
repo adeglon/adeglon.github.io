@@ -375,6 +375,31 @@
 .spoiler[open] > summary { margin-bottom: var(--sp-4); }
 .spoiler > *:last-child { margin-bottom: 0; }
 
+/* A quieter disclosure, for a books index where several bordered boxes down
+   one page read as a stack of crates. Same behaviour, no frame, and it sits
+   at the end of the visible text rather than announcing itself. */
+.spoiler--quiet { border: 0; padding: 0; margin: var(--sp-3) 0 0; max-width: var(--measure); }
+.spoiler--quiet > summary { font-size: var(--fs-xs); }
+.spoiler--quiet[open] > summary { margin-bottom: var(--sp-3); }
+
+/* The buy button belongs under the artwork, not adrift at the foot of the
+   description — the cover is what the eye lands on and what gets clicked. */
+.book-card__cover .btn { display: block; margin-top: var(--sp-4); text-align: center; }
+
+/* A series introduction: the words lead, the photograph sits beside them
+   rather than interrupting the column between the intro and the first book. */
+.series-intro {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 17rem);
+  gap: var(--sp-6);
+  align-items: start;
+  margin: var(--sp-5) 0 var(--sp-6);
+}
+.series-intro .series-photo { margin: 0; max-width: 100%; }
+@media (max-width: 40rem) {
+  .series-intro { grid-template-columns: 1fr; }
+}
+
 
 /* --------------------------------------------------------------------------
    8. SIGN-UP
