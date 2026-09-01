@@ -24,6 +24,15 @@ series:
       - number: One
         title: Hey Buddy, I'm Your Body!
         asin: "0998309826"
+        editions:
+          - lang: Français
+            code: fr
+            title: Eh copain, je suis ton corps !
+            asin: "1945061057"
+          - lang: Deutsch
+            code: de
+            title: Hey Kumpel, ich bin dein Körper!
+            asin: "1945061200"
         cover: /assets/books/hey-buddy-cover.jpg
         cover_alt: Cover of Hey Buddy, I'm Your Body!
         blurb: >-
@@ -61,6 +70,15 @@ series:
       - number: Two
         title: Wait for Me! Would You Mind?
         asin: "1947392085"
+        editions:
+          - lang: Français
+            code: fr
+            title: Attends-moi, esprit vagabond !
+            asin: "1945061073"
+          - lang: Deutsch
+            code: de
+            title: Geistesblitz, warte auf mich!
+            asin: "1945061227"
         cover: /assets/books/wait-for-me-cover.jpg
         cover_alt: Cover of Wait for Me! Would You Mind?
         blurb: >-
@@ -89,6 +107,15 @@ series:
       - number: Three
         title: The Little Souls
         asin: "194739214X"
+        editions:
+          - lang: Français
+            code: fr
+            title: Le voyage des petites Âmes
+            asin: "194506109X"
+          - lang: Deutsch
+            code: de
+            title: Die kleinen Seelen
+            asin: "1945061243"
         cover: /assets/books/little-souls-cover.jpg
         cover_alt: Cover of The Little Souls
         blurb: >-

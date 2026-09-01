@@ -273,6 +273,20 @@
 }
 .book-card__blurb { color: var(--text); }
 
+/* Editions. The same book in three languages is one book, so the language
+   choice sits under the cover as a quiet row of equals - not three separate
+   entries in the list, and not a dropdown. Each link goes to that edition's
+   own Amazon page, where the translated cover and description already live. */
+.editions { margin-top: var(--sp-4); }
+.editions .label { display: block; margin-bottom: var(--sp-2); }
+.editions__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.editions__row .btn { font-size: var(--fs-xs); padding: var(--sp-1) var(--sp-3); }
+
 /* A photograph belonging to a series rather than to one book — the shelf, the
    table at a signing. Deliberately half the width of a hero: it is a snapshot,
    not a statement. */

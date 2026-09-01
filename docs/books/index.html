@@ -90,8 +90,18 @@ permalink: /books/
               <span class="title-cover__status">Book {{ b.number }}</span>
             </div>
           {% endif %}
-          <a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"
-             rel="noopener">Find it on Amazon</a>
+          <div class="editions">
+            <span class="label">Find it on Amazon</span>
+            <p class="editions__row">
+              <a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"
+                 rel="noopener">English</a>
+              {%- for e in b.editions %}
+              <a class="btn btn--quiet" hreflang="{{ e.code }}"
+                 href="https://www.amazon.com/dp/{{ e.asin }}"
+                 title="{{ e.title }}" rel="noopener">{{ e.lang }}</a>
+              {%- endfor %}
+            </p>
+          </div>
         </div>
         <div>
           <span class="label">Book {{ b.number }}</span>
