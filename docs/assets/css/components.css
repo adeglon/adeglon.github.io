@@ -575,10 +575,15 @@ dem-agent {
 .featured {
   display: block;
   width: 100%;
-  max-width: var(--measure-wide);
+  max-width: var(--measure);      /* the text column, not wider than it */
+  aspect-ratio: 3 / 2;            /* every essay opens the same shape, whatever
+                                     proportion the photograph arrived in */
+  object-fit: cover;
+  object-position: 50% 45%;
   height: auto;
-  margin: var(--sp-6) 0 var(--sp-7);
+  margin: var(--sp-5) 0 var(--sp-6);
   border-radius: var(--radius-photo);
+  background: var(--bg-deep);
 }
 
 /* Listing rows become two columns once there is room for a thumbnail. */
@@ -597,6 +602,20 @@ dem-agent {
   background: var(--bg-deep);
 }
 .post-list__thumb:hover { opacity: 0.88; }
+
+.post-list__excerpt { color: var(--text); margin: var(--sp-2) 0 var(--sp-3); }
+
+.read-more {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+}
+.read-more:hover { color: var(--accent-strong); border-bottom-color: currentColor; }
 
 @media (max-width: 34rem) {
   .post-list > li.has-thumb { grid-template-columns: 1fr; gap: var(--sp-3); }
