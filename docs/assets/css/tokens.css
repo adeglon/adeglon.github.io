@@ -187,8 +187,12 @@
   --track-title:  0.10em;
   --track-label:  0.18em;
 
-  --measure:      34rem;   /* ~68 characters at --fs-base. Prose never
-                              exceeds this, on either site.               */
+  --measure:      38rem;   /* ~75 characters at --fs-base - the top of the
+                              comfortable range, widened from 34rem (~67)
+                              at Agnès' request. Do not go past this: beyond
+                              about 75 characters the eye loses the start of
+                              the next line and readers re-read without
+                              noticing. Prose never exceeds it, either site. */
   --measure-wide: 46rem;
 
   /* ------------------------------------------------------------------ */
