@@ -1,0 +1,76 @@
+# Books already in print, as data. The Within Trilogy lives in books.yml;
+# this file is everything published before it.
+#
+# Descriptions are Agnès' own copy, taken from her WordPress pages.
+# Links are plain amazon.com/dp/<ASIN> - the originals went through a
+# tracking redirect that no longer resolves, and carried the affiliate tag
+# agnesdeglon-20. Add the tag back if the Associates account is still active.
+
+series:
+  - name: Kids' Questions About Life
+    slug: kids-questions-about-life
+    kind: A children's series on body, mind and soul
+    intro: >-
+      Each book is a collection of questions and answers — a small encyclopedia
+      for any parent or child who wants to know more about the essentials of
+      life. The concepts are made tangible through a family of bears living
+      their adventures in the great outdoors: as the cubs ask questions, Mommy
+      Bear and Daddy Bear answer with simplicity, honesty and hopeful
+      positivity.
+    languages: English, French and German
+    image: /assets/books/kids-series.jpg
+    image_alt: The Kids' Questions About Life series
+    books:
+      - number: One
+        title: Hey Buddy, I'm Your Body!
+        asin: "0998309826"
+        cover: /assets/books/hey-buddy-cover.jpg
+        cover_alt: Cover of Hey Buddy, I'm Your Body!
+        blurb: >-
+          An early introduction to who we are and how to take care of ourselves.
+          Emphasising that we are part of nature, and made from the same
+          building blocks as everything else in it, helps children understand
+          how to look after their bodies. The body knows how to heal itself,
+          but it needs our help to make wise choices.
+      - number: Two
+        title: Wait for Me! Would You Mind?
+        asin: "1947392085"
+        blurb: >-
+          An early introduction to who we are and how the mind works, with its
+          limitations and its power. The awareness that we perceive the world
+          through limited senses, and that there is more out there than we
+          first think, broadens our horizons and opens us to a greater reality.
+      - number: Three
+        title: The Little Souls
+        asin: "194739214X"
+        blurb: >-
+          An early introduction to who we are and where we come from. The idea
+          that we are all connected — like stars in a galaxy, droplets in an
+          ocean, grains of sand in a desert — helps translate ideas like good
+          and bad, birth and death, and even dreams into something concrete.
+
+standalone:
+  - title: Once You Know
+    subtitle: A Guide To Preserving Your Child's Health
+    slug: once-you-know
+    asin: "1947392603"
+    cover: /assets/books/once-you-know-cover.jpg
+    cover_alt: Cover of Once You Know
+    blurb: >-
+      Today's generation of children is the first in history with a shorter
+      life expectancy than their parents. Only about a quarter of a person's
+      health is down to genetics; the rest is diet, environment and lifestyle —
+      which means a great deal of our children's health lies in our hands.
+    body:
+      - >-
+        This book is an invitation to look harder at the cultural influences on
+        our children's health, a resource for parents who want to take an active
+        role in preserving it, and a guide to the information most of us simply
+        never got.
+      - >-
+        It is not about expensive drugs, supplements or medical intervention. It
+        is about nourishment — not just what a child eats, but the total
+        nutrition of body, mind and soul — and about how much easier preserving
+        health is than curing disease.
+    awards:
+      - Endorsed by Neale Donald Walsch, author of *Conversations with God*
