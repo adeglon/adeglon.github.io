@@ -79,10 +79,17 @@ sections:
     welcome:
       - >-
         Life with family is rarely picture-perfect. It's messy, unpredictable,
-        and often hilarious. Here I share the beauty in imperfect moments:
-        outdoor adventures gone sideways, golden doodle disasters, dinners gone
-        wrong, and the everyday comedy of parenting. Writing about it keeps me
-        sane while raising tiny humans into (hopefully) responsible adults.
+        and often hilarious. Here I share the beauty in imperfect moments, and
+        writing about it keeps me sane while raising tiny humans into
+        (hopefully) responsible adults.
+    # Agnès' own list, rescued from the retired "Welcome to Family
+    # Mis-Adventures!" post. The paragraph above used to repeat it; the
+    # duplicate clause came out when these moved in.
+    bullets:
+      - {name: "Outdoor adventures", text: "Stories from the trails, camping trips, and nature's surprises."}
+      - {name: "Parenting humor", text: "The highs, lows, and hilarious moments of raising kids."}
+      - {name: "Relatable stories", text: "Moments that remind us we're all in this beautifully messy journey together."}
+      - {name: "Pet fiascos", text: "Featuring our golden doodle, whose expertise lies in finding mud and creating chaos."}
 
   - name: "Soul & Self"
     key: "Soul&Self"

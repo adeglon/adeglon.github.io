@@ -507,6 +507,29 @@
 .strand__name a { color: var(--text-strong); text-decoration: none; }
 .strand__name a:hover { color: var(--accent); }
 .strand__body { min-width: 0; }
+/* A short list of what a strand actually contains. Not a feature grid - it is
+   Agnès' own voice, so it stays plain type with the label in the body face. */
+.strand__bullets {
+  list-style: none;
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  max-width: var(--measure);
+}
+.strand__bullets li {
+  padding-left: var(--sp-5);
+  position: relative;
+  margin-bottom: var(--sp-3);
+  color: var(--text);
+}
+.strand__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.6em;
+  width: 0.35rem; height: 0.35rem;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.strand__bullets strong { color: var(--text-strong); font-weight: 500; }
 .strand__intro { color: var(--text); max-width: var(--measure); }
 .strand__foot {
   display: flex; align-items: baseline; flex-wrap: wrap;

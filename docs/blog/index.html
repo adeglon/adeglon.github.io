@@ -56,6 +56,14 @@ permalink: /blog/
     <p class="strand__intro">{{ para }}</p>
     {%- endfor %}
 
+    {%- if s.bullets %}
+    <ul class="strand__bullets">
+      {%- for b in s.bullets %}
+      <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
     <p class="strand__foot">
       <a class="btn btn--quiet"
          href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
