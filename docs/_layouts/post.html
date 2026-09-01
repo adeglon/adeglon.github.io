@@ -36,6 +36,12 @@ layout: default
 
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
+  {%- if page.also_on %}
+  <p class="post-list__meta" style="margin-top:var(--sp-6)">
+    Also published on <a href="{{ page.also_on }}" rel="noopener">Medium</a>.
+  </p>
+  {%- endif %}
+
   {%- comment %}
     Previous / next stay inside the essay's own section. Jekyll's page.previous
     and page.next walk every post on the site, which sent a reader from a
