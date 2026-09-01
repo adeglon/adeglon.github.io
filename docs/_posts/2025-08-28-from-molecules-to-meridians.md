@@ -2,7 +2,7 @@
 layout: post
 title: "From Molecules to Meridians"
 date: 2025-08-28 15:02:05 -0800
-categories: ["Uncategorized"]
+categories: ["Health&Science"]
 permalink: /from-molecules-to-meridians/
 ---
 
