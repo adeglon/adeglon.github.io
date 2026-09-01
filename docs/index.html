@@ -108,17 +108,8 @@ og_image: /assets/hero/hero-daytrail-og-1200.jpg
     <span class="label">From the blog</span>
     <h2 class="taste__title">
       <a href="{{ picked.url | relative_url }}">{{ picked.title }}</a></h2>
-    {%- assign plain = picked.content | strip_html | normalize_whitespace %}
-    {%- assign marked = plain | replace: '. ', '.| ' | replace: '! ', '!| ' | replace: '? ', '?| ' %}
-    {%- assign parts = marked | split: '| ' %}
-    {%- assign built = '' %}
-    {%- for part in parts %}
-      {%- assign candidate = built | append: part | append: ' ' %}
-      {%- if candidate.size > 420 and built != '' %}{% break %}{% endif %}
-      {%- assign built = candidate %}
-    {%- endfor %}
-    {%- if built == '' %}{% assign built = plain %}{% endif %}
-    <p class="taste__text">{{ built | strip }}</p>
+    {% include excerpt.html post=picked limit=420 %}
+    <p class="taste__text">{{ excerpt_text }}</p>
     <p><a class="btn btn--quiet" href="{{ picked.url | relative_url }}">Read the rest</a></p>
   </section>
   {%- endif %}

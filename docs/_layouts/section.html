@@ -52,27 +52,8 @@ layout: default
           {%- endunless %}
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           {%- if post.pinned %}<p class="label">Start here</p>{% endif %}
-          {%- comment %}
-            Whole sentences only. Liquid has no regex, so sentence ends are
-            marked with a pipe, split on it, and re-joined until the next
-            sentence would push past the limit. truncate cut mid-word.
-          {%- endcomment %}
-          {%- comment %}
-            Drawn from the whole post, not post.excerpt. excerpt is only the
-            first paragraph, and several essays open with a single short line,
-            which produced a one-line teaser next to a three-line one.
-          {%- endcomment %}
-          {%- assign plain = post.content | strip_html | normalize_whitespace %}
-          {%- assign marked = plain | replace: '. ', '.| ' | replace: '! ', '!| ' | replace: '? ', '?| ' %}
-          {%- assign parts = marked | split: '| ' %}
-          {%- assign built = '' %}
-          {%- for part in parts %}
-            {%- assign candidate = built | append: part | append: ' ' %}
-            {%- if candidate.size > 300 and built != '' %}{% break %}{% endif %}
-            {%- assign built = candidate %}
-          {%- endfor %}
-          {%- if built == '' %}{% assign built = plain %}{% endif %}
-          <p class="post-list__excerpt">{{ built | strip }}</p>
+          {% include excerpt.html post=post limit=300 %}
+          <p class="post-list__excerpt">{{ excerpt_text }}</p>
           <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
         </div>
       </li>

@@ -1,0 +1,42 @@
+{%- comment %}
+  Sets `excerpt_text`: the opening PROSE of a post, cut at a sentence end.
+
+    {% include excerpt.html post=post limit=300 %}
+    {{ excerpt_text }}
+
+  Why it walks paragraphs rather than stripping the whole post: strip_html on
+  the raw content pulls headings in too, so an essay that opens with a
+  subtitle produced "A Family Misadventure How It All Started It all started
+  with a $50 tryout..." - two headings and a sentence run together. Only <p>
+  content is prose. Short paragraphs (a one-line opener, a caption) are
+  skipped so the teaser is not a fragment.
+
+  Jekyll includes share the page's variable scope, which is how the value
+  comes back out.
+{%- endcomment %}
+{%- assign _limit = include.limit | default: 300 %}
+{%- assign _chunks = include.post.content | split: '<p>' %}
+{%- assign _body = '' %}
+{%- for _chunk in _chunks %}
+  {%- assign _para = _chunk | split: '</p>' | first | strip_html | normalize_whitespace | strip %}
+  {%- if _para.size > 60 %}
+    {%- assign _body = _body | append: _para | append: ' ' %}
+  {%- endif %}
+  {%- if _body.size > _limit %}{% break %}{% endif %}
+{%- endfor %}
+{%- if _body == '' %}
+  {%- assign _body = include.post.content | strip_html | normalize_whitespace %}
+{%- endif %}
+{%- comment %} Whole sentences only. Liquid has no regex, so sentence ends are
+  marked with a pipe, split on it, and re-joined until the next sentence would
+  push past the limit. truncate cuts mid-word. {%- endcomment %}
+{%- assign _marked = _body | replace: '. ', '.| ' | replace: '! ', '!| ' | replace: '? ', '?| ' %}
+{%- assign _parts = _marked | split: '| ' %}
+{%- assign _built = '' %}
+{%- for _part in _parts %}
+  {%- assign _candidate = _built | append: _part | append: ' ' %}
+  {%- if _candidate.size > _limit and _built != '' %}{% break %}{% endif %}
+  {%- assign _built = _candidate %}
+{%- endfor %}
+{%- if _built == '' %}{% assign _built = _body %}{% endif %}
+{%- assign excerpt_text = _built | strip %}
