@@ -76,6 +76,9 @@ permalink: /books/
           </h3>
           <p class="status status--{{ book.status }}">{{ book.status_label }}</p>
           <p class="book-card__blurb">{{ book.blurb }}</p>
+          {%- for para in book.blurb_rest %}
+          <p class="book-card__blurb">{{ para }}</p>
+          {%- endfor %}
         </div>
       </article>
     {% endfor %}

@@ -489,12 +489,16 @@
 
 .strand {
   display: grid;
-  grid-template-columns: minmax(0, 18rem) 1fr;
-  gap: var(--sp-6);
+  grid-template-columns: minmax(0, 22rem) 1fr;
+  gap: var(--sp-7);
   align-items: start;
   border-top: 1px solid var(--rule-quiet);
   padding-block: var(--sp-7);
-  max-width: var(--measure-wide);
+  /* No max-width. This block was capped at --measure-wide, which is a MEASURE
+     for a single column of prose - put a 18rem photograph beside it and the
+     text was squeezed into a ribbon. The photograph and the text each get
+     their own width instead: the picture a real size, the paragraphs the
+     reading measure they need, and the page carries both. */
 }
 /* A photograph of Agnès' own, one per strand - the picture says what the
    category is faster than the paragraph does. Fixed 4:3 so three unequal

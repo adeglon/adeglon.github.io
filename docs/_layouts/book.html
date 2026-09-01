@@ -35,16 +35,13 @@ layout: default
       <p class="book-card__blurb">{{ book.blurb }}</p>
 
       {% comment %}
-        The approved blurb gives away where Book One leaves Arielle, so it sits
-        behind a disclosure the reader opens deliberately. <details> needs no
-        JavaScript and announces its own state.
+        The rest of the back-cover copy, in the open. It used to sit behind a
+        spoiler disclosure because it gives away where The Chaos Within leaves
+        Arielle — but Canyon is published first, so there is no earlier book a
+        reader could have had spoiled.
       {% endcomment %}
-      {% if book.blurb_full %}
-        <details class="spoiler">
-          <summary>Read the full description
-            <span class="visually-hidden">(contains details about the end of the previous book)</span></summary>
-          {% for para in book.blurb_full %}<p>{{ para }}</p>{% endfor %}
-        </details>
+      {% if book.blurb_rest %}
+        {% for para in book.blurb_rest %}<p class="book-card__blurb">{{ para }}</p>{% endfor %}
       {% endif %}
 
       <p><em>{{ book.line }}</em></p>

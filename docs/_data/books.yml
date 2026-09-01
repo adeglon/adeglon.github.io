@@ -48,19 +48,21 @@
     Cover of The Canyon Within: sunrise over the Grand Canyon, the title in
     white capitals across the sky.
   line: A novel of midlife awakening in the Grand Canyon.
-  # Spoiler-safe. Shown in the open. Says nothing about how Book One ends.
+  # THE APPROVED BACK-COVER COPY, verbatim, and nothing else. The site used to
+  # open with a written-for-the-web line ("Twenty years after The Chaos
+  # Within...") which Agnès says is not accurate; it is gone.
+  #
+  # It also used to sit behind a spoiler disclosure, because this copy gives
+  # away where The Chaos Within leaves Arielle. That reasoning expired when
+  # the publication order was settled: Canyon comes out FIRST, so there is
+  # nothing here a reader could have spoiled for them.
   blurb: >-
-    Twenty years after <em>The Chaos Within</em>, the house has gone quiet. At
-    fifty-two, Arielle walks to the rim of the Grand Canyon and starts down.
-  # The approved back-cover copy, verbatim from tcw.en.yml. Behind the spoiler
-  # disclosure, because it gives away where Book One leaves her.
-  blurb_full:
-    - >-
-      At fifty-two, Arielle has spent decades being everything to everyone. Now
-      perimenopause is reshaping her body in ways no one warned her about, her
-      sons have left home, and the marriage that once held her feels carefully
-      managed rather than loved. The silence inside her grows deeper than the
-      one around her.
+    At fifty-two, Arielle has spent decades being everything to everyone. Now
+    perimenopause is reshaping her body in ways no one warned her about, her
+    sons have left home, and the marriage that once held her feels carefully
+    managed rather than loved. The silence inside her grows deeper than the
+    one around her.
+  blurb_rest:
     - >-
       She descends into the Grand Canyon hoping to find the woman she used to
       be. What she finds is a stranger on the trail, an ancient way of seeing
