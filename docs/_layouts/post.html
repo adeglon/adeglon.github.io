@@ -86,6 +86,8 @@ layout: default
           {%- if p.image %}
           <img class="latest__thumb" src="{{ p.image | relative_url }}" alt=""
                loading="lazy" decoding="async">
+          {%- else %}
+          <span class="latest__thumb latest__thumb--none" aria-hidden="true"></span>
           {%- endif %}
           <p class="latest__title">{{ p.title }}</p>
           <p class="latest__meta">

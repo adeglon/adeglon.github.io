@@ -129,6 +129,8 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
         {%- if post.image %}
         <img class="latest__thumb" src="{{ post.image | relative_url }}" alt=""
              loading="lazy" decoding="async">
+        {%- else %}
+        <span class="latest__thumb latest__thumb--none" aria-hidden="true"></span>
         {%- endif %}
         {%- assign cat = post.categories | first %}
         {%- for sec in site.sections %}{% if sec.key == cat %}
