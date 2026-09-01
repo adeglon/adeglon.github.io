@@ -214,9 +214,16 @@
 .hero.hero--wash .hero__scrim { background: var(--wash-foot), var(--wash-copy); }
 .hero--wash .hero__media { filter: saturate(0.9); }
 .hero--wash .hero__title,
-.hero--wash .wordmark { color: var(--text-strong); text-shadow: none; }
+.hero--wash .wordmark { color: var(--text-strong); }
 .hero--wash .hero__tagline { color: var(--text); text-shadow: none; }
-.hero--wash .site-nav a { color: var(--text); text-shadow: none; }
+/* The navbar sits on the clear side of the wash, over snow and sky. Dark ink
+   there needs the same help white ink needed over the sunset - a halo, only
+   in the page's cream rather than in night blue. */
+.hero--wash .site-nav a,
+.hero--wash .wordmark {
+  text-shadow: 0 1px 3px rgba(251, 248, 242, 0.95), 0 0 12px rgba(251, 248, 242, 0.8);
+}
+.hero--wash .site-nav a { color: var(--text); }
 .hero--wash .site-nav a:hover,
 .hero--wash .site-nav a[aria-current="page"] {
   color: var(--accent);
