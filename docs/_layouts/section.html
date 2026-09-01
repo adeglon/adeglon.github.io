@@ -9,6 +9,8 @@ layout: default
   {% if page.blurb %}<p class="standfirst">{{ page.blurb }}</p>{% endif %}
   {% include ornament.html modifier="ornament--short" %}
 
+  {% include strand-strip.html current=page.category %}
+
   <ul class="post-list">
     {%- for post in site.posts %}
       {%- if page.category == nil or post.categories contains page.category %}

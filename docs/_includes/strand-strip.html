@@ -1,0 +1,23 @@
+{% comment %}
+  The three blog strands, side by side, with the current one marked.
+
+  This is the answer to "how do I get from a Misadventures piece to Soul &
+  Self without going back to /blog/". It is the same component as the
+  trilogy's reading-order strip, and it works on a phone, needs no
+  JavaScript, and cannot trap a keyboard - none of which is true of a
+  hover menu.
+
+  Set `current` to a section key:
+      {% include strand-strip.html current=page.category %}
+{% endcomment %}
+<nav class="strand-strip" aria-label="Blog categories">
+  <ol>
+    {%- for s in site.sections %}
+      {%- if s.key == include.current %}
+      <li aria-current="page">{{ s.name }}</li>
+      {%- else %}
+      <li><a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a></li>
+      {%- endif %}
+    {%- endfor %}
+  </ol>
+</nav>
