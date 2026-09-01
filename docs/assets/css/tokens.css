@@ -121,20 +121,26 @@
      wash. Here the picture is already low-contrast, so the type needs a
      fraction of the help, and everything below the horizon must stay clear.
      Same hue, roughly half the weight, gone by the horizon line. */
-  --scrim-copy-soft: linear-gradient(to right,
-                      rgba(14, 26, 43, 0.62) 0%,
-                      rgba(14, 26, 43, 0.44) 30%,
-                      rgba(14, 26, 43, 0.16) 58%,
+  /* A LEFT-TO-RIGHT wash is wrong for this frame. The canyon photograph keeps
+     its subject on the right, so washing the left costs nothing. Here the
+     trail is at the BOTTOM LEFT - exactly under the type - and a side wash
+     hides the only thing worth showing. It was tried; the hero read as an
+     empty grey gradient.
+
+     So: a vertical ramp instead. The sky is the emptiest third of this frame
+     and the type sits in it; everything below the ridge line stays clear. */
+  --scrim-sky:      linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.72) 0%,
+                      rgba(14, 26, 43, 0.52) 26%,
+                      rgba(14, 26, 43, 0.22) 48%,
+                      rgba(14, 26, 43, 0.00) 68%);
+  /* Narrow screens use the tall crop, where the sky is proportionally taller
+     and the type runs full width - the ramp simply reaches further down. */
+  --scrim-sky-narrow: linear-gradient(to bottom,
+                      rgba(14, 26, 43, 0.74) 0%,
+                      rgba(14, 26, 43, 0.58) 34%,
+                      rgba(14, 26, 43, 0.26) 58%,
                       rgba(14, 26, 43, 0.00) 78%);
-  --scrim-top-soft:  linear-gradient(to bottom,
-                      rgba(14, 26, 43, 0.40) 0%,
-                      rgba(14, 26, 43, 0.16) 26%,
-                      rgba(14, 26, 43, 0.00) 44%);
-  --scrim-copy-soft-narrow: linear-gradient(to bottom,
-                      rgba(14, 26, 43, 0.62) 0%,
-                      rgba(14, 26, 43, 0.46) 40%,
-                      rgba(14, 26, 43, 0.18) 66%,
-                      rgba(14, 26, 43, 0.00) 88%);
 
   /* Only for a hero whose type sits at the FOOT. Applying both scrims at
      once leaves a ~8% band of un-washed photograph in the middle and the

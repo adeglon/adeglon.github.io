@@ -161,14 +161,12 @@
 /* 4:3 frame in a wide band: crop pinned just below centre, so there is sky
    for the title above and trail and horizon below. Swap the picture at the
    cover reveal and this line is what needs revisiting. */
-.hero__media--trail { object-position: 50% 52%; }
+.hero__media--trail { object-position: 50% 64%; }
 
-.hero--trail { min-height: min(76svh, 40rem); }
-.hero--trail .hero__scrim {
-  background: var(--scrim-copy-soft), var(--scrim-top-soft);
-}
+.hero--trail { min-height: min(84svh, 44rem); }
+.hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {
-  .hero--trail .hero__scrim { background: var(--scrim-copy-soft-narrow); }
+  .hero--trail .hero__scrim { background: var(--scrim-sky-narrow); }
 }
 /* A whole sentence, not a two-word book title - it needs a smaller ceiling
    and a measure, or it fills the frame and the photograph is decoration. */
