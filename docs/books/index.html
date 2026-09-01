@@ -21,9 +21,6 @@ permalink: /books/
         <p class="label">The books</p>
         <h1 class="hero__title">Books</h1>
         {% include ornament.html modifier="ornament--short" %}
-        <p class="hero__sub">A trilogy in progress, a children's series on body,
-          mind and soul, and a guide for parents — written across three languages
-          and two lifetimes' worth of questions.</p>
       </div>
     </div>
   </div>
@@ -35,8 +32,8 @@ permalink: /books/
   <section class="page section" id="within">
     <span class="label">Fiction — in progress</span>
     <h2 style="margin-top:var(--sp-2)">The Within Trilogy</h2>
-    <p class="standfirst">One woman, Arielle, across three books and twenty
-      years. Written to be read in order, though each stands alone.</p>
+    <p class="standfirst">One woman, Arielle, across three books and different
+      phases of life. Each stands alone.</p>
 
     {% include series-strip.html %}
 
@@ -76,16 +73,8 @@ permalink: /books/
     <h2 style="margin-top:var(--sp-2)">{{ s.name }}</h2>
     <p class="standfirst">{{ s.kind }}</p>
 
-    <div class="series-intro">
-      <div>
-        <p>{{ s.intro }}</p>
-        <p class="post-list__meta">Available in {{ s.languages }}</p>
-      </div>
-      {%- if s.image %}
-      <img class="series-photo" src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-           loading="lazy" decoding="async">
-      {%- endif %}
-    </div>
+    <p>{{ s.intro }}</p>
+    <p class="post-list__meta">Available in {{ s.languages }}</p>
 
     {% for b in s.books %}
       <article class="book-card">
@@ -155,28 +144,6 @@ permalink: /books/
     </article>
   </section>
   {% endfor %}
-
-  <!-- ── The author ─────────────────────────────────────────────────── -->
-  <section class="page section" id="author">
-    <div class="author-grid">
-      <img src="{{ '/assets/author/agnes-400.jpg' | relative_url }}"
-           srcset="{{ '/assets/author/agnes-240.jpg' | relative_url }} 240w,
-                   {{ '/assets/author/agnes-400.jpg' | relative_url }} 400w,
-                   {{ '/assets/author/agnes-600.jpg' | relative_url }} 600w"
-           sizes="14rem" width="400" height="400" loading="lazy"
-           style="border-radius:var(--radius-photo)"
-           alt="{{ site.author }}">
-      <div>
-        <span class="label">The author</span>
-        <h2 style="margin-top:0">{{ site.author }}</h2>
-        <p class="standfirst" style="margin-top:0">The novelist who brings ancient wisdom
-          and modern science into conversation through story.</p>
-        <p>A Swiss-American writer trained in biochemistry and Traditional Chinese
-          Medicine, writing for children, for parents, and now in fiction.</p>
-        <p><a href="{{ '/' | relative_url }}">Her essays and notes from the trail &rarr;</a></p>
-      </div>
-    </div>
-  </section>
 
 </main>
 
