@@ -184,7 +184,7 @@
    A new photograph gets a NEW FILENAME. Reusing one leaves every reader who
    has already visited looking at the old picture out of their browser cache,
    which is exactly what happened the first time this was swapped. */
-.hero__media--trail { object-position: 50% 46%; }
+.hero__media--trail { object-position: 50% 72%; }
 
 /* Sized by Agnès: the title at this scale is the point of the page, and she
    would rather it be read than fitted. The hero therefore keeps a minimum
