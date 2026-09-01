@@ -129,6 +129,19 @@
 
      So: a vertical ramp instead. The sky is the emptiest third of this frame
      and the type sits in it; everything below the ridge line stays clear. */
+  /* A WASH, not a scrim. The daylight trail photograph is busy corner to
+     corner - grass, rock, snow, sky - with no empty quarter for white type to
+     sit in, so darkening it only made a muddy picture and hard type. This
+     goes the other way: it lays the page's own cream over the photograph so
+     the picture becomes a background, and the type reverts to ordinary ink.
+     The last stop is opaque, so the hero dissolves into the page instead of
+     ending at a line. Values are the shell, #FBF8F2. */
+  --wash-shell:     linear-gradient(to bottom,
+                      rgba(251, 248, 242, 0.62) 0%,
+                      rgba(251, 248, 242, 0.70) 45%,
+                      rgba(251, 248, 242, 0.86) 78%,
+                      rgba(251, 248, 242, 1.00) 100%);
+
   --scrim-sky:      linear-gradient(to bottom,
                       rgba(14, 26, 43, 0.58) 0%,
                       rgba(14, 26, 43, 0.38) 24%,
