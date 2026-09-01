@@ -96,53 +96,45 @@ og_image: /assets/hero/hero-sunset-dog-og-1200.jpg
     blog categories are one level down and live on /blog/, named here only as
     a hint of what is behind the door.
   {%- endcomment %}
-  <ul class="doors">
+  <ul class="doors doors--deep">
     <li>
       <a class="door" href="{{ '/blog/' | relative_url }}">
         <span class="door__name">Blog</span>
         <p class="door__blurb">
           {%- for s in site.sections %}{{ s.name }}{% unless forloop.last %} · {% endunless %}{% endfor %} —
           essays, reflections, and the family stories that got out of hand.</p>
+        <span class="door__go">All three strands</span>
       </a>
+      {%- comment %}
+        The three newest essays, under the door they belong behind. This is the
+        only part of the landing page that changes on its own: publish, and it
+        appears here.
+      {%- endcomment %}
+      <ul class="door__list">
+        {%- for post in site.posts limit: 3 %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}
+            <span class="door__date">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            </span></a>
+        </li>
+        {%- endfor %}
+      </ul>
     </li>
+
     <li>
       <a class="door door--books" href="{{ '/books/' | relative_url }}">
         <span class="door__name">Books</span>
-        <p class="door__blurb">The Within Trilogy, the children's series Kids'
-          Questions About Life, and Once You Know.</p>
+        <p class="door__blurb">A trilogy in progress, a children's series in
+          three languages, and a guide for parents.</p>
+        <span class="door__go">All the books</span>
       </a>
+      <ul class="door__list">
+        <li><a href="{{ '/books/#within' | relative_url }}">The Within Trilogy</a></li>
+        <li><a href="{{ '/books/#kids-questions-about-life' | relative_url }}">Kids' Questions About Life</a></li>
+        <li><a href="{{ '/books/#once-you-know' | relative_url }}">Once You Know</a></li>
+      </ul>
     </li>
-  </ul>
-
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-  {%- comment %}
-    The one part of this page that changes on its own. The hero is fixed - a
-    reader who came last month sees the same photograph - so without this
-    there is nothing to say the site is still being written.
-  {%- endcomment %}
-  <h2 style="margin-top:var(--sp-7)">Lately</h2>
-  <ul class="latest">
-    {%- for post in site.posts limit: 3 %}
-    <li>
-      <a class="latest__link" href="{{ post.url | relative_url }}">
-        {%- if post.image %}
-        <img class="latest__thumb" src="{{ post.image | relative_url }}" alt=""
-             loading="lazy" decoding="async">
-        {%- else %}
-        <span class="latest__thumb latest__thumb--none" aria-hidden="true"></span>
-        {%- endif %}
-        {%- assign cat = post.categories | first %}
-        {%- for sec in site.sections %}{% if sec.key == cat %}
-        <span class="label">{{ sec.name }}</span>
-        {%- endif %}{% endfor %}
-        <p class="latest__title">{{ post.title }}</p>
-        <p class="latest__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        </p>
-      </a>
-    </li>
-    {%- endfor %}
   </ul>
 
   {% include ornament.html modifier="ornament--center ornament--short" %}

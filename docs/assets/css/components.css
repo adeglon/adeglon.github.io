@@ -1021,11 +1021,56 @@ dem-agent {
 .door:hover { background: var(--bg-deep); transform: translateY(-2px); color: var(--text); }
 .door__name {
   font-family: var(--font-display);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);          /* a door should read as a destination,
+                                       not as a caption */
   line-height: var(--lh-snug);
   color: var(--text-strong);
   display: block;
   margin-bottom: var(--sp-2);
 }
-.door__blurb { font-size: var(--fs-sm); color: var(--text-soft); margin: 0; }
+.door__blurb { font-size: var(--fs-md); color: var(--text); margin: 0; }
 .door--books { border-color: var(--accent); }
+
+/* An arrow costs nothing and says "this goes somewhere" without a word. It
+   slides on hover, which is the only motion on the page. */
+.door__go {
+  display: inline-block;
+  margin-top: var(--sp-4);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--accent);
+}
+.door:hover .door__go { color: var(--accent-strong); }
+.door__go::after {
+  content: " \2192";
+  display: inline-block;
+  transition: transform var(--dur) var(--ease);
+}
+.door:hover .door__go::after { transform: translateX(0.25em); }
+
+/* What is actually behind each door, listed under it: the three newest
+   essays, the three families of books. A reader who knows what they want
+   goes straight there; a reader who does not sees at a glance what kind of
+   place this is. The door itself stays the target for everyone else. */
+.door__list {
+  list-style: none;
+  margin: var(--sp-4) 0 0;
+  padding: 0 var(--sp-5);
+}
+.door__list li + li { margin-top: var(--sp-3); padding-top: var(--sp-3);
+                      border-top: 1px solid var(--rule-quiet); }
+.door__list a {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  color: var(--text);
+  display: block;
+}
+.door__list a:hover { color: var(--accent-strong); }
+.door__date { display: block; font-size: var(--fs-xs); color: var(--text-soft);
+              font-family: var(--font-body); margin-top: var(--sp-1); }
+
+/* Two deep columns, not a row of small cards. */
+.doors--deep { grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+.doors--deep > li { display: flex; flex-direction: column; }
