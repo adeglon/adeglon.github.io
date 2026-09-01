@@ -103,6 +103,13 @@ permalink: /books/
           <span class="label">Book {{ b.number }}</span>
           <h3 class="book-card__title">{{ b.title }}</h3>
           <p class="book-card__blurb">{{ b.blurb }}</p>
+          {% for para in b.body %}<p>{{ para }}</p>{% endfor %}
+          {%- if b.questions %}
+          <details class="spoiler">
+            <summary>The questions this book answers</summary>
+            <ul>{% for q in b.questions %}<li>{{ q }}</li>{% endfor %}</ul>
+          </details>
+          {%- endif %}
           <p><a class="btn btn--quiet" href="https://www.amazon.com/dp/{{ b.asin }}"
                 rel="noopener">Find it on Amazon</a></p>
         </div>

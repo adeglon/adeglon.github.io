@@ -27,27 +27,63 @@ series:
         cover: /assets/books/hey-buddy-cover.jpg
         cover_alt: Cover of Hey Buddy, I'm Your Body!
         blurb: >-
-          An early introduction to who we are and how to take care of ourselves.
-          Emphasising that we are part of nature, and made from the same
-          building blocks as everything else in it, helps children understand
-          how to look after their bodies. The body knows how to heal itself,
-          but it needs our help to make wise choices.
+          The first installment of the series. An educational book written in
+          simple language for parents, teachers and kids who are pondering the
+          deeper, more complex, yet so essential issues of life — an early
+          introduction to who we are and how to take care of ourselves.
+        body:
+          - >-
+            Explaining the complexity of the human being in general — in this
+            book, the human body more specifically — is not an easy but a very
+            important task for parents. These concepts are made more tangible
+            and easily understandable through a family of bears. As the bear
+            cubs ask questions about their bodies, Mommy Bear and Daddy Bear
+            seek to answer their little ones with simplicity and honesty.
+          - >-
+            Emphasizing that we are part of nature and made from the same
+            building blocks as everything else in nature helps children
+            understand how to take care of their body. The body knows how to
+            heal itself, but it needs our help to make informed and wise
+            choices for a healthy and happy lifestyle.
+        questions:
+          - How do we make babies?
+          - We are a bunch of cells? What are cells?
+          - What do I feed my cells?
+          - Why do we need to eat animals?
+          - Why do I have to pee?
+          - Why do we have to sleep?
+          - Why do we get sick?
+          - What are germs?
+          - How can I fight the germs?
+          - Why do some kids get more sick than others?
+          - Why can't my friend eat nuts?
+          - Why are junk foods even sold?
       - number: Two
         title: Wait for Me! Would You Mind?
         asin: "1947392085"
+        cover_alt: Cover of Wait for Me! Would You Mind?
         blurb: >-
-          An early introduction to who we are and how the mind works, with its
-          limitations and its power. The awareness that we perceive the world
-          through limited senses, and that there is more out there than we
-          first think, broadens our horizons and opens us to a greater reality.
+          The second installment. An early introduction to who we are and how
+          the mind works, with its limitations and its power.
+        body:
+          - >-
+            The awareness that we perceive the world through our limited senses,
+            and that there is more out there than what we initially think, helps
+            broaden our horizons and open us up to a greater reality.
       - number: Three
         title: The Little Souls
         asin: "194739214X"
+        cover: /assets/books/little-souls-cover.jpg
+        cover_alt: Cover of The Little Souls
         blurb: >-
-          An early introduction to who we are and where we come from. The idea
-          that we are all connected — like stars in a galaxy, droplets in an
-          ocean, grains of sand in a desert — helps translate ideas like good
-          and bad, birth and death, and even dreams into something concrete.
+          The third installment. An early introduction to who we are and where
+          we come from.
+        body:
+          - >-
+            The idea that we are all connected to one another — like many stars
+            in a galaxy, many droplets of water in an ocean, or many grains of
+            sand in a desert — helps translate concepts like good and bad, birth
+            and death, and even dreams into something more concrete.
 
 standalone:
   - title: Once You Know
