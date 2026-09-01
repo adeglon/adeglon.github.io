@@ -16,9 +16,11 @@ permalink: /books/
   {% endcomment %}
   <div class="hero__body">
     <div class="page">
-      {% include nav.html %}
+      <div class="site-header__inner">
+        <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        {% include nav.html %}
+      </div>
       <div style="margin-top:var(--sp-8)">
-        <p class="label">The books</p>
         <h1 class="hero__title">Books</h1>
         {% include ornament.html modifier="ornament--short" %}
       </div>
@@ -30,8 +32,11 @@ permalink: /books/
 
   <!-- ── The Within Trilogy ─────────────────────────────────────────── -->
   <section class="page section" id="within">
-    <span class="label">Fiction — in progress</span>
-    <h2 style="margin-top:var(--sp-2)">The Within Trilogy</h2>
+    <span class="label">Fiction</span>
+    <p class="credo">A novelist who brings ancient wisdom and modern technology
+      into conversation through story.</p>
+
+    <h2 style="margin-top:var(--sp-7)">The Within Trilogy</h2>
     <p class="standfirst">One woman, Arielle, across three books and different
       phases of life. Each stands alone.</p>
 

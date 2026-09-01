@@ -86,6 +86,9 @@
   letter-spacing: var(--track-title);
   color: var(--text-strong);
 }
+/* The wordmark inside a hero sits on the night ground, not on the page
+   ground, so it cannot take --text-strong from the ambient theme. */
+.wordmark--onDark { color: var(--c-paper); }
 
 .site-nav ul {
   display: flex; flex-wrap: wrap;
@@ -272,6 +275,20 @@
   margin: 0 0 var(--sp-2);
 }
 .book-card__blurb { color: var(--text); }
+
+/* An author statement rather than a description of one book - it stands
+   above the shelf and stays true as the shelf grows. Display italic, wide
+   measure, no quotation marks: it is a claim, not a pull-quote. */
+.credo {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-tight);
+  color: var(--text-strong);
+  max-width: 34rem;
+  margin: var(--sp-3) 0 0;
+}
 
 /* Editions. The same book in three languages is one book, so the language
    choice sits under the cover as a quiet row of equals - not three separate
