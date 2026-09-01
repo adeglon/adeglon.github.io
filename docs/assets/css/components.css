@@ -561,3 +561,76 @@ dem-agent {
   color: var(--c-bone);
   opacity: 0.7;
 }
+
+
+/* --------------------------------------------------------------------------
+   15. FEATURED IMAGE — the picture that belongs to an essay
+   --------------------------------------------------------------------------
+   WordPress calls it a "featured image": one photograph per post, shown at the
+   head of the piece and as a thumbnail in any listing. The blog had one for 28
+   of 29 essays and they carry a lot of the warmth, so the list is not allowed
+   to become a wall of text again.
+   -------------------------------------------------------------------------- */
+
+.featured {
+  display: block;
+  width: 100%;
+  max-width: var(--measure-wide);
+  height: auto;
+  margin: var(--sp-6) 0 var(--sp-7);
+  border-radius: var(--radius-photo);
+}
+
+/* Listing rows become two columns once there is room for a thumbnail. */
+.post-list > li.has-thumb {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: var(--sp-5);
+  align-items: start;
+}
+.post-list__thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+  background: var(--bg-deep);
+}
+.post-list__thumb:hover { opacity: 0.88; }
+
+@media (max-width: 34rem) {
+  .post-list > li.has-thumb { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .post-list__thumb { aspect-ratio: 16 / 9; }
+}
+
+/* --------------------------------------------------------------------------
+   16. DOOR — the big category choices on the landing page
+   -------------------------------------------------------------------------- */
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--sp-5);
+  margin: var(--sp-7) 0;
+  padding: 0;
+  list-style: none;
+}
+.door {
+  display: block;
+  padding: var(--sp-5);
+  border: 1px solid var(--rule);
+  color: var(--text);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.door:hover { background: var(--bg-deep); transform: translateY(-2px); color: var(--text); }
+.door__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  display: block;
+  margin-bottom: var(--sp-2);
+}
+.door__blurb { font-size: var(--fs-sm); color: var(--text-soft); margin: 0; }
+.door--books { border-color: var(--accent); }

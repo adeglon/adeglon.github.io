@@ -4,6 +4,7 @@ title: "Connecting Heaven and Earth: A Transformative Meditation Practice"
 date: 2025-08-26 16:18:47 -0800
 categories: ["Soul&Self"]
 permalink: /connecting-heaven-and-earth-a-transformative-meditation-practice/
+image: /assets/images/featured-connecting-heaven-and-earth-a-transformative-meditation-practice.jpg
 ---
 
 ## Discover how meditation aligns you with the energies of Earth and heaven for balance and clarity

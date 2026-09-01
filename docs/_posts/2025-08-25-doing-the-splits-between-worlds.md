@@ -4,6 +4,7 @@ title: "Doing the Splits Between Worlds"
 date: 2025-08-25 14:40:21 -0800
 categories: ["Misadventures"]
 permalink: /doing-the-splits-between-worlds/
+image: /assets/images/featured-doing-the-splits-between-worlds.jpg
 ---
 
 ## Caught Between Cultures and Generations and Always Out of Sync

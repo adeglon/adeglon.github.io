@@ -4,6 +4,7 @@ title: "Low Back Pain: A Modern Epidemic with Ancient Solutions"
 date: 2025-08-15 22:41:37 -0800
 categories: ["Health&Science"]
 permalink: /low-back-pain-a-modern-epidemic-with-ancient-solutions/
+image: /assets/images/featured-low-back-pain-a-modern-epidemic-with-ancient-solutions.jpg
 ---
 
 My journey with low back pain started just like it has for so many others. It came out of nowhere, and suddenly I was living with an ache that wouldn’t go away. Painkillers only masked it, and nothing seemed to bring lasting relief.

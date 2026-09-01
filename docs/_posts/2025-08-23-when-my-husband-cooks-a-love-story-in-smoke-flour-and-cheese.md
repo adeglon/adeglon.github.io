@@ -4,6 +4,7 @@ title: "When My Husband Cooks: A Love Story in Smoke, Flour, and Cheese"
 date: 2025-08-23 22:14:07 -0800
 categories: ["Misadventures"]
 permalink: /when-my-husband-cooks-a-love-story-in-smoke-flour-and-cheese/
+image: /assets/images/featured-when-my-husband-cooks-a-love-story-in-smoke-flour-and-cheese.jpg
 ---
 
 ### The Chaos of Love in the Kitchen

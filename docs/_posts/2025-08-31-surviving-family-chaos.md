@@ -4,6 +4,7 @@ title: "Surviving Family Chaos"
 date: 2025-08-31 20:17:24 -0800
 categories: ["Misadventures"]
 permalink: /surviving-family-chaos/
+image: /assets/images/featured-surviving-family-chaos.jpg
 ---
 
 Finding the funny in family life, just to keep me sane\!

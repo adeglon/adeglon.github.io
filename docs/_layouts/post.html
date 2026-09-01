@@ -18,6 +18,11 @@ layout: default
       {% include ornament.html modifier="ornament--short" %}
     </header>
 
+    {%- if page.image %}
+    <img class="featured" src="{{ page.image | relative_url }}" alt=""
+         loading="eager" decoding="async">
+    {%- endif %}
+
     <div class="prose">
       {{ content }}
     </div>

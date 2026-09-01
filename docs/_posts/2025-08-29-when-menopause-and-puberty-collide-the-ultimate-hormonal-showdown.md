@@ -4,6 +4,7 @@ title: "When Menopause and Puberty Collide: The Ultimate Hormonal Showdown"
 date: 2025-08-29 20:19:26 -0800
 categories: ["Misadventures"]
 permalink: /when-menopause-and-puberty-collide-the-ultimate-hormonal-showdown/
+image: /assets/images/featured-when-menopause-and-puberty-collide-the-ultimate-hormonal-showdown.jpg
 ---
 
 If you ever find yourself in a house where puberty and menopause are happening at the same time, good luck\! Buckle up\! It’s a wild ride.

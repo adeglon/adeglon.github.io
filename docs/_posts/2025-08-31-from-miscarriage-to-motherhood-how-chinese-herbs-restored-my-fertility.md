@@ -4,6 +4,7 @@ title: "From Miscarriage to Motherhood: How Chinese Herbs Restored My Fertility"
 date: 2025-08-31 20:57:12 -0800
 categories: ["Health&Science"]
 permalink: /from-miscarriage-to-motherhood-how-chinese-herbs-restored-my-fertility/
+image: /assets/images/featured-from-miscarriage-to-motherhood-how-chinese-herbs-restored-my-fertility.jpg
 ---
 
 At 35, I was thrilled to learn I was pregnant after years of irregular cycles and debilitating PMS. But after a heartbreaking miscarriage, I was left wondering if my body could ever handle a pregnancy — until I discovered a path that changed everything.

@@ -4,6 +4,7 @@ title: "Hiking Adventures of a White Dog: A Comedy in Dirt and Drama"
 date: 2025-08-25 12:47:45 -0800
 categories: ["Misadventures", "Uncategorized"]
 permalink: /hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama/
+image: /assets/images/featured-hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama.jpg
 ---
 
 ## What you need to know about hiking and backpacking with a dog, a white dog\!

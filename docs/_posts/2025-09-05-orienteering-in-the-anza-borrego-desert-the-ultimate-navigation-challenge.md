@@ -4,6 +4,7 @@ title: "Orienteering in the Anza Borrego Desert: The Ultimate Navigation Challen
 date: 2025-09-05 14:19:59 -0800
 categories: ["Misadventures"]
 permalink: /orienteering-in-the-anza-borrego-desert-the-ultimate-navigation-challenge/
+image: /assets/images/featured-orienteering-in-the-anza-borrego-desert-the-ultimate-navigation-challenge.jpg
 ---
 
 ## A Race Through Open Terrain and Slot Canyons[](https://medium.com/@agnes.deglon?source=post_page---byline--a348ec6f99b1---------------------------------------)

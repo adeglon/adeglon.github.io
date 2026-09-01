@@ -4,6 +4,7 @@ title: "24 Miles of Steep Trails, Sky, and Sea"
 date: 2025-09-12 14:13:18 -0800
 categories: ["Misadventures"]
 permalink: /24-miles-of-steep-trails-sky-and-sea/
+image: /assets/images/featured-24-miles-of-steep-trails-sky-and-sea.jpg
 ---
 
 ## Four Days. One Island. A Family’s Journey Across the Trans-Catalina Trail.[](https://medium.com/@agnes.deglon?source=post_page---byline--316fc94376b7---------------------------------------)

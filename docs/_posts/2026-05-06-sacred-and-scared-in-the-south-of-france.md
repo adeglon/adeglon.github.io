@@ -4,6 +4,7 @@ title: "Sacred and Scared in the South of France"
 date: 2026-05-06 21:30:28 -0800
 categories: ["Soul&Self"]
 permalink: /sacred-and-scared-in-the-south-of-france/
+image: /assets/images/featured-sacred-and-scared-in-the-south-of-france.jpg
 ---
 
 *Flying Across the World to Meet a Writer, a Group of Strangers… and Myself*

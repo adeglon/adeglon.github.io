@@ -4,6 +4,7 @@ title: "Grand Canyon Rim - River-Rim: A Family Adventure"
 date: 2025-09-17 14:07:23 -0800
 categories: ["Misadventures"]
 permalink: /grand-canyon-rim-river-rim/
+image: /assets/images/featured-grand-canyon-rim-river-rim.jpg
 ---
 
 ## *Because nothing says “Happy Anniversary” like hiking 17 miles with your teenagers*[](https://medium.com/@agnes.deglon?source=post_page---byline--2d1e864cdde6---------------------------------------)

@@ -12,16 +12,24 @@ layout: default
   <ul class="post-list">
     {%- for post in site.posts %}
       {%- if page.category == nil or post.categories contains page.category %}
-      <li>
-        <p class="post-list__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          {%- for c in post.categories %}
-            {%- for s in site.sections %}{% if s.key == c and page.category == nil %}
-            &middot; {{ s.name }}
-            {%- endif %}{% endfor %}
-          {%- endfor %}
-        </p>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <li{% if post.image %} class="has-thumb"{% endif %}>
+        {%- if post.image %}
+        <a href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img class="post-list__thumb" src="{{ post.image | relative_url }}" alt=""
+               loading="lazy" decoding="async">
+        </a>
+        {%- endif %}
+        <div>
+          <p class="post-list__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            {%- for c in post.categories %}
+              {%- for s in site.sections %}{% if s.key == c and page.category == nil %}
+              &middot; {{ s.name }}
+              {%- endif %}{% endfor %}
+            {%- endfor %}
+          </p>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        </div>
       </li>
       {%- endif %}
     {%- endfor %}
