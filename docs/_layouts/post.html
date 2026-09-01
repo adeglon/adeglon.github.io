@@ -63,6 +63,41 @@ layout: default
   {%- assign section_name = nil %}
   {%- for sec in site.sections %}{% if sec.key == cat %}{% assign section_name = sec.name %}{% endif %}{% endfor %}
 
+  {%- comment %}
+    More from the same strand, chosen by recency rather than by any cleverness
+    about similarity - three of Agnès' own essays, not a recommendation engine.
+    Excludes the two the pager already offers, so nothing appears twice on the
+    page, and hides itself entirely if that leaves fewer than two.
+  {%- endcomment %}
+  {%- assign more = "" | split: "" %}
+  {%- for p in siblings %}
+    {%- unless p.url == page.url or p.url == older.url or p.url == newer.url %}
+      {%- if more.size < 3 %}{% assign more = more | push: p %}{% endif %}
+    {%- endunless %}
+  {%- endfor %}
+  {%- if more.size > 1 %}
+  <section class="more" aria-labelledby="more-title">
+    <h2 class="more__title" id="more-title">
+      More{% if section_name %} in {{ section_name }}{% endif %}</h2>
+    <ul class="latest">
+      {%- for p in more %}
+      <li>
+        <a class="latest__link" href="{{ p.url | relative_url }}">
+          {%- if p.image %}
+          <img class="latest__thumb" src="{{ p.image | relative_url }}" alt=""
+               loading="lazy" decoding="async">
+          {%- endif %}
+          <p class="latest__title">{{ p.title }}</p>
+          <p class="latest__meta">
+            <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+          </p>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
   {%- if older or newer %}
   <nav class="pager" aria-label="More essays{% if section_name %} in {{ section_name }}{% endif %}">
     {%- if older %}
