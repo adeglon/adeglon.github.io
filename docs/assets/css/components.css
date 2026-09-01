@@ -456,6 +456,16 @@
 }
 .signup input[type="email"]::placeholder { color: var(--text-soft); }
 .signup input[type="email"]:focus-visible { border-color: var(--accent); }
+.signup__note {
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+  margin: var(--sp-3) 0 0;
+}
+
+/* Substack and Medium live here and nowhere louder. They are directions to
+   the same author, not destinations competing with the page you are on. */
+.site-footer__elsewhere a { color: var(--text-soft); }
+.site-footer__elsewhere a:hover { color: var(--accent); }
 
 
 /* --------------------------------------------------------------------------

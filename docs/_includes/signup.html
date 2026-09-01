@@ -2,21 +2,29 @@
   The ONLY primary action on the site. Nothing is for sale yet, so the email
   list is the whole reason the site exists.
 
-  The form posts nowhere until a provider is chosen (Substack / Buttondown /
-  MailerLite). Swap the action and the field name for the provider's embed —
-  the markup and classes stay.
+  The list IS the Substack, "The Path Is the Goal". This posts to Substack's
+  own no-JS subscribe endpoint - the same one their official /embed iframe
+  falls back to - so the form keeps Agnès' type and her ground instead of a
+  foreign white box. Submitting hands the reader to Substack to confirm.
+
+  If Substack ever changes that endpoint the form will 404 rather than fail
+  silently, which is the failure mode we want: the previous version of this
+  file posted to "#" and quietly threw every address away.
 {% endcomment %}
 <section class="page signup" id="letters">
   <span class="label">Stay in touch</span>
-  <h2 style="margin-top:0">Letters from the trail</h2>
-  <p>Notes on the writing, the canyon, and when each book is coming. No more
-    than once a month, and never anything you did not ask for.</p>
+  <h2 style="margin-top:0">The Path Is the Goal</h2>
+  <p>My letter from the writing desk — notes on the books as they come, the
+    canyon, and the path between science and soul. Free, and never anything
+    you did not ask for.</p>
 
-  <form class="signup__form" method="post" action="#"
-        data-todo="replace with the newsletter provider's endpoint">
+  <form class="signup__form" method="post"
+        action="https://{{ site.substack }}/api/v1/free?nojs=true">
+    <input type="hidden" name="source" value="site">
     <label class="visually-hidden" for="email">Email address</label>
     <input type="email" id="email" name="email" autocomplete="email"
            placeholder="you@example.com" required>
-    <button class="btn btn--primary" type="submit">Join</button>
+    <button class="btn btn--primary" type="submit">Subscribe</button>
   </form>
+  <p class="signup__note">Subscribing takes you to Substack to confirm.</p>
 </section>

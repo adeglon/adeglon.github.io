@@ -43,6 +43,11 @@ defaults:
 # allowlist rather than by secrecy. Empty = widget omitted entirely.
 contact_email: "agnes@deglon.ai"
 
+# Elsewhere. The Substack IS the mailing list - _includes/signup.html posts
+# to it - so changing this one line moves every signup form on the site.
+substack: "agnesdeglon.substack.com"
+medium: "https://medium.com/@agnes.deglon"
+
 demeterics_key: "DEM-CTB2X5VRO4KL"
 
 # One navbar for the whole site.
