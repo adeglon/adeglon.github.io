@@ -1,4 +1,14 @@
+# Cover artwork and the canyon photography are under embargo until the cover
+# reveal. They live in ~/Documents/Github/Design/assets/ and the *-hold folders.
+#
+# This file exists because they were once re-committed by accident: the mount
+# used by the Cowork session cannot delete files, so `git reset --hard` left
+# them on disk as untracked files, and a later `git add -A` swept them back in.
+docs/assets/covers/
+docs/assets/photography/
+
+.DS_Store
 _site/
 .jekyll-cache/
-.sass-cache/
+.bundle/
 vendor/
