@@ -249,6 +249,22 @@
 .hero--sky { align-items: start; }
 .hero--sky .hero__body { padding-top: var(--sp-8); }
 
+/* A hero with NO photograph. The full-height hero is sized for a picture, so
+   without one it is a void, and a void reads as something that failed to load
+   rather than as a decision. Books is in that state until the cover reveal:
+   its hero image WAS the cover photograph and had to come out.
+
+   So: a masthead. It hugs its own type, the trilogy starts near the top of
+   the screen, and the page looks finished. At the reveal, drop this class and
+   the full-height hero returns with the cover in it - the page visibly
+   changes on the day, which is worth more than a picture standing in now. */
+.hero--compact {
+  min-height: 0;
+  align-items: start;
+}
+.hero--compact .hero__body { padding-block: var(--sp-5) var(--sp-7); }
+.hero--compact .hero__title { font-size: clamp(2.4rem, 1.4rem + 3vw, 4rem); }
+
 /* Type at the foot instead — for an interior page over a busier picture. */
 .hero--foot .hero__scrim { background: var(--scrim-foot); }
 
