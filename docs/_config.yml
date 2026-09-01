@@ -51,7 +51,6 @@ nav:
   - {name: "Soul & Self",      url: "/soul-self/"}
   - {name: "Misadventures",    url: "/misadventures/"}
   - {name: "Books",            url: "/books/"}
-  - {name: "The Author",       url: "/author/"}
   - {name: "Contact",          url: "/contact/"}
 
 # Blog categories, keyed to the WordPress category names in post front matter.
