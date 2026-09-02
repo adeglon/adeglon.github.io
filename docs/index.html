@@ -74,6 +74,18 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
     </div>
     <div class="page">
       <h1 class="hero__title">Words from the trail,<br>stories from the soul</h1>
+        {%- comment %}
+          The one concrete fact in the hero: there is a novel, and it has a
+          date. Without it a stranger meets a name, five nouns and a poetic
+          line, and never learns this is a novelist. Read from books.yml, so
+          it removes itself after publication.
+        {%- endcomment %}
+        {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+        {%- if launching %}
+        <p class="hero__note">
+          <a href="{{ '/books/#within' | relative_url }}">{{ launching.title }}
+            &mdash; a novel, {{ launching.release_label }}</a></p>
+        {%- endif %}
     </div>
   </div>
 </header>
@@ -97,14 +109,21 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
     <div>
       <span class="label">The author</span>
       <h2 style="margin-top:0">Agnès Déglon-Fischer</h2>
-      <p>I'm a Swiss-American writer with a background in biochemistry and acupuncture.
-        My work bridges
-        the worlds of science and storytelling, blending evidence-based health with holistic
-        perspectives and lived experience. Whether unpacking the latest research, reflecting
-        on body–mind–soul connections, or writing from the trail, I aim to make complex ideas
-        accessible and meaningful.</p>
-      <p>And when I'm not writing about the serious stuff? I'm a mama, soul-searcher, and
-        semi-functional adult, making sense of the mess through stories, soul, and humor.</p>
+      {%- comment %}
+        Rewritten 2026-09-01. The version before this described a sensibility -
+        bridging worlds, blending perspectives, making ideas accessible - and
+        never named the work. Agnès read it back and asked what she was
+        actually writing about. Now it says: novelist, book, date, essays.
+        The date comes from _data/books.yml so the paragraph cannot go stale.
+      {%- endcomment %}
+      <p>I'm a Swiss-American writer with a background in biochemistry and Chinese
+        medicine. For years I read the body two ways — in molecules and in
+        meridians — and I've stopped trying to pick one.</p>
+      {%- assign novel = site.data.books | where_exp: "b", "b.release" | first %}
+      <p>My first novel, <em>The Canyon Within</em>, comes out
+        {% if novel %}{{ novel.release_label }}{% else %}soon{% endif %}. In between,
+        I write here: on health and science, on the soul, and on the family
+        misadventures that keep me honest.</p>
     </div>
   </div>
 

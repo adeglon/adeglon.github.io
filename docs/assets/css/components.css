@@ -207,7 +207,11 @@
    a headshot and three lines of bio peeking over the fold read as clutter,
    not as an invitation to scroll. The type inside stays at the smaller size
    Agnès chose; only the frame is tall. */
-.hero--short { min-height: 100svh; }
+/* NOT the full screen. A whole viewport of photograph makes people leave
+   before they reach the reason to stay, so the hero stops short and a band of
+   the page below shows: a deliberate hint that there is more, rather than an
+   accidental half of something. */
+.hero--short { min-height: min(80svh, 42rem); }
 
 /* PHOTOGRAPH AS BACKGROUND. White type needs an empty, dark quarter of the
    frame to live in; this daylight picture has none, so the answer is not a
@@ -266,6 +270,25 @@
   font-size: clamp(2.1rem, 1.15rem + 3.2vw, 3.9rem);
   max-width: 20ch;
 }
+/* The novel, under the title. Small, gold, uppercase - the only place on the
+   landing page that names a book above the fold, and the only reason a
+   stranger learns in two seconds that this is a novelist. */
+.hero__note {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  margin: var(--sp-5) 0 0;
+}
+.hero__note a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--sp-1);
+}
+.hero__note a:hover { color: var(--accent-strong); border-bottom-color: var(--accent); }
+.hero--wash .hero__note a {
+  text-shadow: 0 1px 2px rgba(251, 248, 242, 1), 0 0 12px rgba(251, 248, 242, 0.9);
+}
+
 /* The tagline rides directly under the wordmark, in the scrim's darkest band,
    so it needs almost nothing of its own. It is a caption to her name, not a
    second headline - hence the small size and the ordinary sentence case. */
@@ -352,7 +375,9 @@
 .hero--compact + main.section { padding-top: var(--sp-6); }
 /* A washed hero already ends in the page's own cream, so the section under it
    needs no separating space either. */
-.hero--wash + main.section { padding-top: var(--sp-6); }
+/* Enough cream under a washed hero that whatever shows above the fold is
+   space, not the top third of a photograph. */
+.hero--wash + main.section { padding-top: var(--sp-8); }
 
 /* Type at the foot instead — for an interior page over a busier picture. */
 .hero--foot .hero__scrim { background: var(--scrim-foot); }

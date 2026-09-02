@@ -69,6 +69,41 @@ nav:
 #             first on WordPress, and it belongs on /blog/ rather than being
 #             lost in the move.
 sections:
+  - name: "Health & Science"
+    key: "Health&Science"
+    slug: "health-science"
+    image: /assets/images/featured-what-i-wish-i-knew-sooner-about-breath-qigong-and-unlocking-energy-flow.jpg
+    image_alt: "Qigong beside a waterfall in green hills"
+    welcome_title: "Welcome to Health & Science"
+    blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
+    welcome:
+      - >-
+        I entered acupuncture school with a degree in biochemistry, trained to
+        think in molecules and lab reports. Then, I found myself studying Qi,
+        Yin and Yang, and meridians: medicine in another language. Traditional
+        Chinese Medicine expanded my scientific training and taught me to see
+        the whole person, body, mind, and soul, catching imbalances on an
+        energetic and emotional level, before they manifest on a physical level.
+      - >-
+        Here I explore where evidence-based science meets holistic wisdom,
+        writing through both lenses to bridge East and West.
+
+  - name: "Soul & Self"
+    key: "Soul&Self"
+    slug: "soul-self"
+    image: /assets/images/featured-a-sahara-meditation-journey-through-sandstorms-and-silence.jpg
+    image_alt: "Two figures and a camel crossing the dunes at first light in the Sahara"
+    welcome_title: "Welcome to Soul & Self"
+    blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."
+    welcome:
+      - >-
+        Life isn't just about the miles we hike, but the inner paths we walk.
+      - >-
+        In Soul & Self, I write closest to the heart, reflections on resilience,
+        healing, and the inner path. From soulfulness to mindlessness, from life
+        transitions to quiet revelations, these stories weave the personal with
+        the universal.
+
   - name: "Misadventures"
     key: "Misadventures"
     slug: "misadventures"
@@ -90,38 +125,3 @@ sections:
       - {name: "Parenting humor", text: "The highs, lows, and hilarious moments of raising kids."}
       - {name: "Relatable stories", text: "Moments that remind us we're all in this beautifully messy journey together."}
       - {name: "Pet fiascos", text: "Featuring our golden doodle, whose expertise lies in finding mud and creating chaos."}
-
-  - name: "Soul & Self"
-    key: "Soul&Self"
-    slug: "soul-self"
-    image: /assets/images/featured-a-sahara-meditation-journey-through-sandstorms-and-silence.jpg
-    image_alt: "Two figures and a camel crossing the dunes at first light in the Sahara"
-    welcome_title: "Welcome to Soul & Self"
-    blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."
-    welcome:
-      - >-
-        Life isn't just about the miles we hike, but the inner paths we walk.
-      - >-
-        In Soul & Self, I write closest to the heart, reflections on resilience,
-        healing, and the inner path. From soulfulness to mindlessness, from life
-        transitions to quiet revelations, these stories weave the personal with
-        the universal.
-
-  - name: "Health & Science"
-    key: "Health&Science"
-    slug: "health-science"
-    image: /assets/images/featured-what-i-wish-i-knew-sooner-about-breath-qigong-and-unlocking-energy-flow.jpg
-    image_alt: "Qigong beside a waterfall in green hills"
-    welcome_title: "Welcome to Health & Science"
-    blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
-    welcome:
-      - >-
-        I entered acupuncture school with a degree in biochemistry, trained to
-        think in molecules and lab reports. Then, I found myself studying Qi,
-        Yin and Yang, and meridians: medicine in another language. Traditional
-        Chinese Medicine expanded my scientific training and taught me to see
-        the whole person, body, mind, and soul, catching imbalances on an
-        energetic and emotional level, before they manifest on a physical level.
-      - >-
-        Here I explore where evidence-based science meets holistic wisdom,
-        writing through both lenses to bridge East and West.
