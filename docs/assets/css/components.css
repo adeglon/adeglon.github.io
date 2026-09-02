@@ -284,8 +284,15 @@
   font-style: italic;
 }
 .hero--short .hero__title--claim {
-  font-size: clamp(1.5rem, 0.9rem + 1.9vw, 2.5rem);
-  max-width: 24ch;
+  font-size: clamp(1.35rem, 0.85rem + 1.5vw, 2.2rem);
+  max-width: 34ch;
+}
+/* A fourteen-word claim needs fewer lines on a short window, or the hero
+   grows through its own ceiling and pushes the fold off the screen. */
+@media (max-height: 44rem) {
+  .hero--short .hero__title--claim { font-size: clamp(1.2rem, 0.8rem + 1.2vw, 1.7rem); }
+  .hero--short .hero__body--split { padding-bottom: var(--sp-5); }
+  .hero__note { margin-top: var(--sp-5); font-size: var(--fs-sm); }
 }
 /* The novel, under the title. Small, gold, uppercase - the only place on the
    landing page that names a book above the fold, and the only reason a
