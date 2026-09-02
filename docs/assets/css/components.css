@@ -941,6 +941,16 @@
 
 /* Substack and Medium live here and nowhere louder. They are directions to
    the same author, not destinations competing with the page you are on. */
+/* The site's own line, closing every page. Italic display type so it reads as
+   a signature rather than as another navigation item. */
+.site-footer__line a {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-md);
+  color: var(--text);
+}
+.site-footer__line a:hover { color: var(--accent-strong); }
+
 .site-footer__elsewhere a { color: var(--text-soft); }
 .site-footer__elsewhere a:hover { color: var(--accent); }
 

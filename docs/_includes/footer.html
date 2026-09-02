@@ -1,8 +1,14 @@
 <footer class="site-footer">
   <div class="page site-footer__cols">
     <p style="margin:0">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</p>
-    <p style="margin:0">
-      <a href="{{ '/' | relative_url }}">Essays and notes from the trail</a>
+    {%- comment %}
+      The line that used to be the landing page's headline. It was too
+      unspecific to open a site with, but as a closing note on every page it
+      does exactly what a footer line should: says what kind of place this is,
+      quietly, after the reader already knows.
+    {%- endcomment %}
+    <p class="site-footer__line" style="margin:0">
+      <a href="{{ '/' | relative_url }}">Words from the trail, stories from the soul</a>
     </p>
     {% comment %}
       Elsewhere, quietly. Substack is the letter; Medium is distribution only
