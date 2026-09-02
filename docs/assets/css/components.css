@@ -257,7 +257,11 @@
    nothing between the last line and the fold. */
 .hero--short .hero__body--split {
   gap: var(--sp-6);
-  padding-bottom: min(24svh, 12rem);
+  /* Was a quarter of the viewport, which on a short laptop window pushed the
+     hero past the fold - min-height is a floor, and tall content simply grows
+     through it. Fixed space instead: the type still sits clear of the bottom
+     edge, and the frame stays under the screen. */
+  padding-bottom: var(--sp-7);
 }
 .hero--short .hero__title { font-size: clamp(1.7rem, 0.95rem + 2.3vw, 2.9rem); }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
