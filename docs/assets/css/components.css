@@ -683,12 +683,10 @@
 /* --------------------------------------------------------------------------
    LEDE  ← the heading on /blog/ and /books/
    --------------------------------------------------------------------------
-   Both pages used to open with one display-size word - Blog, Books - directly
-   under a navigation bar that already said which page you were on. The word
-   cost about a hundred and thirty pixels and told a reader nothing they had
-   not just clicked. The sentence that replaced it does the labelling and the
-   explaining at once, at a fraction of the height, which is what gets three
-   photographs (or three shelves) above the fold.
+   /blog/ only. Books went back to its display-size word and its ornament on
+   2026-09-02; this stayed, because on /blog/ the sentence says what the three
+   strands ARE, which the word "Blog" under a nav bar already marking Blog as
+   the current page never did.
    -------------------------------------------------------------------------- */
 
 .blog-lede {
@@ -706,47 +704,6 @@
 /* The second sentence is the gloss on the first, so it steps back a shade
    rather than starting a new paragraph and costing another line of space. */
 .blog-lede span { color: var(--text); }
-
-/* --------------------------------------------------------------------------
-   SHELVES  ← the three-up row at the top of /books/
-   --------------------------------------------------------------------------
-   The books page holds three unrelated things: a trilogy being written, a
-   children's series in three languages, and a guide for parents. Stacked as
-   full sections, the second and third were invisible without scrolling, so a
-   reader who came for the novel never learned the other two existed.
-   -------------------------------------------------------------------------- */
-
-.shelves {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--sp-5) var(--sp-6);
-  margin-block: var(--sp-6) var(--sp-7);
-}
-.shelf {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  padding-top: var(--sp-4);
-  /* A hairline over each one, the same device the strands use on /blog/. It
-     is what makes three of these read as one row of three rather than three
-     paragraphs that happen to sit side by side. */
-  border-top: 1px solid var(--rule);
-  text-decoration: none;
-  color: inherit;
-  transition: border-color var(--dur) var(--ease);
-}
-.shelf:hover { border-top-color: var(--accent); }
-.shelf__name {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: var(--fs-xl);
-  line-height: var(--lh-tight);
-  text-transform: uppercase;
-  letter-spacing: var(--track-title);
-  color: var(--text-strong);
-}
-.shelf:hover .shelf__name { color: var(--accent); }
-.shelf__line { font-size: var(--fs-sm); color: var(--text); line-height: 1.45; }
 
 /* --------------------------------------------------------------------------
    UTILITY ROW  ← "Ask me anything", above the navigation
