@@ -535,7 +535,7 @@
     padding: var(--sp-5) var(--sp-6) var(--sp-7);
   }
   .hero--split .hero__frame { height: 42svh; min-height: 14rem; }
-  .hero--split .hero__title--claim { max-width: 22ch; }
+  .hero--split .hero__title--claim { max-width: 26rem; }
 }
 /* The page under it starts a tenth of a screen down, so on a tall window the
    fold lands in cream rather than on the top of the headshot. */
