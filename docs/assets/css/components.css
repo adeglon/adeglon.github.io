@@ -325,6 +325,9 @@
    far too much under a masthead - it reopens the very gap the masthead was
    closing. */
 .hero--compact + main.section { padding-top: var(--sp-6); }
+/* A washed hero already ends in the page's own cream, so the section under it
+   needs no separating space either. */
+.hero--wash + main.section { padding-top: var(--sp-6); }
 
 /* Type at the foot instead — for an interior page over a busier picture. */
 .hero--foot .hero__scrim { background: var(--scrim-foot); }
