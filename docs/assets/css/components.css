@@ -479,8 +479,11 @@
   font-style: italic;
   font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.35rem);
   /* 17ch was a column narrower than the panel it sits in - seven lines of
-     four words, which reads as a poem rather than a claim. */
-  max-width: 22ch;
+     four words, which reads as a poem rather than a claim. ch is measured on
+     the digit zero, and this display italic has a narrow one, so the number
+     has to run well past what it looks like it should be: 30ch here is about
+     600px, which is the panel and not a column inside it. */
+  max-width: 30ch;
   margin: 0;
 }
 /* The button goes to the actual top-right corner of the page, over the sky in
