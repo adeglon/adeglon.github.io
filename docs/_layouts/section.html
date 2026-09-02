@@ -10,6 +10,19 @@ layout: default
   {% include ornament.html modifier="ornament--short" %}
 
   {%- comment %}
+    A section's own list of what a reader will find, when it has one. It used
+    to sit on /blog/, where three unequal cards side by side needed one of
+    them not to carry an extra list.
+  {%- endcomment %}
+  {%- for s in site.sections %}{% if s.key == page.category and s.bullets %}
+  <ul class="strand__bullets">
+    {%- for b in s.bullets %}
+    <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}{% endfor %}
+
+  {%- comment %}
     Order: pinned first, then newest. `pinned: true` in a post's front matter
     lifts it to the top of its own section and nowhere else - the previous /
     next pager stays strictly chronological, because reading order and

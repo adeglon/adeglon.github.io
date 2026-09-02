@@ -44,48 +44,42 @@ permalink: /blog/
     Deliberately no combined post list here. Mixing the three is exactly what
     this page exists to undo.
   {%- endcomment %}
-  {%- for s in site.sections %}
-  {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
-  {%- assign latest = posts | first %}
-  <section class="strand" id="{{ s.slug }}">
-    {%- if s.image %}
-    <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
-       tabindex="-1" aria-hidden="true">
-      <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-           loading="lazy" decoding="async">
-    </a>
-    {%- endif %}
-    <div class="strand__body">
-    <h2 class="strand__name">
-      <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.welcome_title }}</a>
-    </h2>
-    {%- for para in s.welcome %}
-    <p class="strand__intro">{{ para }}</p>
+  {%- comment %}
+    THREE ABREAST, above the fold. This page's whole job is to let a reader
+    choose a strand, so all three have to be visible at once - stacked, the
+    third one lived below two screens of scrolling and was effectively hidden.
+
+    Picture, name, Agnès' own introduction, a way in. The Misadventures list
+    of what-you-will-find moved to /misadventures/ itself, where it introduces
+    that shelf without unbalancing this row.
+  {%- endcomment %}
+  <ul class="strands">
+    {%- for s in site.sections %}
+    {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
+    <li class="strand" id="{{ s.slug }}">
+      {%- if s.image %}
+      <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
+         tabindex="-1" aria-hidden="true">
+        <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+             loading="lazy" decoding="async">
+      </a>
+      {%- endif %}
+      <div class="strand__body">
+        <h2 class="strand__name">
+          <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a>
+        </h2>
+        {%- for para in s.welcome %}{% if forloop.first %}
+        <p class="strand__intro">{{ para }}</p>
+        {%- endif %}{% endfor %}
+        <p class="strand__foot">
+          <a class="btn btn--quiet"
+             href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
+          <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
+        </p>
+      </div>
+    </li>
     {%- endfor %}
-
-    {%- if s.bullets %}
-    <ul class="strand__bullets">
-      {%- for b in s.bullets %}
-      <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
-      {%- endfor %}
-    </ul>
-    {%- endif %}
-
-    <p class="strand__foot">
-      <a class="btn btn--quiet"
-         href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
-      <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
-    </p>
-
-    {%- if latest %}
-    <p class="strand__latest">
-      Latest: <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
-      <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%b %-d, %Y" }}</time>
-    </p>
-    {%- endif %}
-    </div>
-  </section>
-  {%- endfor %}
+  </ul>
 
 </main>
 

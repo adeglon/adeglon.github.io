@@ -20,6 +20,12 @@
   <dem-agent
       name="default"
       title="Ask me anything"
-      primary-color="#C9A05C"
-      accent-color="#0E1A2B"></dem-agent>
+      {%- comment %}
+        The site's own palette: night ground, gold accent. It was the other
+        way round - a gold bar on a cream page, which clashed with everything
+        under it. Values are --c-night and --c-gold from tokens.css; keep them
+        in step if the palette ever moves.
+      {%- endcomment %}
+      primary-color="#11181E"
+      accent-color="#C9A05C"></dem-agent>
 {% endif %}
