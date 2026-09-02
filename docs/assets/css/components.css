@@ -437,6 +437,15 @@
   min-height: 92svh;
   align-items: stretch;
 }
+/* The <picture> is a grid item like everything else, so it was opening a row
+   of its own and pushing the type 93px down the frame - out of the top band.
+   Taking it out of the flow leaves the body as the only item in the grid, so
+   the body fills the hero and the corner button lands in the actual corner. */
+.hero--full > picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 .hero--full .hero__veil {
   position: absolute;
   inset: 0;
