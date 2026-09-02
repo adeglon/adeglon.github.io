@@ -457,10 +457,10 @@
   background:
     /* the masthead's band */
     linear-gradient(to bottom,
-      rgba(17, 24, 30, 0.86) 0%,
-      rgba(17, 24, 30, 0.62) 16%,
-      rgba(17, 24, 30, 0.28) 28%,
-      rgba(17, 24, 30, 0) 46%),
+      rgba(17, 24, 30, 0.88) 0%,
+      rgba(17, 24, 30, 0.70) 18%,
+      rgba(17, 24, 30, 0.36) 30%,
+      rgba(17, 24, 30, 0) 50%),
     /* the claim's band - deeper and taller, because grass is not sky */
     linear-gradient(to top,
       rgba(17, 24, 30, 0.95) 0%,
@@ -472,7 +472,10 @@
 .hero--full .hero__body {
   position: relative;
   z-index: 2;
-  padding-block: var(--sp-5) var(--sp-8);
+  /* Room at the top for the corner button to sit ABOVE the navigation rather
+     than on top of it - both are right-aligned, so without this they collide
+     in the same 35px of the same corner. */
+  padding-block: calc(var(--sp-4) + 2.75rem) var(--sp-8);
 }
 /* Full contrast type. The shadow is a soft halo rather than a drop shadow -
    there to survive a pale evening in the photograph, not to be seen. */
@@ -522,7 +525,7 @@
    and took the fold with it. Everything steps down together. */
 @media (max-height: 46rem) {
   .hero--full .hero__title--claim { font-size: clamp(1.45rem, 1rem + 1.5vw, 2.1rem); }
-  .hero--full .hero__body { padding-block: var(--sp-4) var(--sp-6); }
+  .hero--full .hero__body { padding-block: calc(var(--sp-3) + 2.6rem) var(--sp-6); }
   .hero--full .hero__note { margin-top: var(--sp-5); }
   .hero--full .hero__tagline { font-size: var(--fs-base); }
 }
