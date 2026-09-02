@@ -451,24 +451,29 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Measured against where the type actually lands, not guessed: the
-     masthead sits in the top 12% and the claim in the bottom 40%, so both
-     bands have to still be carrying real black at those depths. */
+  /* LIGHTENED 2026-09-02. The bands were doing all the work and the picture
+     had gone to dusk. The contrast moves off the photograph and onto the
+     letters instead - see the halo on .hero__title below, which darkens only
+     the few pixels around each glyph rather than the whole frame. The bands
+     stay, but as a lean rather than a curtain. */
   background:
     /* the masthead's band */
     linear-gradient(to bottom,
-      rgba(17, 24, 30, 0.88) 0%,
-      rgba(17, 24, 30, 0.70) 18%,
-      rgba(17, 24, 30, 0.36) 30%,
-      rgba(17, 24, 30, 0) 50%),
-    /* the claim's band - deeper and taller, because grass is not sky */
+      rgba(17, 24, 30, 0.62) 0%,
+      rgba(17, 24, 30, 0.40) 16%,
+      rgba(17, 24, 30, 0.16) 28%,
+      rgba(17, 24, 30, 0) 44%),
+    /* the claim's band - a little deeper, because grass is not sky */
     linear-gradient(to top,
-      rgba(17, 24, 30, 0.95) 0%,
-      rgba(17, 24, 30, 0.86) 20%,
-      rgba(17, 24, 30, 0.62) 34%,
-      rgba(17, 24, 30, 0.30) 48%,
-      rgba(17, 24, 30, 0) 66%);
+      rgba(17, 24, 30, 0.78) 0%,
+      rgba(17, 24, 30, 0.60) 20%,
+      rgba(17, 24, 30, 0.38) 36%,
+      rgba(17, 24, 30, 0.16) 52%,
+      rgba(17, 24, 30, 0) 68%);
 }
+/* Its own colour, very slightly forward. Nothing is filtering the photograph
+   down any more, so it can carry the daylight it was shot in. */
+.hero--full .hero__media { filter: saturate(1.06) contrast(1.02); }
 .hero--full .hero__body {
   position: relative;
   z-index: 2;
@@ -477,17 +482,27 @@
      in the same 35px of the same corner. */
   padding-block: calc(var(--sp-4) + 2.75rem) var(--sp-8);
 }
-/* Full contrast type. The shadow is a soft halo rather than a drop shadow -
-   there to survive a pale evening in the photograph, not to be seen. */
+/* THE HALO IS WHERE THE CONTRAST LIVES. Three shadows at three radii: a tight
+   one that gives every stroke a hard edge, a middle one that fills the
+   counters, and a wide soft one that darkens a hand's breadth of photograph
+   around the words and nothing else. This is what lets the picture stay bright
+   - the letters carry their own ground with them instead of asking the whole
+   frame to go dark. */
 .hero--full .wordmark,
 .hero--full .hero__title {
-  color: var(--c-shell);
-  text-shadow: 0 1px 14px rgba(17, 24, 30, 0.85), 0 0 3px rgba(17, 24, 30, 0.6);
+  color: #FFFDF8;
+  text-shadow:
+    0 1px 2px rgba(17, 24, 30, 0.95),
+    0 0 10px rgba(17, 24, 30, 0.85),
+    0 0 34px rgba(17, 24, 30, 0.7);
 }
 .hero--full .hero__tagline,
 .hero--full .site-nav a {
-  color: rgba(251, 248, 242, 0.92);
-  text-shadow: 0 1px 12px rgba(17, 24, 30, 0.9), 0 0 3px rgba(17, 24, 30, 0.7);
+  color: #FFFDF8;
+  text-shadow:
+    0 1px 2px rgba(17, 24, 30, 0.95),
+    0 0 9px rgba(17, 24, 30, 0.9),
+    0 0 24px rgba(17, 24, 30, 0.7);
 }
 .hero--full .site-nav a:hover,
 .hero--full .site-nav a[aria-current="page"] {
@@ -499,11 +514,13 @@
   letter-spacing: 0.01em;
   line-height: 1.14;
   font-style: italic;
-  font-size: clamp(1.85rem, 1.05rem + 2.5vw, 3.5rem);
+  /* BIG - the size the original hero title had, because this is the headline
+     of the page and it was reading as a caption. */
+  font-size: clamp(2.1rem, 1.15rem + 3.1vw, 3.9rem);
   /* A measure in rem, never in ch: ch is the width of the digit zero and this
      display italic has an unusually narrow one, so a ch number renders about a
      third of the width it looks like it should. */
-  max-width: 34rem;
+  max-width: 46rem;
   margin: 0;
 }
 .hero--full .hero__note { margin-top: var(--sp-6); }
@@ -524,7 +541,7 @@
 /* min-height is a floor, so on a short laptop window the type grew through it
    and took the fold with it. Everything steps down together. */
 @media (max-height: 46rem) {
-  .hero--full .hero__title--claim { font-size: clamp(1.45rem, 1rem + 1.5vw, 2.1rem); }
+  .hero--full .hero__title--claim { font-size: clamp(1.55rem, 1rem + 1.9vw, 2.5rem); }
   .hero--full .hero__body { padding-block: calc(var(--sp-3) + 2.6rem) var(--sp-6); }
   .hero--full .hero__note { margin-top: var(--sp-5); }
   .hero--full .hero__tagline { font-size: var(--fs-base); }
