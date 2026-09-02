@@ -210,8 +210,15 @@
 /* NOT the full screen. A whole viewport of photograph makes people leave
    before they reach the reason to stay, so the hero stops short and a band of
    the page below shows: a deliberate hint that there is more, rather than an
-   accidental half of something. */
-.hero--short { min-height: min(80svh, 42rem); }
+   accidental half of something.
+
+   Raised to 88svh 2026-09-02. At 80 the band was deep enough to show the top
+   of Agnès' headshot, which is the one thing that must not half-appear - a
+   sliver of a face reads as a broken layout, not as an invitation. At 88 the
+   band is cream and whitespace: clearly more page, no content cut in half.
+   The ceiling rises with it, or a tall monitor caps the hero at 42rem and
+   puts the bio back over the fold. */
+.hero--short { min-height: min(88svh, 56rem); }
 
 /* PHOTOGRAPH AS BACKGROUND. White type needs an empty, dark quarter of the
    frame to live in; this daylight picture has none, so the answer is not a
