@@ -1154,10 +1154,33 @@ dem-agent {
 }
 .door:hover .door__go::after { transform: translateX(0.25em); }
 
-/* What is actually behind each door, listed under it: the three newest
-   essays, the three families of books. A reader who knows what they want
-   goes straight there; a reader who does not sees at a glance what kind of
-   place this is. The door itself stays the target for everyone else. */
+/* ONE current thing under each door: the newest essay, the coming book. The
+   door is the destination; this is the reason to go through it now. Replaced
+   a three-item list, which was a directory - useful, but it said nothing was
+   happening. */
+.door__latest {
+  padding: var(--sp-5) var(--sp-5) 0;
+}
+.door__latest .label { display: block; margin-bottom: var(--sp-3); }
+.door__latest-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+  margin-bottom: var(--sp-4);
+}
+.door__latest-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--sp-3);
+}
+.door__latest-title a { color: var(--text-strong); }
+.door__latest-title a:hover { color: var(--accent-strong); }
+.door__latest-text { color: var(--text); }
+
+/* The older three-up list, kept for any page that still wants a directory. */
 .door__list {
   list-style: none;
   margin: var(--sp-4) 0 0;

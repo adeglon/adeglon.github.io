@@ -99,60 +99,17 @@ og_image: /assets/hero/hero-alps-og-1200.jpg
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
   {%- comment %}
-    Something of hers to actually read. A novelist's site where a visitor
-    cannot read a sentence of the novelist asks them to take the writing on
-    trust; this is the fix. `featured: true` in a post's front matter picks
-    the piece, otherwise it is the newest.
+    TWO DOORS, and under each one the single most current thing behind it:
+    the newest essay under Blog, the launch under Books. There is no "Where
+    would you like to start?" heading any more - two large doors ARE the
+    question, and asking it in words as well was saying the same thing twice.
+
+    Everything here used to be four separate stacked sections (a taste of the
+    writing, the launch panel, a heading, the doors). Same content, half the
+    page, and each item now sits under the door it belongs behind.
   {%- endcomment %}
-  {%- assign picked = site.posts | where: "featured", true | first %}
-  {%- unless picked %}{% assign picked = site.posts.first %}{% endunless %}
-  {%- if picked %}
-  <section class="taste">
-    <span class="label">From the blog</span>
-    <h2 class="taste__title">
-      <a href="{{ picked.url | relative_url }}">{{ picked.title }}</a></h2>
-    {% include excerpt.html post=picked limit=420 %}
-    <p class="taste__text">{{ excerpt_text }}</p>
-    <p><a class="btn btn--quiet" href="{{ picked.url | relative_url }}">Read the rest</a></p>
-  </section>
-  {%- endif %}
+  <ul class="doors doors--deep" style="margin-top:var(--sp-7)">
 
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-  {%- comment %}
-    THE LAUNCH PANEL. Found by data, not hard-coded: the featured book is
-    whichever entry in _data/books.yml carries a `release` date. Remove that
-    key after publication and this whole block disappears on its own rather
-    than sitting here announcing a date that has passed.
-
-    No cover here, and none until the reveal — see rule 7 in Design/README.md.
-    The panel is a date and two sentences, which is all a pre-launch page can
-    honestly offer.
-  {%- endcomment %}
-  {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-  {%- if launching %}
-  <section class="launch" aria-labelledby="launch-title">
-    <p class="launch__date">Coming {{ launching.release_label }}</p>
-    <h2 class="launch__title" id="launch-title">{{ launching.title }}</h2>
-    <p class="launch__line">{{ launching.line }}</p>
-    <p class="launch__blurb">{{ launching.blurb }}</p>
-    <p class="launch__actions">
-      <a class="btn btn--primary" href="#letters">Be told when it's out</a>
-      <a class="btn btn--quiet" href="{{ '/books/#within' | relative_url }}">About the trilogy</a>
-    </p>
-  </section>
-  {%- endif %}
-
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-  <h2 style="margin-top:var(--sp-7)">Where would you like to start?</h2>
-
-  {%- comment %}
-    Two doors, because there are two things here: books and writing. The three
-    blog categories are one level down and live on /blog/, named here only as
-    a hint of what is behind the door.
-  {%- endcomment %}
-  <ul class="doors doors--deep">
     <li>
       <a class="door" href="{{ '/blog/' | relative_url }}">
         <span class="door__name">Blog</span>
@@ -161,30 +118,29 @@ og_image: /assets/hero/hero-alps-og-1200.jpg
           essays, reflections, and the family stories that got out of hand.</p>
         <span class="door__go">All three strands</span>
       </a>
+
       {%- comment %}
-        The three newest essays, under the door they belong behind. This is the
-        only part of the landing page that changes on its own: publish, and it
-        appears here.
+        `featured: true` on a post pins it here; otherwise it is the newest.
+        This is also the only prose of Agnès' own on the page, so it is a
+        real paragraph and not a one-line teaser.
       {%- endcomment %}
-      <ul class="door__list">
-        {%- for post in site.posts limit: 3 %}
-        <li>
-          <a href="{{ post.url | relative_url }}">
-            {%- if post.image %}
-            <img class="door__thumb" src="{{ post.image | relative_url }}" alt=""
-                 loading="lazy" decoding="async">
-            {%- else %}
-            <span class="door__thumb door__thumb--none" aria-hidden="true">
-              <img src="{{ '/assets/ornament/diamond.svg' | relative_url }}" alt=""></span>
-            {%- endif %}
-            <span>{{ post.title }}
-              <span class="door__date">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-              </span></span>
-          </a>
-        </li>
-        {%- endfor %}
-      </ul>
+      {%- assign picked = site.posts | where: "featured", true | first %}
+      {%- unless picked %}{% assign picked = site.posts.first %}{% endunless %}
+      {%- if picked %}
+      <div class="door__latest">
+        <span class="label">Latest</span>
+        {%- if picked.image %}
+        <a href="{{ picked.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img class="door__latest-img" src="{{ picked.image | relative_url }}" alt=""
+               loading="lazy" decoding="async"></a>
+        {%- endif %}
+        <h3 class="door__latest-title">
+          <a href="{{ picked.url | relative_url }}">{{ picked.title }}</a></h3>
+        {% include excerpt.html post=picked limit=320 %}
+        <p class="door__latest-text">{{ excerpt_text }}</p>
+        <p><a class="btn btn--quiet" href="{{ picked.url | relative_url }}">Read the rest</a></p>
+      </div>
+      {%- endif %}
     </li>
 
     <li>
@@ -194,43 +150,25 @@ og_image: /assets/hero/hero-alps-og-1200.jpg
           three languages, and a guide for parents.</p>
         <span class="door__go">All the books</span>
       </a>
+
       {%- comment %}
-        The trilogy has no artwork to show until the reveal, so it gets the
-        night tile rather than a borrowed photograph. The other two have real
-        covers and use them.
+        The launch, found by data: whichever book carries a `release` date.
+        Delete those two lines in _data/books.yml after publication and this
+        removes itself rather than announcing a date that has passed.
       {%- endcomment %}
-      <ul class="door__list">
-        <li>
-          <a href="{{ '/books/#within' | relative_url }}">
-            <span class="door__thumb door__thumb--book door__thumb--none" aria-hidden="true">
-              <img src="{{ '/assets/ornament/diamond.svg' | relative_url }}" alt=""></span>
-            <span>The Within Trilogy
-              <span class="door__date">Fiction — The Canyon Within, March 3, 2027</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/books/#kids-questions-about-life' | relative_url }}">
-            <img class="door__thumb door__thumb--book" src="{{ '/assets/books/hey-buddy-cover.jpg' | relative_url }}"
-                 alt="" loading="lazy" decoding="async">
-            <span>Kids' Questions About Life
-              <span class="door__date">Three books, in English, French and German</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/books/#once-you-know' | relative_url }}">
-            <img class="door__thumb door__thumb--book" src="{{ '/assets/books/once-you-know-cover.jpg' | relative_url }}"
-                 alt="" loading="lazy" decoding="async">
-            <span>Once You Know
-              <span class="door__date">A guide to preserving your child's health</span></span>
-          </a>
-        </li>
-      </ul>
+      {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+      {%- if launching %}
+      <div class="door__latest">
+        <span class="label">Coming {{ launching.release_label }}</span>
+        <h3 class="door__latest-title">
+          <a href="{{ '/books/#within' | relative_url }}">{{ launching.title }}</a></h3>
+        <p class="launch__line">{{ launching.line }}</p>
+        <p class="door__latest-text">{{ launching.blurb }}</p>
+        <p><a class="btn btn--primary" href="#letters">Be told when it's out</a></p>
+      </div>
+      {%- endif %}
     </li>
   </ul>
-
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-
 
 </main>
 
