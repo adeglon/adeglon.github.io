@@ -63,6 +63,15 @@
       s.textContent = '.widget-container.minimized{visibility:hidden;pointer-events:none;}';
       sr.appendChild(s);
     }
+    /* The widget re-renders its own shadow root when it opens and closes, and
+       that throws the stylesheet away with everything else - so the bar came
+       back the first time anyone minimised it. Put it back whenever the shadow
+       root's children change. */
+    function keepHidden(sr) {
+      if (!window.MutationObserver) return;
+      new MutationObserver(function () { hideBubble(sr); })
+        .observe(sr, { childList: true });
+    }
     function wait() {
       var sr = root();
       if (!sr || !launcher(sr)) {
@@ -70,6 +79,7 @@
         return;
       }
       hideBubble(sr);
+      keepHidden(sr);
       var bs = document.querySelectorAll('[data-chat-open]');
       for (var i = 0; i < bs.length; i++) { bs[i].hidden = false; }
     }
