@@ -277,15 +277,19 @@
 /* A claim is a sentence, not a two-word title. Sentence case, a smaller size
    and a wider measure, or fourteen words at display scale fill the screen and
    stop being readable as a sentence. */
-.hero__title--claim {
+/* .hero .hero__title--claim, not .hero__title--claim: the base .hero__title
+   rule is declared LATER in this file and its uppercase was winning on equal
+   specificity. A sentence of fourteen words set in caps is a wall. */
+.hero .hero__title--claim {
   text-transform: none;
   letter-spacing: 0.01em;
   line-height: 1.16;
   font-style: italic;
 }
+.hero--short .hero--short .hero__title--claim,
 .hero--short .hero__title--claim {
-  font-size: clamp(1.35rem, 0.85rem + 1.5vw, 2.2rem);
-  max-width: 34ch;
+  font-size: clamp(1.4rem, 0.9rem + 1.6vw, 2.35rem);
+  max-width: 30ch;
 }
 /* A fourteen-word claim needs fewer lines on a short window, or the hero
    grows through its own ceiling and pushes the fold off the screen. */
@@ -298,7 +302,7 @@
    landing page that names a book above the fold, and the only reason a
    stranger learns in two seconds that this is a novelist. */
 .hero__note {
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
   text-transform: uppercase;
   letter-spacing: var(--track-label);
   margin: var(--sp-6) 0 0;
@@ -309,7 +313,7 @@
   font-weight: 500;
   border: 1px solid var(--accent);
   border-radius: 0;
-  padding: var(--sp-3) var(--sp-5);
+  padding: var(--sp-2) var(--sp-4);
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .hero__note a:hover { background: var(--accent); color: var(--c-night); }
