@@ -385,7 +385,7 @@
      a visible seam across the screen. Let the page ground show through. */
   background: transparent;
 }
-.hero--compact .hero__body { padding-block: var(--sp-5) var(--sp-7); }
+.hero--compact .hero__body { padding-block: var(--sp-5) var(--sp-5); }
 .hero--compact .hero__title { font-size: clamp(2.4rem, 1.4rem + 3vw, 4rem); }
 
 /* With no photograph underneath, the type takes the GROUND's own ink instead
@@ -616,9 +616,9 @@
 .strands {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: var(--sp-7);
+  gap: var(--sp-6);
   list-style: none;
-  margin: var(--sp-6) 0 0;
+  margin: 0;
   padding: 0;
 }
 .strands .strand { display: flex; flex-direction: column; }

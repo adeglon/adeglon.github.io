@@ -17,9 +17,13 @@ permalink: /blog/
         <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         {% include nav.html %}
       </div>
-      <div style="margin-top:var(--sp-6)">
+      {%- comment %}
+        Tight on purpose. This page exists to show three choices; every
+        pixel spent on a masthead is a pixel that pushes one of them below
+        the fold. The ornament came out for the same reason.
+      {%- endcomment %}
+      <div style="margin-top:var(--sp-5)">
         <h1 class="hero__title">Blog</h1>
-        {% include ornament.html modifier="ornament--short" %}
       </div>
     </div>
   </div>
@@ -32,9 +36,9 @@ permalink: /blog/
     Health & Science, healer's heart onto Soul & Self, mother's humor onto
     Misadventures. It was describing this page all along.
   {%- endcomment %}
-  <p class="standfirst" style="margin-top:0">A scientist's mind, a healer's
-    heart, a mother's humor. Three strands of the same life — each keeps its
-    own shelf.</p>
+  <p class="standfirst" style="margin:0 0 var(--sp-5)">A scientist's mind, a
+    healer's heart, a mother's humor. Three strands of the same life — each
+    keeps its own shelf.</p>
 
   {%- comment %}
     A landing page for the three categories, NOT a mixed feed. Agnès wrote an
