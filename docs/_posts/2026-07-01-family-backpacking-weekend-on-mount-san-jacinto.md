@@ -4,7 +4,9 @@ title: "Family Backpacking Weekend on Mount San Jacinto"
 date: 2026-07-01 09:00:00 -0800
 categories: ["Misadventures"]
 permalink: /family-backpacking-weekend-on-mount-san-jacinto/
-image: /assets/images/medium-family-backpacking-weekend-on-mount-san-jacinto-1.jpg
+# The Wellmans Divide shot, on the peak trail - Agnès' choice over the first
+# photograph, which is from before they were up the mountain.
+image: /assets/images/medium-family-backpacking-weekend-on-mount-san-jacinto-4.jpg
 image_in_body: true
 also_on: https://medium.com/@agnes.deglon/family-backpacking-weekend-on-mount-san-jacinto-ffeced6fdef4
 ---
