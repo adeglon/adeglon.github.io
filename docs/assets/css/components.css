@@ -115,6 +115,8 @@
 .hero .site-nav a {
   color: var(--c-paper);
   font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.12em;
   /* A hairline of type over a sunset needs more than colour. Two shadows: a
      tight one that thickens the stroke, and a wide soft one that darkens the
      sky immediately around it. Cheaper than a bar behind the nav, and it does
@@ -200,7 +202,12 @@
    when the picture WAS the message; once the page's job became "introduce the
    writer", a whole screen of photograph only delayed her. Still a minimum,
    never a fixed height - the type keeps its size. */
-.hero--short { min-height: min(58svh, 30rem); }
+/* Named "short" for the TYPE it carries, not for its height. The hero fills
+   the screen so that a first look is the photograph and nothing else - half
+   a headshot and three lines of bio peeking over the fold read as clutter,
+   not as an invitation to scroll. The type inside stays at the smaller size
+   Agnès chose; only the frame is tall. */
+.hero--short { min-height: 100svh; }
 
 /* PHOTOGRAPH AS BACKGROUND. White type needs an empty, dark quarter of the
    frame to live in; this daylight picture has none, so the answer is not a
@@ -216,14 +223,23 @@
 .hero--wash .hero__title,
 .hero--wash .wordmark { color: var(--text-strong); }
 .hero--wash .hero__tagline { color: var(--text); text-shadow: none; }
-/* The navbar sits on the clear side of the wash, over snow and sky. Dark ink
-   there needs the same help white ink needed over the sunset - a halo, only
-   in the page's cream rather than in night blue. */
+/* The navbar crosses onto the clear side of the wash, over snow, sky and
+   grass. Small letterspaced caps in a light ink simply vanished there, so it
+   gets three things at once: the strongest ink on the page, a heavier
+   stroke, and a cream halo wide enough to hold its own patch of quiet.
+   Letterspacing is pulled in too - tracking that reads as elegant on paper
+   reads as faint over a photograph. */
 .hero--wash .site-nav a,
 .hero--wash .wordmark {
-  text-shadow: 0 1px 3px rgba(251, 248, 242, 0.95), 0 0 12px rgba(251, 248, 242, 0.8);
+  text-shadow: 0 1px 2px rgba(251, 248, 242, 1), 0 0 10px rgba(251, 248, 242, 0.95),
+               0 0 22px rgba(251, 248, 242, 0.85);
 }
-.hero--wash .site-nav a { color: var(--text); }
+.hero--wash .site-nav a {
+  color: var(--text-strong);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.hero--wash .wordmark { font-weight: 400; }
 .hero--wash .site-nav a:hover,
 .hero--wash .site-nav a[aria-current="page"] {
   color: var(--accent);

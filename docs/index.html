@@ -1,15 +1,19 @@
 ---
 layout: default
 permalink: /
-og_image: /assets/hero/hero-alps-og-1200.jpg
+og_image: /assets/hero/hero-ridge-og-1200.jpg
 ---
 {%- comment %}
-  The hero. Agnès' own photograph: the Alps above Lake Lucerne, from a summer
-  meadow. Swiss, deliberately - she is Swiss-American and writes about living
-  between the two, so this says something true that a Californian trail did
-  not. It also survives the wash: at 10% strength a mountain range still
-  reads, where a footpath simply disappears. Shapes survive fading, detail
-  does not.
+  The hero. Agnès' own photograph: her sons walking down a ridge above Lake
+  Lucerne. Swiss, deliberately - she is Swiss-American and writes about living
+  between the two, so this says something a Californian trail cannot. And it
+  is the only candidate that shows a PATH being walked, which is what the
+  title promises.
+
+  Its source is 2048px, not the 4032 the others had - it has been through a
+  messaging app at some point. That is acceptable here and only here: the
+  wash softens the picture anyway, so the first thing lost to compression is
+  the first thing the design was going to throw away.
 
   It is also SHORT now. A full screen of photograph made a stranger scroll
   past a mood before meeting the writer; the page's job is to introduce her,
@@ -20,28 +24,28 @@ og_image: /assets/hero/hero-alps-og-1200.jpg
 <header class="hero hero--sky hero--trail hero--short hero--wash">
   <picture>
     <source media="(max-width: 40rem)" type="image/webp"
-            srcset="{{ '/assets/hero/hero-alps-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-alps-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-alps-tall-1024.webp' | relative_url }} 1024w">
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.webp' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.webp' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.webp' | relative_url }} 1024w">
     <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/hero/hero-alps-tall-640.jpg' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-alps-tall-900.jpg' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-alps-tall-1024.jpg' | relative_url }} 1024w">
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.jpg' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.jpg' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.jpg' | relative_url }} 1024w">
     <source type="image/webp"
-            srcset="{{ '/assets/hero/hero-alps-1200.webp' | relative_url }} 1200w,
-                    {{ '/assets/hero/hero-alps-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/hero/hero-alps-1920.webp' | relative_url }} 1920w,
-                    {{ '/assets/hero/hero-alps-2400.webp' | relative_url }} 2400w">
+            srcset="{{ '/assets/hero/hero-ridge-1200.webp' | relative_url }} 1200w,
+                    {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1600w,
+                    {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1920w,
+                    {{ '/assets/hero/hero-ridge-2048.webp' | relative_url }} 2048w">
     <img class="hero__media hero__media--trail"
-         src="{{ '/assets/hero/hero-alps-1600.jpg' | relative_url }}"
-         srcset="{{ '/assets/hero/hero-alps-1200.jpg' | relative_url }} 1200w,
-                 {{ '/assets/hero/hero-alps-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/hero/hero-alps-1920.jpg' | relative_url }} 1920w,
-                 {{ '/assets/hero/hero-alps-2400.jpg' | relative_url }} 2400w"
-         sizes="100vw" width="4032" height="3024"
+         src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
+         srcset="{{ '/assets/hero/hero-ridge-1200.jpg' | relative_url }} 1200w,
+                 {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1600w,
+                 {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1920w,
+                 {{ '/assets/hero/hero-ridge-2048.jpg' | relative_url }} 2048w"
+         sizes="100vw" width="2048" height="1536"
          fetchpriority="high" decoding="async"
-         alt="A summer meadow above Lake Lucerne, the snow-capped Alps
-              running the width of the horizon under an open sky.">
+         alt="Two young hikers walking down a grassy ridge above Lake
+              Lucerne, mountains and haze stretching to the horizon.">
   </picture>
   <div class="hero__scrim"></div>
   {%- comment %}
