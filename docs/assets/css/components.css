@@ -478,12 +478,14 @@
   line-height: 1.14;
   font-style: italic;
   font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.35rem);
-  /* 17ch was a column narrower than the panel it sits in - seven lines of
-     four words, which reads as a poem rather than a claim. ch is measured on
-     the digit zero, and this display italic has a narrow one, so the number
-     has to run well past what it looks like it should be: 30ch here is about
-     600px, which is the panel and not a column inside it. */
-  max-width: 30ch;
+  /* No ch measure at all. 17ch was a column narrower than the panel it sits
+     in - five lines of four words, which reads as a poem rather than a claim -
+     and raising the number chased a moving target, because ch is measured on
+     the digit zero and this display italic has an unusually narrow one (30ch
+     came out at 326px, not the 600 it looks like). The panel is already the
+     right measure: it is about 580px at every screen width, because its left
+     padding is the page gutter and grows with the window. */
+  max-width: 100%;
   margin: 0;
 }
 /* The button goes to the actual top-right corner of the page, over the sky in
