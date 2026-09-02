@@ -276,7 +276,10 @@
                                        be read, not a credit line */
   color: var(--c-cream);
   margin: var(--sp-3) 0 0;
-  max-width: 34rem;
+  /* Five nouns separated by dots read as one gesture; broken over two lines
+     the last two look like an afterthought. Wide enough to stay on one line
+     wherever there is room for it. */
+  max-width: 52rem;
   text-shadow: 0 1px 3px rgba(14, 26, 43, 0.9), 0 0 18px rgba(14, 26, 43, 0.7);
 }
 
