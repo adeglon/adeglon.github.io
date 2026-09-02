@@ -675,7 +675,18 @@
 }
 .strands .strand { display: flex; flex-direction: column; }
 .strands .strand__body { display: flex; flex-direction: column; flex: 1; }
-.strands .strand__foot { margin-top: auto; }
+/* Stacked inside the three-column row, not inline. The feet are already
+   bottom-aligned, but "Read Health & Science" is a wider label than "Read
+   Soul & Self", so on one line the piece-count wrapped under it in some
+   columns and not others - which lifted those buttons a line higher than
+   their neighbours. Column direction gives every foot the same shape, so
+   the three buttons share a line. */
+.strands .strand__foot {
+  margin-top: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
 
 .strand {
   border-top: 1px solid var(--rule-quiet);
