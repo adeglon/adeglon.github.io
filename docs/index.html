@@ -4,80 +4,90 @@ permalink: /
 og_image: /assets/hero/hero-ridge-og-1200.jpg
 ---
 {%- comment %}
-  THE HERO, rebuilt 2026-09-02. It stopped being a photograph with type on it.
+  THE HERO. Full-bleed photograph, type on it - but not the way the early
+  versions did it, which is what kept failing.
 
-  Every version before this asked one daylight photograph to be both a picture
-  and a background for six pieces of type - a wordmark, a tagline, four nav
-  links, a fourteen-word claim and a book. Dark scrims made the photograph
-  grey; a cream wash made the type readable and the photograph bland; and the
-  tagline, whatever was done to it, ended up over the trees where nothing can
-  be read. That is not a tuning problem, it is the wrong shape: white letters
-  need an empty dark quarter of a frame to live in, and this frame has none.
+  The lesson from those was never "no type on pictures". It was that type
+  needs a piece of the frame dark enough to hold it, and a flat scrim over the
+  WHOLE picture does not give it one: it greys everything equally, so the
+  photograph loses its light and the letters still sit on clutter. What works
+  is what a film poster does - leave the middle of the frame alone and pour
+  the darkness into the two edges where the type actually is. The sky takes
+  the top band and loses nothing, since it holds no detail; the scrub takes
+  the bottom band, and white letters get real black underneath them.
 
-  So the type gets its own ground. Night panel on the left carrying everything
-  that has to be READ, at full contrast; the photograph on the right at full
-  strength, undimmed, unfiltered, finally allowed to look like a photograph.
-  Nothing overlaps, so nothing has to be compromised, and the claim can be as
-  large as it deserves.
+  So: masthead in the top band, claim in the bottom band, and the whole middle
+  of the photograph - lake, mountains, haze, the two walkers - untouched.
 
   Agnès' own picture: her sons walking down a ridge above Lake Lucerne. Swiss,
   deliberately - she is Swiss-American and writes about living between the
-  two. It is also the only candidate that shows a PATH being walked.
+  two - and the only candidate that shows a PATH being walked.
 {%- endcomment %}
-<header class="hero hero--split">
-  <div class="hero__panel">
-    <div class="hero__panel-inner">
-      <div>
-        {% include chat-button.html %}
-        <div class="site-header__inner">
-          <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-          {% include nav.html %}
-        </div>
-        {%- comment %}
-          Agnès' own line from agnesdeglonblog.com. Five nouns, five facts: a
-          stranger knows in two seconds that this is a writer who is also a
-          scientist, a healer and a mother, and the collision is the
-          interesting part.
-        {%- endcomment %}
-        <p class="hero__tagline">Writer &middot; Acupuncturist &middot; Biochemist
-          &middot; Mama &middot; Soulful Adventurer</p>
-      </div>
+<header class="hero hero--full">
+  <picture>
+    <source media="(max-width: 40rem)" type="image/webp"
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.webp' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.webp' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.webp' | relative_url }} 1024w">
+    <source media="(max-width: 40rem)"
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.jpg' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.jpg' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.jpg' | relative_url }} 1024w">
+    <source type="image/webp"
+            srcset="{{ '/assets/hero/hero-ridge-1200.webp' | relative_url }} 1200w,
+                    {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1600w,
+                    {{ '/assets/hero/hero-ridge-2048.webp' | relative_url }} 2048w">
+    <img class="hero__media"
+         src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
+         srcset="{{ '/assets/hero/hero-ridge-1200.jpg' | relative_url }} 1200w,
+                 {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1600w,
+                 {{ '/assets/hero/hero-ridge-2048.jpg' | relative_url }} 2048w"
+         sizes="100vw" width="2048" height="1536"
+         fetchpriority="high" decoding="async"
+         alt="Two young hikers walking down a grassy ridge above Lake
+              Lucerne, mountains and haze stretching to the horizon.">
+  </picture>
+  {%- comment %}
+    Two gradients in one layer, top and bottom, meeting nothing in the middle.
+  {%- endcomment %}
+  <div class="hero__veil"></div>
 
-      <div class="hero__claim">
-        <h1 class="hero__title hero__title--claim">The novelist who brings ancient
-          wisdom and modern science into conversation through story</h1>
-        {%- comment %}
-          The launch, read from _data/books.yml - so there is exactly one date
-          on the site and it removes itself after publication.
-        {%- endcomment %}
-        {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-        {%- if launching %}
-        <p class="hero__note">
-          <a href="{{ '/books/#within' | relative_url }}">
-            <span class="hero__note-title">{{ launching.title }}</span>
-            <span class="hero__note-meta">A novel &mdash; {{ launching.release_label }}</span>
-          </a></p>
-        {%- endif %}
+  <div class="hero__body hero__body--split">
+    <div class="page">
+      {% include chat-button.html %}
+      <div class="site-header__inner">
+        <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        {% include nav.html %}
       </div>
+      {%- comment %}
+        Agnès' own line from agnesdeglonblog.com. Five nouns, five facts.
+      {%- endcomment %}
+      <p class="hero__tagline">Writer &middot; Acupuncturist &middot; Biochemist
+        &middot; Mama &middot; Soulful Adventurer</p>
     </div>
-  </div>
 
-  <div class="hero__frame">
-    <picture>
-      <source type="image/webp"
-              srcset="{{ '/assets/hero/hero-ridge-1200.webp' | relative_url }} 1200w,
-                      {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1600w,
-                      {{ '/assets/hero/hero-ridge-2048.webp' | relative_url }} 2048w">
-      <img class="hero__media"
-           src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
-           srcset="{{ '/assets/hero/hero-ridge-1200.jpg' | relative_url }} 1200w,
-                   {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1600w,
-                   {{ '/assets/hero/hero-ridge-2048.jpg' | relative_url }} 2048w"
-           sizes="(max-width: 60rem) 100vw, 50vw" width="2048" height="1536"
-           fetchpriority="high" decoding="async"
-           alt="Two young hikers walking down a grassy ridge above Lake
-                Lucerne, mountains and haze stretching to the horizon.">
-    </picture>
+    <div class="page hero__claim">
+      {%- comment %}
+        Shortened 2026-09-02. It used to open "The novelist who brings..." -
+        fourteen words that spent the first three saying what she is before
+        saying anything. This is the same claim with the throat-clearing gone,
+        and it fits on two lines at poster size.
+      {%- endcomment %}
+      <h1 class="hero__title hero__title--claim">Ancient wisdom and modern
+        science, brought into conversation through story</h1>
+      {%- comment %}
+        The launch, read from _data/books.yml - one date on the whole site,
+        and it removes itself after publication.
+      {%- endcomment %}
+      {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+      {%- if launching %}
+      <p class="hero__note">
+        <a href="{{ '/books/#within' | relative_url }}">
+          <span class="hero__note-title">{{ launching.title }}</span>
+          <span class="hero__note-meta">A novel &mdash; {{ launching.release_label }}</span>
+        </a></p>
+      {%- endif %}
+    </div>
   </div>
 </header>
 

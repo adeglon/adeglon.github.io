@@ -47,47 +47,63 @@ permalink: /blog/
     this page exists to undo.
   {%- endcomment %}
   {%- comment %}
-    THREE ABREAST, above the fold. This page's whole job is to let a reader
-    choose a strand, so all three have to be visible at once - stacked, the
-    third one lived below two screens of scrolling and was effectively hidden.
+    ONE UNDER ANOTHER, restored 2026-09-02. They spent a day three abreast so
+    that all three were visible at once; Agnès looked at it and wanted the
+    stacked rows back. Three abreast forced every introduction into the same
+    clamped seven lines and turned her three welcomes into three cards of
+    equal weight - which is a directory, not a door. A wide row gives each
+    strand a real photograph and all of her words.
 
-    Picture, name, Agnès' own introduction, a way in. The Misadventures list
-    of what-you-will-find moved to /misadventures/ itself, where it introduces
-    that shelf without unbalancing this row.
+    The top of the page stays clean and carries no category row: the masthead,
+    the line that says what the three strands are, and then the strands
+    themselves.
   {%- endcomment %}
-  <ul class="strands">
-    {%- for s in site.sections %}
-    {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
-    <li class="strand" id="{{ s.slug }}">
-      {%- if s.image %}
-      <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
-         tabindex="-1" aria-hidden="true">
-        <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-             loading="lazy" decoding="async">
-      </a>
+  {%- for s in site.sections %}
+  {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
+  {%- assign latest = posts | first %}
+  <section class="strand" id="{{ s.slug }}">
+    {%- if s.image %}
+    <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
+       tabindex="-1" aria-hidden="true">
+      <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+           loading="lazy" decoding="async">
+    </a>
+    {%- endif %}
+    <div class="strand__body">
+      <h2 class="strand__name">
+        <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.welcome_title }}</a>
+      </h2>
+      {%- comment %}
+        Agnès' own introduction from WordPress, every paragraph of it, in her
+        words. `sections` in _config.yml holds them verbatim.
+      {%- endcomment %}
+      {%- for para in s.welcome %}
+      <p class="strand__intro">{{ para }}</p>
+      {%- endfor %}
+
+      {%- if s.bullets %}
+      <ul class="strand__bullets">
+        {%- for b in s.bullets %}
+        <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
+        {%- endfor %}
+      </ul>
       {%- endif %}
-      <div class="strand__body">
-        <h2 class="strand__name">
-          <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a>
-        </h2>
-        {%- comment %}
-          All of the welcome, joined, then clamped to a fixed number of lines
-          by CSS. Agnès' three introductions are different lengths - one is a
-          single sentence - so taking "the first paragraph" gave three columns
-          of wildly different depth. Clamping equalises them without editing
-          her words; the full text is on the strand's own page.
-        {%- endcomment %}
-        {%- assign intro = s.welcome | join: " " %}
-        <p class="strand__intro">{{ intro }}</p>
-        <p class="strand__foot">
-          <a class="btn btn--quiet"
-             href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
-          <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
-        </p>
-      </div>
-    </li>
-    {%- endfor %}
-  </ul>
+
+      <p class="strand__foot">
+        <a class="btn btn--quiet"
+           href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
+        <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
+      </p>
+
+      {%- if latest %}
+      <p class="strand__latest">
+        Latest: <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+        <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%b %-d, %Y" }}</time>
+      </p>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endfor %}
 
 </main>
 

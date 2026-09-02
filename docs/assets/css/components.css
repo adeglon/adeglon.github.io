@@ -416,6 +416,102 @@
   width: 100%;
 }
 /* --------------------------------------------------------------------------
+   FULL-BLEED HERO  ← the landing page
+   --------------------------------------------------------------------------
+   One photograph across the whole screen, with the type on it. The earlier
+   attempts at this failed for a specific reason worth writing down: they laid
+   a scrim over the WHOLE frame. That greys the photograph everywhere - which
+   is what made it look bland - and still leaves the letters sitting on
+   clutter, because the middle of a daylight picture is busy wherever you put
+   them.
+
+   A poster does the opposite. It leaves the middle of the frame alone and
+   pours the darkness into the two edges where the type actually is: the sky
+   at the top, which holds no detail and loses nothing by going dark, and the
+   scrub at the bottom, where white letters get real black underneath them.
+   Lake, mountains, haze and the two walkers are untouched.
+   -------------------------------------------------------------------------- */
+
+.hero--full {
+  position: relative;
+  min-height: 92svh;
+  align-items: stretch;
+}
+.hero--full .hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* the masthead's band */
+    linear-gradient(to bottom,
+      rgba(17, 24, 30, 0.82) 0%,
+      rgba(17, 24, 30, 0.52) 14%,
+      rgba(17, 24, 30, 0.16) 30%,
+      rgba(17, 24, 30, 0) 44%),
+    /* the claim's band - deeper, because grass is not sky */
+    linear-gradient(to top,
+      rgba(17, 24, 30, 0.94) 0%,
+      rgba(17, 24, 30, 0.80) 16%,
+      rgba(17, 24, 30, 0.40) 34%,
+      rgba(17, 24, 30, 0) 58%);
+}
+.hero--full .hero__body {
+  position: relative;
+  z-index: 2;
+  padding-block: var(--sp-5) var(--sp-8);
+}
+/* Full contrast type. The shadow is a soft halo rather than a drop shadow -
+   there to survive a pale evening in the photograph, not to be seen. */
+.hero--full .wordmark,
+.hero--full .hero__title {
+  color: var(--c-shell);
+  text-shadow: 0 1px 14px rgba(17, 24, 30, 0.85), 0 0 3px rgba(17, 24, 30, 0.6);
+}
+.hero--full .hero__tagline,
+.hero--full .site-nav a {
+  color: rgba(251, 248, 242, 0.92);
+  text-shadow: 0 1px 12px rgba(17, 24, 30, 0.9), 0 0 3px rgba(17, 24, 30, 0.7);
+}
+.hero--full .site-nav a:hover,
+.hero--full .site-nav a[aria-current="page"] {
+  color: var(--c-gold);
+  border-bottom-color: rgba(201, 160, 92, 0.6);
+}
+.hero--full .hero__title--claim {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  line-height: 1.14;
+  font-style: italic;
+  font-size: clamp(1.85rem, 1.05rem + 2.5vw, 3.5rem);
+  /* A measure in rem, never in ch: ch is the width of the digit zero and this
+     display italic has an unusually narrow one, so a ch number renders about a
+     third of the width it looks like it should. */
+  max-width: 34rem;
+  margin: 0;
+}
+.hero--full .hero__note { margin-top: var(--sp-6); }
+.hero--full .chat-open {
+  background: rgba(17, 24, 30, 0.55);
+  border-color: rgba(201, 160, 92, 0.8);
+}
+/* min-height is a floor, so on a short laptop window the type grew through it
+   and took the fold with it. Everything steps down together. */
+@media (max-height: 46rem) {
+  .hero--full .hero__title--claim { font-size: clamp(1.45rem, 1rem + 1.5vw, 2.1rem); }
+  .hero--full .hero__body { padding-block: var(--sp-4) var(--sp-6); }
+  .hero--full .hero__note { margin-top: var(--sp-5); }
+  .hero--full .hero__tagline { font-size: var(--fs-base); }
+}
+/* The page under it starts a tenth of a screen down, so the fold lands in
+   cream rather than on the top of the headshot. */
+.hero--full + .section { padding-top: max(var(--sp-8), 8svh); }
+
+/* PARKED. .hero--split below is the two-column version - a night panel of type
+   beside an undimmed photograph. No page uses it; it is kept because it solved
+   the readability problem outright and may be wanted again. */
+
+/* --------------------------------------------------------------------------
    SPLIT HERO  ← the landing page
    --------------------------------------------------------------------------
    Type on its own ground, photograph on its own. Every earlier version put
@@ -894,44 +990,18 @@
    feed: mixing the categories is the thing this page exists to undo.
    -------------------------------------------------------------------------- */
 
-/* Three abreast, so a reader sees every strand without scrolling. Was a
-   stacked list of wide rows, which put the third strand two screens down. */
-.strands {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: var(--sp-6);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.strands .strand { display: flex; flex-direction: column; }
-.strands .strand__body { display: flex; flex-direction: column; flex: 1; }
-/* Stacked inside the three-column row, not inline. The feet are already
-   bottom-aligned, but "Read Health & Science" is a wider label than "Read
-   Soul & Self", so on one line the piece-count wrapped under it in some
-   columns and not others - which lifted those buttons a line higher than
-   their neighbours. Column direction gives every foot the same shape, so
-   the three buttons share a line. */
-/* A shallower crop in the three-up row. At 4:3 the picture alone was 250px
-   tall and the category name under it fell off the bottom of a short laptop
-   window - which defeats the point of the row. A landscape photograph loses
-   nothing by being a little more landscape. */
-.strands .strand__media img { aspect-ratio: 16 / 10; }
-.strands .strand { padding-block: var(--sp-3) var(--sp-6); }
-/* One line each. At --fs-xl "Health & Science" wrapped to two lines in a
-   331px column and its neighbours did not, which cost 45px on the tallest
-   card and made the row look accidental. */
-.strands .strand__name { font-size: var(--fs-lg); margin-bottom: var(--sp-3); }
-.strands .strand__foot {
-  margin-top: auto;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--sp-3);
-}
-
+/* ONE UNDER ANOTHER. They were three abreast for a day so that all three were
+   visible at once; Agnès wanted the wide rows back. Three columns forced every
+   introduction into the same clamped seven lines, which turns three different
+   welcomes into three cards of equal weight - a directory rather than three
+   doors. A wide row gives each strand a real photograph and all of her words. */
 .strand {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) 1fr;
+  gap: var(--sp-7);
+  align-items: start;
   border-top: 1px solid var(--rule-quiet);
-  padding-block: var(--sp-6);
+  padding-block: var(--sp-7);
   /* No max-width. This block was capped at --measure-wide, which is a MEASURE
      for a single column of prose - put a 18rem photograph beside it and the
      text was squeezed into a ribbon. The photograph and the text each get
@@ -942,13 +1012,16 @@
    category is faster than the paragraph does. Fixed 4:3 so three unequal
    source frames still line up down the page. */
 .strand__media { display: block; }
-.strand__media { display: block; margin-bottom: var(--sp-4); }
 .strand__media img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-photo);
+}
+
+@media (max-width: 44rem) {
+  .strand { grid-template-columns: 1fr; gap: var(--sp-5); }
 }
 
 .strand__name {
@@ -992,20 +1065,9 @@
    weight on the page; the full introduction is on the strand's own page.
    The old -webkit- properties are the only ones any browser implements, and
    every browser implements them, including Firefox. */
-.strand__intro {
-  color: var(--text);
-  max-width: var(--measure);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 7;
-  line-clamp: 7;
-  overflow: hidden;
-}
-/* Stacked, there is one column and nothing to equalise - so let the whole
-   introduction show rather than cutting it for no reason. */
-@media (max-width: 52rem) {
-  .strand__intro { -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; display: block; }
-}
+/* No clamp. In a wide row there is nothing to equalise against, so Agnès'
+   introduction runs in full - which is the whole point of the page. */
+.strand__intro { color: var(--text); max-width: var(--measure); }
 .strand__foot {
   display: flex; align-items: baseline; flex-wrap: wrap;
   gap: var(--sp-4);
