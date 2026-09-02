@@ -206,6 +206,13 @@
   --fs-3xl:       clamp(2.80rem, 1.80rem + 4.40vw, 5.00rem);
   --fs-hero:      clamp(3.20rem, 1.60rem + 7.00vw, 7.00rem);
 
+  /* TEN PER CENT BIGGER, on pages that ask for it in front matter
+     (big_type: true → html[data-type="big"]). Agnès wanted the landing page
+     to read larger; scaling the TOKENS rather than the root font size means
+     only the type grows - the page width, the gutters and the vertical rhythm
+     stay exactly where they are, so nothing reflows or loses its proportion.
+     Keep these in step with the scale above: each is that value times 1.1. */
+
   --lh-tight:     1.06;   /* display caps, stacked title lines            */
   --lh-snug:      1.28;
   --lh-body:      1.62;   /* long-form prose                              */
@@ -308,4 +315,17 @@
 
 @media (prefers-reduced-motion: reduce) {
   :root { --dur: 1ms; }
+}
+
+/* --------------------------------------------------------------------------
+   THE 10% SCALE  ← html[data-type="big"], set by `big_type: true`
+   -------------------------------------------------------------------------- */
+html[data-type="big"] {
+  --fs-base:      1.30625rem;
+  --fs-xs:        0.89375rem;
+  --fs-sm:        1.03125rem;
+  --fs-lg:        clamp(1.43rem, 1.298rem + 0.605vw, 1.705rem);
+  --fs-xl:        clamp(1.815rem, 1.54rem + 1.21vw, 2.475rem);
+  --fs-2xl:       clamp(2.31rem, 1.76rem + 2.42vw, 3.575rem);
+  --fs-3xl:       clamp(3.08rem, 1.98rem + 4.84vw, 5.50rem);
 }

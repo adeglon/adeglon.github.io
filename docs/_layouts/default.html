@@ -4,7 +4,7 @@
   follow the operating system; the trilogy pages set `ground: dark` in their
   front matter, because a book cover does not have a light mode.
 {% endcomment %}
-<html lang="{{ site.lang | default: 'en' }}" data-ground="{{ page.ground | default: 'auto' }}">
+<html lang="{{ site.lang | default: 'en' }}" data-ground="{{ page.ground | default: 'auto' }}"{% if page.big_type %} data-type="big"{% endif %}>
 <head>{% include head.html %}</head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

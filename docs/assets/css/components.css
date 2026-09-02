@@ -434,7 +434,10 @@
 
 .hero--full {
   position: relative;
-  min-height: 92svh;
+  /* SHORTER, 2026-09-02. It carries only the masthead now, so a full screen of
+     it was a screen a reader had to get past before anything was said. Two
+     thirds shows the whole picture and puts the headline in view underneath. */
+  min-height: 64svh;
   align-items: stretch;
 }
 /* The <picture> is a grid item like everything else, so it was opening a row
@@ -451,25 +454,16 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* LIGHTENED 2026-09-02. The bands were doing all the work and the picture
-     had gone to dusk. The contrast moves off the photograph and onto the
-     letters instead - see the halo on .hero__title below, which darkens only
-     the few pixels around each glyph rather than the whole frame. The bands
-     stay, but as a lean rather than a curtain. */
+  /* ONE BAND, at the top, where the masthead is. The band at the foot went
+     with the headline it was there for; the bottom two thirds of the
+     photograph is now completely unfiltered, which is the whole difference
+     between a poster and an open window. */
   background:
-    /* the masthead's band */
     linear-gradient(to bottom,
-      rgba(17, 24, 30, 0.62) 0%,
-      rgba(17, 24, 30, 0.40) 16%,
-      rgba(17, 24, 30, 0.16) 28%,
-      rgba(17, 24, 30, 0) 44%),
-    /* the claim's band - a little deeper, because grass is not sky */
-    linear-gradient(to top,
-      rgba(17, 24, 30, 0.78) 0%,
-      rgba(17, 24, 30, 0.60) 20%,
-      rgba(17, 24, 30, 0.38) 36%,
-      rgba(17, 24, 30, 0.16) 52%,
-      rgba(17, 24, 30, 0) 68%);
+      rgba(17, 24, 30, 0.58) 0%,
+      rgba(17, 24, 30, 0.36) 18%,
+      rgba(17, 24, 30, 0.12) 32%,
+      rgba(17, 24, 30, 0) 48%);
 }
 /* Its own colour, very slightly forward. Nothing is filtering the photograph
    down any more, so it can carry the daylight it was shot in. */
@@ -509,21 +503,13 @@
   color: var(--c-gold);
   border-bottom-color: rgba(201, 160, 92, 0.6);
 }
-.hero--full .hero__title--claim {
-  text-transform: none;
-  letter-spacing: 0.01em;
-  line-height: 1.14;
-  font-style: italic;
-  /* BIG - the size the original hero title had, because this is the headline
-     of the page and it was reading as a caption. */
-  font-size: clamp(2.1rem, 1.15rem + 3.1vw, 3.9rem);
-  /* A measure in rem, never in ch: ch is the width of the digit zero and this
-     display italic has an unusually narrow one, so a ch number renders about a
-     third of the width it looks like it should. */
-  max-width: 46rem;
-  margin: 0;
+/* HER NAME, TWICE THE SIZE. It is the first thing on the site and it was set
+   at the same size as a section heading. Doubled, over open sky, it is the
+   masthead of a book jacket rather than a browser tab label. */
+.hero--full .wordmark {
+  font-size: min(calc(var(--fs-lg) * 2), 9.5vw);
+  line-height: 1.05;
 }
-.hero--full .hero__note { margin-top: var(--sp-6); }
 /* Out of the flow and into the actual corner. In flow it pushed the wordmark
    and the navigation 60px down the picture, out of the top band's darkest
    part - which is the one place they are certain to be readable. */
@@ -541,14 +527,66 @@
 /* min-height is a floor, so on a short laptop window the type grew through it
    and took the fold with it. Everything steps down together. */
 @media (max-height: 46rem) {
-  .hero--full .hero__title--claim { font-size: clamp(1.55rem, 1rem + 1.9vw, 2.5rem); }
   .hero--full .hero__body { padding-block: calc(var(--sp-3) + 2.6rem) var(--sp-6); }
-  .hero--full .hero__note { margin-top: var(--sp-5); }
-  .hero--full .hero__tagline { font-size: var(--fs-base); }
 }
-/* The page under it starts a tenth of a screen down, so the fold lands in
-   cream rather than on the top of the headshot. */
-.hero--full + .section { padding-top: max(var(--sp-8), 8svh); }
+/* Close under the picture: the headline is the next thing and it should be
+   arriving as the photograph ends, not after a field of cream. */
+.hero--full + .section { padding-top: var(--sp-7); }
+
+/* --------------------------------------------------------------------------
+   THE OPENING  ← the headline and the book, on the cream
+   --------------------------------------------------------------------------
+   Everything a stranger has to READ, in the page's own ink at full contrast,
+   with no photograph underneath and therefore no scrim, no halo and no
+   compromise on size. This is where the landing page actually speaks.
+   -------------------------------------------------------------------------- */
+
+.opening { margin-block: 0 var(--sp-7); }
+.opening__claim {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.1rem, 1.2rem + 3.1vw, 3.9rem);
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+  color: var(--text-strong);
+  max-width: 46rem;
+  margin: 0;
+  text-wrap: pretty;
+}
+.opening__book { margin: var(--sp-6) 0 0; }
+
+/* THE BOOK, as a filled button. Outlined gold on a photograph was a whisper;
+   gold ground with the night ink on it is the loudest thing on the page after
+   the headline, which is right - it is the only reason the launch exists. */
+.booknote {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2em;
+  background: var(--accent);
+  border-color: var(--accent);
+  /* Stated, not --bg: on the cream ground --bg IS the cream, which would put
+     pale text on a gold button. */
+  color: var(--c-night);
+  padding: var(--sp-4) var(--sp-6);
+}
+.booknote:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--c-night);
+}
+.booknote__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--track-title);
+  line-height: 1.1;
+}
+.booknote__meta {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-label);
+  opacity: 0.82;
+}
 
 /* PARKED. .hero--split below is the two-column version - a night panel of type
    beside an undimmed photograph. No page uses it; it is kept because it solved

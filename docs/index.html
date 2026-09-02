@@ -1,23 +1,22 @@
 ---
 layout: default
 permalink: /
+# Every type token on this page is scaled 10% - Agnes asked for it, and a
+# landing page read at arm's length can carry it. See html[data-type="big"].
+big_type: true
 og_image: /assets/hero/hero-ridge-og-1200.jpg
 ---
 {%- comment %}
-  THE HERO. Full-bleed photograph, type on it - but not the way the early
-  versions did it, which is what kept failing.
+  THE HERO. One photograph across the whole screen, in its own daylight, and
+  the only type on it is the masthead - name, navigation, the five nouns.
 
-  The lesson from those was never "no type on pictures". It was that type
-  needs a piece of the frame dark enough to hold it, and a flat scrim over the
-  WHOLE picture does not give it one: it greys everything equally, so the
-  photograph loses its light and the letters still sit on clutter. What works
-  is what a film poster does - leave the middle of the frame alone and pour
-  the darkness into the two edges where the type actually is. The sky takes
-  the top band and loses nothing, since it holds no detail; the scrub takes
-  the bottom band, and white letters get real black underneath them.
-
-  So: masthead in the top band, claim in the bottom band, and the whole middle
-  of the photograph - lake, mountains, haze, the two walkers - untouched.
+  That is the settled answer after several rounds. Type in the middle or at
+  the foot of this frame can only be made readable by darkening the picture,
+  and every time the picture was darkened enough for a headline it stopped
+  being welcoming. The sky at the top is the one place that gives type a
+  ground for free: it holds no detail, so a light lean over it costs the
+  photograph nothing. Everything that has to be READ at length - the claim,
+  the book - is on the cream below, where it can be as large as it likes.
 
   Agnès' own picture: her sons walking down a ridge above Lake Lucerne. Swiss,
   deliberately - she is Swiss-American and writes about living between the
@@ -66,32 +65,46 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
         &middot; Mama &middot; Soulful Adventurer</p>
     </div>
 
-    <div class="page hero__claim">
-      {%- comment %}
-        Agnès' line, restored in full 2026-09-02 after a shortened version
-        was tried and rejected. It names what she IS in the first three words,
-        which the short version dropped - and on a page whose whole job is to
-        introduce a writer, that is the part that cannot go.
-      {%- endcomment %}
-      <h1 class="hero__title hero__title--claim">A novelist who brings ancient
-        wisdom and modern science into conversation through story</h1>
-      {%- comment %}
-        The launch, read from _data/books.yml - one date on the whole site,
-        and it removes itself after publication.
-      {%- endcomment %}
-      {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-      {%- if launching %}
-      <p class="hero__note">
-        <a href="{{ '/books/#within' | relative_url }}">
-          <span class="hero__note-title">{{ launching.title }}</span>
-          <span class="hero__note-meta">A novel &mdash; {{ launching.release_label }}</span>
-        </a></p>
-      {%- endif %}
-    </div>
   </div>
 </header>
 
 <main id="main" class="page section">
+
+  {%- comment %}
+    THE HEADLINE COMES OFF THE PHOTOGRAPH, 2026-09-02.
+
+    Not a retreat from type-on-a-picture - a measurement. This frame has no
+    empty quarter big enough to hold a sentence at headline size: the sky is
+    shallow, the lake is busy with towns, and the one smooth area, the grass
+    at bottom left, is about 440px wide before it runs into the pines. A
+    headline that fits there is not a headline. Every version that tried it
+    either shrank the sentence or darkened the picture until it was dusk.
+
+    On the cream it can be as large as it likes, in the page's own ink, at
+    full contrast, with no scrim needed anywhere. The photograph goes back to
+    being a photograph, in daylight, with only the masthead on its sky - and
+    that is what makes the page feel like an invitation rather than a poster.
+  {%- endcomment %}
+  <div class="opening">
+    <h1 class="opening__claim">A novelist who brings ancient wisdom and modern
+      science into conversation through story</h1>
+    {%- comment %}
+      The launch, read from _data/books.yml - one date on the whole site, and
+      it removes itself after publication. Filled gold with night ink on it:
+      the outlined version was gold-on-photograph and barely there.
+    {%- endcomment %}
+    {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+    {%- if launching %}
+    <p class="opening__book">
+      <a class="btn booknote" href="{{ '/books/#within' | relative_url }}">
+        <span class="booknote__title">{{ launching.title }}</span>
+        <span class="booknote__meta">A novel &mdash; {{ launching.release_label }}</span>
+      </a>
+    </p>
+    {%- endif %}
+  </div>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
 
   {%- comment %}
     IDENTITY FIRST, then the writing. The page's job is to introduce a writer
