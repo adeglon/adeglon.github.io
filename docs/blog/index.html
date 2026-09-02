@@ -72,9 +72,15 @@ permalink: /blog/
         <h2 class="strand__name">
           <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a>
         </h2>
-        {%- for para in s.welcome %}{% if forloop.first %}
-        <p class="strand__intro">{{ para }}</p>
-        {%- endif %}{% endfor %}
+        {%- comment %}
+          All of the welcome, joined, then clamped to a fixed number of lines
+          by CSS. Agnès' three introductions are different lengths - one is a
+          single sentence - so taking "the first paragraph" gave three columns
+          of wildly different depth. Clamping equalises them without editing
+          her words; the full text is on the strand's own page.
+        {%- endcomment %}
+        {%- assign intro = s.welcome | join: " " %}
+        <p class="strand__intro">{{ intro }}</p>
         <p class="strand__foot">
           <a class="btn btn--quiet"
              href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>

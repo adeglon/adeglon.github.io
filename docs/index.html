@@ -72,28 +72,23 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
         {% include nav.html %}
       </div>
     </div>
-    <div class="page">
-      {%- comment %}
-        Agnès' own positioning line, promoted from the Books page. It is
-        longer than the line it replaced and far more specific: "Words from
-        the trail, stories from the soul" could belong to a hundred writers;
-        this belongs to one. Removed from /books/ so the site does not say it
-        twice.
-      {%- endcomment %}
+    <div class="page hero__foot">
       <h1 class="hero__title hero__title--claim">The novelist who brings ancient
         wisdom and modern science into conversation through story</h1>
-        {%- comment %}
-          The one concrete fact in the hero: there is a novel, and it has a
-          date. Without it a stranger meets a name, five nouns and a poetic
-          line, and never learns this is a novelist. Read from books.yml, so
-          it removes itself after publication.
-        {%- endcomment %}
-        {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-        {%- if launching %}
-        <p class="hero__note">
-          <a href="{{ '/books/#within' | relative_url }}">{{ launching.title }}
-            &mdash; a novel, {{ launching.release_label }}</a></p>
-        {%- endif %}
+      {%- comment %}
+        The book, out in the open ground on the right of the picture, so the
+        claim gets the whole left column. Two lines: the title, then what and
+        when. Read from _data/books.yml, so it removes itself after
+        publication.
+      {%- endcomment %}
+      {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+      {%- if launching %}
+      <p class="hero__note">
+        <a href="{{ '/books/#within' | relative_url }}">
+          <span class="hero__note-title">{{ launching.title }}</span>
+          <span class="hero__note-meta">A novel &mdash; {{ launching.release_label }}</span>
+        </a></p>
+      {%- endif %}
     </div>
   </div>
 </header>

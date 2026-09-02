@@ -288,24 +288,45 @@
 }
 .hero--short .hero--short .hero__title--claim,
 .hero--short .hero__title--claim {
-  font-size: clamp(1.4rem, 0.9rem + 1.6vw, 2.35rem);
-  max-width: 30ch;
+  /* Raised 2026-09-02. The claim IS the headline now, and at the old size it
+     read as a caption - which left the bio peeking over the fold and made
+     the first thing a stranger saw a half-portrait rather than a sentence.
+     Bigger type also does the fold work: it fills the hero's foot, so what
+     is below the fold stays below it. */
+  font-size: clamp(1.75rem, 1.05rem + 2.3vw, 3.1rem);
+  max-width: 24ch;
 }
 /* A fourteen-word claim needs fewer lines on a short window, or the hero
    grows through its own ceiling and pushes the fold off the screen. */
 @media (max-height: 44rem) {
   .hero--short .hero__title--claim { font-size: clamp(1.2rem, 0.8rem + 1.2vw, 1.7rem); }
   .hero--short .hero__body--split { padding-bottom: var(--sp-5); }
-  .hero__note { margin-top: var(--sp-5); font-size: var(--fs-sm); }
+  .hero__note a { padding: var(--sp-2) var(--sp-4); }
 }
-/* The novel, under the title. Small, gold, uppercase - the only place on the
+/* THE FOOT OF THE HERO: the claim and the book, side by side rather than
+   stacked. The photograph's left third is ridge and figures; its right third
+   is open pasture and haze - empty ground that was carrying nothing. Moving
+   the book there gives the sentence the whole left column and puts the novel
+   where the eye lands last. They share a baseline, so the two blocks read as
+   one line of the picture rather than two floating labels. */
+.hero__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-6) var(--sp-7);
+  flex-wrap: wrap;
+}
+.hero__foot .hero__title--claim { flex: 1 1 22ch; margin-bottom: 0; }
+.hero__foot .hero__note { flex: 0 1 auto; }
+
+/* The novel, beside the claim. Small, gold, uppercase - the only place on the
    landing page that names a book above the fold, and the only reason a
    stranger learns in two seconds that this is a novelist. */
 .hero__note {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs, 0.8rem);
   text-transform: uppercase;
   letter-spacing: var(--track-label);
-  margin: var(--sp-6) 0 0;
+  margin: 0;
 }
 .hero__note a {
   display: inline-block;
@@ -313,8 +334,26 @@
   font-weight: 500;
   border: 1px solid var(--accent);
   border-radius: 0;
-  padding: var(--sp-2) var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  text-align: right;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+/* Two lines, deliberately: the title, then what it is and when. One line put
+   a novel's name and a date in the same breath and neither registered. */
+.hero__note-title,
+.hero__note-meta { display: block; }
+.hero__note-meta {
+  font-size: 0.86em;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+  margin-top: 0.25em;
+}
+/* Stacked, "to the right" means nothing - there is one column. The note goes
+   back under the claim and stops trying to hold an edge that isn't there. */
+@media (max-width: 44rem) {
+  .hero__foot { display: block; }
+  .hero__foot .hero__note { margin-top: var(--sp-5); }
+  .hero__note a { text-align: left; }
 }
 .hero__note a:hover { background: var(--accent); color: var(--c-night); }
 .hero--wash .hero__note a {
@@ -681,7 +720,27 @@
   transform: rotate(45deg);
 }
 .strand__bullets strong { color: var(--text-strong); font-weight: 500; }
-.strand__intro { color: var(--text); max-width: var(--measure); }
+/* CLAMPED, not truncated in Liquid. Agnès' three welcomes run to wildly
+   different lengths - Soul & Self's is a single sentence - so three columns
+   showed three different depths and the Read buttons landed on three
+   different lines. A fixed number of lines gives every strand the same
+   weight on the page; the full introduction is on the strand's own page.
+   The old -webkit- properties are the only ones any browser implements, and
+   every browser implements them, including Firefox. */
+.strand__intro {
+  color: var(--text);
+  max-width: var(--measure);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+}
+/* Stacked, there is one column and nothing to equalise - so let the whole
+   introduction show rather than cutting it for no reason. */
+@media (max-width: 52rem) {
+  .strand__intro { -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; display: block; }
+}
 .strand__foot {
   display: flex; align-items: baseline; flex-wrap: wrap;
   gap: var(--sp-4);
