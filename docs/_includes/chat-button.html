@@ -1,0 +1,19 @@
+{% comment %}
+  "Ask me anything" in the masthead instead of a floating bubble.
+
+  The Demeterics widget parks a 380px bar in the bottom-right corner of every
+  page. That is where a support chat lives on a software product; on an
+  author's site it sat on top of the writing and looked bought-in. This button
+  puts the same thing where a reader looks for a way to talk to someone - the
+  top right, above the navigation - and the bubble is hidden.
+
+  It renders HIDDEN and is revealed by the script in chat-widget.html only
+  once the widget has actually loaded and its launcher can be found. If the
+  widget is blocked (the domain allowlist, an ad blocker, no key) the button
+  never appears, so it can never be a button that does nothing.
+{% endcomment %}
+{% if site.demeterics_key and site.demeterics_key != "" %}
+<div class="utility">
+  <button type="button" class="chat-open" data-chat-open hidden>Ask me anything</button>
+</div>
+{% endif %}

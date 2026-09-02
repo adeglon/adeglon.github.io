@@ -415,6 +415,196 @@
   padding-block: var(--sp-9);
   width: 100%;
 }
+/* --------------------------------------------------------------------------
+   SPLIT HERO  ← the landing page
+   --------------------------------------------------------------------------
+   Type on its own ground, photograph on its own. Every earlier version put
+   white letters over a daylight photograph and then tried to rescue them: a
+   dark scrim greyed the picture, a cream wash made the picture bland, and the
+   tagline sat over the trees where nothing can be read at any opacity. The
+   frame simply has no empty quarter for type to live in.
+
+   Two columns solve all of it at once. The panel is near-black, so contrast
+   is a non-question and the claim can be as large as it deserves; the
+   photograph keeps its own colour and never carries a word.
+   -------------------------------------------------------------------------- */
+
+.hero--split {
+  display: grid;
+  /* The type side is the wider one. Equal halves read as a comparison of two
+     things; a 1.15 : 1 split reads as a page with a picture on it. */
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: stretch;
+  min-height: 92svh;
+  background: var(--c-night);
+}
+.hero--split .hero__panel { display: flex; background: var(--c-night); }
+.hero--split .hero__panel-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--sp-7);
+  width: 100%;
+  /* The left padding is the PAGE's own gutter, computed the same way .page
+     computes it. That puts the wordmark directly above the author's name in
+     the section below, which is what makes the two halves of the screen read
+     as one page rather than as two panes. */
+  padding: var(--sp-5) var(--sp-7) var(--sp-8)
+           max(var(--sp-6), calc((100vw - var(--page-max)) / 2));
+}
+.hero--split .hero__frame { position: relative; overflow: hidden; }
+/* No filter, no scrim, no wash. It carries no type, so it has nothing to
+   apologise for. */
+.hero--split .hero__frame .hero__media { object-position: 50% 45%; }
+
+/* The panel is night whatever the ground, so its type is stated here rather
+   than inherited - the page below can be in light mode. */
+.hero--split .hero__panel { color: var(--c-shell); }
+.hero--split .wordmark,
+.hero--split .hero__title { color: var(--c-shell); text-shadow: none; }
+.hero--split .hero__tagline { color: rgba(251, 248, 242, 0.72); text-shadow: none; }
+.hero--split .site-nav a { color: rgba(251, 248, 242, 0.82); text-shadow: none; }
+.hero--split .site-nav a:hover,
+.hero--split .site-nav a[aria-current="page"] {
+  color: var(--c-gold);
+  border-bottom-color: rgba(201, 160, 92, 0.5);
+}
+/* THE CLAIM, at last at headline size. On its own ground there is no reason
+   to keep it small, and it is the sentence the whole page is built on. */
+.hero--split .hero__title--claim {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  line-height: 1.14;
+  font-style: italic;
+  font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.35rem);
+  max-width: 17ch;
+  margin: 0;
+}
+.hero--split .hero__note { margin-top: var(--sp-6); }
+
+@media (max-width: 60rem) {
+  /* Stacked: the panel first, because the navigation belongs at the top of a
+     page, then the photograph as a band under it. */
+  .hero--split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero--split .hero__panel-inner {
+    gap: var(--sp-6);
+    padding: var(--sp-5) var(--sp-6) var(--sp-7);
+  }
+  .hero--split .hero__frame { height: 42svh; min-height: 14rem; }
+  .hero--split .hero__title--claim { max-width: 22ch; }
+}
+/* The page under it starts a tenth of a screen down, so on a tall window the
+   fold lands in cream rather than on the top of the headshot. */
+.hero--split + .section { padding-top: max(var(--sp-8), 8svh); }
+
+/* --------------------------------------------------------------------------
+   LEDE  ← the heading on /blog/ and /books/
+   --------------------------------------------------------------------------
+   Both pages used to open with one display-size word - Blog, Books - directly
+   under a navigation bar that already said which page you were on. The word
+   cost about a hundred and thirty pixels and told a reader nothing they had
+   not just clicked. The sentence that replaced it does the labelling and the
+   explaining at once, at a fraction of the height, which is what gets three
+   photographs (or three shelves) above the fold.
+   -------------------------------------------------------------------------- */
+
+.blog-lede {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.3rem, 0.95rem + 1.1vw, 1.95rem);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.01em;
+  color: var(--text-strong);
+  max-width: var(--measure-wide);
+  margin: var(--sp-5) 0 0;
+  text-wrap: pretty;
+}
+/* The second sentence is the gloss on the first, so it steps back a shade
+   rather than starting a new paragraph and costing another line of space. */
+.blog-lede span { color: var(--text); }
+
+/* --------------------------------------------------------------------------
+   SHELVES  ← the three-up row at the top of /books/
+   --------------------------------------------------------------------------
+   The books page holds three unrelated things: a trilogy being written, a
+   children's series in three languages, and a guide for parents. Stacked as
+   full sections, the second and third were invisible without scrolling, so a
+   reader who came for the novel never learned the other two existed.
+   -------------------------------------------------------------------------- */
+
+.shelves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--sp-5) var(--sp-6);
+  margin-block: var(--sp-6) var(--sp-7);
+}
+.shelf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding-top: var(--sp-4);
+  /* A hairline over each one, the same device the strands use on /blog/. It
+     is what makes three of these read as one row of three rather than three
+     paragraphs that happen to sit side by side. */
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--dur) var(--ease);
+}
+.shelf:hover { border-top-color: var(--accent); }
+.shelf__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--track-title);
+  color: var(--text-strong);
+}
+.shelf:hover .shelf__name { color: var(--accent); }
+.shelf__line { font-size: var(--fs-sm); color: var(--text); line-height: 1.45; }
+
+/* --------------------------------------------------------------------------
+   UTILITY ROW  ← "Ask me anything", above the navigation
+   --------------------------------------------------------------------------
+   The chat widget's own launcher is a 380px bar pinned to the bottom-right
+   corner of the screen, which is where a SaaS support chat lives. On an
+   author's site it sat on top of the writing. This is the same thing in the
+   place a reader looks for a way to talk to someone.
+   -------------------------------------------------------------------------- */
+
+.utility {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--sp-3);
+}
+.chat-open {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  /* Gold on both grounds, so one rule serves the night panel and the cream
+     Blog masthead without a second set of colours. */
+  color: var(--c-gold);
+  background: transparent;
+  border: 1px solid rgba(201, 160, 92, 0.55);
+  border-radius: 999px;
+  padding: var(--sp-2) var(--sp-4);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+.chat-open:hover,
+.chat-open:focus-visible {
+  background: var(--c-gold);
+  border-color: var(--c-gold);
+  color: var(--c-night);
+}
+
 /* Title-in-the-sky: content at the TOP, like the cover, where the photograph
    is emptiest. This is the default hero for a book or series page. */
 .hero--sky { align-items: start; }
@@ -456,7 +646,7 @@
 /* .section pads sp-9 at the top, which is right under a full-height hero and
    far too much under a masthead - it reopens the very gap the masthead was
    closing. */
-.hero--compact + main.section { padding-top: var(--sp-6); }
+.hero--compact + main.section { padding-top: var(--sp-5); }
 /* A washed hero already ends in the page's own cream, so the section under it
    needs no separating space either. */
 /* Enough cream under a washed hero that whatever shows above the fold is
@@ -681,6 +871,12 @@
    columns and not others - which lifted those buttons a line higher than
    their neighbours. Column direction gives every foot the same shape, so
    the three buttons share a line. */
+/* A shallower crop in the three-up row. At 4:3 the picture alone was 250px
+   tall and pushed the category name under the fold on a short laptop window;
+   at 3:2 the name clears it, and a landscape photograph loses nothing by
+   being landscape. */
+.strands .strand__media img { aspect-ratio: 3 / 2; }
+.strands .strand { padding-block: var(--sp-4) var(--sp-6); }
 .strands .strand__foot {
   margin-top: auto;
   flex-direction: column;
@@ -701,7 +897,7 @@
    category is faster than the paragraph does. Fixed 4:3 so three unequal
    source frames still line up down the page. */
 .strand__media { display: block; }
-.strand__media { display: block; margin-bottom: var(--sp-5); }
+.strand__media { display: block; margin-bottom: var(--sp-4); }
 .strand__media img {
   display: block;
   width: 100%;

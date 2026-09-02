@@ -16,19 +16,62 @@ permalink: /books/
   {% endcomment %}
   <div class="hero__body">
     <div class="page">
+      {% include chat-button.html %}
       <div class="site-header__inner">
         <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         {% include nav.html %}
       </div>
-      <div style="margin-top:var(--sp-6)">
-        <h1 class="hero__title">Books</h1>
-        {% include ornament.html modifier="ornament--short" %}
-      </div>
+      {%- comment %}
+        The display-size word "Books" has gone, 2026-09-02, and so has the
+        ornament under it. The navigation already marks Books as the current
+        page, so the word was labelling a page the reader had just chosen -
+        while the thing they actually need to know in the first two seconds,
+        that there are THREE shelves here and not one, was two screens down.
+        This line says it, and the row below shows it.
+      {%- endcomment %}
+      <h1 class="blog-lede">Three shelves. <span>A trilogy in the making, a
+        children's series in three languages, and a guide for parents.</span></h1>
     </div>
   </div>
 </header>
 
 <main id="main">
+
+  {%- comment %}
+    THE THREE SHELVES, above the fold. Deliberately typographic and not three
+    cover tiles: The Within Trilogy has no artwork to show until the cover
+    reveal, and a placeholder tile standing between two real covers reads as a
+    book that is missing rather than as a book that is coming. Three covers
+    would also be three portraits - tall enough to push the third shelf off
+    the screen, which is the one thing this row exists to prevent.
+
+    Each one is a link down the page, so the row is navigation, not a summary
+    the reader has to read twice.
+  {%- endcomment %}
+  <nav class="page shelves" aria-label="What is on the shelf">
+    {%- assign lead = site.data.books | where: "lead", true | first %}
+    <a class="shelf" href="#within">
+      <span class="label">Fiction &mdash; coming</span>
+      <span class="shelf__name">The Within Trilogy</span>
+      <span class="shelf__line">Three standalone novels about one woman at
+        three points in her life.{% if lead %} <em>{{ lead.title }}</em> is
+        published {{ lead.release_label }}.{% endif %}</span>
+    </a>
+    {%- for s in site.data.published.series %}
+    <a class="shelf" href="#{{ s.slug }}">
+      <span class="label">Published &mdash; for children</span>
+      <span class="shelf__name">{{ s.name }}</span>
+      <span class="shelf__line">{{ s.kind }}. In {{ s.languages }}.</span>
+    </a>
+    {%- endfor %}
+    {%- for b in site.data.published.standalone %}
+    <a class="shelf" href="#{{ b.slug }}">
+      <span class="label">Published &mdash; for parents</span>
+      <span class="shelf__name">{{ b.title }}</span>
+      <span class="shelf__line">{{ b.subtitle }}.</span>
+    </a>
+    {%- endfor %}
+  </nav>
 
   <!-- ── The Within Trilogy ─────────────────────────────────────────── -->
   <section class="page section" id="within">

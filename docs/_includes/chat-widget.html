@@ -28,4 +28,58 @@
       {%- endcomment %}
       primary-color="#11181E"
       accent-color="#C9A05C"></dem-agent>
+  {%- comment %}
+    The widget's own launcher is a bar pinned to the bottom-right corner. It
+    is hidden here and replaced by the button in chat-button.html, up in the
+    masthead. The shadow root is open, so a stylesheet appended to it can
+    reach inside; the button then clicks the real launcher, which means the
+    widget's own open/close logic still runs and nothing here has to know how
+    it works.
+
+    visibility, not display: a display:none element is still clickable
+    programmatically, but hiding it this way keeps its box in the layout and
+    keeps the widget's own measurements honest.
+
+    Nothing appears until the launcher is found. A button that silently does
+    nothing is worse than no button, and the widget can legitimately fail to
+    load - it refuses any host missing from the Demeterics allowlist, which
+    WILL happen the day the custom domain goes live.
+  {%- endcomment %}
+  <script>
+  (function () {
+    var LIMIT = 12000, t0 = Date.now();
+    function root() {
+      var a = document.querySelector('dem-agent');
+      return a && a.shadowRoot ? a.shadowRoot : null;
+    }
+    function launcher(sr) {
+      var c = sr.querySelector('.widget-container.minimized');
+      return c ? (c.querySelector('.widget-header') || c) : null;
+    }
+    function hideBubble(sr) {
+      if (sr.querySelector('#site-chat-css')) return;
+      var s = document.createElement('style');
+      s.id = 'site-chat-css';
+      s.textContent = '.widget-container.minimized{visibility:hidden;pointer-events:none;}';
+      sr.appendChild(s);
+    }
+    function wait() {
+      var sr = root();
+      if (!sr || !launcher(sr)) {
+        if (Date.now() - t0 < LIMIT) { setTimeout(wait, 200); }
+        return;
+      }
+      hideBubble(sr);
+      var bs = document.querySelectorAll('[data-chat-open]');
+      for (var i = 0; i < bs.length; i++) { bs[i].hidden = false; }
+    }
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-chat-open]') : null;
+      if (!b) return;
+      var sr = root(), l = sr && launcher(sr);
+      if (l) { l.click(); }
+    });
+    wait();
+  })();
+  </script>
 {% endif %}

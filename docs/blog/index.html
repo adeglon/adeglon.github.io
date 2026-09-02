@@ -13,33 +13,31 @@ permalink: /blog/
 <header class="hero hero--sky hero--compact">
   <div class="hero__body">
     <div class="page">
+      {% include chat-button.html %}
       <div class="site-header__inner">
         <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         {% include nav.html %}
       </div>
       {%- comment %}
-        Tight on purpose. This page exists to show three choices; every
-        pixel spent on a masthead is a pixel that pushes one of them below
-        the fold. The ornament came out for the same reason.
+        Tight on purpose, and tighter again 2026-09-02. This page exists to
+        show three choices, so every pixel spent above them is a pixel that
+        pushes a photograph below the fold. The ornament went first; now the
+        display-size word "Blog" has gone too, and the line that used to sit
+        under it in the body has become the heading.
+
+        Nothing is lost by that. The navigation already marks Blog as the
+        current page, so the word was labelling a page the reader had just
+        chosen - and this line says what the three strands ARE, which the
+        word never did.
       {%- endcomment %}
-      <div style="margin-top:var(--sp-5)">
-        <h1 class="hero__title">Blog</h1>
-      </div>
+      <h1 class="blog-lede">A scientist's mind, a healer's heart, a mother's
+        humor. <span>Three strands of the same life — each keeps its own
+        shelf.</span></h1>
     </div>
   </div>
 </header>
 
 <main id="main" class="page section">
-  {%- comment %}
-    This line was the landing page's tagline. It belongs here: its three
-    clauses map exactly onto the three strands below - scientist's mind onto
-    Health & Science, healer's heart onto Soul & Self, mother's humor onto
-    Misadventures. It was describing this page all along.
-  {%- endcomment %}
-  <p class="standfirst" style="margin:0 0 var(--sp-5)">A scientist's mind, a
-    healer's heart, a mother's humor. Three strands of the same life — each
-    keeps its own shelf.</p>
-
   {%- comment %}
     A landing page for the three categories, NOT a mixed feed. Agnès wrote an
     introduction to each on WordPress and a reader met it before any post; the

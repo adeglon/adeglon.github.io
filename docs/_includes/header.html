@@ -3,6 +3,7 @@
   the wordmark and nav cannot drift between page types.
 {% endcomment %}
 <header class="site-header">
+  <div class="page">{% include chat-button.html %}</div>
   <div class="page site-header__inner">
     <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     {% include nav.html %}
