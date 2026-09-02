@@ -534,6 +534,60 @@
 .hero--full + .section { padding-top: var(--sp-7); }
 
 /* --------------------------------------------------------------------------
+   SITE TOP + HERO BAND  ← the landing page
+   --------------------------------------------------------------------------
+   Nothing sits on the photograph. The measurement that settles it: this frame
+   has no area both large enough and quiet enough to hold type at the size the
+   page needs - shallow sky, a lake busy with towns, and one smooth patch of
+   grass about 440px wide before it meets the pines. Words there meant either
+   shrinking them or darkening the picture, and both were rejected, rightly.
+
+   So the masthead is on the page's own cream at full contrast - which is what
+   lets her name be twice the size without a scrim behind it - and the
+   photograph runs full width underneath, unfiltered, in its own daylight.
+   -------------------------------------------------------------------------- */
+
+.site-top { padding-block: var(--sp-6) var(--sp-6); }
+/* HER NAME, TWICE THE SIZE. It is the first thing on the site and it had been
+   set at the size of a section heading. On cream it can simply be big; the vw
+   ceiling is only there so it cannot outgrow a phone. */
+.wordmark--big {
+  display: block;
+  font-size: min(calc(var(--fs-lg) * 2), 10vw);
+  line-height: 1.04;
+}
+.site-top__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin: var(--sp-3) 0 0;
+  max-width: none;
+}
+.site-top .site-nav { margin-top: var(--sp-5); }
+.site-top .site-nav a { font-size: var(--fs-sm); }
+
+/* The photograph, full width, filtered by nothing. Tall enough to be a view
+   and short enough that the headline under it is in sight. */
+.hero-band {
+  position: relative;
+  width: 100%;
+  height: clamp(12rem, 42svh, 30rem);
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+.hero-band img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Low, so the band keeps the walkers and the near slope rather than cropping
+     to a strip of haze. */
+  object-position: 50% 58%;
+}
+.hero-band + main.section { padding-top: var(--sp-7); }
+
+/* --------------------------------------------------------------------------
    THE OPENING  ← the headline and the book, on the cream
    --------------------------------------------------------------------------
    Everything a stranger has to READ, in the page's own ink at full contrast,

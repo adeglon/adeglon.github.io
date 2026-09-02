@@ -7,37 +7,46 @@ big_type: true
 og_image: /assets/hero/hero-ridge-og-1200.jpg
 ---
 {%- comment %}
-  THE HERO. One photograph across the whole screen, in its own daylight, and
-  the only type on it is the masthead - name, navigation, the five nouns.
+  MASTHEAD ON THE PAGE, PHOTOGRAPH UNDER IT. 2026-09-02, after several rounds
+  of trying to put type on this picture.
 
-  That is the settled answer after several rounds. Type in the middle or at
-  the foot of this frame can only be made readable by darkening the picture,
-  and every time the picture was darkened enough for a headline it stopped
-  being welcoming. The sky at the top is the one place that gives type a
-  ground for free: it holds no detail, so a light lean over it costs the
-  photograph nothing. Everything that has to be READ at length - the claim,
-  the book - is on the cream below, where it can be as large as it likes.
+  The measurement that settles it: the frame has no area both large enough and
+  quiet enough to hold type at the size this page needs. The sky is shallow,
+  the lake is busy with towns and haze, and the one smooth patch - the grass
+  at bottom left - runs about 440px before it meets the pines. Every version
+  that put words there had the same two choices, shrink the words or darken
+  the picture, and Agnès rejected both, correctly: small type on a dusk-dark
+  photograph is neither readable nor welcoming.
+
+  So nothing sits on the photograph at all. The name, the five nouns and the
+  navigation are on the page's own cream at full contrast, at any size we
+  like; the photograph is a clean full-width band underneath, unfiltered, in
+  the daylight it was shot in; and the claim follows on cream below it.
 
   Agnès' own picture: her sons walking down a ridge above Lake Lucerne. Swiss,
   deliberately - she is Swiss-American and writes about living between the
   two - and the only candidate that shows a PATH being walked.
 {%- endcomment %}
-<header class="hero hero--full">
+<header class="site-top">
+  <div class="page">
+    {% include chat-button.html %}
+    <a class="wordmark wordmark--big" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {%- comment %}
+      Agnès' own line from agnesdeglonblog.com. Five nouns, five facts.
+    {%- endcomment %}
+    <p class="site-top__tagline">Writer &middot; Acupuncturist &middot; Biochemist
+      &middot; Mama &middot; Soulful Adventurer</p>
+    {% include nav.html %}
+  </div>
+</header>
+
+<div class="hero-band">
   <picture>
-    <source media="(max-width: 40rem)" type="image/webp"
-            srcset="{{ '/assets/hero/hero-ridge-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-ridge-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-ridge-tall-1024.webp' | relative_url }} 1024w">
-    <source media="(max-width: 40rem)"
-            srcset="{{ '/assets/hero/hero-ridge-tall-640.jpg' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-ridge-tall-900.jpg' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-ridge-tall-1024.jpg' | relative_url }} 1024w">
     <source type="image/webp"
             srcset="{{ '/assets/hero/hero-ridge-1200.webp' | relative_url }} 1200w,
                     {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1600w,
                     {{ '/assets/hero/hero-ridge-2048.webp' | relative_url }} 2048w">
-    <img class="hero__media"
-         src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
+    <img src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
          srcset="{{ '/assets/hero/hero-ridge-1200.jpg' | relative_url }} 1200w,
                  {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1600w,
                  {{ '/assets/hero/hero-ridge-2048.jpg' | relative_url }} 2048w"
@@ -46,27 +55,7 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
          alt="Two young hikers walking down a grassy ridge above Lake
               Lucerne, mountains and haze stretching to the horizon.">
   </picture>
-  {%- comment %}
-    Two gradients in one layer, top and bottom, meeting nothing in the middle.
-  {%- endcomment %}
-  <div class="hero__veil"></div>
-
-  <div class="hero__body hero__body--split">
-    <div class="page">
-      {% include chat-button.html %}
-      <div class="site-header__inner">
-        <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        {% include nav.html %}
-      </div>
-      {%- comment %}
-        Agnès' own line from agnesdeglonblog.com. Five nouns, five facts.
-      {%- endcomment %}
-      <p class="hero__tagline">Writer &middot; Acupuncturist &middot; Biochemist
-        &middot; Mama &middot; Soulful Adventurer</p>
-    </div>
-
-  </div>
-</header>
+</div>
 
 <main id="main" class="page section">
 
