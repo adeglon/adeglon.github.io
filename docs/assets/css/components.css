@@ -430,6 +430,7 @@
    -------------------------------------------------------------------------- */
 
 .hero--split {
+  position: relative;
   display: grid;
   /* The type side is the wider one. Equal halves read as a comparison of two
      things; a 1.15 : 1 split reads as a page with a picture on it. */
@@ -477,8 +478,43 @@
   line-height: 1.14;
   font-style: italic;
   font-size: clamp(1.9rem, 1.1rem + 2.4vw, 3.35rem);
-  max-width: 17ch;
+  /* 17ch was a column narrower than the panel it sits in - seven lines of
+     four words, which reads as a poem rather than a claim. */
+  max-width: 22ch;
   margin: 0;
+}
+/* The button goes to the actual top-right corner of the page, over the sky in
+   the photograph, rather than to the right edge of the panel - which is the
+   middle of the screen and reads as nothing in particular. It needs its own
+   dark ground there: gold on sky is gold on nothing. */
+.hero--split .utility {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-5);
+  z-index: 3;
+  margin: 0;
+}
+.hero--split .chat-open {
+  background: rgba(17, 24, 30, 0.66);
+  border-color: rgba(201, 160, 92, 0.75);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.hero--split .chat-open:hover,
+.hero--split .chat-open:focus-visible { background: var(--c-gold); }
+
+/* A SHORT WINDOW. min-height is a floor, so on a laptop window turned short
+   the type simply grew through it and the hero ran off the bottom of the
+   screen - taking the fold with it. Everything steps down together. */
+@media (max-height: 46rem) {
+  .hero--split .hero__panel-inner {
+    gap: var(--sp-5);
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-6);
+  }
+  .hero--split .hero__title--claim { font-size: clamp(1.5rem, 1rem + 1.5vw, 2.15rem); }
+  .hero--split .hero__note { margin-top: var(--sp-5); }
+  .hero--split .hero__tagline { font-size: var(--fs-base, 1rem); }
 }
 .hero--split .hero__note { margin-top: var(--sp-6); }
 
