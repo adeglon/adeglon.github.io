@@ -556,12 +556,12 @@
   font-family: var(--font-display);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.3rem, 0.95rem + 1.1vw, 1.95rem);
+  font-size: clamp(1.2rem, 0.9rem + 0.95vw, 1.7rem);
   line-height: var(--lh-snug);
   letter-spacing: 0.01em;
   color: var(--text-strong);
   max-width: var(--measure-wide);
-  margin: var(--sp-5) 0 0;
+  margin: var(--sp-4) 0 0;
   text-wrap: pretty;
 }
 /* The second sentence is the gloss on the first, so it steps back a shade
@@ -687,7 +687,7 @@
 /* .section pads sp-9 at the top, which is right under a full-height hero and
    far too much under a masthead - it reopens the very gap the masthead was
    closing. */
-.hero--compact + main.section { padding-top: var(--sp-5); }
+.hero--compact + main.section { padding-top: var(--sp-4); }
 /* A washed hero already ends in the page's own cream, so the section under it
    needs no separating space either. */
 /* Enough cream under a washed hero that whatever shows above the fold is
@@ -913,11 +913,15 @@
    their neighbours. Column direction gives every foot the same shape, so
    the three buttons share a line. */
 /* A shallower crop in the three-up row. At 4:3 the picture alone was 250px
-   tall and pushed the category name under the fold on a short laptop window;
-   at 3:2 the name clears it, and a landscape photograph loses nothing by
-   being landscape. */
-.strands .strand__media img { aspect-ratio: 3 / 2; }
-.strands .strand { padding-block: var(--sp-4) var(--sp-6); }
+   tall and the category name under it fell off the bottom of a short laptop
+   window - which defeats the point of the row. A landscape photograph loses
+   nothing by being a little more landscape. */
+.strands .strand__media img { aspect-ratio: 16 / 10; }
+.strands .strand { padding-block: var(--sp-3) var(--sp-6); }
+/* One line each. At --fs-xl "Health & Science" wrapped to two lines in a
+   331px column and its neighbours did not, which cost 45px on the tallest
+   card and made the row look accidental. */
+.strands .strand__name { font-size: var(--fs-lg); margin-bottom: var(--sp-3); }
 .strands .strand__foot {
   margin-top: auto;
   flex-direction: column;
