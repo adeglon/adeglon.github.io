@@ -59,7 +59,15 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
       <div class="site-header__inner">
         <div>
           <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-          <p class="hero__tagline">A scientist's mind, a healer's heart, a mother's humor.</p>
+          {%- comment %}
+            Agnès' own line from agnesdeglonblog.com. Five nouns, five facts:
+            a stranger knows in two seconds that this is a writer who is also
+            a scientist, a healer and a mother, and the collision is the
+            interesting part. The line it replaced described qualities rather
+            than facts and left people asking what she actually writes.
+          {%- endcomment %}
+          <p class="hero__tagline">Writer &middot; Acupuncturist &middot; Biochemist
+            &middot; Mama &middot; Soulful Adventurer</p>
         </div>
         {% include nav.html %}
       </div>

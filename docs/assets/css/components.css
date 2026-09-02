@@ -248,7 +248,13 @@
 @media (max-width: 48rem) {
   .hero.hero--wash .hero__scrim { background: var(--wash-copy-narrow); }
 }
-.hero--short .hero__body--split { gap: var(--sp-6); padding-bottom: var(--sp-6); }
+/* The type sits in the upper two-thirds, not against the bottom edge. Pinned
+   to the foot it read as though it were falling out of the frame, and left
+   nothing between the last line and the fold. */
+.hero--short .hero__body--split {
+  gap: var(--sp-6);
+  padding-bottom: min(24svh, 12rem);
+}
 .hero--short .hero__title { font-size: clamp(1.7rem, 0.95rem + 2.3vw, 2.9rem); }
 .hero--trail .hero__scrim { background: var(--scrim-sky); }
 @media (max-width: 48rem) {

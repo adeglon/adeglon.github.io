@@ -8,49 +8,22 @@ description: >-
 ground: dark
 permalink: /books/
 ---
-{%- comment %}
-  ON TRIAL. Agnès asked to see her dog on the trail at sunset here.
-
-  The DARK treatment, not the wash: this page is on the night ground, so the
-  picture keeps its colour and the type stays paper white - the same scrim
-  the landing page used when it carried this photograph.
-
-  Worth remembering when the reveal comes: this slot becomes the cover on
-  8 December, and of all Agnès' photographs this one is nearest the cover's
-  own palette. Keeping it here until then spends a little of that surprise.
-{%- endcomment %}
-<header class="hero hero--sky hero--short hero--trail">
-  <picture>
-    <source media="(max-width: 40rem)" type="image/webp"
-            srcset="{{ '/assets/hero/hero-sunset-dog-tall-640.webp' | relative_url }} 640w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-900.webp' | relative_url }} 900w,
-                    {{ '/assets/hero/hero-sunset-dog-tall-1024.webp' | relative_url }} 1024w">
-    <source type="image/webp"
-            srcset="{{ '/assets/hero/hero-sunset-dog-1200.webp' | relative_url }} 1200w,
-                    {{ '/assets/hero/hero-sunset-dog-1600.webp' | relative_url }} 1600w,
-                    {{ '/assets/hero/hero-sunset-dog-1920.webp' | relative_url }} 1920w,
-                    {{ '/assets/hero/hero-sunset-dog-2400.webp' | relative_url }} 2400w">
-    <img class="hero__media hero__media--trail"
-         src="{{ '/assets/hero/hero-sunset-dog-1600.jpg' | relative_url }}"
-         srcset="{{ '/assets/hero/hero-sunset-dog-1200.jpg' | relative_url }} 1200w,
-                 {{ '/assets/hero/hero-sunset-dog-1600.jpg' | relative_url }} 1600w,
-                 {{ '/assets/hero/hero-sunset-dog-1920.jpg' | relative_url }} 1920w,
-                 {{ '/assets/hero/hero-sunset-dog-2400.jpg' | relative_url }} 2400w"
-         sizes="100vw" width="4032" height="3024"
-         fetchpriority="high" decoding="async"
-         alt="A dog waiting on a desert trail at sunset, the sky above her
-              streaked orange, a figure watching from the ridge beyond.">
-  </picture>
-  <div class="hero__scrim"></div>
-  <div class="hero__body hero__body--split">
+<header class="hero hero--sky hero--compact">
+  {% comment %}
+    No photograph here on purpose - the hero image was the cover photograph
+    without its type. See rule 7 in Design/README.md. .hero already paints
+    --bg-deep, so the type sits on the night ground.
+  {% endcomment %}
+  <div class="hero__body">
     <div class="page">
       <div class="site-header__inner">
         <a class="wordmark wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         {% include nav.html %}
       </div>
-    </div>
-    <div class="page">
-      <h1 class="hero__title">Books</h1>
+      <div style="margin-top:var(--sp-6)">
+        <h1 class="hero__title">Books</h1>
+        {% include ornament.html modifier="ornament--short" %}
+      </div>
     </div>
   </div>
 </header>
