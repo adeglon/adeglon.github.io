@@ -506,13 +506,17 @@
   gap: var(--sp-5);
   flex-wrap: wrap;
 }
-/* BIGGER AGAIN, now that the links are beside it rather than above. 1.85x the
-   body size puts its baseline on source row 300 against pine tops at 320 -
-   clear, with the nouns still fitting underneath. Do not raise it past about
-   1.9x without re-measuring: the sky in this crop is only so deep, and a name
-   written across a tree line is worse than a smaller name. */
+/* BIGGER AGAIN, now that the links are beside it rather than above - but the
+   ceiling here is the ROW, not the sky. At 1.85x the name measured 687px, the
+   links need 412, and the page column is 1056: the row wrapped, the links
+   dropped underneath, and that pushed the five nouns down into the trees. At
+   1.55x the name is about 576px and the row holds with room to spare.
+
+   Two limits, then, and both have been measured: 1.55x so the row does not
+   wrap, and about 1.9x before the baseline reaches the pine tops. The row is
+   the tighter of the two - do not raise this without checking the width. */
 .hero--full .wordmark--big {
-  font-size: min(calc(var(--fs-lg) * 1.85), 8.5vw);
+  font-size: min(calc(var(--fs-lg) * 1.55), 7.5vw);
 }
 .hero--full .site-nav { flex: 0 0 auto; }
 .hero--full .site-nav ul { justify-content: flex-end; }
