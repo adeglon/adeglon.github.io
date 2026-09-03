@@ -460,10 +460,11 @@
   background:
     linear-gradient(to bottom,
       rgba(17, 24, 30, 0.68) 0%,
-      rgba(17, 24, 30, 0.56) 14%,
-      rgba(17, 24, 30, 0.34) 26%,
-      rgba(17, 24, 30, 0.12) 36%,
-      rgba(17, 24, 30, 0) 46%);
+      rgba(17, 24, 30, 0.60) 16%,
+      rgba(17, 24, 30, 0.46) 30%,
+      rgba(17, 24, 30, 0.28) 42%,
+      rgba(17, 24, 30, 0.10) 52%,
+      rgba(17, 24, 30, 0) 62%);
 }
 /* Its own colour, very slightly forward. Nothing is filtering the photograph
    down any more, so it can carry the daylight it was shot in. */
@@ -552,11 +553,15 @@
 .opening { margin-block: 0 var(--sp-7); }
 /* The five nouns, moved off the photograph. They are a caption to her name,
    so they lead the opening rather than competing with the claim. */
+/* Five nouns separated by dots read as one gesture; broken over two lines the
+   last two look like an afterthought. The default paragraph measure is a
+   reading column and cut it in half, so it gets its own. */
 .opening__nouns {
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--fs-lg);
   color: var(--text);
+  max-width: 46rem;
   margin: 0 0 var(--sp-4);
 }
 .opening__claim {
