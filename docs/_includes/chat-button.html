@@ -1,5 +1,10 @@
 {% comment %}
-  "Ask me anything" in the masthead instead of a floating bubble.
+  "Ask about my writing" instead of a floating bubble.
+
+  The label is scoped on purpose. "Ask me anything" is an open invitation and
+  people take it - it would have brought questions about acupuncture, Swiss
+  visas and the weather. Naming the subject sets the expectation before anyone
+  types, which is cheaper than declining afterwards.
 
   The Demeterics widget parks a 380px bar in the bottom-right corner of every
   page. That is where a support chat lives on a software product; on an
@@ -14,6 +19,6 @@
 {% endcomment %}
 {% if site.demeterics_key and site.demeterics_key != "" %}
 <div class="utility">
-  <button type="button" class="chat-open" data-chat-open hidden>Ask me anything</button>
+  <button type="button" class="chat-open" data-chat-open hidden>Ask about my writing</button>
 </div>
 {% endif %}

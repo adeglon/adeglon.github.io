@@ -60,32 +60,35 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
 
   <div class="hero__body">
     <div class="page">
-      {% include chat-button.html %}
       {%- comment %}
-        The navigation goes ABOVE the name, not beside or below it. It is the
-        smallest type on the photograph and therefore needs the darkest part
-        of the band; the name is large enough to hold its own a little lower
-        down. Contrast decides the order here, not convention.
+        Name and navigation on ONE line, name left and navigation right. They
+        have to share a row: there are about 120px of sky above the pine tops
+        in this crop, and a name of any size plus a row of links plus the five
+        nouns do not fit in it stacked three deep.
       {%- endcomment %}
-      {% include nav.html %}
-      <a class="wordmark wordmark--big wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <div class="hero__masthead">
+        <a class="wordmark wordmark--big wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        {% include nav.html %}
+      </div>
       {%- comment %}
-        THE FIVE NOUNS, PLACED ON THE LAKE. Not in the flow - flow puts them
-        wherever the type above happens to end, which on a tall window is the
-        distant shore and on a short one the grass. They are pinned to half
-        the height of the frame instead, which is open water at every window
-        size this page is read at, and kept narrow enough to stay left of the
-        pines. Two lines, broken by hand, so the break is a decision rather
-        than an accident of measure.
+        Agnès' own line from agnesdeglonblog.com, directly under her name where
+        it belongs - it is a caption to the name, not a separate statement.
+        One line, not two: two would put the second one in the trees.
 
-        Agnès' own line from agnesdeglonblog.com: five nouns, five facts. A
-        stranger knows in two seconds that this is a writer who is also a
-        scientist, a healer and a mother, and the collision is the point.
+        Five nouns, five facts. A stranger knows in two seconds that this is a
+        writer who is also a scientist, a healer and a mother, and the
+        collision is the interesting part.
       {%- endcomment %}
-      <p class="hero__nouns">Writer &middot; Acupuncturist &middot; Biochemist<br>
-        Mama &middot; Soulful Adventurer</p>
+      <p class="hero__nouns">Writer &middot; Acupuncturist &middot; Biochemist
+        &middot; Mama &middot; Soulful Adventurer</p>
     </div>
   </div>
+
+  {%- comment %}
+    The chat button, down in the grass at the bottom right - the emptiest
+    corner of the photograph, and far away from the masthead it was crowding.
+  {%- endcomment %}
+  {% include chat-button.html %}
 </header>
 
 <main id="main" class="page section">
