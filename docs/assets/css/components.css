@@ -434,10 +434,10 @@
 
 .hero--full {
   position: relative;
-  /* SHORTER, 2026-09-02. It carries only the masthead now, so a full screen of
-     it was a screen a reader had to get past before anything was said. Two
-     thirds shows the whole picture and puts the headline in view underneath. */
-  min-height: 64svh;
+  /* A HERO AGAIN. At 64svh under a cream masthead it had stopped reading as
+     one - it was a band. Seventy per cent of the screen, at the top, with the
+     page's first words arriving just under it. */
+  min-height: 70svh;
   align-items: stretch;
 }
 /* The <picture> is a grid item like everything else, so it was opening a row
@@ -454,16 +454,16 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* ONE BAND, at the top, where the masthead is. The band at the foot went
-     with the headline it was there for; the bottom two thirds of the
-     photograph is now completely unfiltered, which is the whole difference
-     between a poster and an open window. */
+  /* ONE BAND, over the sky, carrying two things. Everything below 46% of the
+     frame is completely unfiltered - which is the whole difference between a
+     poster and an open window. */
   background:
     linear-gradient(to bottom,
-      rgba(17, 24, 30, 0.58) 0%,
-      rgba(17, 24, 30, 0.36) 18%,
-      rgba(17, 24, 30, 0.12) 32%,
-      rgba(17, 24, 30, 0) 48%);
+      rgba(17, 24, 30, 0.68) 0%,
+      rgba(17, 24, 30, 0.56) 14%,
+      rgba(17, 24, 30, 0.34) 26%,
+      rgba(17, 24, 30, 0.12) 36%,
+      rgba(17, 24, 30, 0) 46%);
 }
 /* Its own colour, very slightly forward. Nothing is filtering the photograph
    down any more, so it can carry the daylight it was shot in. */
@@ -471,11 +471,16 @@
 .hero--full .hero__body {
   position: relative;
   z-index: 2;
-  /* Room at the top for the corner button to sit ABOVE the navigation rather
-     than on top of it - both are right-aligned, so without this they collide
-     in the same 35px of the same corner. */
-  padding-block: calc(var(--sp-4) + 2.75rem) var(--sp-8);
+  /* Everything hugs the top, because the top is where the band is. Room is
+     left for the corner button to sit ABOVE the navigation rather than on top
+     of it - both start at the same edge, and the button is out of the flow. */
+  padding-block: calc(var(--sp-4) + 2.75rem) var(--sp-6);
+  align-self: start;
 }
+/* The name sits under the navigation, close to it: the pair reads as one
+   masthead, and both stay inside the top third where the band is dark. */
+.hero--full .wordmark--big { margin-top: var(--sp-4); }
+.hero--full .site-nav ul { justify-content: flex-start; }
 /* THE HALO IS WHERE THE CONTRAST LIVES. Three shadows at three radii: a tight
    one that gives every stroke a hard edge, a middle one that fills the
    counters, and a wide soft one that darkens a hand's breadth of photograph
@@ -503,13 +508,7 @@
   color: var(--c-gold);
   border-bottom-color: rgba(201, 160, 92, 0.6);
 }
-/* HER NAME, TWICE THE SIZE. It is the first thing on the site and it was set
-   at the same size as a section heading. Doubled, over open sky, it is the
-   masthead of a book jacket rather than a browser tab label. */
-.hero--full .wordmark {
-  font-size: min(calc(var(--fs-lg) * 2), 9.5vw);
-  line-height: 1.05;
-}
+
 /* Out of the flow and into the actual corner. In flow it pushed the wordmark
    and the navigation 60px down the picture, out of the top band's darkest
    part - which is the one place they are certain to be readable. */
@@ -533,59 +532,14 @@
    arriving as the photograph ends, not after a field of cream. */
 .hero--full + .section { padding-top: var(--sp-7); }
 
-/* --------------------------------------------------------------------------
-   SITE TOP + HERO BAND  ← the landing page
-   --------------------------------------------------------------------------
-   Nothing sits on the photograph. The measurement that settles it: this frame
-   has no area both large enough and quiet enough to hold type at the size the
-   page needs - shallow sky, a lake busy with towns, and one smooth patch of
-   grass about 440px wide before it meets the pines. Words there meant either
-   shrinking them or darkening the picture, and both were rejected, rightly.
-
-   So the masthead is on the page's own cream at full contrast - which is what
-   lets her name be twice the size without a scrim behind it - and the
-   photograph runs full width underneath, unfiltered, in its own daylight.
-   -------------------------------------------------------------------------- */
-
-.site-top { padding-block: var(--sp-6) var(--sp-6); }
 /* HER NAME, TWICE THE SIZE. It is the first thing on the site and it had been
-   set at the size of a section heading. On cream it can simply be big; the vw
-   ceiling is only there so it cannot outgrow a phone. */
+   set at the size of a section heading. The vw ceiling is only there so it
+   cannot outgrow a phone. */
 .wordmark--big {
   display: block;
-  font-size: min(calc(var(--fs-lg) * 2), 10vw);
+  font-size: min(calc(var(--fs-lg) * 2), 9.5vw);
   line-height: 1.04;
 }
-.site-top__tagline {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--fs-lg);
-  color: var(--text);
-  margin: var(--sp-3) 0 0;
-  max-width: none;
-}
-.site-top .site-nav { margin-top: var(--sp-5); }
-.site-top .site-nav a { font-size: var(--fs-sm); }
-
-/* The photograph, full width, filtered by nothing. Tall enough to be a view
-   and short enough that the headline under it is in sight. */
-.hero-band {
-  position: relative;
-  width: 100%;
-  height: clamp(12rem, 42svh, 30rem);
-  overflow: hidden;
-  background: var(--bg-deep);
-}
-.hero-band img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Low, so the band keeps the walkers and the near slope rather than cropping
-     to a strip of haze. */
-  object-position: 50% 58%;
-}
-.hero-band + main.section { padding-top: var(--sp-7); }
 
 /* --------------------------------------------------------------------------
    THE OPENING  ← the headline and the book, on the cream
@@ -596,6 +550,15 @@
    -------------------------------------------------------------------------- */
 
 .opening { margin-block: 0 var(--sp-7); }
+/* The five nouns, moved off the photograph. They are a caption to her name,
+   so they lead the opening rather than competing with the claim. */
+.opening__nouns {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin: 0 0 var(--sp-4);
+}
 .opening__claim {
   font-family: var(--font-display);
   font-weight: 300;

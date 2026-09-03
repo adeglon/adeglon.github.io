@@ -7,46 +7,44 @@ big_type: true
 og_image: /assets/hero/hero-ridge-og-1200.jpg
 ---
 {%- comment %}
-  MASTHEAD ON THE PAGE, PHOTOGRAPH UNDER IT. 2026-09-02, after several rounds
-  of trying to put type on this picture.
+  THE HERO. The photograph is back at the top, full width and tall, which is
+  what it is for - it stopped reading as a hero the moment it became a band
+  under a masthead.
 
-  The measurement that settles it: the frame has no area both large enough and
-  quiet enough to hold type at the size this page needs. The sky is shallow,
-  the lake is busy with towns and haze, and the one smooth patch - the grass
-  at bottom left - runs about 440px before it meets the pines. Every version
-  that put words there had the same two choices, shrink the words or darken
-  the picture, and Agnès rejected both, correctly: small type on a dusk-dark
-  photograph is neither readable nor welcoming.
+  Only two things sit on it: Agnès' name, at twice its old size, and the
+  navigation. Both live in the top fifth of the frame, which is open sky - the
+  one part of this picture that holds no detail and so gives type a ground for
+  free. Nothing else is on the photograph at all.
 
-  So nothing sits on the photograph at all. The name, the five nouns and the
-  navigation are on the page's own cream at full contrast, at any size we
-  like; the photograph is a clean full-width band underneath, unfiltered, in
-  the daylight it was shot in; and the claim follows on cream below it.
+  That restraint is the result of measuring, not taste. There is no area in
+  this frame both large enough and quiet enough for a sentence at headline
+  size: shallow sky, a lake busy with towns and haze, and one smooth patch of
+  grass about 440px wide before it meets the pines. Every version that put the
+  headline there had to either shrink it or darken the picture to dusk. So the
+  five nouns, the claim and the book are all on the cream below, where they
+  can be as large as they like at full contrast - and the photograph keeps its
+  daylight everywhere below the sky.
 
   Agnès' own picture: her sons walking down a ridge above Lake Lucerne. Swiss,
   deliberately - she is Swiss-American and writes about living between the
   two - and the only candidate that shows a PATH being walked.
 {%- endcomment %}
-<header class="site-top">
-  <div class="page">
-    {% include chat-button.html %}
-    <a class="wordmark wordmark--big" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    {%- comment %}
-      Agnès' own line from agnesdeglonblog.com. Five nouns, five facts.
-    {%- endcomment %}
-    <p class="site-top__tagline">Writer &middot; Acupuncturist &middot; Biochemist
-      &middot; Mama &middot; Soulful Adventurer</p>
-    {% include nav.html %}
-  </div>
-</header>
-
-<div class="hero-band">
+<header class="hero hero--full">
   <picture>
+    <source media="(max-width: 40rem)" type="image/webp"
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.webp' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.webp' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.webp' | relative_url }} 1024w">
+    <source media="(max-width: 40rem)"
+            srcset="{{ '/assets/hero/hero-ridge-tall-640.jpg' | relative_url }} 640w,
+                    {{ '/assets/hero/hero-ridge-tall-900.jpg' | relative_url }} 900w,
+                    {{ '/assets/hero/hero-ridge-tall-1024.jpg' | relative_url }} 1024w">
     <source type="image/webp"
             srcset="{{ '/assets/hero/hero-ridge-1200.webp' | relative_url }} 1200w,
                     {{ '/assets/hero/hero-ridge-1600.webp' | relative_url }} 1600w,
                     {{ '/assets/hero/hero-ridge-2048.webp' | relative_url }} 2048w">
-    <img src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
+    <img class="hero__media"
+         src="{{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }}"
          srcset="{{ '/assets/hero/hero-ridge-1200.jpg' | relative_url }} 1200w,
                  {{ '/assets/hero/hero-ridge-1600.jpg' | relative_url }} 1600w,
                  {{ '/assets/hero/hero-ridge-2048.jpg' | relative_url }} 2048w"
@@ -55,7 +53,25 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
          alt="Two young hikers walking down a grassy ridge above Lake
               Lucerne, mountains and haze stretching to the horizon.">
   </picture>
-</div>
+  {%- comment %}
+    One gradient, at the top, over the sky. Nothing touches the rest.
+  {%- endcomment %}
+  <div class="hero__veil"></div>
+
+  <div class="hero__body">
+    <div class="page">
+      {% include chat-button.html %}
+      {%- comment %}
+        The navigation goes ABOVE the name, not beside or below it. It is the
+        smallest type on the photograph and therefore needs the darkest part
+        of the band; the name is large enough to hold its own a little lower
+        down. Contrast decides the order here, not convention.
+      {%- endcomment %}
+      {% include nav.html %}
+      <a class="wordmark wordmark--big wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+  </div>
+</header>
 
 <main id="main" class="page section">
 
@@ -75,6 +91,14 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
     that is what makes the page feel like an invitation rather than a poster.
   {%- endcomment %}
   <div class="opening">
+    {%- comment %}
+      Agnès' own line from agnesdeglonblog.com. Five nouns, five facts: a
+      stranger knows in two seconds that this is a writer who is also a
+      scientist, a healer and a mother, and the collision is the interesting
+      part. On the cream, where it can be read - over the trees it could not.
+    {%- endcomment %}
+    <p class="opening__nouns">Writer &middot; Acupuncturist &middot; Biochemist
+      &middot; Mama &middot; Soulful Adventurer</p>
     <h1 class="opening__claim">A novelist who brings ancient wisdom and modern
       science into conversation through story</h1>
     {%- comment %}
