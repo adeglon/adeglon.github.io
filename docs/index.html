@@ -69,6 +69,21 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
       {%- endcomment %}
       {% include nav.html %}
       <a class="wordmark wordmark--big wordmark--onDark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      {%- comment %}
+        THE FIVE NOUNS, PLACED ON THE LAKE. Not in the flow - flow puts them
+        wherever the type above happens to end, which on a tall window is the
+        distant shore and on a short one the grass. They are pinned to half
+        the height of the frame instead, which is open water at every window
+        size this page is read at, and kept narrow enough to stay left of the
+        pines. Two lines, broken by hand, so the break is a decision rather
+        than an accident of measure.
+
+        Agnès' own line from agnesdeglonblog.com: five nouns, five facts. A
+        stranger knows in two seconds that this is a writer who is also a
+        scientist, a healer and a mother, and the collision is the point.
+      {%- endcomment %}
+      <p class="hero__nouns">Writer &middot; Acupuncturist &middot; Biochemist<br>
+        Mama &middot; Soulful Adventurer</p>
     </div>
   </div>
 </header>
@@ -91,30 +106,28 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
     that is what makes the page feel like an invitation rather than a poster.
   {%- endcomment %}
   <div class="opening">
-    {%- comment %}
-      Agnès' own line from agnesdeglonblog.com. Five nouns, five facts: a
-      stranger knows in two seconds that this is a writer who is also a
-      scientist, a healer and a mother, and the collision is the interesting
-      part. On the cream, where it can be read - over the trees it could not.
-    {%- endcomment %}
-    <p class="opening__nouns">Writer &middot; Acupuncturist &middot; Biochemist
-      &middot; Mama &middot; Soulful Adventurer</p>
     <h1 class="opening__claim">A novelist who brings ancient wisdom and modern
       science into conversation through story</h1>
     {%- comment %}
-      The launch, read from _data/books.yml - one date on the whole site, and
-      it removes itself after publication. Filled gold with night ink on it:
-      the outlined version was gold-on-photograph and barely there.
+      THE CANYON WITHIN BUTTON IS OUT until the cover reveal on 8 December
+      2026. Agnès took it off deliberately: fifteen months before publication
+      a button is an announcement with nothing behind it, and the date already
+      appears in her bio paragraph below and on /books/.
+
+      TO PUT IT BACK on 8 December, uncomment this. It reads the title and the
+      date from _data/books.yml, so it cannot go stale, and it removes itself
+      from the data file after publication.
+
+      {% assign launching = site.data.books | where_exp: "b", "b.release" | first %}
+      {% if launching %}
+      <p class="opening__book">
+        <a class="btn booknote" href="{{ '/books/#within' | relative_url }}">
+          <span class="booknote__title">{{ launching.title }}</span>
+          <span class="booknote__meta">A novel &mdash; {{ launching.release_label }}</span>
+        </a>
+      </p>
+      {% endif %}
     {%- endcomment %}
-    {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-    {%- if launching %}
-    <p class="opening__book">
-      <a class="btn booknote" href="{{ '/books/#within' | relative_url }}">
-        <span class="booknote__title">{{ launching.title }}</span>
-        <span class="booknote__meta">A novel &mdash; {{ launching.release_label }}</span>
-      </a>
-    </p>
-    {%- endif %}
   </div>
 
   {% include ornament.html modifier="ornament--center ornament--short" %}

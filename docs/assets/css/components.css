@@ -434,10 +434,17 @@
 
 .hero--full {
   position: relative;
-  /* A HERO AGAIN. At 64svh under a cream masthead it had stopped reading as
-     one - it was a band. Seventy per cent of the screen, at the top, with the
-     page's first words arriving just under it. */
-  min-height: 70svh;
+  /* 88svh, and the number is not taste - it is what puts the tree line low
+     enough in the crop for the name to clear it.
+
+     The picture is 1200x900 and the hero is wide and short, so `cover` keeps
+     the full width and takes a horizontal slice of the source: rows
+     (900 - H) x 0.45 to that plus H. The pine tops are at source row 320. At
+     70svh on a laptop that slice began at row 221, which put the trees only
+     99px down the frame - right where the name was. At 88svh the slice begins
+     nearer row 198 and the trees fall to about 122px, with open sky above
+     them for the navigation and the name both. */
+  min-height: 88svh;
   align-items: stretch;
 }
 /* The <picture> is a grid item like everything else, so it was opening a row
@@ -472,16 +479,56 @@
 .hero--full .hero__body {
   position: relative;
   z-index: 2;
-  /* Everything hugs the top, because the top is where the band is. Room is
-     left for the corner button to sit ABOVE the navigation rather than on top
-     of it - both start at the same edge, and the button is out of the flow. */
-  padding-block: calc(var(--sp-4) + 2.75rem) var(--sp-6);
+  /* Everything hugs the top, because the top is where the sky is, and there
+     is not a pixel to spare above the trees. The corner button needs no
+     reserved space here: it is out of the flow at the right, the navigation
+     is left-aligned and ends well short of it, so they share the first line
+     without touching. */
+  padding-block: var(--sp-4) var(--sp-6);
   align-self: start;
 }
 /* The name sits under the navigation, close to it: the pair reads as one
-   masthead, and both stay inside the top third where the band is dark. */
-.hero--full .wordmark--big { margin-top: var(--sp-4); }
+   masthead, and both have to finish above the pine tops. Smaller than it was -
+   at twice the body size it ran into the trees, and a name written across a
+   tree line is worse than a smaller name. */
+.hero--full .wordmark--big {
+  margin-top: var(--sp-3);
+  font-size: min(calc(var(--fs-lg) * 1.5), 7vw);
+}
 .hero--full .site-nav ul { justify-content: flex-start; }
+
+/* THE FIVE NOUNS, ON THE WATER. Pinned to half the frame's height rather than
+   left to the flow: flow puts them wherever the type above ends, which is the
+   distant shore on a tall window and the grass on a short one. Fifty per cent
+   of this crop is open lake at every height the page is read at.
+
+   The width cap is the other half of it - the near pine stands at about x=400
+   in the source, so the line has to stop before it. Two hand-broken lines fit
+   inside that; one line would not. */
+.hero--full .hero__nouns {
+  position: absolute;
+  top: 50%;
+  max-width: 30rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+  color: #FFFDF8;
+  text-shadow:
+    0 1px 2px rgba(17, 24, 30, 0.95),
+    0 0 10px rgba(17, 24, 30, 0.9),
+    0 0 26px rgba(17, 24, 30, 0.72);
+}
+/* On a phone the source is the TALL crop, a different picture geometry
+   altogether, so the placement above means nothing. Back into the flow. */
+@media (max-width: 40rem) {
+  .hero--full .hero__nouns {
+    position: static;
+    margin-top: var(--sp-5);
+    max-width: none;
+  }
+}
 /* THE HALO IS WHERE THE CONTRAST LIVES. Three shadows at three radii: a tight
    one that gives every stroke a hard edge, a middle one that fills the
    counters, and a wide soft one that darkens a hand's breadth of photograph
