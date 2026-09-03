@@ -528,6 +528,10 @@
    rest. */
 .hero--full .hero__nouns {
   margin: var(--sp-3) 0 0;
+  /* The default paragraph measure is 38rem - a reading column - which broke
+     the line in two and dropped the second half onto source row 344, twenty
+     rows into the pines. It is a caption, not a paragraph: no measure. */
+  max-width: none;
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--fs-lg);
