@@ -4,6 +4,8 @@ title: "Where There Is Free Flow…"
 date: 2026-09-21 12:00:00 -0700
 categories: ["Soul&Self"]
 permalink: /where-there-is-free-flow/
+image: /assets/images/featured-where-there-is-free-flow.jpg
+image_in_body: true
 ---
 
 *Write Where You Are — a writing retreat with Kelly Notaras at the Drala Mountain Center in Colorado*
@@ -24,7 +26,9 @@ I knew I could edit my book at home, but what I couldn't do at home was put myse
 
 I had come to learn what I didn't know I needed to learn. I just couldn't really put that into a number for the camera.
 
-{% comment %} PHOTO: Stupa at Drala Mountain Center, Colorado {% endcomment %}
+![The Great Stupa at Drala Mountain Center, prayer flags along the path up the hill](/assets/images/featured-where-there-is-free-flow.jpg)
+
+*Stupa at Drala Mountain Center, Colorado*
 
 ### Welcome to 8,000 feet
 
