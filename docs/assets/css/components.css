@@ -1866,7 +1866,7 @@ dem-agent {
   padding: var(--sp-5);
 }
 .door--hub:hover { background: transparent; transform: none; }
-.doors--hub { margin-bottom: 0; }   /* nothing follows the doors now */
+.doors--hub { margin-bottom: 0; }   /* main's own padding does the spacing */
 .door__head { display: block; text-decoration: none; }
 .door__head:hover .door__name { color: var(--accent-strong); }
 .door--hub .door__go {
