@@ -292,17 +292,17 @@ By Wednesday morning I was exhausted. I barely made it out of bed for breakfast,
 
 Perfect. I would lie down and sleep.
 
-Mind: Excellent plan.
+**Mind:** Excellent plan.
 
 I got onto the table and closed my eyes. Almost immediately, the hands on my back invited my attention away from my thoughts and into sensation.
 
-Body: Oh, nice.
+**Body:** Oh, nice.
 
-Mind: Yes. Very nice. We can sleep now.
+**Mind:** Yes. Very nice. We can sleep now.
 
-Soul: Hello.
+**Soul:** Hello.
 
-Mind: No.
+**Mind:** No.
 
 I followed the sensation surprisingly easily. He asked a few questions, and at first I simply listened because I hadn't realized I was supposed to answer them. That's how tired I was. Eventually I asked.
 
@@ -312,23 +312,23 @@ I followed the sensation surprisingly easily. He asked a few questions, and at f
 
 So I tried. Some words started flowing.
 
-Mind: Wait. What are you telling him?
+**Mind:** Wait. What are you telling him?
 
-Body: Shhh. Feel this.
+**Body:** Shhh. Feel this.
 
-Mind: Yes, but she just said—
+**Mind:** Yes, but she just said—
 
-Soul: I wasn't finished.
+**Soul:** I wasn't finished.
 
 And apparently Soul wasn't finished for quite some time.
 
 Every time my mind tried to control the conversation and review what had just come out of my mouth, the hands on my back brought me right back into sensation.
 
-Body: Here.
+**Body:** Here.
 
-Mind: But—
+**Mind:** But—
 
-Body: Here, feel this.
+**Body:** Here, feel this.
 
 More and more words kept coming.
 
@@ -336,13 +336,13 @@ I would say something that made my mind sit bolt upright in horror and wait for 
 
 "Good," he simply said, then waited, creating room for more.
 
-Soul: See?
+**Soul:** See?
 
-Mind: No, I do not see. I would actually like to change what we just said.
+**Mind:** No, I do not see. I would actually like to change what we just said.
 
-Soul: Shhh. We're talking.
+**Soul:** Shhh. We're talking.
 
-Mind: WE APPARENTLY ARE.
+**Mind:** WE APPARENTLY ARE.
 
 Whatever came out was met with the same response. Good. More words. Good. At some point he told me there was nothing I could say that would not be accepted and welcomed. I don't remember his exact words anymore, but I remember what they did. The more I talked, the more space he created.
 
@@ -350,13 +350,13 @@ Somewhere in all of that, I tried to explain what I was beginning to recognize i
 
 Then he put his hand on my throat chakra.
 
-Mind: We have been expressing ourselves quite enough.
+**Mind:** We have been expressing ourselves quite enough.
 
-Soul: No, you're still monitoring everything.
+**Soul:** No, you're still monitoring everything.
 
-Mind: SOMEONE HAS TO.
+**Mind:** SOMEONE HAS TO.
 
-Body: Breathe.
+**Body:** Breathe.
 
 My breath caught. I could feel the emotion rising and my body reacting. It felt like everything I had just tried to explain in words had now found the exact place where I was holding it.
 
@@ -364,13 +364,13 @@ He had opened me up like a book.
 
 I don't remember everything I said, but I remember feeling that I had said an awful lot in one hour.
 
-Mind: Thank God we don't remember.
+**Mind:** Thank God we don't remember.
 
-Agnès: Fine. Maybe I remember more than I'm willing to admit.
+**Agnès:** Fine. Maybe I remember more than I'm willing to admit.
 
-Mind: We are absolutely not putting that in the blog.
+**Mind:** We are absolutely not putting that in the blog.
 
-Agnès: Never mind.
+**Agnès:** Never mind.
 
 I don't know exactly what made it possible, whether it was the questions, the touch, the complete absence of judgment, or just the timing and meeting someone who seemed totally unafraid of whatever came out of me. But somewhere on that table, I stopped deciding which words were safe before I spoke them. For the first time that week, nothing had to be pushed or pulled or blasted under pressure. The words simply flowed.
 
@@ -560,7 +560,7 @@ I was leaving with much more than I knew how to measure.
 
 Thank you to everyone who shared this beautiful week with me.
 
-Let it flow.
+**Let it flow.**
 
 With love,  
 Agnès, Arielle and Anyi
