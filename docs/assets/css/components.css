@@ -1855,3 +1855,121 @@ dem-agent {
 /* Two deep columns, not a row of small cards. */
 .doors--deep { grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
 .doors--deep > li { display: flex; flex-direction: column; }
+
+/* HUB DOORS (2026-09-21). A door that shows its three parts instead of
+   describing them: the blog's three strands, the three kinds of book. The
+   door itself is no longer one big link - each tile links to its own place,
+   and the name at the top and the arrow at the foot go to the hub. */
+.door--hub {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5);
+}
+.door--hub:hover { background: transparent; transform: none; }
+.doors--hub { margin-bottom: 0; }   /* nothing follows the doors now */
+.door__head { display: block; text-decoration: none; }
+.door__head:hover .door__name { color: var(--accent-strong); }
+.door--hub .door__go {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: var(--sp-5);
+  text-decoration: none;
+}
+.door--hub .door__go:hover { color: var(--accent-strong); }
+.door--hub .door__go:hover::after { transform: translateX(0.25em); }
+
+.facets {
+  list-style: none;
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-4);
+}
+.facet { display: block; color: var(--text); text-decoration: none; }
+.facet__frame {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-photo);
+  background: var(--bg-deep);
+  margin-bottom: var(--sp-3);
+}
+.facet__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur) var(--ease);
+}
+.facet:hover .facet__photo { transform: scale(1.04); }
+
+/* The novels have no artwork before the reveal: the night tile and the
+   diamond, as on the Books page - never a grey box. */
+.facet__frame--night {
+  display: grid;
+  place-items: center;
+  background: var(--c-night);
+  border: 1px solid var(--rule);
+}
+.facet__mark { width: 34%; height: auto; opacity: 0.85; }
+
+/* Covers stand on the pale ground with a shadow, like books on a table. */
+.facet__frame--covers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12% 8%;
+}
+.facet__cover {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,.30), 0 6px 14px rgba(0,0,0,.22);
+  transition: transform var(--dur) var(--ease);
+}
+.facet:hover .facet__cover { transform: translateY(-3px); }
+/* The children's series: its three square covers overlapping, so "a series
+   of three" is visible before a word is read. */
+.facet__cover--square {
+  flex: none;
+  width: 60%;
+  max-height: none;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.facet__cover--square + .facet__cover--square { margin-left: -40%; }
+
+.facet__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+}
+.facet:hover .facet__name { color: var(--accent-strong); }
+.facet__line {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  line-height: 1.35;
+  color: var(--text-soft);
+}
+
+/* On a phone three tiles side by side leave no room for the names, so each
+   tile becomes a row: picture left, name and line right. */
+@media (max-width: 40rem) {
+  .facets { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .facet {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    column-gap: var(--sp-4);
+    align-items: center;
+  }
+  .facet__frame { grid-row: span 2; margin: 0; }
+  .facet__name { align-self: end; }
+  .facet__line { align-self: start; }
+}

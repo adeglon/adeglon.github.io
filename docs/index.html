@@ -173,77 +173,78 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
   {% include ornament.html modifier="ornament--center ornament--short" %}
 
   {%- comment %}
-    TWO DOORS, and under each one the single most current thing behind it:
-    the newest essay under Blog, the launch under Books. There is no "Where
-    would you like to start?" heading any more - two large doors ARE the
-    question, and asking it in words as well was saying the same thing twice.
+    TWO DOORS, and nothing after them - 2026-09-21, Agnès: "we keep the two
+    boxes blogs and books but then nothing." The newest essay under Blog, the
+    launch panel under Books and the newsletter signup below the doors all came
+    off the landing page. The page is now: who she is, then where to go.
 
-    Everything here used to be four separate stacked sections (a taste of the
-    writing, the launch panel, a heading, the doors). Same content, half the
-    page, and each item now sits under the door it belongs behind.
+    Inside each door, its three parts are shown as three tiles, so a stranger
+    sees at a glance that the blog has three strands and the books are three
+    kinds of book. Each tile is its own link; the door name and the arrow at
+    the foot both go to the hub.
   {%- endcomment %}
-  <ul class="doors doors--deep" style="margin-top:var(--sp-7)">
+  <ul class="doors doors--deep doors--hub" style="margin-top:var(--sp-7)">
 
-    <li>
-      <a class="door" href="{{ '/blog/' | relative_url }}">
-        <span class="door__name">Blog</span>
-        <p class="door__blurb">
-          {%- for s in site.sections %}{{ s.name }}{% unless forloop.last %} · {% endunless %}{% endfor %} —
-          essays, reflections, and the family stories that got out of hand.</p>
-        <span class="door__go">All three strands</span>
-      </a>
-
-      {%- comment %}
-        `featured: true` on a post pins it here; otherwise it is the newest.
-        This is also the only prose of Agnès' own on the page, so it is a
-        real paragraph and not a one-line teaser.
-      {%- endcomment %}
-      {%- assign picked = site.posts | where: "featured", true | first %}
-      {%- unless picked %}{% assign picked = site.posts.first %}{% endunless %}
-      {%- if picked %}
-      <div class="door__latest">
-        <span class="label">Latest</span>
-        {%- if picked.image %}
-        <a href="{{ picked.url | relative_url }}" tabindex="-1" aria-hidden="true">
-          <img class="door__latest-img" src="{{ picked.image | relative_url }}" alt=""
-               loading="lazy" decoding="async"></a>
-        {%- endif %}
-        <h3 class="door__latest-title">
-          <a href="{{ picked.url | relative_url }}">{{ picked.title }}</a></h3>
-        {% include excerpt.html post=picked limit=320 %}
-        <p class="door__latest-text">{{ excerpt_text }}</p>
-        <p><a class="btn btn--quiet" href="{{ picked.url | relative_url }}">Read the rest</a></p>
-      </div>
-      {%- endif %}
+    <li class="door door--hub">
+      <a class="door__head" href="{{ '/blog/' | relative_url }}">
+        <span class="door__name">Blog</span></a>
+      <ul class="facets">
+        {%- for s in site.sections %}
+        {%- assign strand_line = s.blurb | split: ". " | first %}
+        <li>
+          <a class="facet" href="{{ '/' | append: s.slug | append: '/' | relative_url }}">
+            <span class="facet__frame">
+              <img class="facet__photo" src="{{ s.image | relative_url }}" alt=""
+                   loading="lazy" decoding="async"></span>
+            <span class="facet__name">{{ s.name }}</span>
+            <span class="facet__line">{{ strand_line }}</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      <a class="door__go" href="{{ '/blog/' | relative_url }}">All three strands</a>
     </li>
 
-    <li>
-      <a class="door door--books" href="{{ '/books/' | relative_url }}">
-        <span class="door__name">Books</span>
-        <p class="door__blurb">A trilogy in progress, a children's series in
-          three languages, and a guide for parents.</p>
-        <span class="door__go">All the books</span>
-      </a>
-
-      {%- comment %}
-        The launch, found by data: whichever book carries a `release` date.
-        Delete those two lines in _data/books.yml after publication and this
-        removes itself rather than announcing a date that has passed.
-      {%- endcomment %}
-      {%- assign launching = site.data.books | where_exp: "b", "b.release" | first %}
-      {%- if launching %}
-      <div class="door__latest">
-        <span class="label">Coming {{ launching.release_label }}</span>
-        <h3 class="door__latest-title">
-          <a href="{{ '/books/#within' | relative_url }}">{{ launching.title }}</a></h3>
-        <p class="launch__line">{{ launching.line }}</p>
-        <p class="door__latest-text">{{ launching.blurb }}</p>
-        <p><a class="btn btn--primary" href="#letters">Be told when it's out</a></p>
-      </div>
-      {%- endif %}
+    {%- assign kids = site.data.published.series | first %}
+    {%- assign guide = site.data.published.standalone | first %}
+    <li class="door door--hub door--books">
+      <a class="door__head" href="{{ '/books/' | relative_url }}">
+        <span class="door__name">Books</span></a>
+      <ul class="facets">
+        <li>
+          <a class="facet" href="{{ '/books/#within' | relative_url }}">
+            {%- comment %} No artwork before the cover reveal: the night tile
+            and the diamond, never a grey box. {% endcomment %}
+            <span class="facet__frame facet__frame--night">
+              <svg class="facet__mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M16 7 L25 16 L16 25 L7 16 Z" fill="none" stroke="#C9A05C" stroke-width="1.6"/><path d="M16 12.5 L19.5 16 L16 19.5 L12.5 16 Z" fill="#C9A05C"/></svg></span>
+            <span class="facet__name">Novels</span>
+            <span class="facet__line">The Within Trilogy</span>
+          </a>
+        </li>
+        <li>
+          <a class="facet" href="{{ '/books/#' | append: kids.slug | relative_url }}">
+            <span class="facet__frame facet__frame--covers">
+              {%- for b in kids.books limit: 3 %}
+              <img class="facet__cover facet__cover--square" src="{{ b.cover | relative_url }}"
+                   alt="" loading="lazy" decoding="async">
+              {%- endfor %}</span>
+            <span class="facet__name">For children</span>
+            <span class="facet__line">In English, French and German</span>
+          </a>
+        </li>
+        <li>
+          <a class="facet" href="{{ '/books/#' | append: guide.slug | relative_url }}">
+            <span class="facet__frame facet__frame--covers">
+              <img class="facet__cover" src="{{ guide.cover | relative_url }}"
+                   alt="" loading="lazy" decoding="async"></span>
+            <span class="facet__name">For parents</span>
+            <span class="facet__line">{{ guide.title }}</span>
+          </a>
+        </li>
+      </ul>
+      <a class="door__go" href="{{ '/books/' | relative_url }}">All the books</a>
     </li>
   </ul>
 
 </main>
 
-{% include signup.html %}
