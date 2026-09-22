@@ -21,15 +21,25 @@
   Messages, Slack and Facebook — which is most of how a book gets passed on.
   absolute_url, not relative_url: these have to be full URLs.
 {% endcomment %}
-<meta property="og:type" content="{% if page.book %}book{% else %}website{% endif %}">
+{%- comment %}
+  THE CARD IS THE POST'S OWN PICTURE when it has one (2026-09-22). Before this
+  every shared link showed the trilogy card, so an essay passed around in
+  WhatsApp announced THE WITHIN TRILOGY instead of the piece being shared.
+  Order: an explicit og_image, then the post's own photograph, then the
+  trilogy card as the last resort. The declared 1200x630 belongs to that card
+  alone - stating it for a photograph of another shape crops it badly.
+{%- endcomment %}
+{%- assign card = page.og_image | default: page.image | default: '/assets/ornament/social-card-1200.jpg' %}
+<meta property="og:type" content="{% if page.book %}book{% elsif page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{{ page.title | default: site.title }}">
-<meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description | strip_newlines | strip }}{% elsif page.layout == 'post' %}{{ page.excerpt | strip_html | strip_newlines | strip | truncate: 200 }}{% else %}{{ site.description | strip_newlines | strip }}{% endif %}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title }}">
-{%- comment %}Pages may override the card; the ornament is the fallback.{%- endcomment %}
-<meta property="og:image" content="{{ page.og_image | default: '/assets/ornament/social-card-1200.jpg' | absolute_url }}">
+<meta property="og:image" content="{{ card | absolute_url }}">
+{%- if card contains 'social-card-1200' %}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+{%- endif %}
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/ornament/diamond.svg' | relative_url }}">
