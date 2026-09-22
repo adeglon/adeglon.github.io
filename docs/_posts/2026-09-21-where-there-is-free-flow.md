@@ -344,13 +344,17 @@ I would say something that made my mind sit bolt upright in horror and wait for 
 
 **Mind:** No, I do not see. I would actually like to change what we just said.
 
+**Soul:** Why?
+
+**Mind:** Because that was a lot.
+
 **Soul:** Shhh. We're talking.
 
-**Mind:** WE APPARENTLY ARE.
+**Mind:** THAT IS EXACTLY WHAT I’M WORRIED ABOUT.
 
 Whatever came out was met with the same response. Good. More words. Good. At some point he told me there was nothing I could say that would not be accepted and welcomed. I don't remember his exact words anymore, but I remember what they did. The more I talked, the more space he created.
 
-Somewhere in all of that, I tried to explain what I was beginning to recognize in myself. I had a very vivid interior world and also a strong mind, and my mind had apparently decided it was responsible for keeping that interior world under control. The pressure would build while Mind kept deciding what was allowed out.
+Somewhere in all of that, I tried to explain what I was beginning to recognize in myself. I had a very vivid interior world and also a strong mind, and my mind had apparently decided it was responsible for keeping that interior world under control. I was afraid that if I let people see its full intensity, I would simply be too much. So Mind kept deciding what was allowed out, and the pressure kept building behind it.
 
 Then he put his hand on my throat chakra.
 
@@ -359,6 +363,12 @@ Then he put his hand on my throat chakra.
 **Soul:** No, you're still monitoring everything.
 
 **Mind:** SOMEONE HAS TO.
+
+**Soul:** Why?
+
+**Mind:** Because you're a lot.
+
+**Soul:** I know.
 
 **Body:** Breathe.
 
