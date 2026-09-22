@@ -68,7 +68,9 @@ After breakfast, the group gathered and walked up to the Great Stupa, where we m
 
 The little trail was beautiful, and the tall flags showed the way as we walked in silence, absorbing the energy and beauty of the land around us.
 
-{% comment %} PHOTO: Stupa trail {% endcomment %}
+![Prayer flags along the trail to the Great Stupa](/assets/images/free-flow-stupa-trail.jpg)
+
+*Stupa trail*
 
 The Stupa soon came into view in all its splendor, and I was impressed by the details and by the huge statue of the Buddha greeting us inside. Kelly led us into a guided meditation and invited us to receive a Stupa blessing. Mine came in images, not words: my book, shining out in the world, telling me to stop holding back and allow myself to be seen…
 
@@ -191,6 +193,10 @@ I looked at what I had just written and asked in the same group chat whether thi
 Then I hiked back up the same trail as the day before, and past the Stupa I spotted the runner, running straight, with no zigzag whatsoever. Good.
 
 We paired up and continued to an overlook on the other side of the mountain. We talked, laughed, took pictures and stood there looking at a view I would never have seen if I had stayed in my room.
+
+![A rocky ridge and pines under a wide Colorado sky, with a cairn beside the trail](/assets/images/free-flow-hike-past-the-stupa.jpg)
+
+*Hike past the Stupa*
 
 I still didn't know what I was going to do with Kelly's feedback. I still wasn't sure what Enneagram type I was, but I knew how to move my feet. So I did that.
 
@@ -430,6 +436,10 @@ No one saw me. Good.
 
 And I survived.
 
+![Four mule deer grazing in a meadow below the pines](/assets/images/free-flow-wildlife.jpg)
+
+*Wildlife near the pond*
+
 After dinner, we walked back up to the Stupa together in the dark and gathered again in the aspen grove for a meditation.
 
 By then I was running on very little sleep, so whatever mystical insights might have been available in that grove were going to have to find someone more conscious. The only instruction I followed in that moment was: close your eyes.
@@ -494,6 +504,10 @@ In my interpretation, a scar is a wound that found its flow again.
 I had learned to recognize stagnation in other people's bodies back in school. That week, I was the one on the table. My Qi had stagnated on Monday, burst out of a fire hose on Tuesday, and found its way back to a river by Wednesday.
 
 I knew it was up to me to keep letting it move. I wasn't entirely sure how I was going to do that, but at least now I could recognize what was happening.
+
+![The group sitting in a circle at dusk around a ring of candles, mountains behind](/assets/images/free-flow-campfire.jpg)
+
+*Last night around the campfire*
 
 The sun set while we went around the circle sharing our little bits of wisdom. By the time we were done, we were sitting under an incredibly beautiful night sky. The darkness made every tiny point of light above our heads more luminous, and the Milky Way made me feel incredibly vast and incredibly small at the same time.
 
@@ -578,3 +592,7 @@ Thank you to everyone who shared this beautiful week with me.
 
 With love,  
 Agnès, Arielle and Anyi
+
+![Agnès and Kelly Notaras, arms around each other, in the meeting room](/assets/images/free-flow-agnes-and-kelly.jpg)
+
+*Agnès & Kelly*
