@@ -26,9 +26,10 @@ I knew I could edit my book at home, but what I couldn't do at home was put myse
 
 I had come to learn what I didn't know I needed to learn. I just couldn't really put that into a number for the camera.
 
-![The Great Stupa at Drala Mountain Center, prayer flags along the path up the hill](/assets/images/featured-where-there-is-free-flow.jpg)
+![The Great Stupa at Drala Mountain Center, prayer flags along the path up the hill](/assets/images/featured-where-there-is-free-flow.jpg){: .photo}
 
 *Stupa at Drala Mountain Center, Colorado*
+{: .caption}
 
 ### Welcome to 8,000 feet
 
@@ -68,9 +69,10 @@ After breakfast, the group gathered and walked up to the Great Stupa, where we m
 
 The little trail was beautiful, and the tall flags showed the way as we walked in silence, absorbing the energy and beauty of the land around us.
 
-![Prayer flags along the trail to the Great Stupa](/assets/images/free-flow-stupa-trail.jpg)
+![Prayer flags along the trail to the Great Stupa](/assets/images/free-flow-stupa-trail.jpg){: .photo .photo--tall}
 
 *Stupa trail*
+{: .caption}
 
 The Stupa soon came into view in all its splendor, and I was impressed by the details and by the huge statue of the Buddha greeting us inside. Kelly led us into a guided meditation and invited us to receive a Stupa blessing. Mine came in images, not words: my book, shining out in the world, telling me to stop holding back and allow myself to be seen…
 
@@ -194,9 +196,10 @@ Then I hiked back up the same trail as the day before, and past the Stupa I spot
 
 We paired up and continued to an overlook on the other side of the mountain. We talked, laughed, took pictures and stood there looking at a view I would never have seen if I had stayed in my room.
 
-![A rocky ridge and pines under a wide Colorado sky, with a cairn beside the trail](/assets/images/free-flow-hike-past-the-stupa.jpg)
+![A rocky ridge and pines under a wide Colorado sky, with a cairn beside the trail](/assets/images/free-flow-hike-past-the-stupa.jpg){: .photo}
 
 *Hike past the Stupa*
+{: .caption}
 
 I still didn't know what I was going to do with Kelly's feedback. I still wasn't sure what Enneagram type I was, but I knew how to move my feet. So I did that.
 
@@ -436,9 +439,10 @@ No one saw me. Good.
 
 And I survived.
 
-![Four mule deer grazing in a meadow below the pines](/assets/images/free-flow-wildlife.jpg)
+![Four mule deer grazing in a meadow below the pines](/assets/images/free-flow-wildlife.jpg){: .photo}
 
 *Wildlife near the pond*
+{: .caption}
 
 After dinner, we walked back up to the Stupa together in the dark and gathered again in the aspen grove for a meditation.
 
@@ -505,9 +509,10 @@ I had learned to recognize stagnation in other people's bodies back in school. T
 
 I knew it was up to me to keep letting it move. I wasn't entirely sure how I was going to do that, but at least now I could recognize what was happening.
 
-![The group sitting in a circle at dusk around a ring of candles, mountains behind](/assets/images/free-flow-campfire.jpg)
+![The group sitting in a circle at dusk around a ring of candles, mountains behind](/assets/images/free-flow-campfire.jpg){: .photo}
 
 *Last night around the campfire*
+{: .caption}
 
 The sun set while we went around the circle sharing our little bits of wisdom. By the time we were done, we were sitting under an incredibly beautiful night sky. The darkness made every tiny point of light above our heads more luminous, and the Milky Way made me feel incredibly vast and incredibly small at the same time.
 
@@ -593,6 +598,9 @@ Thank you to everyone who shared this beautiful week with me.
 With love,  
 Agnès, Arielle and Anyi
 
-![Agnès and Kelly Notaras, arms around each other, in the meeting room](/assets/images/free-flow-agnes-and-kelly.jpg)
+![Agnès and Kelly Notaras, arms around each other, in the meeting room](/assets/images/free-flow-agnes-and-kelly.jpg){: .photo .photo--tall}
 
 *Agnès & Kelly*
+{: .caption}
+
+Thank you Kelly and team for the great week!

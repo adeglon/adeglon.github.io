@@ -1685,6 +1685,26 @@ dem-agent {
   background: var(--bg-deep);
 }
 
+/* PHOTOGRAPHS INSIDE AN ESSAY (2026-09-22). A portrait photograph at the full
+   width of the reading column becomes a wall the reader has to scroll past, so
+   a tall frame is capped by HEIGHT and centred instead. Landscape frames keep
+   the column width. The caption sits under the picture, centred with it. */
+.prose .photo {
+  margin-inline: auto;
+  border-radius: var(--radius-photo);
+}
+.prose .photo--tall {
+  max-height: 30rem;
+  width: auto;
+}
+.prose .caption {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  margin-top: var(--sp-3);
+  margin-inline: auto;
+}
+
 /* Listing rows become two columns once there is room for a thumbnail. */
 .post-list > li.has-thumb {
   display: grid;
