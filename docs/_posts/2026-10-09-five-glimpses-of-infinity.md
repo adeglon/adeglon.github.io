@@ -4,12 +4,17 @@ title: "Five Glimpses of Infinity"
 date: 2026-10-09 12:00:00 -0700
 categories: ["Soul&Self"]
 permalink: /five-glimpses-of-infinity/
+image: /assets/images/featured-five-glimpses-of-infinity.jpg
+image_in_body: true
 also_on: https://medium.com/@agnes.deglon/five-glimpses-of-infinity-21704fce60f8
 ---
 
 *The Unexpected Journey of a Little Starfish*
 
-{% comment %} PHOTO: Starfish under a starry sky (AI-generated) {% endcomment %}
+![A starfish on wet sand at the edge of the surf, the Milky Way and a low moon over the ocean behind it](/assets/images/featured-five-glimpses-of-infinity.jpg){: .photo}
+
+*Starfish under a starry sky (AI-generated)*
+{: .caption}
 
 ### 1 — The Shore
 
