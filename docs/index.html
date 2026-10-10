@@ -13,6 +13,7 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
 {%- endcomment %}
 <header class="hero--author">
   <div class="page">
+    {% include chat-button.html %}
     <div class="hero__masthead-row">
       <a class="wordmark wordmark--big" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       {% include nav.html %}
@@ -28,8 +29,6 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
           brings ancient wisdom and modern science into conversation through
           story</h1>
 
-
-        <p class="hero__note"><a href="{{ '/books/' | relative_url }}">The books</a></p>
       </div>
 
       <img class="hero__portrait"
@@ -38,7 +37,6 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
            alt="Agnès Déglon-Fischer writing at home, her goldendoodle beside her">
     </div>
   </div>
-  {% include chat-button.html %}
 </header>
 
 <main id="main" class="page section">
