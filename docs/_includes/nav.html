@@ -1,9 +1,26 @@
 {% comment %}
-  One navbar for the whole site — essays and trilogy side by side. Entries
-  come from `nav` in _config.yml so this markup never changes when a
-  destination is added.
+  One navbar for the whole site. Entries come from `nav` in _config.yml so
+  this markup never changes when a destination is added.
+
+  ON A PHONE it collapses behind a hamburger (Agnes, 2026-10-10). Five
+  uppercase, letter-spaced words will not fit on one line at 390px: they wrapped
+  onto a second and sometimes a third row and pushed the fold down the screen.
+
+  The button is revealed, and the list hidden, only for `.has-js` - set by the
+  script below before the header paints. Without JavaScript the list stays
+  visible and stacked, because a menu you cannot open is worse than a long one.
 {% endcomment %}
-<nav class="site-nav" aria-label="Main">
+<script>document.documentElement.classList.add('has-js');</script>
+<button class="nav-toggle" type="button" id="nav-toggle"
+        aria-expanded="false" aria-controls="site-menu">
+  <span class="nav-toggle__box" aria-hidden="true">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </span>
+  <span class="visually-hidden">Menu</span>
+</button>
+<nav class="site-nav" id="site-menu" aria-label="Main">
   <ul>
     {%- for item in site.nav %}
     <li><a href="{{ item.url | relative_url }}"
@@ -11,3 +28,25 @@
     {%- endfor %}
   </ul>
 </nav>
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var menu = document.getElementById('site-menu');
+  if (!btn || !menu) return;
+  function set(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) { menu.setAttribute('data-open', ''); } else { menu.removeAttribute('data-open'); }
+  }
+  btn.addEventListener('click', function () {
+    set(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  /* Tapping a destination closes it; so does Escape, so does turning the
+     phone sideways into a layout where the menu is a row again. */
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  var wide = window.matchMedia('(min-width: 48rem)');
+  (wide.addEventListener ? wide.addEventListener.bind(wide, 'change') : wide.addListener.bind(wide))(function (e) {
+    if (e.matches) set(false);
+  });
+})();
+</script>

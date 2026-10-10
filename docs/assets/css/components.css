@@ -115,6 +115,83 @@
   border-bottom-color: var(--rule);
 }
 
+/* --------------------------------------------------------------------------
+   THE HAMBURGER  <- the navbar on a phone, 2026-10-10
+   --------------------------------------------------------------------------
+   Five uppercase, letter-spaced destinations are about 460px of type. On a
+   390px screen they wrapped onto two and sometimes three rows and shoved the
+   fold down with them. Below 48rem they fold behind a button instead.
+
+   Everything here is gated on .has-js, which nav.html sets before the header
+   paints. With JavaScript off the button never appears and the list stays
+   open and stacked - a menu nothing can open is worse than a long one.
+   -------------------------------------------------------------------------- */
+
+.nav-toggle { display: none; }
+
+@media (max-width: 48rem) {
+  /* The name and the button share the top line. At 390px the wordmark at its
+     desktop size is about 300px, which plus the gap and the 44px button is
+     wider than the screen - so it wrapped and left the button stranded on a
+     line of its own. It scales with the viewport here instead. */
+  .site-header__inner { gap: var(--sp-3); flex-wrap: wrap; }
+  .site-header__inner .wordmark { font-size: clamp(1rem, 4.4vw, 1.55rem); }
+
+  .has-js .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    /* 44px square: the smallest target a thumb finds reliably. */
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    margin-inline-start: auto;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .nav-toggle__box { display: block; width: 1.15rem; }
+  .nav-toggle__bar {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+  }
+  .nav-toggle__bar + .nav-toggle__bar { margin-top: 4px; }
+  /* Open: the three bars become a cross, so the button says how to undo
+     itself rather than needing a second control beside it. */
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .has-js .site-nav { display: none; }
+  /* Full width, so it drops onto its own line under the name and the button
+     rather than squeezing in beside them. */
+  .has-js .site-nav[data-open] {
+    display: block;
+    flex-basis: 100%;
+    margin-top: var(--sp-4);
+    border-top: 1px solid var(--rule);
+  }
+  .site-nav ul { flex-direction: column; gap: 0; }
+  .site-nav li + li { border-top: 1px solid var(--rule-quiet); }
+  .site-nav a {
+    display: block;
+    font-size: var(--fs-sm);
+    padding-block: var(--sp-4);
+    border-bottom: 0;
+  }
+  .site-nav a[aria-current="page"] { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle__bar { transition: none; }
+}
+
 /* Inside a hero the navbar sits on a photograph, where --text (a dark ink
    meant for paper) all but vanishes. Paper white plus a shadow the width of
    the stroke: legible over sky or over rock, without a bar behind it. */
