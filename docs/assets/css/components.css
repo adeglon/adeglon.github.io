@@ -686,6 +686,11 @@
 }
 
 
+/* The bio, under the fold since 2026-10-10: the fold carried the sentence, the
+   bio and the picture, and that was too much text to meet. */
+.bio { max-width: var(--measure); }
+.bio p + p { margin-top: var(--sp-4); }
+
 /* --------------------------------------------------------------------------
    AUTHOR HERO  <- the landing page, 2026-10-09
    --------------------------------------------------------------------------
@@ -717,7 +722,7 @@
 }
 .hero--author .hero__cols {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 21rem);
   gap: var(--sp-8);
   align-items: center;
 }
@@ -725,19 +730,31 @@
   font-family: var(--font-display);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(1.5rem, 1rem + 1.5vw, 2.3rem);
-  line-height: 1.16;
+  font-size: clamp(1.55rem, 1rem + 1.6vw, 2.45rem);
+  line-height: 1.2;
   letter-spacing: 0.01em;
   color: var(--text-strong);
   margin: 0;
   text-wrap: pretty;
+}
+/* THE INITIAL. Agnes chose this of three treatments: the sentence reads as one
+   unbroken thought and the gold A opens it the way a chapter opens. It floats,
+   so the sentence sets around it; the line-height is deliberately tight so the
+   letter sits on the first three lines rather than pushing them apart. */
+.hero--author .hero__claim .initial {
+  float: left;
+  font-style: normal;
+  color: var(--accent);
+  font-size: 3.1em;
+  line-height: 0.76;
+  padding: 0.06em 0.1em 0 0;
 }
 .hero--author .hero__bio { margin-top: var(--sp-6); }
 .hero--author .hero__bio p { color: var(--text); max-width: 46ch; }
 .hero--author .hero__bio p + p { margin-top: var(--sp-4); }
 .hero--author .hero__portrait {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: 50% 22%;
   border-radius: var(--radius-photo);
@@ -748,7 +765,7 @@
 
 @media (max-width: 60rem) {
   .hero--author .hero__cols { grid-template-columns: 1fr; gap: var(--sp-6); }
-  .hero--author .hero__portrait { width: 11rem; }
+  .hero--author .hero__portrait { width: 100%; max-width: 20rem; }
   .hero--author .site-nav ul { gap: var(--sp-4); font-size: var(--fs-sm); }
   .hero--author .hero__masthead-row { margin-bottom: var(--sp-6); }
 }

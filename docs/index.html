@@ -24,33 +24,43 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
           The sentence is the one line that decides whether a stranger stays,
           so it is the largest thing on the page. Agnes' own words.
         {%- endcomment %}
-        <h1 class="hero__claim">A novelist who brings ancient wisdom and modern
-          science into conversation through story</h1>
+        <h1 class="hero__claim"><span class="initial">A</span> novelist who
+          brings ancient wisdom and modern science into conversation through
+          story</h1>
 
-        <div class="hero__bio">
-          {%- assign novel = site.data.books | where_exp: "b", "b.release" | first %}
-          <p>I'm a Swiss-American writer with a background in biochemistry and Chinese
-            medicine. For years I read the body two ways — in molecules and in
-            meridians — and I've stopped trying to pick one.</p>
-          <p>My first novel, <em>The Canyon Within</em>, comes out
-            {% if novel %}{{ novel.release_label }}{% else %}soon{% endif %}. In between,
-            I write here: on health and science, on the soul, and on the family
-            misadventures that keep me honest.</p>
-        </div>
 
         <p class="hero__note"><a href="{{ '/books/' | relative_url }}">The books</a></p>
       </div>
 
       <img class="hero__portrait"
-           src="{{ '/assets/author/agnes-portrait-900.jpg' | relative_url }}"
-           width="900" height="1350" fetchpriority="high" decoding="async"
-           alt="Agnès Déglon-Fischer">
+           src="{{ '/assets/author/agnes-writing-1200.jpg' | relative_url }}"
+           width="1200" height="900" fetchpriority="high" decoding="async"
+           alt="Agnès Déglon-Fischer writing at home, her goldendoodle beside her">
     </div>
   </div>
   {% include chat-button.html %}
 </header>
 
 <main id="main" class="page section">
+
+  {%- comment %}
+    THE BIO, UNDER THE FOLD (2026-10-10). Agnes: "there is too much text above
+    the fold." The fold now holds the sentence and her photograph; this is the
+    first thing a reader meets after it.
+  {%- endcomment %}
+  <div class="bio">
+    {%- assign novel = site.data.books | where_exp: "b", "b.release" | first %}
+    <p>I'm a Swiss-American writer with a background in biochemistry and Chinese
+      medicine. For years I read the body two ways — in molecules and in
+      meridians — and I've stopped trying to pick one.</p>
+    <p>My first novel, <em>The Canyon Within</em>, comes out
+      {% if novel %}{{ novel.release_label }}{% else %}soon{% endif %}. In between,
+      I write here: on health and science, on the soul, and on the family
+      misadventures that keep me honest.</p>
+  </div>
+
+  {% include ornament.html modifier="ornament--center ornament--short" %}
+
 
 
   {%- comment %}
