@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Junior Lifeguards: Sun, Surf, and Ocean Skills"
-date: 2025-09-02 14:30:18 -0800
+date: 2025-01-28 14:30:18 -0800
 categories: ["Misadventures"]
 permalink: /junior-lifeguards-sun-surf-and-ocean-skills/
 image: /assets/images/featured-junior-lifeguards-sun-surf-and-ocean-skills.jpg
