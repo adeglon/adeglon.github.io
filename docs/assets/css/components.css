@@ -685,6 +685,74 @@
   opacity: 0.82;
 }
 
+
+/* --------------------------------------------------------------------------
+   AUTHOR HERO  <- the landing page, 2026-10-09
+   --------------------------------------------------------------------------
+   Kelly Notaras' note: the author's photograph belongs above the fold. So the
+   trail photograph came off the top and this took its place - the sentence,
+   the bio and a portrait, on a warm band one shade deeper than the page.
+
+   The night panel was tried first and Agnes found it too dark; cream was too
+   close to the page below to read as a fold at all. --bg-deep sits between
+   them: a band of its own without the weight.
+
+   The portrait is SMALL on purpose. A studio headshot has no air in it, so at
+   column width it becomes a wall of face; at 15rem it is a framed picture of
+   a person and the sentence stays the loudest thing on the screen. The gold
+   hairline keeps the studio grey from reading as a floating swatch.
+   -------------------------------------------------------------------------- */
+
+.hero--author {
+  background: var(--bg-deep);
+  padding: var(--sp-5) 0 var(--sp-8);
+  border-bottom: 1px solid var(--rule-quiet);
+}
+.hero--author .hero__masthead-row { margin-bottom: var(--sp-8); }
+/* One line, at every width: the name breaking across two lines pushed the
+   picture off the fold on a phone. */
+.hero--author .wordmark--big {
+  font-size: min(calc(var(--fs-lg) * 1.3), 6.2vw);
+  white-space: nowrap;
+}
+.hero--author .hero__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+  gap: var(--sp-8);
+  align-items: center;
+}
+.hero--author .hero__claim {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.5rem, 1rem + 1.5vw, 2.3rem);
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--text-strong);
+  margin: 0;
+  text-wrap: pretty;
+}
+.hero--author .hero__bio { margin-top: var(--sp-6); }
+.hero--author .hero__bio p { color: var(--text); max-width: 46ch; }
+.hero--author .hero__bio p + p { margin-top: var(--sp-4); }
+.hero--author .hero__portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: var(--radius-photo);
+  border: 1px solid var(--rule);
+  display: block;
+}
+.hero--author .hero__note { margin-top: var(--sp-7); }
+
+@media (max-width: 60rem) {
+  .hero--author .hero__cols { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .hero--author .hero__portrait { width: 11rem; }
+  .hero--author .site-nav ul { gap: var(--sp-4); font-size: var(--fs-sm); }
+  .hero--author .hero__masthead-row { margin-bottom: var(--sp-6); }
+}
+
 /* PARKED. .hero--split below is the two-column version - a night panel of type
    beside an undimmed photograph. No page uses it; it is kept because it solved
    the readability problem outright and may be wanted again. */
