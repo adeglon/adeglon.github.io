@@ -1,11 +1,7 @@
 {% comment %}
-  Site header. Was duplicated inline in page.html and book.html; extracted so
-  the wordmark and nav cannot drift between page types.
+  Site header for the ordinary pages. The masthead itself lives in
+  masthead.html so that it cannot drift between page types.
 {% endcomment %}
 <header class="site-header">
-  <div class="page">{% include chat-button.html %}</div>
-  <div class="page site-header__inner">
-    <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    {% include nav.html %}
-  </div>
+  <div class="page">{% include masthead.html %}</div>
 </header>

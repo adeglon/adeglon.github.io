@@ -7,7 +7,6 @@ description: >-
   rim of the Grand Canyon and starts down. A novel of midlife awakening by
   Agnès Déglon-Fischer.
 book: true
-ground: dark
 ---
 
 {% include ornament.html modifier="ornament--short" %}

@@ -76,6 +76,12 @@
   justify-content: space-between;
   gap: var(--sp-5);
   flex-wrap: wrap;
+  /* THE MASTHEAD DOES NOT SCALE. The landing page sets big_type, which grows
+     every type token by 10%, and that moved the name and the tabs a few
+     pixels off where they sit on every other page. The masthead is furniture
+     rather than reading, so it opts out and stays identical everywhere. */
+  --fs-lg: clamp(1.30rem, 1.18rem + 0.55vw, 1.55rem);
+  --fs-xs: 0.8125rem;
 }
 
 .wordmark {
@@ -710,20 +716,21 @@
 
 .hero--author {
   background: var(--bg-deep);
+  /* The top padding matches .site-header exactly, so the name and the tabs
+     begin at the same height here as on every other page. */
   padding: var(--sp-5) 0 var(--sp-8);
   border-bottom: 1px solid var(--rule-quiet);
 }
-.hero--author .hero__masthead-row { margin-bottom: var(--sp-8); }
+/* ONE MASTHEAD, 2026-10-10. The landing page used to carry its own: an
+   oversized wordmark with the navigation stacked underneath it, because
+   .hero__masthead-row had no layout rules of its own. Agnes wanted the tabs
+   in the same place on every page, so the landing page now takes the shared
+   masthead include like everything else and these one-offs are gone. All
+   that is left here is the air between the masthead and the sentence. */
+.hero--author .site-header__inner { margin-bottom: var(--sp-8); }
 /* The ask-about-my-writing button rides in the top right corner, above the
-   name, where a reader looks for a way to talk to someone. It is the first
-   thing on the band, so it needs no margin of its own above it. */
-.hero--author .utility { margin-bottom: var(--sp-4); }
-/* One line, at every width: the name breaking across two lines pushed the
-   picture off the fold on a phone. */
-.hero--author .wordmark--big {
-  font-size: min(calc(var(--fs-lg) * 1.3), 6.2vw);
-  white-space: nowrap;
-}
+   name, on every page. It takes the shared .utility spacing: an override
+   here put the landing page's masthead four pixels below everyone else's. */
 .hero--author .hero__cols {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 25rem);
@@ -806,7 +813,7 @@
   .hero--author .hero__cols { grid-template-columns: 1fr; gap: var(--sp-6); }
   .hero--author .hero__portrait { width: 100%; max-width: 20rem; }
   .hero--author .site-nav ul { gap: var(--sp-4); font-size: var(--fs-sm); }
-  .hero--author .hero__masthead-row { margin-bottom: var(--sp-6); }
+  .hero--author .site-header__inner { margin-bottom: var(--sp-6); }
 }
 
 /* PARKED. .hero--split below is the two-column version - a night panel of type

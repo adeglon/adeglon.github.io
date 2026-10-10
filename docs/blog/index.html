@@ -13,26 +13,19 @@ permalink: /blog/
 <header class="hero hero--sky hero--compact">
   <div class="hero__body">
     <div class="page">
-      {% include chat-button.html %}
-      <div class="site-header__inner">
-        <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        {% include nav.html %}
-      </div>
+      {% include masthead.html %}
       {%- comment %}
-        Tight on purpose, and tighter again 2026-09-02. This page exists to
-        show three choices, so every pixel spent above them is a pixel that
-        pushes a photograph below the fold. The ornament went first; now the
-        display-size word "Blog" has gone too, and the line that used to sit
-        under it in the body has become the heading.
+        NO STANDFIRST, 2026-10-10. Agnes: "let's remove this. its just
+        confusing." The line that used to sit here - a scientist's mind, a
+        healer's heart, a mother's humor - was trying to explain the three
+        columns before the reader had seen them, and the three columns say it
+        better by existing. The page now opens straight onto the choices.
 
-        Nothing is lost by that. The navigation already marks Blog as the
-        current page, so the word was labelling a page the reader had just
-        chosen - and this line says what the three strands ARE, which the
-        word never did.
+        The heading stays for screen readers and for search, because a page
+        with no h1 is a page with no name; it just has nothing to say out
+        loud that the navigation has not already said.
       {%- endcomment %}
-      <h1 class="blog-lede">A scientist's mind, a healer's heart, a mother's
-        humor. <span>Three strands of the same life — each keeps its own
-        shelf.</span></h1>
+      <h1 class="visually-hidden">Blog</h1>
     </div>
   </div>
 </header>

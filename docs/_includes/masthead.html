@@ -1,0 +1,20 @@
+{% comment %}
+  THE MASTHEAD — one row, one place, every page.
+
+  Agnes, 2026-10-10: "lets make sure the tabs are in the same place on each
+  page of the website." They were not. Every page but the landing page put
+  the name and the navigation on one line with the tabs hard right; the
+  landing page had an oversized name with the tabs stacked underneath it on
+  the left, because .hero__masthead-row was a plain div with no layout rules
+  at all. So the whole masthead became this one include, and the landing page
+  takes the same name at the same size as everywhere else. What makes that
+  page the landing page is the gold initial, the sentence and the photograph
+  below this line, not a bigger wordmark.
+
+  The ask-about-my-writing button rides above it, top right.
+{% endcomment %}
+{% include chat-button.html %}
+<div class="site-header__inner">
+  <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  {% include nav.html %}
+</div>
