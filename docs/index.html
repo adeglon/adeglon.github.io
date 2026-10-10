@@ -39,35 +39,18 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
   </div>
 </header>
 
-<main id="main" class="page section">
+<main id="main" class="page section section--tight">
 
   {%- comment %}
-    THE BIO, UNDER THE FOLD (2026-10-10). Agnes: "there is too much text above
-    the fold." The fold now holds the sentence and her photograph; this is the
-    first thing a reader meets after it.
+    THE BIO MOVED OUT (2026-10-10). It lives on /about/ now, with the studio
+    portrait. The fold introduces her; the doors below send a reader on.
   {%- endcomment %}
-  <div class="bio">
-    {%- assign novel = site.data.books | where_exp: "b", "b.release" | first %}
-    <p>I'm a Swiss-American writer with a background in biochemistry and Chinese
-      medicine. For years I read the body two ways — in molecules and in
-      meridians — and I've stopped trying to pick one.</p>
-    <p>My first novel, <em>The Canyon Within</em>, comes out
-      {% if novel %}{{ novel.release_label }}{% else %}soon{% endif %}. In between,
-      I write here: on health and science, on the soul, and on the family
-      misadventures that keep me honest.</p>
-  </div>
-
-  {% include ornament.html modifier="ornament--center ornament--short" %}
-
-
 
   {%- comment %}
-    IDENTITY FIRST, then the writing. The page's job is to introduce a writer
-    to a stranger, so the two things a stranger needs - who she is, and what
-    her prose sounds like - come before the launch, the doors and the ask.
-    Everything below this is navigation.
+    THE DOORS. The fold has said who she is; everything from here is a way
+    further in - the writing, the books, and the ask at the bottom.
   {%- endcomment %}
-  <ul class="doors doors--deep doors--hub" style="margin-top:var(--sp-7)">
+  <ul class="doors doors--deep doors--hub">
 
     <li class="door door--hub">
       <a class="door__head" href="{{ '/blog/' | relative_url }}">

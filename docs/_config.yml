@@ -56,6 +56,7 @@ demeterics_key: "DEM-CTB2X5VRO4KL"
 # because that is where Agnès is most active; the Newsletter is an ask, so it
 # comes after the two things worth subscribing for.
 nav:
+  - {name: "About",      url: "/about/"}
   - {name: "Blog",       url: "/blog/"}
   - {name: "Books",      url: "/books/"}
   - {name: "Newsletter", url: "/newsletter/"}
