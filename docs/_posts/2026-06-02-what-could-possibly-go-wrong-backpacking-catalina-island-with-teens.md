@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Could Possibly Go Wrong? Backpacking Catalina Island With Teens"
-date: 2026-06-03 09:00:00 -0800
+date: 2026-06-02 09:00:00 -0800
 categories: ["Misadventures"]
 permalink: /what-could-possibly-go-wrong-backpacking-catalina-island-with-teens/
 image: /assets/images/medium-what-could-possibly-go-wrong-backpacking-catalina-island-with-teens-1.jpg

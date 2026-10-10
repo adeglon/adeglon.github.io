@@ -19,6 +19,11 @@ baseurl: ""
 # Keeps agnesdeglonblog.com/<slug>/ working after the domain moves.
 permalink: /:title/
 
+# Agnes writes in California and every post is stamped -0800. Without this,
+# Jekyll builds in the server's timezone (UTC on GitHub's builders) and a post
+# written after 4pm Pacific displays with TOMORROW's date - which is why four
+# Misadventures pieces were showing a day late.
+timezone: America/Los_Angeles
 markdown: kramdown
 kramdown:
   input: GFM
@@ -73,7 +78,7 @@ sections:
   - name: "Health & Science"
     key: "Health&Science"
     slug: "health-science"
-    image: /assets/images/strand-health-science.jpg
+    image: /assets/images/strand-health-science-dish.jpg
     image_alt: "A petri dish holding a yin-yang of clear and dark liquid, molecular models and a green leaf beside it"
     welcome_title: "Welcome to Health & Science"
     blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
