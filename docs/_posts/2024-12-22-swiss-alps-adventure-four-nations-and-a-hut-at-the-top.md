@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Swiss Alps Adventure: Four Nations and a Hut at the Top"
-date: 2025-09-01 10:10:07 -0800
+date: 2024-12-22 10:10:07 -0800
 categories: ["Misadventures"]
 permalink: /swiss-alps-adventure-four-nations-and-a-hut-at-the-top/
 image: /assets/images/featured-swiss-alps-adventure-four-nations-and-a-hut-at-the-top.jpg

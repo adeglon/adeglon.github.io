@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Overnight Backpacking Adventures: Surviving the Trail with Family Fun"
-date: 2025-08-31 20:16:57 -0800
+date: 2024-12-13 20:16:57 -0800
 categories: ["Misadventures"]
 permalink: /overnight-backpacking-adventures-surviving-the-trail-with-family-fun/
 image: /assets/images/featured-overnight-backpacking-adventures-surviving-the-trail-with-family-fun.jpg

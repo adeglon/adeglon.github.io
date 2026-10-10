@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Through Red Rocks and Turquoise Waters: Our Family’s Havasupai Adventure"
-date: 2025-09-01 09:57:25 -0800
+date: 2024-12-18 09:57:25 -0800
 categories: ["Misadventures"]
 permalink: /through-red-rocks-and-turquoise-waters-our-familys-havasupai-adventure/
 image: /assets/images/featured-through-red-rocks-and-turquoise-waters-our-familys-havasupai-adventure.jpg

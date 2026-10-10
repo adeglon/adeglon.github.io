@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Reality of a Family Ski Trip"
-date: 2025-09-04 14:26:30 -0800
+date: 2024-12-29 14:26:30 -0800
 categories: ["Misadventures"]
 permalink: /the-reality-of-a-family-ski-trip/
 image: /assets/images/featured-the-reality-of-a-family-ski-trip.jpg

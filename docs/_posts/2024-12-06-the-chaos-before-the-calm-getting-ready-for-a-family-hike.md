@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Chaos Before the Calm: Getting Ready for a Family Hike"
-date: 2025-08-30 22:20:23 -0800
+date: 2024-12-06 22:20:23 -0800
 categories: ["Misadventures"]
 permalink: /the-chaos-before-the-calm-getting-ready-for-a-family-hike/
 image: /assets/images/featured-the-chaos-before-the-calm-getting-ready-for-a-family-hike.jpg

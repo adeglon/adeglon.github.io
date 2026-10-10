@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Into the Wild(ish): Our Family’s Attempt at Survival Skills"
-date: 2025-09-03 14:14:54 -0800
+date: 2024-12-08 14:14:54 -0800
 categories: ["Misadventures", "Uncategorized"]
 permalink: /into-the-wildish-our-familys-attempt-at-survival-skills/
 image: /assets/images/featured-into-the-wildish-our-familys-attempt-at-survival-skills.jpg
