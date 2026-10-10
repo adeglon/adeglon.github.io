@@ -11,7 +11,7 @@
   Set `current` to a book slug when including it:
       {% include series-strip.html current=page.slug %}
 {% endcomment %}
-<nav class="series-strip" aria-label="The Within Trilogy, in reading order">
+<nav class="series-strip" aria-label="The Within Series, in reading order">
   <ol>
     {% for book in site.data.books %}
       {% if book.slug == include.current %}

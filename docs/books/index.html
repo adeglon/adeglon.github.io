@@ -2,7 +2,7 @@
 layout: default
 title: Books
 description: >-
-  Books by Agnès Déglon-Fischer — The Within Trilogy, the children's series
+  Books by Agnès Déglon-Fischer — The Within Series, the children's series
   Kids' Questions About Life, and Once You Know: A Guide To Preserving Your
   Child's Health.
 ground: dark
@@ -31,7 +31,7 @@ permalink: /books/
 
 <main id="main">
 
-  <!-- ── The Within Trilogy ─────────────────────────────────────────── -->
+  <!-- ── The Within Series ─────────────────────────────────────────── -->
   <section class="page section" id="within">
     {%- comment %}
       The credo that used to open this section is now the landing page's
@@ -39,7 +39,7 @@ permalink: /books/
       a claim - and this page's job is the books themselves.
     {%- endcomment %}
     <span class="label">Fiction</span>
-    <h2 style="margin-top:var(--sp-2)">The Within Trilogy</h2>
+    <h2 style="margin-top:var(--sp-2)">The Within Series</h2>
     <p class="standfirst">Three standalone novels about one woman at three
       points in her life. They are published in the order they were written
       rather than the order they happened, so you can begin anywhere — and
@@ -99,7 +99,7 @@ permalink: /books/
     {%- endcomment %}
     {%- assign coming = site.data.books | where_exp: "b", "b.lead != true" %}
     <p class="chronology">
-      <span class="label">Also in the trilogy</span>
+      <span class="label">Also in the series</span>
       {%- for book in coming %}
       <em>{{ book.title }}</em>{% unless forloop.last %} and {% endunless %}
       {%- endfor %} are being written.

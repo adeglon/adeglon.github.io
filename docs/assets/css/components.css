@@ -770,27 +770,35 @@
 /* --------------------------------------------------------------------------
    THE ABOUT PORTRAIT
    --------------------------------------------------------------------------
-   The studio headshot, on /about/. It floats beside the first paragraphs on a
-   wide screen so the page opens with a face and a voice together, and drops
-   above the text on a phone, where a float would leave three-word lines.
+   The studio headshot, on /about/. It does NOT sit inside the reading column:
+   the prose keeps its measure and the picture hangs in the margin to its
+   right, flush with the page edge, the way a magazine runs an author photo.
+
+   The negative right margin is what carries it out there - the float starts
+   at the edge of the measure, and this pushes it the rest of the way to the
+   page's own right edge, whatever the window is doing.
+
+   No aspect-ratio and no cover crop. An earlier version squared the frame and
+   took the top of Agnes' head off with it; the picture now shows what the
+   photograph shows.
    -------------------------------------------------------------------------- */
 
 .prose .portrait {
   display: block;
   width: 100%;
-  max-width: 17rem;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  max-width: 14rem;
+  height: auto;
   border-radius: var(--radius-photo);
   border: 1px solid var(--rule);
   margin: 0 0 var(--sp-6);
 }
-@media (min-width: 46rem) {
+@media (min-width: 64rem) {
   .prose .portrait {
     float: right;
     width: 15rem;
-    margin: 0.35rem 0 var(--sp-5) var(--sp-6);
-    shape-outside: inset(0 round var(--radius-photo));
+    max-width: none;
+    margin: 0.4rem 0 var(--sp-6) var(--sp-7);
+    margin-right: calc(var(--measure) - min(var(--page-max), 100vw) + var(--gutter) * 2);
   }
 }
 

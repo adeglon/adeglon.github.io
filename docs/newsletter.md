@@ -8,7 +8,7 @@ description: >-
 permalink: /newsletter/
 ---
 
-This is where I write about the making rather than the made: the trilogy as it
+This is where I write about the making rather than the made: the series as it
 arrives, the days it refuses to, what twenty years of biochemistry and
 acupuncture keep insisting on when I sit down to write fiction, and the
 stubbornly unglamorous business of becoming an author in public.

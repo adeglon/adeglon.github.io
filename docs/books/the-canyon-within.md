@@ -3,7 +3,7 @@ layout: book
 slug: the-canyon-within
 title: The Canyon Within
 description: >-
-  A standalone novel in The Within Trilogy. At fifty-two, Arielle walks to the
+  A standalone novel in The Within Series. At fifty-two, Arielle walks to the
   rim of the Grand Canyon and starts down. A novel of midlife awakening by
   Agnès Déglon-Fischer.
 book: true
