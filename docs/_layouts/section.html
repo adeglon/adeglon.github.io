@@ -10,6 +10,22 @@ layout: default
   {% include ornament.html modifier="ornament--short" %}
 
   {%- comment %}
+    AGNES' OWN WELCOME, moved here 2026-10-10. These paragraphs lived on
+    /blog/, under a wide row that had all the space in the world for them.
+    /blog/ is three columns now and a column cannot hold them without
+    clamping - and a clamped welcome is a teaser, which is the one thing
+    these are not. So they moved to the page they were always about, where
+    the reader has already chosen the strand.
+
+    Verbatim from `sections` in _config.yml, every paragraph of it.
+  {%- endcomment %}
+  {%- for s in site.sections %}{% if s.key == page.category and s.welcome %}
+  {%- for para in s.welcome %}
+  <p class="strand__intro">{{ para }}</p>
+  {%- endfor %}
+  {%- endif %}{% endfor %}
+
+  {%- comment %}
     A section's own list of what a reader will find, when it has one. It used
     to sit on /blog/, where three unequal cards side by side needed one of
     them not to carry an extra list.

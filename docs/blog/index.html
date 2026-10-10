@@ -37,74 +37,70 @@ permalink: /blog/
   </div>
 </header>
 
-<main id="main" class="page section">
+<main id="main" class="page section section--tight">
   {%- comment %}
-    A landing page for the three categories, NOT a mixed feed. Agnès wrote an
-    introduction to each on WordPress and a reader met it before any post; the
-    words live in `sections` in _config.yml and are hers verbatim.
+    A landing page for the three categories, NOT a mixed feed. Deliberately no
+    combined post list: mixing the three is exactly what this page exists to
+    undo.
 
-    Deliberately no combined post list here. Mixing the three is exactly what
-    this page exists to undo.
+    THREE ABREAST, 2026-10-10. Agnes: "columns instead of having the 3 blog
+    types underneath one another" - and the names have to be above the fold.
+    The wide stacked rows were tried first and kept for a month; what broke
+    the earlier column attempt was that each column still carried her whole
+    welcome and had to clamp it. The welcome has moved to each strand's own
+    page instead, so a column now holds only what a column can hold: the
+    photograph, the name, one line, and the way in.
   {%- endcomment %}
-  {%- comment %}
-    ONE UNDER ANOTHER, restored 2026-09-02. They spent a day three abreast so
-    that all three were visible at once; Agnès looked at it and wanted the
-    stacked rows back. Three abreast forced every introduction into the same
-    clamped seven lines and turned her three welcomes into three cards of
-    equal weight - which is a directory, not a door. A wide row gives each
-    strand a real photograph and all of her words.
-
-    The top of the page stays clean and carries no category row: the masthead,
-    the line that says what the three strands are, and then the strands
-    themselves.
-  {%- endcomment %}
-  {%- for s in site.sections %}
-  {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
-  {%- assign latest = posts | first %}
-  <section class="strand" id="{{ s.slug }}">
-    {%- if s.image %}
-    <a class="strand__media" href="{{ '/' | append: s.slug | append: '/' | relative_url }}"
-       tabindex="-1" aria-hidden="true">
-      <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
-           loading="lazy" decoding="async">
-    </a>
-    {%- endif %}
-    <div class="strand__body">
-      <h2 class="strand__name">
-        <a href="{{ '/' | append: s.slug | append: '/' | relative_url }}">{{ s.welcome_title }}</a>
-      </h2>
-      {%- comment %}
-        Agnès' own introduction from WordPress, every paragraph of it, in her
-        words. `sections` in _config.yml holds them verbatim.
-      {%- endcomment %}
-      {%- for para in s.welcome %}
-      <p class="strand__intro">{{ para }}</p>
-      {%- endfor %}
-
-      {%- if s.bullets %}
-      <ul class="strand__bullets">
-        {%- for b in s.bullets %}
-        <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
-        {%- endfor %}
-      </ul>
+  <ul class="strands">
+    {%- for s in site.sections %}
+    {%- assign posts = site.posts | where_exp: "p", "p.categories contains s.key" %}
+    {%- assign latest = posts | first %}
+    {%- assign strand_url = '/' | append: s.slug | append: '/' %}
+    {%- comment %}
+      The one line under the name is the strand page's own blurb, read off that
+      page rather than copied, so the two can never drift apart.
+    {%- endcomment %}
+    {%- assign strand_page = site.pages | where: "permalink", strand_url | first %}
+    <li class="strand" id="{{ s.slug }}">
+      {%- if s.image %}
+      <a class="strand__media" href="{{ strand_url | relative_url }}"
+         tabindex="-1" aria-hidden="true">
+        <img src="{{ s.image | relative_url }}" alt="{{ s.image_alt }}"
+             decoding="async">
+      </a>
       {%- endif %}
+      <h2 class="strand__name">
+        <a href="{{ strand_url | relative_url }}">{{ s.name }}</a>
+      </h2>
+      <p class="strand__intro">{{ strand_page.blurb | default: s.blurb }}</p>
+      <p class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</p>
 
-      <p class="strand__foot">
-        <a class="btn btn--quiet"
-           href="{{ '/' | append: s.slug | append: '/' | relative_url }}">Read {{ s.name }}</a>
-        <span class="strand__count">{{ posts | size }} piece{% if posts.size != 1 %}s{% endif %}</span>
-      </p>
-
+      {%- comment %}
+        The latest piece sits ABOVE the button, not below it. The three
+        headlines are different lengths and wrap differently, so with the
+        button last and pushed to the foot of an equal-height column, the
+        three buttons land on one line across the row however ragged the
+        text above them is.
+      {%- endcomment %}
       {%- if latest %}
       <p class="strand__latest">
         Latest: <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
         <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%b %-d, %Y" }}</time>
       </p>
       {%- endif %}
-    </div>
-  </section>
-  {%- endfor %}
 
+      {%- comment %}
+        The button is the only thing in the foot, so the foot is one line in
+        every column and the three buttons land on the same line across the
+        row. The piece count used to sit beside it and wrapped underneath on
+        the two long names, which is what knocked them out of alignment.
+      {%- endcomment %}
+      <p class="strand__foot">
+        <a class="btn btn--quiet" href="{{ strand_url | relative_url }}">Read {{ s.name }}</a>
+      </p>
+    </li>
+    {%- endfor %}
+  </ul>
 </main>
 
 {% include signup.html %}

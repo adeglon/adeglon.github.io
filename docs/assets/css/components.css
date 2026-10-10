@@ -1249,96 +1249,96 @@
    feed: mixing the categories is the thing this page exists to undo.
    -------------------------------------------------------------------------- */
 
-/* ONE UNDER ANOTHER. They were three abreast for a day so that all three were
-   visible at once; Agnès wanted the wide rows back. Three columns forced every
-   introduction into the same clamped seven lines, which turns three different
-   welcomes into three cards of equal weight - a directory rather than three
-   doors. A wide row gives each strand a real photograph and all of her words. */
-.strand {
+/* THREE ABREAST (2026-10-10). Agnes asked for columns, and for the three
+   names to be readable without scrolling. The first attempt at columns, back
+   in September, failed for one reason: every column still carried her whole
+   welcome and had to clamp it to seven lines, which turned three different
+   introductions into three identical cards. The welcome now lives on each
+   strand's own page, so a column carries only what a column can carry - the
+   photograph, the name, one line, and the way in - and nothing is cut off.
+
+   The photograph is 3:2 rather than 4:3 and a third of the page wide, which
+   is what buys the names their place above the fold. */
+.strands {
   display: grid;
-  grid-template-columns: minmax(0, 22rem) 1fr;
-  gap: var(--sp-7);
-  align-items: start;
-  border-top: 1px solid var(--rule-quiet);
-  padding-block: var(--sp-7);
-  /* No max-width. This block was capped at --measure-wide, which is a MEASURE
-     for a single column of prose - put a 18rem photograph beside it and the
-     text was squeezed into a ribbon. The photograph and the text each get
-     their own width instead: the picture a real size, the paragraphs the
-     reading measure they need, and the page carries both. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-/* A photograph of Agnès' own, one per strand - the picture says what the
-   category is faster than the paragraph does. Fixed 4:3 so three unequal
-   source frames still line up down the page. */
+.strand {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-top: 1px solid var(--rule-quiet);
+  padding-top: var(--sp-5);
+}
+/* A photograph of Agnes' own, one per strand - the picture says what the
+   category is faster than the paragraph does. A fixed ratio so three unequal
+   source frames still line up across the row. */
 .strand__media { display: block; }
 .strand__media img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: var(--radius-photo);
-}
-
-@media (max-width: 44rem) {
-  .strand { grid-template-columns: 1fr; gap: var(--sp-5); }
 }
 
 .strand__name {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: var(--fs-xl);
+  /* Smaller than the old wide row's --fs-xl: in a third of the page, that
+     size broke every name across three uppercase lines. */
+  font-size: var(--fs-lg);
   text-transform: uppercase;
   letter-spacing: var(--track-title);
-  margin: 0 0 var(--sp-4);
+  line-height: var(--lh-snug);
+  margin: var(--sp-5) 0 var(--sp-3);
+  text-wrap: balance;
 }
 .strand__name a { color: var(--text-strong); text-decoration: none; }
 .strand__name a:hover { color: var(--accent); }
-.strand__body { min-width: 0; }
-/* A short list of what a strand actually contains. Not a feature grid - it is
-   Agnès' own voice, so it stays plain type with the label in the body face. */
-.strand__bullets {
-  list-style: none;
-  margin: var(--sp-5) 0 0;
-  padding: 0;
-  max-width: var(--measure);
-}
-.strand__bullets li {
-  padding-left: var(--sp-5);
-  position: relative;
-  margin-bottom: var(--sp-3);
+
+/* Agnes' welcome, on the strand's own page: a column of prose with its own
+   paragraph spacing. */
+.strand__intro {
   color: var(--text);
+  max-width: var(--measure);
+  margin: 0 0 var(--sp-4);
 }
-.strand__bullets li::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0.6em;
-  width: 0.35rem; height: 0.35rem;
-  background: var(--accent);
-  transform: rotate(45deg);
-}
-.strand__bullets strong { color: var(--text-strong); font-weight: 500; }
-/* CLAMPED, not truncated in Liquid. Agnès' three welcomes run to wildly
-   different lengths - Soul & Self's is a single sentence - so three columns
-   showed three different depths and the Read buttons landed on three
-   different lines. A fixed number of lines gives every strand the same
-   weight on the page; the full introduction is on the strand's own page.
-   The old -webkit- properties are the only ones any browser implements, and
-   every browser implements them, including Firefox. */
-/* No clamp. In a wide row there is nothing to equalise against, so Agnès'
-   introduction runs in full - which is the whole point of the page. */
-.strand__intro { color: var(--text); max-width: var(--measure); }
+.strand__intro:last-of-type { margin-bottom: 0; }
+/* In a /blog/ column it is one line, not an introduction, and the spacing
+   below it belongs to the pieces count. */
+.strands .strand__intro { margin: 0; max-width: none; }
+
 .strand__foot {
   display: flex; align-items: baseline; flex-wrap: wrap;
-  gap: var(--sp-4);
-  margin: var(--sp-5) 0 0;
+  gap: var(--sp-3) var(--sp-4);
+  /* Pushed to the bottom of the column so the three buttons line up however
+     unevenly the three lines above them wrap. */
+  margin: auto 0 0;
+  padding-top: var(--sp-5);
 }
 .strand__count,
 .strand__latest {
   font-size: var(--fs-sm);
   color: var(--text-soft);
 }
-.strand__latest { margin: var(--sp-3) 0 0; }
-.strand__latest time { margin-left: var(--sp-2); }
+.strand__count { margin: var(--sp-3) 0 0; }
+.strand__latest { margin: var(--sp-4) 0 0; }
+.strand__latest time { margin-left: var(--sp-2); white-space: nowrap; }
+
+/* A phone takes them one under another again - three columns on a 390px
+   screen is three ribbons. A tablet gets two and the third drops below. */
+@media (max-width: 62rem) {
+  .strands { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .strands { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .strand__foot { margin-top: var(--sp-4); }
+}
 
 
 /* --------------------------------------------------------------------------
