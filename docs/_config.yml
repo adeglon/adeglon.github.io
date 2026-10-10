@@ -73,8 +73,8 @@ sections:
   - name: "Health & Science"
     key: "Health&Science"
     slug: "health-science"
-    image: /assets/images/featured-what-i-wish-i-knew-sooner-about-breath-qigong-and-unlocking-energy-flow.jpg
-    image_alt: "Qigong beside a waterfall in green hills"
+    image: /assets/images/strand-health-science.jpg
+    image_alt: "A yin-yang drawn in ink and gold, with molecules threaded through both halves"
     welcome_title: "Welcome to Health & Science"
     blurb: "Body wisdom. As an acupuncturist and biochemist, I bring together Eastern and Western medicine to explore holistic health: body, mind, and soul."
     welcome:
@@ -92,8 +92,8 @@ sections:
   - name: "Soul & Self"
     key: "Soul&Self"
     slug: "soul-self"
-    image: /assets/images/featured-a-sahara-meditation-journey-through-sandstorms-and-silence.jpg
-    image_alt: "Two figures and a camel crossing the dunes at first light in the Sahara"
+    image: /assets/images/strand-soul-self.jpg
+    image_alt: "A Southern California sunset, palms in silhouette against an orange and blue sky"
     welcome_title: "Welcome to Soul & Self"
     blurb: "Soul reflections. These are the reflections I didn't plan to write, raw, soulful, and sometimes funny, exploring the inner alchemy of healing, identity, and life transitions."
     welcome:

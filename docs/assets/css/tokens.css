@@ -264,7 +264,13 @@
    ========================================================================== */
 
 [data-ground="light"] {
-  --bg:            var(--c-shell);
+  /* ONE CREAM, 2026-10-10. Agnes: "look at the color of the landing page and
+     apply the same color to every other page." The landing page's fold band
+     was --bg-deep (#F4EEE3), a shade warmer than the --c-shell the rest of
+     the site sat on, and she was reading that band as the site's colour. So
+     #F4EEE3 IS the colour now, page and band alike. The fold still reads,
+     because the hero keeps its hairline rule at the bottom. */
+  --bg:            #F4EEE3;
   --bg-deep:       #F4EEE3;
   --bg-warm:       var(--c-bone);
   --surface:       #FFFFFF;
@@ -301,7 +307,7 @@
 
 @media (prefers-color-scheme: light) {
   [data-ground="auto"] {
-    --bg: var(--c-shell);      --bg-deep: #F4EEE3;
+    --bg: #F4EEE3;             --bg-deep: #F4EEE3;
     --bg-warm: var(--c-bone);  --surface: #FFFFFF;
     --text: var(--c-ink);      --text-strong: #000000;
     --text-soft: var(--c-ink-soft);
