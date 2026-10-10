@@ -6,13 +6,17 @@ categories: ["Misadventures", "Uncategorized"]
 permalink: /hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama/
 image: /assets/images/featured-hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama.jpg
 image_in_body: true
+also_on: https://medium.com/gardening-birding-and-outdoor-adventure/hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama-a9920efb3444
 ---
 
 ## What you need to know about hiking and backpacking with a dog, a white dog\!
 
 Meet my golden doodle, who, despite her name, is more doodle than golden. In fact, she’s white. At least she starts out white. Let’s just say by the end of any backpacking trip, she’s the *furthest* thing from white.
 
-![](/assets/images/Screenshot-2025-08-25-12.39.37-PM.jpg)
+![A white goldendoodle on the trail, still white](/assets/images/Screenshot-2025-08-25-12.39.37-PM.jpg)
+
+My white goldendoodle (photo by H. Johnston)
+{: .caption}
 
 ### Day 1: The Excited Cloud
 
@@ -30,11 +34,17 @@ My tween has become a water source detective. Between looking for water, climbin
 
 By day three, it’s official: my dog no longer resembles anything close to white. She looks more like a walking dust mop that got dragged through a charcoal grill. Her fur has layers of dirt, each telling the story of every trail she rolled in and every puddle she stomped through.
 
-![](/assets/images/Screenshot-2025-08-25-12.41.18-PM-1024x766.jpg)
+![The same dog, now dusty grey](/assets/images/Screenshot-2025-08-25-12.41.18-PM-1024x766.jpg)
+
+My dog changing color (photo by owner)
+{: .caption}
 
 Yes, about that stomping through the river, her paws are now black\! And she’s *not* happy about it. She marches over to me, plops down dramatically, and presents a paw with the unmistakable look of, “Fix this, Mom.”
 
-![](/assets/images/Screenshot-2025-08-25-12.42.34-PM-1024x575.jpg)
+![A blackened paw held out to be cleaned](/assets/images/Screenshot-2025-08-25-12.42.34-PM-1024x575.jpg)
+
+Round #1 of "fixing the dirty paw problem" (photo by my husband)
+{: .caption}
 
 Out come the wet wipes. I clean; she watches, clearly unimpressed. One paw, two paws… no, wait, the same paw again. And again. Eight times, as if saying, “Not good enough, Mom\!” Finally, I get to the other paw and just when I think we’re done, splash\! She’s back in the river, and the whole mess starts again. This time, my sleeping bag is the real victim.
 
@@ -46,7 +56,10 @@ After paw-cleaning attempt \#7, we decide we’ve had enough. Into the tent she 
 
 When we get home, it’s doggy shower time. Except, my doodle doesn’t like water. So, picture two exhausted parent hikers and two goofy, dirt-covered kids bursting into fits of laughter as they chase a mud-caked furball around the house, trying to corner her into the bathroom. By the time we finally catch her, the house looks like a disaster zone, and her face is pure innocence: *“It wasn’t me\! You’re the ones who kept chasing me\! Let’s play some more\!”*
 
-![](/assets/images/Screenshot-2025-08-25-12.43.55-PM-1024x766.jpg)
+![Muddy paw prints across the floor](/assets/images/Screenshot-2025-08-25-12.43.55-PM-1024x766.jpg)
+
+No, this is not what she looks like after a 3 day hike, but this is what my floor looks like after we chase a black paw dog around! (photo by desperate owner)
+{: .caption}
 
 In the shower, she looks at us like we’re the villains in her epic story of trail heroism. We scrub. She protests. Finally, her whiteness reappears.
 
@@ -56,7 +69,10 @@ After her shower, she dashes outside, clean and white… for about a minute. The
 
 You see, my teenager has taken to decorating our backyard wall with bright blue chalk drawings. It’s lovely, except for one tiny detail: my freshly cleaned dog thinks this wall is her personal scratching post. She rubs against it with wild abandon, and when she returns, she’s no longer a white dog. She’s *blue*. Smurf blue.
 
-![](/assets/images/Screenshot-2025-08-25-12.45.56-PM.jpg)
+![The dog turned chalk-blue after rubbing against the wall](/assets/images/Screenshot-2025-08-25-12.45.56-PM.jpg)
+
+She smurphed! (another photo by desperate owner)
+{: .caption}
 
 And so begins round two of the doggy shower showdown. Meanwhile, my teenager is frantically scrubbing the wall before it rains, and I’m stuck wondering how a single dog can produce so much chaos.
 
