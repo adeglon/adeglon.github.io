@@ -1,11 +1,11 @@
 ---
 layout: page
 title: About me
-standfirst: Science, spirit and story, in the same room.
+standfirst: Curious about what makes us human.
 description: >-
-  Agnès Déglon-Fischer is a Swiss-American writer trained in biochemistry and
-  Traditional Chinese Medicine, author of Once You Know and the Within Series,
-  and the writer behind these essays on health, soul and family misadventures.
+  Agnès Déglon-Fischer is a Swiss writer trained in biochemistry and
+  Traditional Chinese Medicine, author of Once You Know and the Kids' Questions
+  About Life trilogy, and at work on the Within Series.
 permalink: /about/
 og_image: /assets/author/agnes-portrait-1000.jpg
 redirect_from:
@@ -17,25 +17,29 @@ redirect_from:
      width="1000" height="1500" loading="lazy"
      alt="Agnès Déglon-Fischer">
 
-Agnès Déglon-Fischer is a Swiss-American writer whose work explores the meeting
-place between science, spirituality, and story. Trained in biochemistry and
-Traditional Chinese Medicine, she brings both intellectual curiosity and
-embodied experience to themes of transformation, midlife, and human connection.
+Agnès Déglon-Fischer has always been curious about what makes us human.
 
-Her writing blends humor, honesty, and emotional depth to illuminate the beauty
-hidden inside everyday chaos. She is the author of *Once You Know: A Guide to
-Preserve Your Child's Health* and the *Kids' Questions About Life* trilogy on
-body, mind, and soul, published in English, French, and German.
+Born and raised in Switzerland, she followed that curiosity from biochemistry
+to Traditional Chinese Medicine, discovering along the way that science and
+ancient wisdom offer different ways of understanding ourselves and the world
+around us.
 
-Her upcoming Within Series — *The Chaos Within*, *The Canyon Within*, and
-*The Creation Within* — uses fiction as a mirror for inner transformation,
-weaving wilderness, Taoist philosophy, relationships, and modern life into
-emotionally resonant stories of becoming.
+Today, she brings those perspectives together through storytelling.
 
-A translator and non-native English speaker, Déglon-Fischer initially resisted
-both digital translation tools and AI-assisted writing before eventually
-embracing them as creative companions rather than threats. That movement from
-resistance to collaboration echoes many of the themes explored in her fiction.
+A lifelong lover of books, languages, and the outdoors, Agnès draws inspiration
+from the unexpected places life takes us, the people we meet, and the questions
+that don't always have easy answers.
+
+She is the author of *Once You Know: A Guide to Preserve Your Child's Health*
+and the *Kids' Questions About Life* trilogy, published in English, French, and
+German.
+
+Her current fiction project, the Within Series, explores the complexities of
+being human through stories of relationships, self-discovery, and
+transformation.
+
+When she's not writing, you'll likely find her hiking a trail, hanging upside
+down on aerial silks, or exploring life from yet another perspective.
 
 {% include ornament.html modifier="ornament--short" %}
 
