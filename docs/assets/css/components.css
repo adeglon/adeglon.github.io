@@ -954,46 +954,123 @@
   border: 1px solid var(--rule);
   margin: 0 0 var(--sp-6);
 }
-/* THE TEXT RUNS AROUND IT, 2026-10-16. Agnes: "can you make the text go
-   around the picture and bring everything above the fold?"
+/* --------------------------------------------------------------------------
+   BOOK DOORS  <- the three shelves, at the top of /books/, 2026-10-16
+   --------------------------------------------------------------------------
+   The same three-abreast shape as /blog/, so the two landing pages read as
+   siblings. Two differences, both forced by what is in the frames:
 
-   The picture used to hang OUT in the right margin on a negative margin, so
-   the prose kept its own narrow column and simply ended beside it - which
-   made the bio tall. Inside a wider column the paragraphs wrap around the
-   frame instead, and the whole bio fits on one screen. */
-/* A visible page title for a page that asks for one with `show_title`.
-   Agnes: "a title About me would look nice, but not huge, we still want
-   everything above the fold." So: named, not announced. Well under the h1's
-   display size, and tight underneath. */
-.page-title {
-  font-size: clamp(1.7rem, 1.35rem + 1vw, 2.25rem);
-  margin-bottom: var(--sp-5);
+   A book cover is upright and must not be cropped, so the frame is a fixed
+   height and the cover is CONTAINED inside it, centred on the page's own
+   cream. The blog's photographs can be cropped to a ratio; a cover cannot.
+
+   And these doors go DOWN this page rather than off to another one, so the
+   whole shelf is visible at once and a reader picks a shelf before scrolling
+   four thousand pixels looking for it.
+   -------------------------------------------------------------------------- */
+
+.bookdoors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bookdoor { min-width: 0; border-top: 1px solid var(--rule-quiet); padding-top: var(--sp-5); }
+.bookdoor__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+/* --door-h drives BOTH the frame and the cover's cap. A percentage height
+   on the picture resolved against the grid row, and the row sized itself to
+   the picture - so the covers came out full size and ran over the titles
+   underneath. An absolute cap cannot do that. */
+.bookdoor__frame {
+  --door-h: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--door-h);
+  margin-bottom: var(--sp-4);
+}
+.bookdoor__frame img {
+  max-height: var(--door-h);
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-photo);
+  transition: transform var(--dur) var(--ease);
+}
+.bookdoor__link:hover .bookdoor__frame img { transform: scale(1.03); }
+/* No cover before the reveal: the night tile and the diamond, never a grey
+   box that reads as an image that failed to load. */
+.bookdoor__frame--night {
+  background: var(--c-night);
+  border-radius: var(--radius-photo);
+  width: 100%;
+}
+.bookdoor__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--track-title);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  text-wrap: balance;
+}
+.bookdoor__link:hover .bookdoor__name { color: var(--accent); }
+.bookdoor__line {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  margin-top: var(--sp-3);
 }
 
-.prose--wrap { max-width: 50rem; }
-/* The global `p { max-width: --measure }` is what stopped the wrap: the
-   paragraph BOX ended at 38rem, short of the float, so no line ever had to
-   flow around it. Here the box reaches the picture. Beside the frame a line
-   is about 62 characters, which is the measure in all but name; below it the
-   last paragraphs run wider, and that is the price of the wrap. */
-.prose--wrap p,
-.prose--wrap li { max-width: 50rem; }
-/* Tighter between paragraphs than a long essay needs - this is one screen of
-   bio, and the eight-pixel saving per gap is what brings the closing line
-   above the fold. */
-.prose--wrap p { margin-bottom: var(--sp-4); }
-.prose--wrap .ornament { margin-block: var(--sp-5); }
+@media (max-width: 62rem) {
+  .bookdoors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .bookdoors { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .bookdoor__frame { --door-h: 11rem; }
+}
+
+/* --------------------------------------------------------------------------
+   COMPACT PROSE  <- a page meant to land on one screen
+   --------------------------------------------------------------------------
+   Agnes wants the whole About page above the fold, title and all. At the
+   site's reading measure the bio ran to 940px - it never fitted, with or
+   without the picture hanging in the margin.
+
+   Three small economies get it to 776: a slightly longer line (82 characters
+   rather than 75), a tighter gap between paragraphs, and no closing ornament.
+   None of them is right for a long essay; all three are right for seven short
+   paragraphs that have to be seen at once.
+   -------------------------------------------------------------------------- */
+
+.prose--compact { max-width: 42rem; }
+.prose--compact p,
+.prose--compact li { max-width: 42rem; }
+.prose--compact p { margin-bottom: var(--sp-4); }
+/* The picture hangs out of the column by exactly the gap between the column
+   and the page edge. That sum is written against --measure, so widening the
+   column to 42rem pushed the picture 64px too far and back off the page.
+   Restated here against the column's real width. */
 @media (min-width: 64rem) {
-  .prose--wrap .portrait {
-    float: right;
-    width: 15rem;
-    max-width: none;
-    /* no negative margin: it belongs INSIDE the column, which is what makes
-       the text wrap rather than stop at its edge. */
-    margin: 0.35rem 0 var(--sp-5) var(--sp-6);
-    shape-outside: inset(0 round var(--radius-photo));
+  .prose.prose--compact .portrait {
+    margin-right: calc(42rem - min(var(--page-max), 100vw) + var(--gutter) * 2);
   }
 }
+
+/* WRAPPING THE PICTURE: TRIED AND REMOVED, 2026-10-16.
+   Agnes asked for the text to run around the portrait. It can, but only by
+   letting the paragraph boxes reach the picture - and the lines BELOW the
+   picture then run the full column, about 110 characters, which is half as
+   long again as a readable measure. The bio also grew past the fold rather
+   than shrinking. The picture hangs in the right margin instead: the prose
+   keeps its measure, the page keeps its shape, and everything fits.        */
 
 @media (min-width: 64rem) {
   .prose .portrait {

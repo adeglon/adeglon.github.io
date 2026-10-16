@@ -6,8 +6,8 @@ description: >-
   and Traditional Chinese Medicine, author of Once You Know and the Kids'
   Questions About Life trilogy, now at work on the Within Series.
 permalink: /about/
-prose_wide: true
 show_title: true
+compact: true
 og_image: /assets/author/agnes-portrait-78-1050.jpg
 redirect_from:
   - /author/
@@ -40,7 +40,5 @@ self-discovery, and the messy beauty of being human.
 
 When I'm not writing, you'll likely find me hiking a trail, hanging upside down
 on aerial silks, or exploring life from yet another perspective.
-
-{% include ornament.html modifier="ornament--short" %}
 
 [The books &rarr;]({{ '/books/' | relative_url }})

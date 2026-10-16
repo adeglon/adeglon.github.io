@@ -35,6 +35,55 @@ permalink: /books/
     Tight at the top, like every other page: the band above has no display
     title any more, so a full six rems here just reopened the gap it closed.
   {%- endcomment %}
+  {%- comment %}
+    THE THREE DOORS, 2026-10-16. Agnes: "set up the book landing page like
+    the blog landing page where all three are all visible above the fold. the
+    reader can click on one and it takes him down the page to the one s/he
+    clicked on."
+
+    So: the same three-abreast shape as /blog/, but with covers rather than
+    photographs, and each door jumps to its own section further down this
+    page instead of to another page. The novels have no cover before the
+    reveal, so that door takes the night tile and the diamond - the same mark
+    the landing page uses - never a grey box pretending to be a picture.
+  {%- endcomment %}
+  <section class="page section section--tight" aria-label="The books, in short">
+    <ul class="bookdoors">
+      {%- assign kids = site.data.published.series | first %}
+      {%- assign guide = site.data.published.standalone | first %}
+      <li class="bookdoor">
+        <a class="bookdoor__link" href="#within">
+          <span class="bookdoor__frame bookdoor__frame--night">
+            <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true">
+              <path d="M16 7 L25 16 L16 25 L7 16 Z" fill="none" stroke="#C9A05C" stroke-width="1.6"/>
+              <path d="M16 12.5 L19.5 16 L16 19.5 L12.5 16 Z" fill="#C9A05C"/></svg>
+          </span>
+          <span class="bookdoor__name">The Within Series</span>
+          <span class="bookdoor__line">Three standalone novels — <em>The Canyon Within</em> first</span>
+        </a>
+      </li>
+      <li class="bookdoor">
+        <a class="bookdoor__link" href="#{{ kids.slug }}">
+          <span class="bookdoor__frame">
+            {%- assign first_kid = kids.books | first %}
+            <img src="{{ first_kid.cover | relative_url }}" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="bookdoor__name">{{ kids.name }}</span>
+          <span class="bookdoor__line">For children — in English, French and German</span>
+        </a>
+      </li>
+      <li class="bookdoor">
+        <a class="bookdoor__link" href="#{{ guide.slug }}">
+          <span class="bookdoor__frame">
+            <img src="{{ guide.cover | relative_url }}" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="bookdoor__name">{{ guide.title }}</span>
+          <span class="bookdoor__line">For parents — {{ guide.subtitle }}</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
   <section class="page section section--tight" id="within">
     {%- comment %}
       The credo that used to open this section is now the landing page's

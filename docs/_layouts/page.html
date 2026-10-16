@@ -28,7 +28,7 @@ layout: default
   {%- if page.wide %}
   {{ content }}
   {%- else %}
-  <div class="prose{% if page.prose_wide %} prose--wrap{% endif %}">
+  <div class="prose{% if page.compact %} prose--compact{% endif %}">
     {{ content }}
   </div>
   {%- endif %}
