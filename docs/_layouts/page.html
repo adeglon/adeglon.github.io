@@ -19,7 +19,7 @@ layout: default
 {% include header.html %}
 
 <main id="main" class="page section section--tight">
-  <h1{% unless page.show_title %} class="visually-hidden"{% endunless %}>{{ page.title }}</h1>
+  <h1 class="{% if page.show_title %}page-title{% else %}visually-hidden{% endif %}">{{ page.title }}</h1>
   {% if page.standfirst %}<p class="standfirst">{{ page.standfirst }}</p>{% endif %}
   {%- comment %}
     `wide: true` drops the reading measure, for a page that lays itself out

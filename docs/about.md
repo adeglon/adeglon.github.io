@@ -7,6 +7,7 @@ description: >-
   Questions About Life trilogy, now at work on the Within Series.
 permalink: /about/
 prose_wide: true
+show_title: true
 og_image: /assets/author/agnes-portrait-78-1050.jpg
 redirect_from:
   - /author/

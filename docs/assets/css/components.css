@@ -961,6 +961,15 @@
    the prose kept its own narrow column and simply ended beside it - which
    made the bio tall. Inside a wider column the paragraphs wrap around the
    frame instead, and the whole bio fits on one screen. */
+/* A visible page title for a page that asks for one with `show_title`.
+   Agnes: "a title About me would look nice, but not huge, we still want
+   everything above the fold." So: named, not announced. Well under the h1's
+   display size, and tight underneath. */
+.page-title {
+  font-size: clamp(1.7rem, 1.35rem + 1vw, 2.25rem);
+  margin-bottom: var(--sp-5);
+}
+
 .prose--wrap { max-width: 50rem; }
 /* The global `p { max-width: --measure }` is what stopped the wrap: the
    paragraph BOX ended at 38rem, short of the float, so no line ever had to
