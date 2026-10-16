@@ -3,7 +3,12 @@ layout: default
 ---
 {% include header.html %}
 
-<main id="main" class="page section">
+{%- comment %}
+  The strand pages keep their visible title: they are not in the navigation,
+  so a reader arriving from a link or a search result needs to be told which
+  of the three strands this is. Only the air above it is cut.
+{%- endcomment %}
+<main id="main" class="page section section--tight">
   <span class="label">{{ page.label | default: "Essays" }}</span>
   <h1>{{ page.title }}</h1>
   {% if page.blurb %}<p class="standfirst">{{ page.blurb }}</p>{% endif %}

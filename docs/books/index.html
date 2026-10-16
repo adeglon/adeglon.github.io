@@ -16,10 +16,14 @@ permalink: /books/
   <div class="hero__body">
     <div class="page">
       {% include masthead.html %}
-      <div style="margin-top:var(--sp-6)">
-        <h1 class="hero__title">Books</h1>
-        {% include ornament.html modifier="ornament--short" %}
-      </div>
+      {%- comment %}
+        NO DISPLAY TITLE, 2026-10-15. "Books" in 64px type, an ornament and a
+        band of air pushed the first actual book to 480px down the page - the
+        worst fold on the site. The navigation already marks Books as the
+        current page, so the word was labelling a page the reader had chosen.
+        The heading stays for screen readers and for search.
+      {%- endcomment %}
+      <h1 class="visually-hidden">Books</h1>
     </div>
   </div>
 </header>
@@ -27,7 +31,11 @@ permalink: /books/
 <main id="main">
 
   <!-- ── The Within Series ─────────────────────────────────────────── -->
-  <section class="page section" id="within">
+  {%- comment %}
+    Tight at the top, like every other page: the band above has no display
+    title any more, so a full six rems here just reopened the gap it closed.
+  {%- endcomment %}
+  <section class="page section section--tight" id="within">
     {%- comment %}
       The credo that used to open this section is now the landing page's
       headline. Saying it in both places made it read as a slogan rather than

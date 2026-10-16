@@ -6,14 +6,14 @@ description: >-
   and Traditional Chinese Medicine, author of Once You Know and the Kids'
   Questions About Life trilogy, now at work on the Within Series.
 permalink: /about/
-og_image: /assets/author/agnes-portrait-45-1000.jpg
+og_image: /assets/author/agnes-portrait-78-1050.jpg
 redirect_from:
   - /author/
   - /family-mis-adventures/
 ---
 
-<img class="portrait" src="{{ '/assets/author/agnes-portrait-45-1000.jpg' | relative_url }}"
-     width="1000" height="1250" loading="lazy"
+<img class="portrait" src="{{ '/assets/author/agnes-portrait-78-1050.jpg' | relative_url }}"
+     width="1050" height="1200" loading="lazy"
      alt="Agnès Déglon-Fischer">
 
 I was born and raised in Switzerland, and my curiosity has taken me from

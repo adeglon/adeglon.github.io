@@ -879,7 +879,10 @@
 @media (min-width: 64rem) {
   .prose .portrait {
     float: right;
-    width: 15rem;
+    /* 13rem, down from 15. Agnes: "my face is so big its almost scary for the
+       reader." The crop widened to carry more background, and the frame came
+       in, so the head reads at about two thirds of the size it did. */
+    width: 13rem;
     max-width: none;
     margin: 0.4rem 0 var(--sp-6) var(--sp-7);
     margin-right: calc(var(--measure) - min(var(--page-max), 100vw) + var(--gutter) * 2);

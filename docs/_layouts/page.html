@@ -1,10 +1,25 @@
 ---
 layout: default
 ---
+{% comment %}
+  THE ORDINARY PAGE — About, Newsletter, Contact.
+
+  NO VISIBLE TITLE, 2026-10-15. Agnes: "the other pages have huge titles and
+  then nothing useful above the fold." She was right: an 80px display word sat
+  where the content should be, and the word only repeated the navigation tab
+  the reader had just clicked. The heading stays in the markup for screen
+  readers and for search; it simply has nothing to say out loud.
+
+  A page that is NOT in the navigation, and so needs to name itself, can ask
+  for the title back with `show_title: true` in its front matter.
+
+  The band is tight for the same reason: six rems of air above a page that
+  opens with a picture is six rems of the picture pushed under the fold.
+{% endcomment %}
 {% include header.html %}
 
-<main id="main" class="page section">
-  <h1>{{ page.title }}</h1>
+<main id="main" class="page section section--tight">
+  <h1{% unless page.show_title %} class="visually-hidden"{% endunless %}>{{ page.title }}</h1>
   {% if page.standfirst %}<p class="standfirst">{{ page.standfirst }}</p>{% endif %}
   <div class="prose">
     {{ content }}
