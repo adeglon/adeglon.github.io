@@ -81,6 +81,7 @@
      pixels off where they sit on every other page. The masthead is furniture
      rather than reading, so it opts out and stays identical everywhere. */
   --fs-lg: clamp(1.30rem, 1.18rem + 0.55vw, 1.55rem);
+  --fs-sm: 0.9375rem;
   --fs-xs: 0.8125rem;
 }
 
@@ -101,10 +102,21 @@
   gap: var(--sp-5);
   list-style: none; margin: 0; padding: 0;
 }
+/* ONE SET OF TABS, 2026-10-16. Agnes: "i like the tabs like they are on the
+   blog landing page... right now they seem to have different sizes."
+
+   They did. Blog and Books are the two pages still wrapped in .hero, and
+   `.hero .site-nav a` was styled for a navbar sitting ON A PHOTOGRAPH -
+   larger, heavier, wider-tracked, with a dark shadow to hold it against sky.
+   The photographs are gone from both, but the styling stayed, so those two
+   pages had 15px tabs and every other page had 13px.
+
+   Agnes prefers the larger one, so it moves here and becomes the only one. */
 .site-nav a {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: var(--track-label);
+  letter-spacing: 0.12em;
   color: var(--text);
   padding-block: var(--sp-2);
   border-bottom: 1px solid transparent;
@@ -197,9 +209,6 @@
    the stroke: legible over sky or over rock, without a bar behind it. */
 .hero .site-nav a {
   color: var(--c-paper);
-  font-size: var(--fs-sm);
-  font-weight: 500;
-  letter-spacing: 0.12em;
   /* A hairline of type over a sunset needs more than colour. Two shadows: a
      tight one that thickens the stroke, and a wide soft one that darkens the
      sky immediately around it. Cheaper than a bar behind the nav, and it does
@@ -850,6 +859,24 @@
   display: block;
 }
 .hero--author .hero__note { margin-top: var(--sp-7); }
+
+/* --------------------------------------------------------------------------
+   THE STRAND TITLE  <- Health & Science, Soul & Self, Misadventures
+   --------------------------------------------------------------------------
+   Agnes: "make the title smaller so that the first essay appears above the
+   fold." These pages keep their title - they are not in the navigation - but
+   at the page h1's full display size it, the standfirst and the ornament ate
+   the top third of the screen before a single essay appeared.
+
+   Smaller, and tighter under it. The name still arrives first and still
+   says which strand this is; it just stops being the event.
+   -------------------------------------------------------------------------- */
+
+.strand-title {
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 2.9rem);
+  margin-bottom: var(--sp-3);
+}
+.strand-title + .standfirst { margin-top: 0; }
 
 /* --------------------------------------------------------------------------
    SPLIT  <- a page whose fold is a thing and its explanation, 2026-10-16
