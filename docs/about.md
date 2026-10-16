@@ -6,6 +6,7 @@ description: >-
   and Traditional Chinese Medicine, author of Once You Know and the Kids'
   Questions About Life trilogy, now at work on the Within Series.
 permalink: /about/
+prose_wide: true
 og_image: /assets/author/agnes-portrait-78-1050.jpg
 redirect_from:
   - /author/

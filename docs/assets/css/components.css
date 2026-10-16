@@ -954,6 +954,38 @@
   border: 1px solid var(--rule);
   margin: 0 0 var(--sp-6);
 }
+/* THE TEXT RUNS AROUND IT, 2026-10-16. Agnes: "can you make the text go
+   around the picture and bring everything above the fold?"
+
+   The picture used to hang OUT in the right margin on a negative margin, so
+   the prose kept its own narrow column and simply ended beside it - which
+   made the bio tall. Inside a wider column the paragraphs wrap around the
+   frame instead, and the whole bio fits on one screen. */
+.prose--wrap { max-width: 50rem; }
+/* The global `p { max-width: --measure }` is what stopped the wrap: the
+   paragraph BOX ended at 38rem, short of the float, so no line ever had to
+   flow around it. Here the box reaches the picture. Beside the frame a line
+   is about 62 characters, which is the measure in all but name; below it the
+   last paragraphs run wider, and that is the price of the wrap. */
+.prose--wrap p,
+.prose--wrap li { max-width: 50rem; }
+/* Tighter between paragraphs than a long essay needs - this is one screen of
+   bio, and the eight-pixel saving per gap is what brings the closing line
+   above the fold. */
+.prose--wrap p { margin-bottom: var(--sp-4); }
+.prose--wrap .ornament { margin-block: var(--sp-5); }
+@media (min-width: 64rem) {
+  .prose--wrap .portrait {
+    float: right;
+    width: 15rem;
+    max-width: none;
+    /* no negative margin: it belongs INSIDE the column, which is what makes
+       the text wrap rather than stop at its edge. */
+    margin: 0.35rem 0 var(--sp-5) var(--sp-6);
+    shape-outside: inset(0 round var(--radius-photo));
+  }
+}
+
 @media (min-width: 64rem) {
   .prose .portrait {
     float: right;
