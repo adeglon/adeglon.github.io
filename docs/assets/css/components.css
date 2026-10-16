@@ -852,6 +852,57 @@
 .hero--author .hero__note { margin-top: var(--sp-7); }
 
 /* --------------------------------------------------------------------------
+   SPLIT  <- a page whose fold is a thing and its explanation, 2026-10-16
+   --------------------------------------------------------------------------
+   Agnes, looking at the folds: the pages that felt wrong were the ones that
+   ran a narrow ribbon of text down the left with half the screen empty, and
+   that opened with words ABOUT the page instead of the page itself.
+
+   This puts the thing first and at a real width, with the words beside it.
+   The aside comes SECOND in the markup, so on a phone the reader meets the
+   form (or the books, or the way to write) before the explanation.
+   -------------------------------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: var(--sp-8);
+  align-items: start;
+}
+.split__main { min-width: 0; }
+.split__aside { min-width: 0; }
+.split__aside p { max-width: 38ch; }
+.split__aside p + p { margin-top: var(--sp-4); }
+.split__go { margin-top: var(--sp-6); }
+
+/* The other places Agnes writes, on /contact/. A plain list in her own type:
+   three routes, not a row of brand buttons. */
+.elsewhere {
+  list-style: none;
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  max-width: 38ch;
+}
+.elsewhere li {
+  padding-left: var(--sp-5);
+  position: relative;
+  margin-bottom: var(--sp-4);
+  color: var(--text);
+}
+.elsewhere li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.6em;
+  width: 0.35rem; height: 0.35rem;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 54rem) {
+  .split { grid-template-columns: 1fr; gap: var(--sp-7); }
+}
+
+/* --------------------------------------------------------------------------
    THE ABOUT PORTRAIT
    --------------------------------------------------------------------------
    The studio headshot, on /about/. It does NOT sit inside the reading column:
@@ -1660,6 +1711,13 @@
   border-block: 1px solid var(--rule);
   padding-block: var(--sp-8);
   margin-block: var(--sp-9);
+}
+/* Inside a split it is not a closing band, it is the content of the page, so
+   the rules and the air that separate it from an essay come off. */
+.split__main > .signup {
+  border-block: 0;
+  padding-block: 0;
+  margin-block: 0;
 }
 .signup__form {
   display: flex; flex-wrap: wrap; gap: var(--sp-3);
