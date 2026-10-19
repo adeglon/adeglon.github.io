@@ -76,40 +76,23 @@ layout: default
   </ul>
 
   {%- comment %}
-    Agnes' own introduction to the strand, verbatim from `sections` in
-    _config.yml. At the foot of the list it is a note from the writer to a
-    reader who has just scrolled her work, which is a better place for it
-    than above the work.
-  {%- endcomment %}
-  {%- comment %}
-    (history) AGNES' OWN WELCOME, moved off /blog/ 2026-10-10. These paragraphs lived on
-    /blog/, under a wide row that had all the space in the world for them.
-    /blog/ is three columns now and a column cannot hold them without
-    clamping - and a clamped welcome is a teaser, which is the one thing
-    these are not. So they moved to the page they were always about, where
-    the reader has already chosen the strand.
+    NO CLOSING WELCOME, 2026-10-19. Agnes, on the Misadventures page: "i think
+    we should just cut it."
 
-    Verbatim from `sections` in _config.yml, every paragraph of it.
-  {%- endcomment %}
-  {%- for s in site.sections %}{% if s.key == page.category and s.welcome %}
-  {%- for para in s.welcome %}
-  <p class="strand__intro">{{ para }}</p>
-  {%- endfor %}
-  {%- endif %}{% endfor %}
+    She was right, and it goes from all three strands. The welcome had already
+    been moved down here from the top, where it pushed the first essay off the
+    fold; at the foot it was no better, just quieter - a reader who has
+    scrolled twenty essays does not need to be told what the strand contains.
+    The one line under the title says it in nine words, and the About page now
+    carries the longer version of the same story.
 
-  {%- comment %}
-    A section's own list of what a reader will find, when it has one. It used
-    to sit on /blog/, where three unequal cards side by side needed one of
-    them not to carry an extra list.
-  {%- endcomment %}
-  {%- for s in site.sections %}{% if s.key == page.category and s.bullets %}
-  <ul class="strand__bullets">
-    {%- for b in s.bullets %}
-    <li><strong>{{ b.name }}</strong> — {{ b.text }}</li>
-    {%- endfor %}
-  </ul>
-  {%- endif %}{% endfor %}
+    The bullets went with it. A list of what a page contains, printed under
+    the page's contents, is a table of contents for something already read.
 
+    NOTHING IS LOST: every paragraph is still `welcome` and `bullets` in
+    `sections` in _config.yml, in Agnes' own words. Put the loop back and they
+    return.
+  {%- endcomment %}
 </main>
 
 {% include signup.html %}
