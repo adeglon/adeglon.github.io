@@ -955,6 +955,37 @@
   margin: 0 0 var(--sp-6);
 }
 /* --------------------------------------------------------------------------
+   ASTERISM  <- a scene break inside a story, 2026-10-30
+   --------------------------------------------------------------------------
+   The ornament is the page's one piece of decoration and says so in its own
+   comment; a narrative with seven scene breaks cannot use seven of them. An
+   asterism is the older and quieter device: three marks, plenty of air, and
+   no rule across the column. It says "time passes here" without announcing
+   itself.
+   -------------------------------------------------------------------------- */
+
+/* Markdown turns `* * *` into an <hr>, which is semantically right - it IS a
+   thematic break - so the marks are drawn on it rather than typed into the
+   prose. No rule across the column: just three gold asterisks and air. */
+hr.asterism {
+  border: 0;
+  height: auto;
+  background: none;
+  text-align: center;
+  margin-block: var(--sp-7);
+}
+hr.asterism::before {
+  content: "* * *";
+  display: block;
+  color: var(--accent);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  letter-spacing: 0.7em;
+  /* the tracking adds a gap after the last mark; this re-centres the group */
+  text-indent: 0.7em;
+}
+
+/* --------------------------------------------------------------------------
    BOOK DOORS  <- the three shelves, at the top of /books/, 2026-10-16
    --------------------------------------------------------------------------
    The same three-abreast shape as /blog/, so the two landing pages read as
