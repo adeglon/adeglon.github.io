@@ -8,7 +8,8 @@ image: /assets/images/featured-where-there-is-free-flow.jpg
 image_in_body: true
 ---
 
-*Write Where You Are — a writing retreat with Kelly Notaras at the Drala Mountain Center in Colorado*
+Write Where You Are — a writing retreat with Kelly Notaras at the Drala Mountain Center in Colorado
+{: .subtitle}
 
 ### Talk to the camera
 

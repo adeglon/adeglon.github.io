@@ -8,10 +8,10 @@ image: /assets/images/featured-the-traveler.jpg
 image_in_body: true
 ---
 
-*Of Suitcases and Forgotten Shores*
+Of Suitcases and Forgotten Shores
+{: .subtitle}
 
 How much can we carry for others before we realize we've left our own behind?
-{: .standfirst}
 
 Beyond the great glass windows of an airport, planes rise into the morning sky, disappearing into clouds glowing with the first light of day.
 

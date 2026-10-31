@@ -9,7 +9,8 @@ image_in_body: true
 also_on: https://medium.com/@agnes.deglon/five-glimpses-of-infinity-21704fce60f8
 ---
 
-*The Unexpected Journey of a Little Starfish*
+The Unexpected Journey of a Little Starfish
+{: .subtitle}
 
 ![A starfish on wet sand at the edge of the surf, the Milky Way and a low moon over the ocean behind it](/assets/images/featured-five-glimpses-of-infinity.jpg){: .photo}
 

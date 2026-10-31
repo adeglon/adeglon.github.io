@@ -8,7 +8,8 @@ image: /assets/images/featured-sacred-and-scared-in-the-south-of-france.jpg
 image_in_body: true
 ---
 
-*Flying Across the World to Meet a Writer, a Group of Strangers… and Myself*
+Flying Across the World to Meet a Writer, a Group of Strangers… and Myself
+{: .subtitle}
 
 I didn't go to the south of France for a vacation. I went because I couldn't not go.
 
