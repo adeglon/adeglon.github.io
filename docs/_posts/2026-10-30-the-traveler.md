@@ -46,7 +46,7 @@ Years passed, then decades, and somewhere along the way she forgot that there ha
 * * *
 {: .asterism}
 
-One day, while traveling with a group, she found herself watching the boarding area (had everyone arrived? was anyone missing? would the slower travelers make it onto the bus?) when she noticed an empty seat beside someone whose company she enjoyed. She imagined the conversation they might have, the laughter they might share, the simple pleasure of traveling together… but the seat near the front would allow her to watch everyone board, so she sat there instead.
+One day, while traveling with a group, she found herself watching the boarding area. Had everyone arrived? Was anyone missing? Would the slower travelers make it onto the bus? Then she noticed an empty seat beside someone whose company she enjoyed. She imagined the conversation they might have, the laughter they might share, the simple pleasure of traveling together… but the seat near the front would allow her to watch everyone board, so she sat there instead.
 
 One by one the travelers climbed aboard, nobody forgotten, nobody left behind, and the bus departed, and she watched the scenery pass, alone, thinking about that empty seat beside her friend. She had wanted to sit there. So why hadn't she? It wasn't as though anyone had asked her to watch the door, but she had felt responsible for making sure everyone was aboard, just as she felt the urge to help whenever she saw someone struggling with their luggage.
 
@@ -65,7 +65,7 @@ He smiled. "Are you sure?"
 
 "Of course!"
 
-And she began explaining, spending an extraordinary amount of time describing how responsible she felt for everyone else, without once realizing that this was exactly what she was doing.
+And she began explaining, spending an extraordinary amount of time describing how she took care of everyone else, without realizing that this was exactly what she was doing.
 
 "Perhaps," he said, "there's someone you've forgotten to take care of."
 
@@ -76,7 +76,7 @@ He didn't answer right away. Instead, he began walking beside her.
 * * *
 {: .asterism}
 
-They passed through the terminal together, and for once she wasn't leading anyone toward a gate, nor following someone who walked too quickly, they were simply walking side by side.
+They passed through the terminal together, and for once she wasn't leading anyone toward a gate, nor following someone who walked too quickly. They were simply walking side by side.
 
 As they passed through security, she noticed she didn't have to hurry, explain, organize, or look after anyone. The traveler beside her asked for nothing. He simply walked with her, and somehow, that was enough for her to feel safe.
 
@@ -89,7 +89,7 @@ They continued walking. At the next gate she noticed a family rushing toward a d
 * * *
 {: .asterism}
 
-Eventually they arrived at a quieter part of the terminal, where beyond the great windows a narrow bridge stretched toward another part of the airport, and the woman stopped.
+Eventually they arrived at a quieter part of the terminal, where a narrow, glass-enclosed pedestrian bridge connected two wings of the airport, and the woman stopped.
 
 "Why are we here?"
 
@@ -103,7 +103,7 @@ She looked across and hesitated. The bridge looked narrow, and the other side se
 
 She thought about the years of traveling, of caring for others, of being there for everyone, and about the many bridges she had crossed, between countries, between languages, between worlds.
 
-And although she had crossed oceans and continents, the middle of a bridge still frightened her. As she stepped onto it, she felt it sway gently beneath her feet. She instinctively reached for the railing, suddenly aware of the distance between the two shores. Behind her lay everything she knew. Ahead, something she could not yet see.
+And although she had crossed oceans and continents, the middle of a bridge still frightened her. As she stepped onto it, she felt it sway gently beneath her feet. She instinctively reached for the railing, suddenly aware of the distance between the two sides. Behind her lay everything she knew. Ahead lay something strangely familiar, yet still beyond her sight.
 
 Knowing another shore existed did not make the crossing less frightening.
 
@@ -122,7 +122,7 @@ She looked toward the other side, loosened her grip on the railing, and took ano
 * * *
 {: .asterism}
 
-On the far side of the bridge, a woman sat on a bench beside a suitcase, not watching the departure board, not rushing toward a gate, simply sitting there, watching the light move across the water, and there was something strangely familiar about her.
+On the far side of the bridge, a woman sat on a bench beside a suitcase, not watching the departure board, not rushing toward a gate, simply sitting there in the soft morning light, and there was something strangely familiar about her.
 
 "Are you waiting for someone?" the traveler asked.
 
