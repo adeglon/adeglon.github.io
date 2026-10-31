@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Through Red Rocks and Turquoise Waters: Our Family’s Havasupai Adventure"
+title: "Through Red Rocks and Turquoise Waters"
 date: 2024-12-18 09:57:25 -0800
 categories: ["Misadventures"]
 permalink: /through-red-rocks-and-turquoise-waters-our-familys-havasupai-adventure/
@@ -8,8 +8,10 @@ image: /assets/images/featured-through-red-rocks-and-turquoise-waters-our-family
 image_in_body: true
 ---
 
-With turquoise waters, hidden waterfalls, and epic family adventures, Havasupai has it all. If you’re looking for breathtaking beauty, a little challenge, and the kind of memories that stick, this is the place.
+Our Family’s Havasupai Adventure
 {: .subtitle}
+
+With turquoise waters, hidden waterfalls, and epic family adventures, Havasupai has it all. If you’re looking for breathtaking beauty, a little challenge, and the kind of memories that stick, this is the place.
 
 ![Havasu Falls](/assets/images/0W3zzIyF70OZiWn3p.jpg)
 
