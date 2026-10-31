@@ -10,6 +10,7 @@ image_in_body: true
 ---
 
 Finding the funny in family life, just to keep me sane\!
+{: .subtitle}
 
 ### The Broken Record Mom
 

@@ -6,7 +6,8 @@ categories: ["Misadventures"]
 permalink: /neighborhood-tales-with-tails/
 ---
 
-## Funny stories from the dog-walking community
+Funny stories from the dog-walking community
+{: .subtitle}
 
 There's something uniquely wonderful about the dog-walking community in any neighborhood. We may not always know each other's names, but we definitely know each other's dogs.
 

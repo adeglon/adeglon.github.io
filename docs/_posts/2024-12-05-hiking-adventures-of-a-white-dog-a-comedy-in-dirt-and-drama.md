@@ -9,7 +9,8 @@ image_in_body: true
 also_on: https://medium.com/gardening-birding-and-outdoor-adventure/hiking-adventures-of-a-white-dog-a-comedy-in-dirt-and-drama-a9920efb3444
 ---
 
-## What you need to know about hiking and backpacking with a dog, a white dog\!
+What you need to know about hiking and backpacking with a dog, a white dog\!
+{: .subtitle}
 
 Meet my golden doodle, who, despite her name, is more doodle than golden. In fact, she’s white. At least she starts out white. Let’s just say by the end of any backpacking trip, she’s the *furthest* thing from white.
 

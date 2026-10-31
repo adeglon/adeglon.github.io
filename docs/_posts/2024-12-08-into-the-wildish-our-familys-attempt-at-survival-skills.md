@@ -8,7 +8,8 @@ image: /assets/images/featured-into-the-wildish-our-familys-attempt-at-survival-
 image_in_body: true
 ---
 
-## **Learning ancient survival skills… and why we’re glad we don’t actually live in the Stone Age.**[](https://medium.com/@agnes.deglon?source=post_page---byline--2e0be0c9504d---------------------------------------)
+Learning ancient survival skills… and why we’re glad we don’t actually live in the Stone Age.
+{: .subtitle}
 
 The alarm went off at 6 a.m., and we groggily rolled out of bed. We were tired but excited, because today we were officially trading cozy beds for the great outdoors and something called *“survival weekend.”* What could possibly go wrong?
 

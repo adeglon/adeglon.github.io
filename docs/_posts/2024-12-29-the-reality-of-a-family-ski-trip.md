@@ -8,7 +8,8 @@ image: /assets/images/featured-the-reality-of-a-family-ski-trip.jpg
 image_in_body: true
 ---
 
-## [](https://medium.com/@agnes.deglon?source=post_page---byline--b0d422a8be01---------------------------------------)**A Swiss Tradition That’s Non-Negotiable**
+A Swiss Tradition That’s Non-Negotiable
+{: .subtitle}
 
 Every winter, we pack up our lives for a week and embark on a journey that defies all logic, especially to a Swiss mind. Driving 6–9 hours to Mammoth for our skiing fix is not just a trip, it’s a necessity for us as SoCal Swiss. Snow is in our DNA. Sure, back in Switzerland, we could cross the Alps three times in the same amount of time. But here in the U.S., distances are a different thing\! So here we go, every year, we load up the car like we’re moving.
 

@@ -10,6 +10,7 @@ also_on: https://medium.com/@agnes.deglon/things-nobody-told-me-about-becoming-a
 ---
 
 A Family Misadventure
+{: .subtitle}
 
 ### How It All Started
 

@@ -9,7 +9,8 @@ image_in_body: true
 also_on: https://medium.com/@agnes.deglon/teen-one-teen-two-who-are-you-64699ea286d8
 ---
 
-## Or, as Dr. Seuss might say: Teen-One, Teen-Two… Who Are You?
+Or, as Dr. Seuss might say: Teen-One, Teen-Two… Who Are You?
+{: .subtitle}
 
 I thought I knew what to expect. I’d already survived the first round of adolescent metamorphosis with my oldest. Let’s call him Teen-One, aka pantry-raiding raccoon. I thought I had the roadmap: the screen-timer, the candy under lock and key. I believed I was prepared.
 

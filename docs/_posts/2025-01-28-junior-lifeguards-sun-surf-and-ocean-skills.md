@@ -8,7 +8,8 @@ image: /assets/images/featured-junior-lifeguards-sun-surf-and-ocean-skills.jpg
 image_in_body: true
 ---
 
-## A Summer Where the Fun Never Ends and the Sand Never Leaves[](https://medium.com/@agnes.deglon?source=post_page---byline--d13424628c36---------------------------------------)
+A Summer Where the Fun Never Ends and the Sand Never Leaves
+{: .subtitle}
 
 Despite the sunny California beach and sparkling waves under a flawless blue sky, there’s a special kind of panic that comes from watching your kids swim toward a buoy that looks like it’s in the middle of the Pacific Ocean*.*
 

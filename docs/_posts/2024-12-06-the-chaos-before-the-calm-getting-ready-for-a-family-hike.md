@@ -8,7 +8,8 @@ image: /assets/images/featured-the-chaos-before-the-calm-getting-ready-for-a-fam
 image_in_body: true
 ---
 
-##### Before the Trail: The Art of Family Hiking Prep
+Before the Trail: The Art of Family Hiking Prep
+{: .subtitle}
 
 ### The Hardest Part: Just Getting Out The Door
 

@@ -8,7 +8,8 @@ image: /assets/images/featured-24-miles-of-steep-trails-sky-and-sea.jpg
 image_in_body: true
 ---
 
-## Four Days. One Island. A Family’s Journey Across the Trans-Catalina Trail.[](https://medium.com/@agnes.deglon?source=post_page---byline--316fc94376b7---------------------------------------)
+Four Days. One Island. A Family’s Journey Across the Trans-Catalina Trail.
+{: .subtitle}
 
 Every mile had a view, and every view had a price. From Avalon to Two Harbors, we hiked 24 miles of steep ridges, ocean views, and rolling hills. We found everything we were looking for: unforgettable memories, amazing scenery, aching knees, cold plunges, and a teenager who refused to part with a rock named Stoney, his loyal trail companion and makeshift dumbbell.
 

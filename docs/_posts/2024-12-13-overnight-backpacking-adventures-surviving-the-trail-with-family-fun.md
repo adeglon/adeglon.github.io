@@ -8,7 +8,8 @@ image: /assets/images/featured-overnight-backpacking-adventures-surviving-the-tr
 image_in_body: true
 ---
 
-## *Tips, humor, and stories from the trail that will make you want to pack your bags*
+Tips, humor, and stories from the trail that will make you want to pack your bags
+{: .subtitle}
 
 ### The Journey Begins
 

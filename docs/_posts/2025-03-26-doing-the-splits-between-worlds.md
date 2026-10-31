@@ -8,7 +8,8 @@ image: /assets/images/featured-doing-the-splits-between-worlds.jpg
 image_in_body: true
 ---
 
-## Caught Between Cultures and Generations and Always Out of Sync
+Caught Between Cultures and Generations and Always Out of Sync
+{: .subtitle}
 
 We land in Switzerland. Our bodies step off the plane, but our brains are still somewhere over the Atlantic, wondering what day it is. But the first test comes immediately: greetings. In the U.S., it’s hugs. In Switzerland? Two cheek kisses. Or sometimes three. But definitely not a hug. Unless you’re me, and you forget where you are. That’s how international incidents begin: with a well-meaning hug.
 

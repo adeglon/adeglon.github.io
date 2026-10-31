@@ -7,7 +7,8 @@ permalink: /orienteering-in-the-anza-borrego-desert-the-ultimate-navigation-chal
 image: /assets/images/featured-orienteering-in-the-anza-borrego-desert-the-ultimate-navigation-challenge.jpg
 ---
 
-## A Race Through Open Terrain and Slot Canyons[](https://medium.com/@agnes.deglon?source=post_page---byline--a348ec6f99b1---------------------------------------)
+A Race Through Open Terrain and Slot Canyons
+{: .subtitle}
 
 Orienteering is always an adventure, but when you take it to the vast, open landscapes of the Anza Borrego Desert, it becomes something entirely different: a test of strategy, endurance, and navigation where both your brain and legs get a serious workout.
 

@@ -8,7 +8,8 @@ image: /assets/images/featured-3-powerful-insights-you-need-to-know-about-medita
 image_in_body: true
 ---
 
-## *Discover how meditation can transform your life with these three powerful insights*
+Discover how meditation can transform your life with these three powerful insights
+{: .subtitle}
 
 In my thirties, I felt completely lost. As a scientist working in a research lab, my days had become monotonous and unfulfilling. My relationship had fallen apart, I had no sense of direction, and joy seemed out of reach. Desperate for answers, I turned to something that had always intrigued me: meditation. What started as a small curiosity became a journey that would completely transform my life.
 

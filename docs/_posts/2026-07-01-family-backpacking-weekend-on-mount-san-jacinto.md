@@ -11,7 +11,8 @@ image_in_body: true
 also_on: https://medium.com/@agnes.deglon/family-backpacking-weekend-on-mount-san-jacinto-ffeced6fdef4
 ---
 
-## We made plans. The wind made edits.
+We made plans. The wind made edits.
+{: .subtitle}
 
 We drove east on Interstate 10 through that wide valley where thousands of enormous white turbines stand spinning across the desert, and we did what everyone does the first time, we admired them. “Look at those, aren’t they impressive,” I said, pointing at these giant elegant things turning in perfect slow motion, silently harvesting the one resource that valley apparently has in absurd abundance: wind.
 

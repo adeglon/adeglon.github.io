@@ -8,7 +8,8 @@ image: /assets/images/featured-connecting-heaven-and-earth-a-transformative-medi
 image_in_body: true
 ---
 
-## Discover how meditation aligns you with the energies of Earth and heaven for balance and clarity
+Discover how meditation aligns you with the energies of Earth and heaven for balance and clarity
+{: .subtitle}
 
 This is part 2 of my blog series on meditation in the Sahara desert, where I learned about connecting earthly stability with heavenly energy.
 

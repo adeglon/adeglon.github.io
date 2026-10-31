@@ -46,4 +46,4 @@ Lately, something surprising has happened, my husband has embraced the keto diet
 
 ### The Kitchen Chaos Continues
 
-After all these years, we’ve found our rhythm, he brings the fire (sometimes literally), and I bring the balance. His meals are spectacular, his messes are legendary, and somehow, it all works. Sure, the smoke alarm still sings, and the flour still finds its way into places it shouldn’t, but at the end of the day, the food is delicious, the memories are priceless, and really… what’s a little kitchen chaos in a couple?[](https://medium.com/@agnes.deglon?source=post_page---byline--dcb236fcf1ef---------------------------------------)
+After all these years, we’ve found our rhythm, he brings the fire (sometimes literally), and I bring the balance. His meals are spectacular, his messes are legendary, and somehow, it all works. Sure, the smoke alarm still sings, and the flour still finds its way into places it shouldn’t, but at the end of the day, the food is delicious, the memories are priceless, and really… what’s a little kitchen chaos in a couple?

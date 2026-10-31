@@ -9,7 +9,8 @@ image_in_body: true
 also_on: https://medium.com/@agnes.deglon/what-could-possibly-go-wrong-catalina-island-round-three-ad5dedecb03c
 ---
 
-## The Trail, the Stingray, and the Porta-Potty
+The Trail, the Stingray, and the Porta-Potty
+{: .subtitle}
 
 We boarded the morning ferry full of optimism, excitement, and far more confidence than our training hikes this year justified.
 

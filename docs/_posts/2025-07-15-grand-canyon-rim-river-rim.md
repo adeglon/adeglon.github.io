@@ -7,7 +7,8 @@ permalink: /grand-canyon-rim-river-rim/
 image: /assets/images/featured-grand-canyon-rim-river-rim.jpg
 ---
 
-## *Because nothing says “Happy Anniversary” like hiking 17 miles with your teenagers*[](https://medium.com/@agnes.deglon?source=post_page---byline--2d1e864cdde6---------------------------------------)
+Because nothing says “Happy Anniversary” like hiking 17 miles with your teenagers
+{: .subtitle}
 
 We had it all planned out for our 20-year anniversary trip: hike down the South Kaibab Trail, spend two glorious nights at Phantom Ranch (with real beds and lemonade on tap), then hike out via Bright Angel Trail with a night at Havasupai Garden Campground. A perfect down-and-up rim-river-rim adventure. So neat. So balanced. So… completely wrecked by construction at the bottom of the canyon to fix water pipes that had apparently broken 85 times already, but *now* was the time to fix them. Of course…
 

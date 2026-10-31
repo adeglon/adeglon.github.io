@@ -11,6 +11,10 @@
   content is prose. Short paragraphs (a one-line opener, a caption) are
   skipped so the teaser is not a fragment.
 
+  A subtitle is a second title, not prose, so it is skipped outright. Most are
+  short enough that the 60-character floor caught them anyway, but a long one
+  (the Drala retreat line) was being read as the opening sentence.
+
   Jekyll includes share the page's variable scope, which is how the value
   comes back out.
 {%- endcomment %}
@@ -19,6 +23,7 @@
 {%- assign _body = '' %}
 {%- for _chunk in _chunks %}
   {%- assign _para = _chunk | split: '</p>' | first | strip_html | normalize_whitespace | strip %}
+  {%- if _chunk contains 'class="subtitle"' %}{% continue %}{% endif %}
   {%- if _para.size > 60 %}
     {%- assign _body = _body | append: _para | append: ' ' %}
   {%- endif %}

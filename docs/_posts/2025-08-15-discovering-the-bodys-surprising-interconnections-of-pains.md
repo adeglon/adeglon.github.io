@@ -8,7 +8,8 @@ image: /assets/images/featured-discovering-the-bodys-surprising-interconnections
 image_in_body: true
 ---
 
-## How Tuina and Stretching Unblock Energy Flow and Relieve Pain from Head to Toe
+How Tuina and Stretching Unblock Energy Flow and Relieve Pain from Head to Toe
+{: .subtitle}
 
 Have you ever noticed how pain in one part of your body can seem linked to pain in a completely different area? It’s not always obvious, but Traditional Chinese Medicine (TCM) provides an interesting perspective on these surprising interconnections.
 

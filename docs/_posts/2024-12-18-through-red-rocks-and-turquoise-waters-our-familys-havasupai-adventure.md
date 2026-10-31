@@ -8,7 +8,8 @@ image: /assets/images/featured-through-red-rocks-and-turquoise-waters-our-family
 image_in_body: true
 ---
 
-[](https://medium.com/@agnes.deglon?source=post_page---byline--25a1e3cef8fb---------------------------------------)*With turquoise waters, hidden waterfalls, and epic family adventures, Havasupai has it all. If you’re looking for breathtaking beauty, a little challenge, and the kind of memories that stick, this is the place.*
+With turquoise waters, hidden waterfalls, and epic family adventures, Havasupai has it all. If you’re looking for breathtaking beauty, a little challenge, and the kind of memories that stick, this is the place.
+{: .subtitle}
 
 ![Havasu Falls](/assets/images/0W3zzIyF70OZiWn3p.jpg)
 
