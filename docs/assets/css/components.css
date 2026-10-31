@@ -955,6 +955,32 @@
   margin: 0 0 var(--sp-6);
 }
 /* --------------------------------------------------------------------------
+   THE BIO NOTE  <- who is writing this, at the foot of the landing page
+   --------------------------------------------------------------------------
+   The About page was erased on Agnes' instruction and its words came here,
+   below the two doors. The placing is the argument: a reader meets the
+   sentence and the photograph at the top, sees what she writes and what she
+   has published in the middle, and only then is told who she is. A bio is
+   more persuasive after the work than before it.
+
+   A reading column, not a box. The doors above are already two bordered
+   shapes; a third would turn the page into a grid of cards.
+   -------------------------------------------------------------------------- */
+
+.bio-note {
+  margin-top: var(--sp-8);
+  max-width: var(--measure);
+}
+.bio-note__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-xl);
+  letter-spacing: 0.01em;
+  margin: var(--sp-5) 0 var(--sp-5);
+}
+.bio-note p + p { margin-top: var(--sp-4); }
+
+/* --------------------------------------------------------------------------
    POST SUBTITLE  <- the line under a post's title, 2026-10-31
    --------------------------------------------------------------------------
    Agnes: "can you make the subtitles in the blogs bigger throughout the

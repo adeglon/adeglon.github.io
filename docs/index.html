@@ -1,6 +1,13 @@
 ---
 layout: default
 permalink: /
+# The About page was erased 2026-10-31 and its bio moved down this page. The
+# homepage claims its old addresses so that anything already shared - a link
+# in an email, a search result, a bio line - still lands somewhere real.
+redirect_from:
+  - /about/
+  - /author/
+  - /family-mis-adventures/
 # Every type token on this page is scaled 10% - Agnes asked for it, and a
 # landing page read at arm's length can carry it. See html[data-type="big"].
 big_type: true
@@ -42,11 +49,6 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
 <main id="main" class="page section section--tight">
 
   {%- comment %}
-    THE BIO MOVED OUT (2026-10-10). It lives on /about/ now, with the studio
-    portrait. The fold introduces her; the doors below send a reader on.
-  {%- endcomment %}
-
-  {%- comment %}
     THE DOORS. The fold has said who she is; everything from here is a way
     further in - the writing, the books, and the ask at the bottom.
   {%- endcomment %}
@@ -54,7 +56,7 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
 
     <li class="door door--hub">
       <a class="door__head" href="{{ '/blog/' | relative_url }}">
-        <span class="door__name">Blog</span></a>
+        <span class="door__name">Blogs</span></a>
       <ul class="facets">
         {%- for s in site.sections %}
         {%- assign strand_line = s.blurb | split: ". " | first %}
@@ -112,6 +114,45 @@ og_image: /assets/hero/hero-ridge-og-1200.jpg
       <a class="door__go" href="{{ '/books/' | relative_url }}">All the books</a>
     </li>
   </ul>
+
+  {%- comment %}
+    THE BIO COMES BACK (2026-10-31). Agnes: "i don't like my about page. can
+    we erase it. just add the bio to the landing page under the blog and
+    books box." So the About page is gone and this is where its words live
+    now - after the doors, where a reader who has seen what she writes might
+    want to know who is writing it, and before the ask at the foot.
+
+    Her own words, first person, moved across unchanged.
+  {%- endcomment %}
+  <section class="bio-note" aria-labelledby="about-me">
+    {% include ornament.html modifier="ornament--short" %}
+    <h2 id="about-me" class="bio-note__title">About me</h2>
+
+    <p>I was born and raised in Switzerland, and my curiosity has taken me from
+      biochemistry to Traditional Chinese Medicine, from molecules to meridians,
+      and eventually to storytelling.</p>
+
+    <p>Along the way, I've learned to look at life through different lenses,
+      discovering how much there is to see when we remain open to more than one
+      perspective.</p>
+
+    <p>I've always loved books, languages, and the outdoors. I draw inspiration
+      from the unexpected places life takes us, the people we meet, and the
+      questions that don't always have easy answers.</p>
+
+    <p>I'm the author of <em>Once You Know: A Guide to Preserve Your Child's
+      Health</em> and the <em>Kids' Questions About Life</em> trilogy, published
+      in English, French, and German.</p>
+
+    <p>I'm now working on my Within Series: <em>The Chaos Within</em>,
+      <em>The Canyon Within</em>, and <em>The Creation Within</em>. Through
+      fiction, I explore relationships, self-discovery, and the messy beauty of
+      being human.</p>
+
+    <p>When I'm not writing, you'll likely find me hiking a trail, hanging
+      upside down on aerial silks, or exploring life from yet another
+      perspective.</p>
+  </section>
 
 </main>
 
