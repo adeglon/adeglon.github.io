@@ -1,0 +1,236 @@
+{% comment %}
+  LISTEN — a play button that reads the essay aloud.
+
+  Some readers would rather listen than read, and these essays are long enough
+  that people want them on a walk. This uses the voice already built into the
+  reader's own device (the Web Speech API), so there are no audio files to
+  make, to store, or to regenerate every time Agnès edits a sentence. It costs
+  nothing and it works on all thirty-six essays the moment it ships.
+
+  The honest trade: the voice is the device's, not hers. On an iPhone or a Mac
+  it is a good one. On Windows it is noticeably more robotic. Nobody can
+  download it and it will not appear in a podcast app. If those things start
+  to matter, real recordings can replace this later, per essay, without the
+  button moving.
+
+  It renders HIDDEN and the script reveals it only after confirming the
+  browser can actually speak — the same rule the chat button follows, so it
+  can never be a button that does nothing.
+{% endcomment %}
+<div class="listen" data-listen hidden>
+  <button type="button" class="listen__btn" data-listen-play>
+    <svg class="listen__icon" viewBox="0 0 12 14" aria-hidden="true" focusable="false"
+         data-icon="play"><path d="M0 0l12 7-12 7z"/></svg>
+    <svg class="listen__icon" viewBox="0 0 12 14" aria-hidden="true" focusable="false"
+         data-icon="pause" hidden><path d="M0 0h4v14H0zM8 0h4v14H8z"/></svg>
+    <span data-listen-label>Listen</span>
+  </button>
+  <button type="button" class="listen__stop" data-listen-stop hidden>Stop</button>
+</div>
+
+<script>
+(function () {
+  /* This include renders inside the article header, so at the moment the
+     script runs the essay itself has not been parsed yet and there is
+     nothing to collect. Wait for the document. */
+  function boot() {
+  var root = document.querySelector('[data-listen]');
+  if (!root) return;
+
+  var synth = window.speechSynthesis;
+  if (!synth || typeof SpeechSynthesisUtterance === 'undefined') return;
+
+  var btn   = root.querySelector('[data-listen-play]');
+  var stopB = root.querySelector('[data-listen-stop]');
+  var label = root.querySelector('[data-listen-label]');
+  var iPlay = root.querySelector('[data-icon="play"]');
+  var iPause= root.querySelector('[data-icon="pause"]');
+
+  /* ---------------------------------------------------------------------
+     HOW THINGS ARE SAID. Applied to the spoken copy only; the page itself is
+     untouched. An English voice makes a mess of Agnès' recurring vocabulary,
+     so the worst offenders are spelled the way they sound. Add a line here
+     whenever a word comes out wrong.
+     --------------------------------------------------------------------- */
+  var SAY = [
+    [/—|–/g, ', '],          /* dashes: a pause, not the word "dash" */
+    [/…/g, '. '],
+    [/\bQi\s?Gong\b/gi, 'chee gong'],
+    [/\bQi\b/g, 'chee'],
+    [/\bTuina\b/gi, 'tweenah'],
+    [/\bMoxa\b/gi, 'mocksa'],
+    [/\bMoxibustion\b/gi, 'mocksi-bustion'],
+    [/\bHavasupai\b/gi, 'Hava-soo-pie'],
+    [/\bHavasu\b/gi, 'Hava-soo'],
+    [/\bAgn[eè]s\b/gi, 'Anyess'],
+    [/\bD[eé]glon\b/gi, 'Dayglon'],
+    [/\bDrala\b/gi, 'Drahla'],
+    [/\bR[oö]stigraben\b/gi, 'Rershti-grahben'],
+    [/\bAnza\b/gi, 'Anza'],
+    [/\bTCM\b/g, 'T C M']
+  ];
+  function say(t) {
+    for (var i = 0; i < SAY.length; i++) t = t.replace(SAY[i][0], SAY[i][1]);
+    return t;
+  }
+
+  /* The title first, so a listener knows what they have started, then the
+     body. Captions and the empty paragraphs that wrap photographs are not
+     prose and are left out. */
+  function collect() {
+    var out = [], h1 = document.querySelector('article h1');
+    if (h1) out.push(h1.textContent);
+    var prose = document.querySelector('.prose');
+    if (!prose) return out;
+    var nodes = prose.querySelectorAll('p, h2, h3, h4, li');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.className && el.className.indexOf('caption') > -1) continue;
+      var t = el.textContent.replace(/\s+/g, ' ').trim();
+      if (t) out.push(t);
+    }
+    return out;
+  }
+
+  /* Chrome cuts an utterance off after about fifteen seconds, so nothing is
+     handed to the voice in one piece. Blocks break at sentence ends, and
+     Agnès' longer sentences break again at commas, which is where she
+     breathes anyway. */
+  var MAX = 190;
+  function splitLong(s) {
+    if (s.length <= MAX) return [s];
+    var parts = s.split(', '), out = [], buf = '';
+    for (var i = 0; i < parts.length; i++) {
+      var piece = parts[i] + (i < parts.length - 1 ? ', ' : '');
+      if (buf && (buf + piece).length > MAX) { out.push(buf); buf = piece; }
+      else buf += piece;
+    }
+    if (buf) out.push(buf);
+    return out;
+  }
+  function chunk(blocks) {
+    var out = [];
+    for (var b = 0; b < blocks.length; b++) {
+      var sentences = say(blocks[b]).match(/[^.!?]+[.!?]*\s*/g) || [say(blocks[b])];
+      var buf = '';
+      for (var s = 0; s < sentences.length; s++) {
+        if (buf && (buf + sentences[s]).length > MAX) { out.push(buf.trim()); buf = sentences[s]; }
+        else buf += sentences[s];
+      }
+      if (buf.trim()) out.push(buf.trim());
+    }
+    var flat = [];
+    for (var i = 0; i < out.length; i++) flat = flat.concat(splitLong(out[i]));
+    return flat.filter(function (t) { return /[A-Za-z0-9]/.test(t); });
+  }
+
+  var blocks = collect();
+  if (!blocks.length) return;
+  var chunks = chunk(blocks), counts = chunks.map(function (c) {
+    return c.split(/\s+/).length;
+  });
+
+  function minutesFrom(i) {
+    var w = 0;
+    for (var k = i; k < counts.length; k++) w += counts[k];
+    return Math.max(1, Math.round(w / 150));
+  }
+
+  /* ------------------------------------------------------------------- */
+  var index = 0, playing = false, voice = null, beat = null;
+
+  function pickVoice() {
+    var all = synth.getVoices(), en = [];
+    for (var i = 0; i < all.length; i++) if (/^en/i.test(all[i].lang)) en.push(all[i]);
+    if (!en.length) return null;
+    var pref = ['Samantha', 'Google US English', 'Microsoft Aria', 'Microsoft Jenny',
+                'Microsoft Zira', 'Karen', 'Serena', 'Moira', 'Daniel'];
+    for (var p = 0; p < pref.length; p++)
+      for (var v = 0; v < en.length; v++)
+        if (en[v].name.indexOf(pref[p]) > -1) return en[v];
+    for (var l = 0; l < en.length; l++) if (en[l].localService) return en[l];
+    return en[0];
+  }
+  voice = pickVoice();
+  if (typeof synth.onvoiceschanged !== 'undefined')
+    synth.onvoiceschanged = function () { if (!playing) voice = pickVoice(); };
+
+  function paint(state) {
+    var left = minutesFrom(index);
+    if (state === 'playing') {
+      label.textContent = 'Pause · ' + left + ' min left';
+      btn.setAttribute('aria-label', 'Pause. About ' + left + ' minutes left.');
+      iPlay.hidden = true; iPause.hidden = false; stopB.hidden = false;
+    } else if (state === 'paused') {
+      label.textContent = 'Resume · ' + left + ' min left';
+      btn.setAttribute('aria-label', 'Resume. About ' + left + ' minutes left.');
+      iPlay.hidden = false; iPause.hidden = true; stopB.hidden = false;
+    } else {
+      label.textContent = 'Listen · ' + minutesFrom(0) + ' min';
+      btn.setAttribute('aria-label', 'Listen to this essay, about ' +
+                       minutesFrom(0) + ' minutes.');
+      iPlay.hidden = false; iPause.hidden = true; stopB.hidden = true;
+    }
+  }
+
+  /* Chrome also simply stops mid-queue on a long page. A resume() every few
+     seconds is harmless when nothing is stuck and un-sticks it when it is. */
+  function heartbeat(on) {
+    clearInterval(beat);
+    if (!on) return;
+    beat = setInterval(function () {
+      if (!playing) { clearInterval(beat); return; }
+      if (synth.speaking && !synth.paused) synth.resume();
+    }, 7000);
+  }
+
+  function speak(i) {
+    if (i >= chunks.length) { halt(); return; }
+    index = i;
+    paint('playing');
+    var u = new SpeechSynthesisUtterance(chunks[i]);
+    if (voice) { u.voice = voice; u.lang = voice.lang; }
+    u.rate = 0.95;
+    u.onend = function () { if (playing) speak(i + 1); };
+    u.onerror = function (e) {
+      if (playing && e.error !== 'interrupted' && e.error !== 'canceled') speak(i + 1);
+    };
+    synth.speak(u);
+  }
+
+  function halt() {
+    playing = false; heartbeat(false); synth.cancel(); index = 0; paint('idle');
+  }
+
+  btn.addEventListener('click', function () {
+    if (!playing) {                       /* idle, or paused */
+      if (synth.paused && synth.speaking) { synth.resume(); }
+      else { synth.cancel(); speak(index); }
+      playing = true; heartbeat(true); paint('playing');
+      return;
+    }
+    synth.pause();
+    playing = false; heartbeat(false); paint('paused');
+    /* Some mobile browsers treat pause() as a stop. If the voice is gone
+       rather than paused, the next click restarts this chunk instead. */
+    setTimeout(function () {
+      if (!synth.paused && !synth.speaking) synth.cancel();
+    }, 60);
+  });
+
+  stopB.addEventListener('click', halt);
+
+  /* Speech outlives the page in some browsers, so it is cleared both on the
+     way in and on the way out. */
+  synth.cancel();
+  window.addEventListener('pagehide', halt);
+  window.addEventListener('beforeunload', halt);
+
+  paint('idle');
+  root.hidden = false;
+  }
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
